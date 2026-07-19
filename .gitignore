@@ -31,3 +31,11 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Test artifacts
+frontend/.playwright-cli/
+frontend/test-results/
+frontend/playwright-report/
+
+# Local Claude Code config
+.claude/settings.local.json
