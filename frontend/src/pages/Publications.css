@@ -1,0 +1,276 @@
+/* Publications Hero Section */
+.pub-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-2-11.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.pub-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.pub-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.pub-hero-content {
+  max-width: 700px;
+}
+
+.pub-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.pub-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.pub-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Journal List styling */
+.pub-list-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.journals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.journal-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-light);
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.06);
+}
+
+.journal-cover-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.75;
+  overflow: hidden;
+  background: #eaeaea;
+}
+
+.journal-cover-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.journal-card:hover .journal-cover-bg {
+  transform: scale(1.05);
+}
+
+.journal-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 22, 40, 0.4), transparent);
+}
+
+.journal-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--navy);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.journal-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.journal-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.4;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+.btn-icon {
+  font-size: 0.75rem;
+}
+
+/* Subscription Box */
+.subscription-box {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sub-icon-wrapper {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--gold);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.subscription-box h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.subscription-box p {
+  font-size: 0.95rem;
+  color: var(--gray-800);
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.sub-input-row {
+  display: flex;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  padding: 0.3rem;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 550px;
+  gap: 0.5rem;
+}
+
+.sub-input-row input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0 1.25rem;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--navy);
+  font-family: var(--font-body);
+}
+
+.sub-input-row .btn {
+  border-radius: 35px;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.85rem;
+}
+
+/* Responsive configurations */
+@media (max-width: 1200px) {
+  .journals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .journals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pub-title {
+    font-size: 2.2rem;
+  }
+  .pub-subtitle {
+    font-size: 0.95rem;
+  }
+  .pub-hero-section {
+    height: 250px;
+  }
+  .sub-input-row {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 1rem;
+  }
+  .sub-input-row input {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 30px;
+    padding: 0.85rem 1.25rem;
+  }
+  .subscription-box {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journals-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,257 @@
+/* Team Hero Header Section */
+.team-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-3-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.team-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.team-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.team-hero-content {
+  max-width: 700px;
+}
+
+.team-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.team-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.team-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Roster / Members Grid List */
+.team-roster-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.roster-top-leaders {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.leader-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.roster-section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.roster-section-title.text-center {
+  text-align: center;
+}
+
+.title-line.center {
+  margin: 0.5rem auto 2.5rem auto;
+}
+
+.roster-section-block {
+  margin-bottom: 5rem;
+}
+
+.roster-section-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Grid systems */
+.roster-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Member card inside roster */
+.team-member-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-light);
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.08);
+}
+
+.team-member-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #eaeaea;
+}
+
+.team-member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-member-card:hover .team-member-img {
+  transform: scale(1.06);
+}
+
+.team-member-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 22, 40, 0.4), transparent);
+}
+
+.team-member-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.team-member-role {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.team-member-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+.team-member-btn {
+  margin-top: auto;
+  border: none;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  padding: 0;
+}
+
+.team-member-btn:hover {
+  color: var(--navy);
+}
+
+.team-member-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive configurations */
+@media (max-width: 1200px) {
+  .grid-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .roster-top-leaders {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-3, .grid-4, .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .team-title {
+    font-size: 2.2rem;
+  }
+  .team-subtitle {
+    font-size: 0.95rem;
+  }
+  .team-hero-section {
+    height: 250px;
+  }
+  .team-roster-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-3, .grid-4, .grid-5 {
+    grid-template-columns: 1fr;
+  }
+}

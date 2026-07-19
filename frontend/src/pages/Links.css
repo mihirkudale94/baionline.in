@@ -1,0 +1,269 @@
+/* Links Hero */
+.links-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.links-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.links-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.links-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.links-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.links-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Accordion list details */
+.links-directory-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.accordion-list-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.accordion-link-item {
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s;
+}
+
+.accordion-link-item.open {
+  border-color: var(--gold);
+}
+
+.accordion-head-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.accordion-head-btn .icon-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.accordion-head-btn .head-icon {
+  color: var(--gold);
+}
+
+.accordion-head-btn .arrow {
+  font-size: 0.8rem;
+  color: var(--gray-800);
+  transition: transform 0.3s;
+}
+
+.accordion-link-item.open .arrow {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+.accordion-body-panel {
+  padding: 0 2rem 2.5rem 2rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.section-intro-text {
+  font-size: 0.88rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* Cards lists grid */
+.links-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.link-card-box {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none !important;
+  transition: all 0.3s;
+}
+
+.link-card-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-light);
+  box-shadow: 0 8px 25px rgba(223, 183, 108, 0.1);
+}
+
+.link-card-box h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.link-url-text {
+  font-size: 0.75rem;
+  color: var(--gray-800);
+  word-break: break-all;
+}
+
+.visit-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: auto;
+}
+
+/* Gov Table */
+.gov-links-table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+.gov-links-custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gov-links-custom-table th {
+  background: var(--navy-light);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem 1.5rem;
+}
+
+.gov-links-custom-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+}
+
+.table-dept-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.table-link-btn {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--gold);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.table-link-btn:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .links-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .links-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .links-title {
+    font-size: 2.2rem;
+  }
+  .links-subtitle {
+    font-size: 0.95rem;
+  }
+  .links-hero-section {
+    height: 250px;
+  }
+  .accordion-head-btn {
+    padding: 1.5rem;
+  }
+  .accordion-body-panel {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+}

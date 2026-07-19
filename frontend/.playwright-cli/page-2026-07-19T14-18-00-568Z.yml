@@ -1,0 +1,354 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "BAI Logo BUILDERS ASSOCIATION OF INDIA All India Association of Civil Engineering Construction Contractors" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "BAI Logo" [ref=e8]
+        - generic [ref=e9]:
+          - generic [ref=e10]: BUILDERS ASSOCIATION OF INDIA
+          - generic [ref=e11]: All India Association of Civil Engineering Construction Contractors
+      - generic [ref=e12]:
+        - textbox "Search Centres / Keyword..." [ref=e16]
+        - textbox "Find City..." [ref=e20]
+        - button "Search" [ref=e21] [cursor=pointer]
+    - navigation [ref=e22]:
+      - list [ref=e24]:
+        - listitem [ref=e25]:
+          - link "Home" [ref=e26] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e27]:
+          - button "About" [ref=e28] [cursor=pointer]
+        - listitem [ref=e31]:
+          - button "BAI Activities" [ref=e32] [cursor=pointer]
+        - listitem [ref=e35]:
+          - button "BAI Centres" [ref=e36] [cursor=pointer]
+        - listitem [ref=e39]:
+          - link "Publications" [ref=e40] [cursor=pointer]:
+            - /url: /publications
+        - listitem [ref=e41]:
+          - link "BAI Services" [ref=e42] [cursor=pointer]:
+            - /url: /services
+        - listitem [ref=e43]:
+          - link "Tenders" [ref=e44] [cursor=pointer]:
+            - /url: /tenders
+        - listitem [ref=e45]:
+          - link "BAI in Media" [ref=e46] [cursor=pointer]:
+            - /url: /media
+        - listitem [ref=e47]:
+          - link "Sponsors Inquiry" [ref=e48] [cursor=pointer]:
+            - /url: /sponsors-inquiry
+        - listitem [ref=e49]:
+          - link "Contact Us" [ref=e50] [cursor=pointer]:
+            - /url: /contact
+  - main [ref=e51]:
+    - generic [ref=e52]:
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e134]:
+            - heading "Shri Ravindra Tyagi, unanimously elected as President of BAI for 2026-27" [level=1] [ref=e135]
+            - link "Click Here" [ref=e136] [cursor=pointer]:
+              - /url: https://www.baionline.in/public/frontend/pdf/Election-Results 2026-27.pdf
+          - generic [ref=e137]:
+            - heading "Quality construction begins with a quality association" [level=1] [ref=e138]
+            - link "Be a Member of BAI" [ref=e139] [cursor=pointer]:
+              - /url: /membership
+          - generic [ref=e140]:
+            - heading "Making your vision become a reality." [level=1] [ref=e141]
+            - link "Be a Member of BAI" [ref=e142] [cursor=pointer]:
+              - /url: /membership
+          - generic [ref=e143]:
+            - heading "Building solid foundations for an ever-changing world." [level=1] [ref=e144]
+            - link "Be a Member of BAI" [ref=e145] [cursor=pointer]:
+              - /url: /membership
+          - generic [ref=e146]:
+            - heading "Building with innovation, quality, and pride." [level=1] [ref=e147]
+            - link "Be a Member of BAI" [ref=e148] [cursor=pointer]:
+              - /url: /membership
+          - generic [ref=e149]:
+            - heading "BAI Representation to Union Ministry" [level=1] [ref=e150]
+            - link "Details" [ref=e151] [cursor=pointer]:
+              - /url: https://www.baionline.in/public/frontend/pdf/BAI-Representation-Dated-1st-April-2026.pdf
+        - generic [ref=e152] [cursor=pointer]: prev
+        - generic [ref=e153] [cursor=pointer]: next
+      - generic [ref=e161]:
+        - generic [ref=e162]: "Latest Update:"
+        - generic [ref=e167]:
+          - link "• Letter to Shri Narendra Modi,PM of India regarding abnormal Cement and Steel Price Increase (Read PDF)" [ref=e168] [cursor=pointer]:
+            - /url: https://www.baionline.in/public/frontend/pdf/Shri-Narendra-Modi-ji-Hon-PM-of-India-Letter.pdf
+          - link "• Letter to Smt Nirmala Sitharaman Ji, FM of India regarding MSME 45-days clause (Read PDF)" [ref=e169] [cursor=pointer]:
+            - /url: https://www.baionline.in/public/frontend/pdf/MSME-Smt-Nirmala-Sitharaman-Ji-MSME-45-days-clause-Letter.pdf
+          - link "• BAI Representation Abnormal Increase in Construction Materials (Read PDF)" [ref=e170] [cursor=pointer]:
+            - /url: https://www.baionline.in/public/frontend/pdf/bai-representation-abnormal-increase-in-construction-materials--20.04.2022.pdf
+          - link "• Delhi Press Clippings - Union Ministry Communique (Read PDF)" [ref=e171] [cursor=pointer]:
+            - /url: https://www.baionline.in/public/frontend/pdf/delhi-press-clippings.pdf
+          - link "• Maharashtra Press Clippings - Union Ministry Communique (Read PDF)" [ref=e172] [cursor=pointer]:
+            - /url: https://www.baionline.in/public/frontend/pdf/maharashtra-press-clippings.pdf
+          - link "• Ahmedabad Press Clippings - Union Ministry Communique (Read PDF)" [ref=e173] [cursor=pointer]:
+            - /url: https://www.baionline.in/public/frontend/pdf/ahmedabad-press-clippings.pdf
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e177]: "0"
+          - generic [ref=e178]: President
+        - generic [ref=e179]:
+          - generic [ref=e180]: "0"
+          - generic [ref=e181]: Imm. Past President
+        - generic [ref=e182]:
+          - generic [ref=e183]: "0"
+          - generic [ref=e184]: Vice Presidents
+        - generic [ref=e185]:
+          - generic [ref=e186]: "0"
+          - generic [ref=e187]: State Chairmen
+        - generic [ref=e188]:
+          - generic [ref=e189]: "0"
+          - generic [ref=e190]: State Co-Ordinators
+        - generic [ref=e191]:
+          - generic [ref=e192]: 0 Lakh
+          - generic [ref=e193]: Members
+        - generic [ref=e194]:
+          - generic [ref=e195]: "0"
+          - generic [ref=e196]: Past Presidents
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - text: Welcome to BAI
+            - heading "Apex representative body of civil construction in India" [level=2] [ref=e201]
+            - paragraph [ref=e203]: Founded in 1941, the Builders' Association of India (BAI) has served as the leading national voice for civil engineering construction companies. Under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, Pune, BAI started as a body to find solutions to builders' problems. Today, it stands as a massive monument with 264+ regional centres spanning the entire length and breadth of India, protecting and furthering the cause of the Indian construction industry.
+            - generic [ref=e204]:
+              - generic [ref=e209]:
+                - heading "25,000+ Direct Members" [level=4] [ref=e210]
+                - paragraph [ref=e211]: Consisting of leading civil engineering developers and contractor firms.
+              - generic [ref=e216]:
+                - heading "All-India Coverage" [level=4] [ref=e217]
+                - paragraph [ref=e218]: 264+ active regional centres organized in 5 zones across the country.
+            - link "Read Our History" [ref=e219] [cursor=pointer]:
+              - /url: /about
+          - generic [ref=e222]:
+            - heading "Indian Construction" [level=3] [ref=e226]
+            - paragraph [ref=e227]: Monthly Bulletin of Builders Association of India
+            - generic [ref=e228]:
+              - img "Indian Construction Bulletin Cover" [ref=e230]
+              - generic [ref=e231]:
+                - paragraph [ref=e232]: ‘INDIAN CONSTRUCTION’ is the monthly bulletin of BUILDERS’ ASSOCIATION OF INDIA (BAI) established in 1941. It is circulated to all BAI members, senior officials of Central and State Government departments, World Bank, ADB, and global IFAWPCA chapters.
+                - generic [ref=e233]:
+                  - link "Advertise" [ref=e234] [cursor=pointer]:
+                    - /url: https://www.baionline.in/indianconstruction
+                  - link "Archives" [ref=e235] [cursor=pointer]:
+                    - /url: https://www.baionline.in/archives
+                  - link "Subscribe Form" [ref=e236] [cursor=pointer]:
+                    - /url: https://www.baionline.in/public/frontend/pdf/Indian_Construction_Subscription_Form_2022-23.pdf
+          - generic [ref=e237]:
+            - heading "Active Announcements" [level=3] [ref=e241]
+            - generic [ref=e242]:
+              - generic [ref=e244]:
+                - heading "BAI takes steps to file Writ Petitions for inclusion of Arbitration Clause in contracts" [level=4] [ref=e245]
+                - paragraph [ref=e246]: "Those members who want a copy of Enclosures, please write to BAI HQ on our email: baihq.mumbai@gmail.com, raju_john_in@yahoo.co.uk and the same will be sent by email."
+                - link "View PDF" [ref=e247] [cursor=pointer]:
+                  - /url: https://www.baionline.in/storage/announcement/m7Gzw8AKaqSDf3cScwZ61sWyopX2JIk54pceDeBl61hRiqSmzAsyq91sMcxO.pdf
+              - generic [ref=e250]:
+                - img "BAI’s 84th Annual Report (2024–2025)" [ref=e251]
+                - generic [ref=e252]:
+                  - heading "BAI’s 84th Annual Report (2024–2025)" [level=4] [ref=e253]
+                  - paragraph [ref=e254]: "Those members who want a copy of Audited Accounts, please write to BAI HQ on our email: baihq.mumbai@gmail.com, raju_john_in@yahoo.co.uk and the same will be sent by email."
+                  - link "View PDF" [ref=e255] [cursor=pointer]:
+                    - /url: https://www.baionline.in/storage/announcement/250726WithoutAuditReport84thAnnualReportBAI2024202525Jul2025.pdf
+          - generic [ref=e258]:
+            - heading "Our All-India Presence" [level=3] [ref=e262]
+            - paragraph [ref=e263]: Now present in more than 264+ city centers across the country. Click on any map image below to view it in full resolution.
+            - generic [ref=e264]:
+              - generic [ref=e265]:
+                - img "Permanent Regional Offices Map" [ref=e266]
+                - text: Permanent Regional Offices
+              - generic [ref=e267]:
+                - img "National Coverage Boundaries Map" [ref=e268]
+                - text: National Coverage Boundaries
+          - generic [ref=e269]:
+            - heading "Recent Events & Conventions" [level=3] [ref=e273]
+            - generic [ref=e274]:
+              - generic [ref=e275]:
+                - img "BAI NATIONAL Managing Committee & General Council Meeting 2025-26" [ref=e276]
+                - generic [ref=e277]:
+                  - heading "BAI NATIONAL Managing Committee & General Council Meeting 2025-26" [level=4] [ref=e278]
+                  - generic [ref=e279]: 27th & 28th February 2026
+                  - paragraph [ref=e280]: Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad
+              - generic [ref=e281]:
+                - img "SPONSORSHIP APPEAL for BAI 4th MC/GC Meeting 2025-26" [ref=e282]
+                - generic [ref=e283]:
+                  - heading "SPONSORSHIP APPEAL for BAI 4th MC/GC Meeting 2025-26" [level=4] [ref=e284]
+                  - generic [ref=e285]: 27th & 28th February 2026
+                  - paragraph [ref=e286]: Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad
+              - generic [ref=e287]:
+                - img "BAI SPORTS LEAGUE 2026" [ref=e288]
+                - generic [ref=e289]:
+                  - heading "BAI SPORTS LEAGUE 2026" [level=4] [ref=e290]
+                  - generic [ref=e291]: Saturday 21st February 2026
+                  - paragraph [ref=e292]: United Sports Center, Kakkanad, Kochi
+              - generic [ref=e293]:
+                - img "BAI's 32nd All India Builders Convention" [ref=e294]
+                - generic [ref=e295]:
+                  - heading "BAI's 32nd All India Builders Convention" [level=4] [ref=e296]
+                  - generic [ref=e297]: 7th, 8th & 9th January 2026
+                  - paragraph [ref=e298]: Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India
+              - generic [ref=e299]:
+                - img "2nd Mumbai Redevelopment Summit 2025" [ref=e300]
+                - generic [ref=e301]:
+                  - heading "2nd Mumbai Redevelopment Summit 2025" [level=4] [ref=e302]
+                  - generic [ref=e303]: 17th December 2025
+                  - paragraph [ref=e304]: Courtyard by Marriott, Mumbai, India
+              - generic [ref=e305]:
+                - img "3rd MC-GC Meeting" [ref=e306]
+                - generic [ref=e307]:
+                  - heading "3rd MC-GC Meeting" [level=4] [ref=e308]
+                  - generic [ref=e309]: 20th - 21st November 2025
+                  - paragraph [ref=e310]: CIAL Convention Centre, Kochi
+        - generic [ref=e311]:
+          - generic [ref=e314]:
+            - heading "Ministerial Interaction" [level=4] [ref=e315]
+            - paragraph [ref=e316]: Hon'ble Shri Nitin Gadkari (Union Minister of Road Transport & Highways) interactive session details with BAI leadership board.
+            - link "Read Details" [ref=e317] [cursor=pointer]:
+              - /url: "#"
+          - link [ref=e319] [cursor=pointer]:
+            - /url: https://youtube.com/user/baihqmumbai
+            - img "BAI YouTube Channel" [ref=e320]
+          - generic [ref=e321]:
+            - heading "Communique Feed" [level=3] [ref=e325]
+            - list [ref=e326]:
+              - listitem [ref=e327]:
+                - paragraph [ref=e328]: Letter to Shri Narendra Modi,PM of India regarding abnormal Cement and Steel Price Increase
+                - link "Download document (PDF)" [ref=e329] [cursor=pointer]:
+                  - /url: https://www.baionline.in/public/frontend/pdf/Shri-Narendra-Modi-ji-Hon-PM-of-India-Letter.pdf
+              - listitem [ref=e330]:
+                - paragraph [ref=e331]: Letter to Smt Nirmala Sitharaman Ji, FM of India regarding MSME 45-days clause
+                - link "Download document (PDF)" [ref=e332] [cursor=pointer]:
+                  - /url: https://www.baionline.in/public/frontend/pdf/MSME-Smt-Nirmala-Sitharaman-Ji-MSME-45-days-clause-Letter.pdf
+              - listitem [ref=e333]:
+                - paragraph [ref=e334]: BAI Representation Abnormal Increase in Construction Materials
+                - link "Download document (PDF)" [ref=e335] [cursor=pointer]:
+                  - /url: https://www.baionline.in/public/frontend/pdf/bai-representation-abnormal-increase-in-construction-materials--20.04.2022.pdf
+              - listitem [ref=e336]:
+                - paragraph [ref=e337]: Delhi Press Clippings - Union Ministry Communique
+                - link "Download document (PDF)" [ref=e338] [cursor=pointer]:
+                  - /url: https://www.baionline.in/public/frontend/pdf/delhi-press-clippings.pdf
+              - listitem [ref=e339]:
+                - paragraph [ref=e340]: Maharashtra Press Clippings - Union Ministry Communique
+                - link "Download document (PDF)" [ref=e341] [cursor=pointer]:
+                  - /url: https://www.baionline.in/public/frontend/pdf/maharashtra-press-clippings.pdf
+              - listitem [ref=e342]:
+                - paragraph [ref=e343]: Ahmedabad Press Clippings - Union Ministry Communique
+                - link "Download document (PDF)" [ref=e344] [cursor=pointer]:
+                  - /url: https://www.baionline.in/public/frontend/pdf/ahmedabad-press-clippings.pdf
+          - generic [ref=e345]:
+            - generic [ref=e346]: SPONSOR PARTNER
+            - img "BAI Cloud Sponsor Partner" [ref=e347]
+      - generic [ref=e349]:
+        - generic [ref=e350]:
+          - generic [ref=e351]: BAI Leadership
+          - heading "Governing Council 2026-27" [level=2] [ref=e352]:
+            - text: Governing Council
+            - generic [ref=e353]: 2026-27
+        - generic [ref=e356]:
+          - button "President" [ref=e357] [cursor=pointer]
+          - button "Immediate Past President" [ref=e358] [cursor=pointer]
+          - button "Vice Presidents" [ref=e359] [cursor=pointer]
+          - button "State Chairmen" [ref=e360] [cursor=pointer]
+          - button "State Coordinators" [ref=e361] [cursor=pointer]
+        - generic [ref=e364]:
+          - img "Shri Ravindra Tyagi" [ref=e366]
+          - generic [ref=e367]:
+            - generic [ref=e368]: President
+            - heading "Shri Ravindra Tyagi" [level=2] [ref=e369]
+            - paragraph [ref=e370]: Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.
+            - button "Read Message" [ref=e371] [cursor=pointer]
+      - generic [ref=e375]:
+        - generic [ref=e376]:
+          - heading "Membership Directory" [level=3] [ref=e377]
+          - paragraph [ref=e378]: Access the detailed directory of Builders Association of India. Join hands with 2 Lakh+ associated developers.
+          - link "Browse Centres" [ref=e379] [cursor=pointer]:
+            - /url: /centres
+        - generic [ref=e380]:
+          - heading "Get In Touch" [level=3] [ref=e381]
+          - paragraph [ref=e382]: Have questions about sponsorship, tenders, publications or local centre details? We are here to assist you.
+          - link "Contact Headquarters" [ref=e383] [cursor=pointer]:
+            - /url: /contact
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - img "BAI Logo White" [ref=e60]
+          - paragraph [ref=e61]: Connecting civil engineering construction companies across India to build solid foundations for an ever-changing world.
+          - generic [ref=e62]:
+            - link [ref=e63] [cursor=pointer]:
+              - /url: https://www.facebook.com/BuildersAssociationOfIndia/
+            - link [ref=e66] [cursor=pointer]:
+              - /url: https://www.instagram.com/p/B60c1Ljnk90/
+            - link [ref=e69] [cursor=pointer]:
+              - /url: https://www.youtube.com/@baihqmumbai/videos
+            - link [ref=e72] [cursor=pointer]:
+              - /url: https://in.linkedin.com/company/builders-association-of-india
+            - link [ref=e75] [cursor=pointer]:
+              - /url: https://twitter.com/bainational
+        - generic [ref=e78]:
+          - heading "Head Office" [level=3] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - generic [ref=e84]: G-1/G-20, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai-400034
+            - listitem [ref=e85]:
+              - generic [ref=e88]: "Tel: (91-22) 23514802, 23520507 Fax: (91-22) 23521328"
+            - listitem [ref=e89]:
+              - link "baihq.mumbai@gmail.com" [ref=e93] [cursor=pointer]:
+                - /url: mailto:baihq.mumbai@gmail.com
+        - generic [ref=e94]:
+          - heading "Quick Links" [level=3] [ref=e95]
+          - list [ref=e96]:
+            - listitem [ref=e97]:
+              - link "About BAI" [ref=e98] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e99]:
+              - link "BAI Team 2026-27" [ref=e100] [cursor=pointer]:
+                - /url: /team
+            - listitem [ref=e101]:
+              - link "Trustees" [ref=e102] [cursor=pointer]:
+                - /url: /trustees
+            - listitem [ref=e103]:
+              - link "Past Presidents" [ref=e104] [cursor=pointer]:
+                - /url: /past-presidents
+        - generic [ref=e105]:
+          - heading "Notifications" [level=3] [ref=e106]
+          - list [ref=e107]:
+            - listitem [ref=e108]:
+              - link "Judgements" [ref=e109] [cursor=pointer]:
+                - /url: /judgements
+            - listitem [ref=e110]:
+              - link "Notifications" [ref=e111] [cursor=pointer]:
+                - /url: /notifications
+            - listitem [ref=e112]:
+              - link "Circular" [ref=e113] [cursor=pointer]:
+                - /url: /circular
+      - generic [ref=e114]:
+        - generic [ref=e115]: Copyright © 2026 BAI - Builders Association of India - All India Association of Civil Engineering Construction Contractors and Builders. All Rights Reserved.
+        - generic [ref=e116]:
+          - link "Privacy Policy" [ref=e117] [cursor=pointer]:
+            - /url: /privacy-policy
+          - generic [ref=e118]: "|"
+          - link "Terms & Conditions" [ref=e119] [cursor=pointer]:
+            - /url: /terms
+          - generic [ref=e120]: "|"
+          - link "Disclaimer" [ref=e121] [cursor=pointer]:
+            - /url: /disclaimer
+  - generic [ref=e122]:
+    - button "Close BAI Assistant" [expanded]
+    - dialog "BAI AI Assistant" [ref=e388]:
+      - generic [ref=e389]:
+        - generic [ref=e394]:
+          - heading "BAI AI Assistant" [level=4] [ref=e395]
+          - generic [ref=e396]: Ready to help
+        - button "Close assistant" [ref=e397] [cursor=pointer]
+      - generic [ref=e400]:
+        - paragraph [ref=e406]: Namaste! I can help you explore BAI's history, leadership, regional centres, membership, and industry resources.
+        - paragraph [ref=e439]: Tell me about BAI History
+        - paragraph [ref=e445]: 🏗️ **BAI History & Foundation** Builders Association of India was founded in **1941** in Pune, under the guidance of Brig. C.V.S. Jackson of the Military Engineering Services (MES). It initially began with 250 members across 3 regional centers to coordinate builder grievances. Today, its headquarters are in Mumbai, but the original 'Jackson Hut' office stands in Pune as a historical monument.
+      - generic [ref=e422]:
+        - generic [ref=e423]:
+          - textbox "Message BAI AI Assistant" [ref=e424]:
+            - /placeholder: Ask a question about BAI...
+          - button "Send message" [disabled] [ref=e425]
+        - generic [ref=e428]: AI responses may need verification.

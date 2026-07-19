@@ -1,0 +1,209 @@
+/* Non-Member Hero */
+.non-member-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-3-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.non-member-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.non-member-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.non-member-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.non-member-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.non-member-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Form layouts */
+.non-member-form-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.non-member-split-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.non-member-form-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.non-member-form-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.non-member-inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.non-member-inquiry-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.non-member-inquiry-form label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.non-member-inquiry-form input, .non-member-inquiry-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  transition: all 0.3s;
+}
+
+.non-member-inquiry-form input:focus, .non-member-inquiry-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(223, 183, 108, 0.15);
+}
+
+.non-member-inquiry-form .submit-btn {
+  border-radius: 30px;
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+/* Info card side layout */
+.non-member-info-card {
+  background: var(--navy-light);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(10, 22, 40, 0.1);
+  position: relative;
+}
+
+.non-member-info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 4px 0 0 4px;
+}
+
+.non-member-info-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.non-member-info-card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.info-list li {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+/* Responsive configurations */
+@media (max-width: 1024px) {
+  .non-member-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .non-member-title {
+    font-size: 2.2rem;
+  }
+  .non-member-subtitle {
+    font-size: 0.95rem;
+  }
+  .non-member-hero-section {
+    height: 250px;
+  }
+  .non-member-form-section {
+    padding: 4rem 0;
+  }
+  .non-member-form-card, .non-member-info-card {
+    padding: 2rem;
+  }
+}

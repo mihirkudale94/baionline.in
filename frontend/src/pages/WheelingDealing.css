@@ -1,0 +1,396 @@
+/* Wheeling Dealing Hero */
+.wd-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-2-11.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.wd-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.wd-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.wd-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.wd-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.wd-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Tabs list selectors */
+.wd-tabs-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.wd-tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--gray-200);
+  padding-bottom: 1rem;
+}
+
+.wd-tabs-header .tab-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy-light);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.wd-tabs-header .tab-btn:hover {
+  color: var(--gold);
+}
+
+.wd-tabs-header .tab-btn.active {
+  color: var(--gold);
+}
+
+.wd-tabs-header .tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gold);
+}
+
+.panel-desc {
+  font-size: 0.9rem;
+  color: var(--gray-800);
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Filter bar styling */
+.listings-filters-bar {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 450px;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+
+.search-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-800);
+  font-size: 0.9rem;
+}
+
+.category-tags-list {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.category-tag-btn {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 0.45rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--navy-light);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.category-tag-btn:hover, .category-tag-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+/* Equipment catalog cards grid */
+.machinery-grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.machinery-card-box {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s;
+}
+
+.machinery-card-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(10, 22, 40, 0.04);
+}
+
+.machinery-cat-badge {
+  background: rgba(224, 122, 95, 0.1);
+  color: var(--amber);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.machinery-card-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.machinery-rate {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold);
+  font-family: var(--font-heading);
+  margin-bottom: 1.5rem;
+}
+
+.machinery-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--gray-100);
+  padding-top: 1rem;
+}
+
+.machinery-details-list p {
+  font-size: 0.8rem;
+  color: var(--gray-800);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.machinery-call-btn {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 24px;
+  text-align: center;
+  padding: 0.65rem 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.machinery-call-btn:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Post form boxes */
+.form-card-container {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 3.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.form-card-container h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.form-helper-text {
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.wd-inputs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-grid-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.wd-inputs-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wd-inputs-form label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wd-inputs-form input, .wd-inputs-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  transition: all 0.3s;
+}
+
+.wd-inputs-form input:focus, .wd-inputs-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.wd-inputs-form .submit-btn {
+  border-radius: 30px;
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+/* Success info */
+.no-listings-fallback {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--gray-800);
+  font-size: 0.9rem;
+}
+
+/* Responsive configurations */
+@media (max-width: 1024px) {
+  .machinery-grid-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .listings-filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wd-tabs-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .wd-tabs-header .tab-btn.active::after {
+    display: none;
+  }
+  .machinery-grid-list {
+    grid-template-columns: 1fr;
+  }
+  .form-grid-columns {
+    grid-template-columns: 1fr;
+  }
+  .form-card-container {
+    padding: 2rem;
+  }
+  .wd-title {
+    font-size: 2.2rem;
+  }
+  .wd-subtitle {
+    font-size: 0.95rem;
+  }
+  .wd-hero-section {
+    height: 250px;
+  }
+  .wd-tabs-section {
+    padding: 4rem 0;
+  }
+}

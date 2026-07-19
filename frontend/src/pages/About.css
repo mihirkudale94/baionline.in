@@ -1,0 +1,497 @@
+/* About Hero Header Section */
+.about-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.about-hero-content {
+  max-width: 700px;
+}
+
+.about-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* History Content details */
+.about-history-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.history-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.history-paragraph {
+  font-size: 0.95rem;
+  color: var(--gray-800);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Jackson monument box */
+.jackson-monument-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.jackson-monument-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 4px 0 0 4px;
+}
+
+.monument-icon {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--gold);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.jackson-monument-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.jackson-monument-card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.jackson-monument-card strong {
+  color: var(--white);
+}
+
+/* Values list styling */
+.about-values-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.value-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 2.5rem;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-light);
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.05);
+}
+
+.value-icon {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--gold);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.value-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.value-card p {
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+}
+
+/* Responsive configurations */
+@media (max-width: 1024px) {
+  .history-grid, .accordion-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    height: 250px;
+  }
+  .about-title {
+    font-size: 2.2rem;
+  }
+  .about-subtitle {
+    font-size: 0.95rem;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .about-history-section, .about-values-section, .about-achievements-section, .about-accordions-section {
+    padding: 4rem 0;
+  }
+  .jackson-monument-card, .membership-form-card {
+    padding: 1.75rem;
+  }
+}
+
+/* 4. Timeline Achievements Section */
+.about-achievements-section {
+  padding: 6rem 0;
+  background-color: var(--gray-50);
+}
+
+.achievements-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.achievement-timeline-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+.achievement-timeline-card:hover {
+  transform: translateX(4px);
+  border-color: var(--gold-light);
+  box-shadow: 0 4px 15px rgba(10,22,40,0.03);
+}
+
+.achievement-icon-wrapper {
+  background: rgba(26, 115, 232, 0.1);
+  color: var(--gold);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.achievement-text {
+  font-size: 0.9rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+}
+
+/* 5. Vision, Constitution & Brochure Accordions */
+.about-accordions-section {
+  padding: 6rem 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--gray-200);
+}
+
+.accordion-grid-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.grid-col-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 2rem;
+}
+
+.accordions-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.accordion-card-item {
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.accordion-card-item.active {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(10,22,40,0.03);
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--gold);
+}
+
+.accordion-card-item.active .arrow-icon {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+.arrow-icon {
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  transition: transform 0.3s;
+}
+
+.accordion-content-panel {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-top: 1.5px solid var(--gray-100);
+}
+
+.vision-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.vision-points-list li {
+  font-size: 0.88rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+  list-style-type: square;
+}
+
+.accordion-doc-desc {
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.doc-download-btn {
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* Membership application request column styling */
+.membership-form-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+}
+
+.membership-form-card .header-icon-wrapper {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--gold);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  margin: 0 auto 1.5rem auto;
+}
+
+.membership-form-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.membership-form-card p {
+  font-size: 0.82rem;
+  color: var(--gray-800);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.membership-request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.membership-request-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.membership-request-form label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.membership-request-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+
+.membership-request-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(223,183,108,0.15);
+}
+
+.membership-request-form .submit-btn {
+  border-radius: 30px;
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Form success panel */
+.form-success-banner {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-success-banner .success-icon {
+  background: var(--gold);
+  color: var(--navy);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.form-success-banner h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.form-success-banner p {
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+

@@ -1,0 +1,146 @@
+/* Presidents Hero banner */
+.presidents-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-2-11.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.presidents-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.presidents-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.presidents-hero-content {
+  max-width: 700px;
+}
+
+.presidents-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.presidents-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.presidents-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Archives list grid */
+.presidents-list-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.presidents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.president-archive-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.president-archive-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-light);
+  box-shadow: 0 8px 25px rgba(10, 22, 40, 0.05);
+}
+
+.card-badge {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.president-tenure {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.president-archive-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+/* Responsive configurations */
+@media (max-width: 1200px) {
+  .presidents-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .presidents-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .presidents-title {
+    font-size: 2.2rem;
+  }
+  .presidents-subtitle {
+    font-size: 0.95rem;
+  }
+  .presidents-hero-section {
+    height: 250px;
+  }
+  .presidents-list-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .presidents-grid {
+    grid-template-columns: 1fr;
+  }
+}
