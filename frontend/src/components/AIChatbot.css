@@ -128,6 +128,37 @@
   border-radius: 50%;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clear-chat-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  display: grid;
+  place-items: center;
+}
+
+.clear-chat-btn:hover {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.15);
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+.clear-chat-btn:hover svg {
+  transform: rotate(180deg);
+  transition: transform 0.4s ease;
+}
+
 .close-window-btn {
   width: 36px;
   height: 36px;

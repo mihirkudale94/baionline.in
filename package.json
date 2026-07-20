@@ -1,0 +1,16 @@
+{
+  "name": "baionline.in",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Builders Association of India (BAI) - Web Portal and AI Assistant",
+  "scripts": {
+    "dev:backend": "cd backend && .venv\\Scripts\\python.exe main.py",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "cd frontend && npm run build",
+    "start": "npm run build && cd backend && .venv\\Scripts\\python.exe main.py"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

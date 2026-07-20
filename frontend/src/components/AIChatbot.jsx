@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaRobot, FaPaperPlane, FaTimes, FaCommentDots } from "react-icons/fa";
+import { FaRobot, FaPaperPlane, FaTimes, FaCommentDots, FaSyncAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import "./AIChatbot.css";
 
@@ -11,14 +11,14 @@ const isLocalFrontend = typeof window !== "undefined"
 const API_BASE = (import.meta.env && import.meta.env.VITE_API_BASE_URL)
   || (isLocalFrontend ? `http://${window.location.hostname}:8000/api` : "/api");
 
+const INITIAL_MESSAGE = {
+  sender: "bot",
+  text: "Namaste! I can help you explore BAI's history, leadership, regional centres, membership, and industry resources.",
+};
+
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      sender: "bot",
-      text: "Namaste! I can help you explore BAI's history, leadership, regional centres, membership, and industry resources.",
-    },
-  ]);
+  const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   
@@ -33,6 +33,11 @@ const AIChatbot = () => {
   useEffect(() => {
     if (isOpen) scrollToBottom();
   }, [messages, isTyping, isOpen]);
+
+  const handleClearChat = () => {
+    setMessages([INITIAL_MESSAGE]);
+    setInput("");
+  };
 
   const handleSendMessage = async (textToSend) => {
     const msgText = textToSend || input.trim();
@@ -125,13 +130,26 @@ const AIChatbot = () => {
                   <span className="online-tag">Ready to help</span>
                 </div>
               </div>
-              <button
-                className="close-window-btn"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close assistant"
-              >
-                <FaTimes />
-              </button>
+              <div className="header-actions">
+                {messages.length > 1 && (
+                  <button
+                    className="clear-chat-btn"
+                    onClick={handleClearChat}
+                    title="Reset Conversation"
+                    aria-label="Reset Conversation"
+                  >
+                    <FaSyncAlt />
+                  </button>
+                )}
+                <button
+                  className="close-window-btn"
+                  onClick={() => setIsOpen(false)}
+                  title="Close assistant"
+                  aria-label="Close assistant"
+                >
+                  <FaTimes />
+                </button>
+              </div>
             </div>
 
             {/* Chat Messages */}
