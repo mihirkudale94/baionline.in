@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSearch, FaBars, FaTimes, FaChevronDown, FaMapMarkerAlt, FaSun, FaMoon } from "react-icons/fa";
+import { FaSearch, FaBars, FaTimes, FaChevronDown, FaMapMarkerAlt } from "react-icons/fa";
 import { navLinks, centresData } from "../services/api";
-import useTheme from "../hooks/useTheme";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { isDark, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -163,14 +161,6 @@ const Navbar = () => {
             
             <button type="submit" className="search-submit-btn">Search</button>
           </form>
-
-          <button
-            className="theme-toggle-btn"
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            onClick={toggleTheme}
-          >
-            {isDark ? <FaSun /> : <FaMoon />}
-          </button>
 
           <button
             className="mobile-toggle-btn"
