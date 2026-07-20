@@ -689,6 +689,18 @@ export const announcements = [
 
 export const events = [
   {
+    title: "Builders' Day Celebration 2025 — BAI Pune Centre",
+    date: "December 2025",
+    venue: "Pune",
+    image: "/images/events/event_builders-day-2025.jpg"
+  },
+  {
+    title: "Satkar Samarambh — Felicitation of Meritorious Children of Construction Workers",
+    date: "14th November 2025",
+    venue: "Pune",
+    image: "/images/events/event_worker-children-felicitation-2025-1.jpg"
+  },
+  {
     title: "BAI NATIONAL Managing Committee & General Council Meeting 2025-26",
     date: "27th & 28th February 2026",
     venue: "Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad",
@@ -900,9 +912,9 @@ export const committeesData = [
 
 export const executiveCommittee = {
   chairman: { role: "Chairman", name: "[Placeholder — add Chairman name]" },
-  vice_chairman: { role: "Vice Chairman", name: "[Placeholder — add Vice Chairman name]" },
-  hon_secretary: { role: "Hon. Secretary", name: "[Placeholder — add Hon. Secretary name]" },
-  hon_treasurer: { role: "Hon. Treasurer", name: "[Placeholder — add Hon. Treasurer name]" },
+  vice_chairman: { role: "Vice Chairman", name: "Rajaram B. Hajare" },
+  hon_secretary: { role: "Hon. Secretary", name: "C. H. Ratlani" },
+  hon_treasurer: { role: "Hon. Treasurer", name: "Mahesh Rathi" },
   members: [
     "[Placeholder — Executive Member 1]",
     "[Placeholder — Executive Member 2]",
@@ -1116,6 +1128,13 @@ export const eventsPageData = {
     { title: "BAI Pune Centre Technical Seminar on Sustainable Construction — sample placeholder event", date: "10th October 2026", venue: "Pune Centre Office, Sangam Bridge, Pune", image: "/images/event_sponsorship.webp" }
   ],
   past: [
+    { title: "Builders' Day Celebration 2025", date: "December 2025", venue: "Pune", image: "/images/events/event_builders-day-2025.jpg", links: ["Gallery"] },
+    { title: "Satkar Samarambh — Felicitation of Meritorious Children of Construction Workers", date: "14th November 2025", venue: "Pune", image: "/images/events/event_worker-children-felicitation-2025-1.jpg", links: ["Gallery"] },
+    { title: "Technical Site Visit — Cable-Stayed Bridge Construction", date: "January 2026", venue: "Maharashtra", image: "/images/events/event_bridge-site-visit-1.jpg", links: ["Gallery"] },
+    { title: "Courtesy Visit to Pune Municipal Corporation", date: "February 2026", venue: "Pune Municipal Corporation, Pune", image: "/images/events/event_pmc-courtesy-visit-1.jpg", links: ["Gallery"] },
+    { title: "Site Visit — Central Water and Power Research Station (CWPRS)", date: "May 2026", venue: "CWPRS, Khadakwasla, Pune", image: "/images/events/event_cwprs-site-visit.jpg", links: ["Gallery"] },
+    { title: "BAI Pune Centre at Central Bank of India's Mega Retail Credit Outreach Campaign", date: "July 2026", venue: "Regional Office, Pune", image: "/images/events/event_central-bank-outreach-campaign.jpg", links: ["Gallery"] },
+    { title: "Industrial Facility Visit", date: "July 2026", venue: "Pune", image: "/images/events/event_industrial-facility-visit-1.jpg", links: ["Gallery"] },
     { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
     { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
     { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/event_sports_league.webp", links: ["Gallery — placeholder"] }
@@ -1131,6 +1150,20 @@ export const eventsPageData = {
     "Leadership Meetings"
   ],
   gallery: [
+    { src: "/images/events/event_builders-day-2025.jpg", caption: "Builders' Day Celebration 2025" },
+    { src: "/images/events/event_worker-children-felicitation-2025-1.jpg", caption: "Felicitation of Meritorious Children of Construction Workers" },
+    { src: "/images/events/event_worker-children-felicitation-2025-2.jpg", caption: "Felicitation Ceremony — Address by Chief Guest" },
+    { src: "/images/events/event_bridge-site-visit-1.jpg", caption: "Technical Site Visit — Cable-Stayed Bridge Construction" },
+    { src: "/images/events/event_bridge-site-visit-2.jpg", caption: "Members at the Bridge Construction Site" },
+    { src: "/images/events/event_pmc-courtesy-visit-1.jpg", caption: "Courtesy Visit to Pune Municipal Corporation" },
+    { src: "/images/events/event_pmc-courtesy-visit-2.jpg", caption: "Meeting with PMC Officials" },
+    { src: "/images/events/event_office-meeting-1.jpg", caption: "Committee Meeting at BAI Pune Centre Office" },
+    { src: "/images/events/event_office-meeting-2.jpg", caption: "Members' Discussion at Pune Centre Office" },
+    { src: "/images/events/event_committee-meeting-office.jpg", caption: "Committee Meeting, Pune Centre Office" },
+    { src: "/images/events/event_cwprs-site-visit.jpg", caption: "Site Visit — Central Water and Power Research Station" },
+    { src: "/images/events/event_central-bank-outreach-campaign.jpg", caption: "Central Bank of India's Mega Retail Credit Outreach Campaign" },
+    { src: "/images/events/event_industrial-facility-visit-1.jpg", caption: "Industrial Facility Visit" },
+    { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members Touring the Facility" },
     { src: "/images/event_goa_convention.webp", caption: "32nd All India Builders Convention, Goa" },
     { src: "/images/event_kochi_meeting.jpg", caption: "3rd MC-GC Meeting, Kochi" },
     { src: "/images/event_mcgc_meet.webp", caption: "Managing Committee & General Council Meeting" },

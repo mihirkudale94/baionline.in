@@ -657,9 +657,9 @@ TRUSTEES = [
 
 EXECUTIVE_COMMITTEE = {
     "chairman": {"role": "Chairman", "name": "[Placeholder — add Chairman name]"},
-    "vice_chairman": {"role": "Vice Chairman", "name": "[Placeholder — add Vice Chairman name]"},
-    "hon_secretary": {"role": "Hon. Secretary", "name": "[Placeholder — add Hon. Secretary name]"},
-    "hon_treasurer": {"role": "Hon. Treasurer", "name": "[Placeholder — add Hon. Treasurer name]"},
+    "vice_chairman": {"role": "Vice Chairman", "name": "Rajaram B. Hajare"},
+    "hon_secretary": {"role": "Hon. Secretary", "name": "C. H. Ratlani"},
+    "hon_treasurer": {"role": "Hon. Treasurer", "name": "Mahesh Rathi"},
     "members": [
         "[Placeholder — Executive Member 1]",
         "[Placeholder — Executive Member 2]",
@@ -757,6 +757,18 @@ ANNOUNCEMENTS = [
 ]
 
 EVENTS = [
+    {
+        "title": "Builders' Day Celebration 2025 — BAI Pune Centre",
+        "date": "December 2025",
+        "venue": "Pune",
+        "image": "/images/events/event_builders-day-2025.jpg"
+    },
+    {
+        "title": "Satkar Samarambh — Felicitation of Meritorious Children of Construction Workers",
+        "date": "14th November 2025",
+        "venue": "Pune",
+        "image": "/images/events/event_worker-children-felicitation-2025-1.jpg"
+    },
     {
         "title": "BAI NATIONAL Managing Committee & General Council Meeting 2025-26",
         "date": "27th & 28th February 2026",
