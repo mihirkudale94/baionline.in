@@ -126,6 +126,13 @@ ul {
   box-shadow: var(--elev-1);
 }
 
+.form-error-text {
+  color: #d92d20;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 /* ============ 3D utilities ============ */
 .perspective-wrap {
   perspective: 1200px;

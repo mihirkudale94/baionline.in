@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaHandshake } from "react-icons/fa";
+import { submitForm } from "../services/api";
 import "./SponsorsInquiry.css";
 
 const SponsorsInquiry = () => {
@@ -15,23 +16,27 @@ const SponsorsInquiry = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        mobile: "",
-        company: "",
-        city: "",
-        state: "",
-        message: ""
-      });
-    }, 1200);
+    setError("");
+    submitForm("sponsors_inquiry", formData)
+      .then(() => {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          company: "",
+          city: "",
+          state: "",
+          message: ""
+        });
+      })
+      .catch(() => setError("Something went wrong submitting your form. Please try again or contact us directly."))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -152,6 +157,7 @@ const SponsorsInquiry = () => {
                     />
                   </div>
 
+                  {error && <p className="form-error-text">{error}</p>}
                   <button type="submit" className="btn btn-primary submit-btn" disabled={loading}>
                     {loading ? "Submitting Request..." : "Submit Sponsorship Inquiry"}
                   </button>

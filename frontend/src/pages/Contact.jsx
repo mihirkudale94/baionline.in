@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getContactData } from "../services/api";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./Contact.css";
 
 const Contact = () => {
+  useDocumentTitle("Contact");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   

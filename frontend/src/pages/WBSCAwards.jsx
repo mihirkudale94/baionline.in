@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { wbscAwardsData } from "../services/api";
 import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaEnvelopeOpenText, FaLayerGroup } from "react-icons/fa";
 import StepFlow from "../components/StepFlow";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./WBSCAwards.css";
 
 const WBSCAwards = () => {
   const data = wbscAwardsData;
   const [activeGroup, setActiveGroup] = useState(0);
+  useDocumentTitle("WBSC Awards");
 
   return (
     <div className="wbsc-page-wrapper">

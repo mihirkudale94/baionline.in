@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getAboutData } from "../services/api";
+import { getAboutData, submitForm } from "../services/api";
 import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy } from "react-icons/fa";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./About.css";
 
 const About = () => {
+  useDocumentTitle("About Us");
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
   
@@ -15,6 +17,7 @@ const About = () => {
   const [formData, setFormData] = useState({ name: "", city: "", email: "", mobile: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState("");
 
   useEffect(() => {
     getAboutData().then((res) => {
@@ -59,11 +62,14 @@ const About = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormLoading(true);
-    setTimeout(() => {
-      setFormLoading(false);
-      setFormSubmitted(true);
-      setFormData({ name: "", city: "", email: "", mobile: "" });
-    }, 1200);
+    setFormError("");
+    submitForm("brochure_request", formData)
+      .then(() => {
+        setFormSubmitted(true);
+        setFormData({ name: "", city: "", email: "", mobile: "" });
+      })
+      .catch(() => setFormError("Something went wrong submitting your form. Please try again or contact us directly."))
+      .finally(() => setFormLoading(false));
   };
 
   return (
@@ -401,6 +407,7 @@ const About = () => {
                       onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                     />
                   </div>
+                  {formError && <p className="form-error-text">{formError}</p>}
                   <button type="submit" className="btn btn-primary submit-btn" disabled={formLoading}>
                     {formLoading ? "Submitting..." : "Request Application Details"}
                   </button>

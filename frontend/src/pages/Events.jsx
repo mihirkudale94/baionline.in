@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import { eventsPageData } from "../services/api";
 import { FaCalendarAlt, FaMapMarkerAlt, FaAward } from "react-icons/fa";
 import ImageLightbox from "../components/ImageLightbox";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./Events.css";
 
 const Events = () => {
   const data = eventsPageData;
+  useDocumentTitle("Events");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState("");
   const [lightboxAlt, setLightboxAlt] = useState("");

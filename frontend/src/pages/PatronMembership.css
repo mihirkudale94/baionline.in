@@ -35,6 +35,10 @@
 .patron-directory-table th { font-family: var(--font-heading); color: var(--navy); font-weight: 700; background: var(--gray-50); }
 .patron-directory-logo { width: 36px; height: 36px; object-fit: contain; border-radius: 6px; }
 .patron-directory-link { color: var(--gold); }
+.patron-directory-empty { max-width: 500px; margin: 0 auto; text-align: center; padding: 3rem 2rem; }
+.patron-directory-empty-icon { color: var(--gold); font-size: 2rem; margin-bottom: 1rem; }
+.patron-directory-empty h4 { font-family: var(--font-heading); color: var(--navy); font-size: 1.1rem; margin-bottom: 0.5rem; }
+.patron-directory-empty p { color: var(--gray-800); font-size: 0.88rem; line-height: 1.6; }
 
 .patron-apply-section { padding: 5rem 0; background: var(--gray-50); }
 .patron-apply-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: flex-start; }

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCommitteesData, executiveCommittee } from "../services/api";
 import { FaUserCircle, FaBookOpen, FaChevronDown, FaUsers } from "react-icons/fa";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./Committees.css";
 
 const Committees = () => {
+  useDocumentTitle("Committees");
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -75,7 +77,7 @@ const Committees = () => {
               >
                 <div className="exec-avatar"><FaUserCircle /></div>
                 <h4 className="exec-role">{person.role}</h4>
-                <p className="exec-name">{person.name}</p>
+                <p className={`exec-name ${!person.name ? "tba" : ""}`}>{person.name || "To be announced"}</p>
               </motion.div>
             ))}
           </div>
@@ -128,7 +130,7 @@ const Committees = () => {
                         <FaUserCircle className="footer-icon" />
                         <div>
                           <span className="footer-label">Chairperson</span>
-                          <h4 className="chairman-name">{committee.chairman}</h4>
+                          <h4 className="chairman-name">{committee.chairman || "To be announced"}</h4>
                         </div>
                       </div>
                       {committee.members && committee.members.length > 0 && (

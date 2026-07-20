@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaChevronRight, FaTimes } from "react-icons/fa";
 import "./LeadershipTabs.css";
 
@@ -29,7 +30,6 @@ const LeadershipTabs = ({ leadership }) => {
         <div className="president-grid">
           <div className="president-img-wrapper">
             <img src={person.image} alt={person.name} className="president-img" />
-            <div className="img-gold-border"></div>
           </div>
           <div className="president-info">
             <span className="info-badge">{person.title}</span>
@@ -90,9 +90,13 @@ const LeadershipTabs = ({ leadership }) => {
     <section className="leadership-section">
       <div className="container">
         <div className="section-header text-center">
-          <span className="subtitle">BAI Leadership</span>
-          <h2 className="section-title">Governing Council <span className="gradient-text">2026-27</span></h2>
+          <span className="subtitle">BAI National Leadership</span>
+          <h2 className="section-title">National Governing Council <span className="gradient-text">2026-27</span></h2>
           <div className="section-title-line"></div>
+          <p className="leadership-scope-note">
+            BAI Pune Centre is a constituent centre of this national body. For Pune Centre's own leadership, see the{" "}
+            <Link to="/committees">Executive Committee</Link>.
+          </p>
         </div>
 
         {/* Tab Buttons */}

@@ -17,36 +17,29 @@ function fetchWithTimeout(url, options = {}) {
 export const heroSlides = [
   {
     id: 1,
+    title: "Builders' Day Celebration 2025 — BAI Pune Centre",
+    image: "/images/events/event_builders-day-2025.jpg",
+    link: "/events",
+    linkText: "See Our Events"
+  },
+  {
+    id: 2,
+    title: "Felicitating the Meritorious Children of Construction Workers",
+    image: "/images/events/event_worker-children-felicitation-2025-1.jpg",
+    link: "/events",
+    linkText: "See Our Events"
+  },
+  {
+    id: 3,
     title: "Shri Ravindra Tyagi, unanimously elected as President of BAI for 2026-27",
     image: "https://www.baionline.in/public/frontend/images/new_president_2026-27_02.jpg",
     link: "https://www.baionline.in/public/frontend/pdf/Election-Results 2026-27.pdf",
     linkText: "Click Here"
   },
   {
-    id: 2,
+    id: 4,
     title: "Quality construction begins with a quality association",
     image: "https://www.baionline.in/public/frontend/images/21.jpg",
-    link: "/membership",
-    linkText: "Be a Member of BAI"
-  },
-  {
-    id: 3,
-    title: "Making your vision become a reality.",
-    image: "https://www.baionline.in/public/frontend/images/Banner-1.jpg",
-    link: "/membership",
-    linkText: "Be a Member of BAI"
-  },
-  {
-    id: 4,
-    title: "Building solid foundations for an ever-changing world.",
-    image: "https://www.baionline.in/public/frontend/images/Banner-3-1.jpg",
-    link: "/membership",
-    linkText: "Be a Member of BAI"
-  },
-  {
-    id: 5,
-    title: "Building with innovation, quality, and pride.",
-    image: "https://www.baionline.in/public/frontend/images/Banner-2-11.jpg",
     link: "/membership",
     linkText: "Be a Member of BAI"
   },
@@ -845,6 +838,16 @@ export async function getNavigationData() {
   }
 }
 
+export async function submitForm(formType, data) {
+  const res = await fetchWithTimeout(`${API_BASE}/submissions`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ form_type: formType, data })
+  });
+  if (!res.ok) throw new Error("Status " + res.status);
+  return res.json();
+}
+
 export async function searchCentres(keyword, cityId) {
   try {
     const params = new URLSearchParams();
@@ -897,29 +900,26 @@ export const trusteesData = [
 ];
 
 export const committeesData = [
-  { name: "Housing Committee", chairman: "[Placeholder — add Chairperson]", desc: "Addresses housing policy, affordable housing initiatives and residential project matters for members.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Membership Committee", chairman: "[Placeholder — add Chairperson]", desc: "Manages new member enrolment, renewals and membership category administration.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Youth Wing", chairman: "[Placeholder — add Chairperson]", desc: "Engages young professionals and next-generation builders through mentorship and networking.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Seminar / Site Visit Committee", chairman: "[Placeholder — add Chairperson]", desc: "Organizes technical seminars, workshops and industrial site visits for members.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Office Renovation Committee", chairman: "[Placeholder — add Chairperson]", desc: "Oversees upkeep and renovation of the B.G. Shirke Activity Centre premises.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "WBSC Committee", chairman: "[Placeholder — add Chairperson]", desc: "Runs the Well Built Structure Competition — entries, jury coordination and awards ceremony.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Grievance Redressal Committee", chairman: "[Placeholder — add Chairperson]", desc: "Handles member grievances and disputes requiring committee-level resolution.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Diary Committee", chairman: "[Placeholder — add Chairperson]", desc: "Coordinates the annual BAI Pune Centre diary/publication and its content.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Media Committee", chairman: "[Placeholder — add Chairperson]", desc: "Manages press relations, social media and public communications for the Centre.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "SIP Committee", chairman: "[Placeholder — add Chairperson]", desc: "Runs the Student Internship Programme connecting students with member firms.", members: ["[Placeholder member]", "[Placeholder member]"] },
-  { name: "Internal Audit Committee", chairman: "[Placeholder — add Chairperson]", desc: "Reviews the Centre's internal accounts and financial controls.", members: ["[Placeholder member]", "[Placeholder member]"] }
+  { name: "Housing Committee", chairman: "", desc: "Addresses housing policy, affordable housing initiatives and residential project matters for members.", members: [] },
+  { name: "Membership Committee", chairman: "", desc: "Manages new member enrolment, renewals and membership category administration.", members: [] },
+  { name: "Youth Wing", chairman: "", desc: "Engages young professionals and next-generation builders through mentorship and networking.", members: [] },
+  { name: "Seminar / Site Visit Committee", chairman: "", desc: "Organizes technical seminars, workshops and industrial site visits for members.", members: [] },
+  { name: "Office Renovation Committee", chairman: "", desc: "Oversees upkeep and renovation of the B.G. Shirke Activity Centre premises.", members: [] },
+  { name: "WBSC Committee", chairman: "", desc: "Runs the Well Built Structure Competition — entries, jury coordination and awards ceremony.", members: [] },
+  { name: "Grievance Redressal Committee", chairman: "", desc: "Handles member grievances and disputes requiring committee-level resolution.", members: [] },
+  { name: "Diary Committee", chairman: "", desc: "Coordinates the annual BAI Pune Centre diary/publication and its content.", members: [] },
+  { name: "Media Committee", chairman: "", desc: "Manages press relations, social media and public communications for the Centre.", members: [] },
+  { name: "SIP Committee", chairman: "", desc: "Runs the Student Internship Programme connecting students with member firms.", members: [] },
+  { name: "Internal Audit Committee", chairman: "", desc: "Reviews the Centre's internal accounts and financial controls.", members: [] }
 ];
 
 export const executiveCommittee = {
-  chairman: { role: "Chairman", name: "[Placeholder — add Chairman name]" },
+  chairman: { role: "Chairman", name: "" },
   vice_chairman: { role: "Vice Chairman", name: "Rajaram B. Hajare" },
   hon_secretary: { role: "Hon. Secretary", name: "C. H. Ratlani" },
   hon_treasurer: { role: "Hon. Treasurer", name: "Mahesh Rathi" },
   members: [
-    "[Placeholder — Executive Member 1]",
-    "[Placeholder — Executive Member 2]",
-    "[Placeholder — Executive Member 3]",
-    "[Placeholder — Executive Member 4]"
+    
   ]
 };
 
@@ -1099,11 +1099,7 @@ export const patronMembershipData = {
     { title: "Direct Representation", desc: "A voice in Centre-level committees and consultations on industry representation matters." },
     { title: "Networking Access", desc: "Invitations to exclusive patron-only networking sessions with Centre leadership." }
   ],
-  directory: [
-    { logo: "/images/logo-bg.png", name: "Sample Patron Co. — replace with real member", representative: "Sample Representative", category: "Residential Developer", location: "Pune", website: "#" },
-    { logo: "/images/logo-bg.png", name: "Sample Infrastructure Pvt. Ltd. — replace with real member", representative: "Sample Representative", category: "Infrastructure Contractor", location: "Pune", website: "#" },
-    { logo: "/images/logo-bg.png", name: "Sample Builders Group — replace with real member", representative: "Sample Representative", category: "Commercial Developer", location: "Pimpri-Chinchwad", website: "#" }
-  ],
+  directory: [],
   becomePatron: {
     eligibility: [
       "Applicant must be a construction, real estate, or allied industry organization.",

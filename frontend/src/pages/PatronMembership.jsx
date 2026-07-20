@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { patronMembershipData } from "../services/api";
+import { patronMembershipData, submitForm } from "../services/api";
 import { FaCrown, FaGlobe, FaEnvelope, FaPhone } from "react-icons/fa";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./PatronMembership.css";
 
 const PatronMembership = () => {
   const data = patronMembershipData;
+  useDocumentTitle("Patron Membership");
   const [formData, setFormData] = useState({ company: "", name: "", email: "", mobile: "", category: "" });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({ company: "", name: "", email: "", mobile: "", category: "" });
-    }, 1200);
+    setError("");
+    submitForm("patron_membership_application", formData)
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ company: "", name: "", email: "", mobile: "", category: "" });
+      })
+      .catch(() => setError("Something went wrong submitting your form. Please try again or contact us directly."))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -81,34 +87,41 @@ const PatronMembership = () => {
             <span className="subtitle">Directory</span>
             <h2 className="section-title">Patron Member Directory</h2>
             <div className="section-title-line"></div>
-            <p className="patron-directory-note">Sample directory data shown below — replace with verified patron member records.</p>
           </div>
-          <div className="patron-directory-table-wrapper">
-            <table className="patron-directory-table">
-              <thead>
-                <tr>
-                  <th>Logo</th>
-                  <th>Name</th>
-                  <th>Representative</th>
-                  <th>Category</th>
-                  <th>Location</th>
-                  <th>Website</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.directory.map((row, idx) => (
-                  <tr key={idx}>
-                    <td><img src={row.logo} alt={row.name} className="patron-directory-logo" /></td>
-                    <td>{row.name}</td>
-                    <td>{row.representative}</td>
-                    <td>{row.category}</td>
-                    <td>{row.location}</td>
-                    <td><a href={row.website} className="patron-directory-link"><FaGlobe /></a></td>
+          {data.directory.length > 0 ? (
+            <div className="patron-directory-table-wrapper">
+              <table className="patron-directory-table">
+                <thead>
+                  <tr>
+                    <th>Logo</th>
+                    <th>Name</th>
+                    <th>Representative</th>
+                    <th>Category</th>
+                    <th>Location</th>
+                    <th>Website</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {data.directory.map((row, idx) => (
+                    <tr key={idx}>
+                      <td><img src={row.logo} alt={row.name} className="patron-directory-logo" /></td>
+                      <td>{row.name}</td>
+                      <td>{row.representative}</td>
+                      <td>{row.category}</td>
+                      <td>{row.location}</td>
+                      <td><a href={row.website} className="patron-directory-link"><FaGlobe /></a></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="patron-directory-empty glass-card">
+              <FaCrown className="patron-directory-empty-icon" />
+              <h4>No Patron Members Listed Yet</h4>
+              <p>Be among the first to support BAI Pune Centre as a Patron Member — apply below.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -169,6 +182,7 @@ const PatronMembership = () => {
                   <label>Business Category*</label>
                   <input type="text" required value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })} placeholder="e.g. Residential Developer" />
                 </div>
+                {error && <p className="form-error-text">{error}</p>}
                 <button type="submit" className="btn btn-primary submit-btn" disabled={loading}>
                   {loading ? "Submitting..." : "Submit Application"}
                 </button>

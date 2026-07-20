@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaUserPlus } from "react-icons/fa";
+import { submitForm } from "../services/api";
 import "./NonMembersArea.css";
 
 const NonMembersArea = () => {
@@ -17,25 +18,29 @@ const NonMembersArea = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({
-        name: "",
-        designation: "",
-        firmName: "",
-        mobile: "",
-        address: "",
-        telephone: "",
-        fax: "",
-        email: "",
-        website: ""
-      });
-    }, 1200);
+    setError("");
+    submitForm("membership_registration", formData)
+      .then(() => {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          designation: "",
+          firmName: "",
+          mobile: "",
+          address: "",
+          telephone: "",
+          fax: "",
+          email: "",
+          website: ""
+        });
+      })
+      .catch(() => setError("Something went wrong submitting your form. Please try again or contact us directly."))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -180,6 +185,7 @@ const NonMembersArea = () => {
                     </div>
                   </div>
 
+                  {error && <p className="form-error-text">{error}</p>}
                   <button type="submit" className="btn btn-primary submit-btn" disabled={loading}>
                     {loading ? "Submitting details..." : "Subscribe to BAI Notifications"}
                   </button>

@@ -81,25 +81,25 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="welcome-text-block glass-card"
             >
-              <span className="subtitle">Welcome to BAI</span>
-              <h2 className="welcome-title">Apex representative body of civil construction in India</h2>
+              <span className="subtitle">Welcome to BAI Pune Centre</span>
+              <h2 className="welcome-title">Building Better Infrastructure. Empowering the Construction Industry.</h2>
               <div className="title-line"></div>
               <p className="welcome-desc">
-                Founded in 1941, the Builders' Association of India (BAI) has served as the leading national voice for civil engineering construction companies. Under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, Pune, BAI started as a body to find solutions to builders' problems. Today, it stands as a massive monument with 264+ regional centres spanning the entire length and breadth of India, protecting and furthering the cause of the Indian construction industry.
+                Founded in 1941 right here in Pune under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, the Builders' Association of India (BAI) began as a body to find solutions to builders' problems — and Pune Centre carries that founding legacy forward today, representing builders, contractors, consultants, engineers and developers in and around the city. As a constituent centre of BAI's nationwide network, Pune Centre also connects its members to India's largest construction industry body — 264+ regional centres strong across the country.
               </p>
               <div className="welcome-features-list">
                 <div className="feature-item">
                   <div className="feature-icon-wrapper"><FaBuilding /></div>
                   <div>
-                    <h4>25,000+ Direct Members</h4>
-                    <p>Consisting of leading civil engineering developers and contractor firms.</p>
+                    <h4>Since 1941</h4>
+                    <p>Pune Centre — the birthplace of BAI, still active and growing.</p>
                   </div>
                 </div>
                 <div className="feature-item">
                   <div className="feature-icon-wrapper"><FaGlobe /></div>
                   <div>
-                    <h4>All-India Coverage</h4>
-                    <p>264+ active regional centres organized in 5 zones across the country.</p>
+                    <h4>Part of BAI's National Network</h4>
+                    <p>264+ regional centres across India, organized in 5 zones.</p>
                   </div>
                 </div>
               </div>
@@ -191,9 +191,9 @@ const Home = () => {
             >
               <div className="section-header-box">
                 <FaGlobe className="header-icon" />
-                <h3>Our All-India Presence</h3>
+                <h3>BAI's National Network</h3>
               </div>
-              <p className="map-desc">Now present in more than 264+ city centers across the country. Click on any map image below to view it in full resolution.</p>
+              <p className="map-desc">BAI Pune Centre is part of a nationwide network present in more than 264+ city centres across the country. Click on any map image below to view it in full resolution.</p>
               
               <div className="presence-maps-grid">
                 <div className="map-card">
@@ -324,14 +324,14 @@ const Home = () => {
       <section className="cta-action-section">
         <div className="container action-grid">
           <TiltCard className="action-card glass-card" maxTilt={5}>
-            <h3>Membership Directory</h3>
-            <p>Access the detailed directory of Builders Association of India. Join hands with 2 Lakh+ associated developers.</p>
-            <Link to="/centres" className="btn btn-primary">Browse Centres</Link>
+            <h3>Become a Pune Centre Member</h3>
+            <p>Join BAI Pune Centre and connect with builders, contractors and developers across the city — and BAI's nationwide network.</p>
+            <Link to="/membership" className="btn btn-primary">Become a Member</Link>
           </TiltCard>
           <TiltCard className="action-card orange-card" maxTilt={5}>
             <h3>Get In Touch</h3>
-            <p>Have questions about sponsorship, tenders, publications or local centre details? We are here to assist you.</p>
-            <Link to="/contact" className="btn btn-secondary">Contact Headquarters</Link>
+            <p>Have questions about sponsorship, tenders, publications or Pune Centre membership? We are here to assist you.</p>
+            <Link to="/contact" className="btn btn-secondary">Contact Pune Centre</Link>
           </TiltCard>
         </div>
       </section>

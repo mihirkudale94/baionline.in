@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { membershipPageData } from "../services/api";
 import { FaCheckCircle, FaIdCard, FaFilePdf, FaArrowRight } from "react-icons/fa";
 import StepFlow from "../components/StepFlow";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./Membership.css";
 
 const Membership = () => {
   const data = membershipPageData;
+  useDocumentTitle("Membership");
 
   return (
     <div className="membership-page-wrapper">
