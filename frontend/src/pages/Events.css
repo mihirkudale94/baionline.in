@@ -1,0 +1,64 @@
+.events-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+.events-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 100%); }
+.events-hero-container { position: relative; z-index: 10; }
+.events-hero-content { max-width: 750px; }
+.events-tag { background: rgba(26,115,232,0.16); color: var(--gold); padding: 0.35rem 1rem; border-radius: 20px; font-family: var(--font-heading); font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem; }
+.events-title { font-size: 2.6rem; font-weight: 800; color: var(--white); line-height: 1.25; margin-bottom: 0.5rem; }
+.events-subtitle { font-family: var(--font-heading); font-size: 1.05rem; color: rgba(255,255,255,0.85); font-weight: 600; }
+
+.events-upcoming-section { padding: 5rem 0; background: var(--white); }
+.events-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.event-card { overflow: hidden; padding: 0; border: 1px solid var(--gray-200); border-radius: 18px; background: var(--white); transition: all 0.3s; }
+.event-card:hover { transform: translateY(-5px); border-color: var(--gold-light); box-shadow: 0 10px 30px rgba(10,22,40,0.06); }
+.event-card-img { height: 180px; background-size: cover; background-position: center; }
+.event-card-body { padding: 1.5rem; }
+.event-card-body h3 { font-family: var(--font-heading); font-size: 1.05rem; color: var(--navy); font-weight: 700; margin-bottom: 0.75rem; }
+.event-card-meta { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--gray-800); margin-bottom: 0.4rem; }
+
+.events-past-section { padding: 5rem 0; background: var(--gray-50); }
+.events-timeline-list { display: flex; flex-direction: column; gap: 1.25rem; max-width: 900px; margin: 0 auto; }
+.event-timeline-card { display: flex; gap: 1.5rem; padding: 1.5rem 2rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; }
+.event-timeline-icon { background: rgba(26,115,232,0.1); color: var(--gold); width: 42px; height: 42px; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; }
+.event-timeline-content h4 { font-family: var(--font-heading); font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 0.5rem; }
+.event-timeline-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.event-timeline-link-chip { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.72rem; color: var(--gray-800); font-style: italic; }
+
+.events-activities-section { padding: 5rem 0; background: var(--white); }
+.events-activities-list { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 900px; margin: 0 auto; }
+.events-activity-chip { background: var(--navy); color: var(--gold); padding: 0.75rem 1.5rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; }
+
+.events-gallery-section { padding: 5rem 0; background: var(--gray-50); }
+.events-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.events-gallery-card { cursor: pointer; overflow: hidden; padding: 0; border: 1px solid var(--gray-200); border-radius: 18px; background: var(--white); transition: all 0.3s; }
+.events-gallery-card:hover { transform: translateY(-5px); border-color: var(--gold-light); box-shadow: 0 10px 30px rgba(10,22,40,0.06); }
+.events-gallery-card .news-img-wrapper { position: relative; }
+.events-gallery-card .news-img-bg { height: 200px; background-size: cover; background-position: center; }
+.events-gallery-card .news-content { padding: 1.25rem 1.5rem; }
+.events-gallery-card .news-desc { font-size: 0.85rem; color: var(--gray-800); }
+
+.events-calendar-section { padding: 5rem 0; background: var(--white); }
+.events-calendar-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+.events-calendar-month { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 1.5rem; }
+.events-calendar-month h4 { font-family: var(--font-heading); color: var(--navy); font-weight: 700; margin-bottom: 0.75rem; }
+.events-calendar-month ul { padding-left: 1.25rem; }
+.events-calendar-month li { font-size: 0.85rem; color: var(--gray-800); line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .events-card-grid, .events-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .events-hero-section { height: 260px; }
+  .events-title { font-size: 1.9rem; }
+  .events-card-grid, .events-gallery-grid, .events-calendar-list { grid-template-columns: 1fr; }
+}

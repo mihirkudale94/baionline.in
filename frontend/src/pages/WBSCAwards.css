@@ -1,0 +1,114 @@
+.wbsc-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/Banner-3-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.wbsc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.wbsc-hero-container { position: relative; z-index: 10; }
+.wbsc-hero-content { max-width: 750px; }
+
+.wbsc-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.wbsc-title { font-size: 2.6rem; font-weight: 800; color: var(--white); line-height: 1.25; margin-bottom: 0.5rem; }
+.wbsc-subtitle { font-family: var(--font-heading); font-size: 1.05rem; color: rgba(255,255,255,0.85); font-weight: 600; }
+
+.wbsc-about-section { padding: 5rem 0; background: var(--white); }
+.wbsc-about-text { max-width: 850px; margin: 0 auto; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--gray-800); }
+
+.wbsc-why-section { padding: 5rem 0; background: var(--gray-50); }
+.wbsc-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
+.wbsc-why-card { background: var(--white); border: 1px solid var(--gray-200); padding: 2rem 1.5rem; border-radius: 18px; transition: all 0.3s; }
+.wbsc-why-card:hover { transform: translateY(-5px); border-color: var(--gold-light); box-shadow: 0 10px 30px rgba(10,22,40,0.05); }
+.wbsc-why-icon { color: var(--gold); font-size: 1.6rem; margin-bottom: 1rem; }
+.wbsc-why-card h3 { font-family: var(--font-heading); font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 0.6rem; }
+.wbsc-why-card p { font-size: 0.82rem; color: var(--gray-800); line-height: 1.5; }
+
+.wbsc-categories-section { padding: 5rem 0; background: var(--white); }
+.wbsc-category-tabs { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem; }
+.wbsc-category-tab {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.wbsc-category-tab.active, .wbsc-category-tab:hover {
+  background: var(--navy);
+  color: var(--gold);
+  border-color: var(--navy);
+}
+.wbsc-category-list {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.wbsc-category-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--gray-800); }
+.wbsc-cat-icon { color: var(--gold); }
+
+.wbsc-eligibility-section { padding: 5rem 0; background: var(--gray-50); }
+.wbsc-eligibility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.wbsc-block-title { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-heading); font-size: 1.2rem; color: var(--navy); font-weight: 800; margin-bottom: 1.25rem; }
+.wbsc-list { display: flex; flex-direction: column; gap: 0.85rem; padding-left: 1.25rem; }
+.wbsc-list li { font-size: 0.88rem; color: var(--gray-800); line-height: 1.6; list-style-type: square; }
+
+.wbsc-process-section { padding: 5rem 0; background: var(--white); }
+
+.wbsc-downloads-section { padding: 5rem 0; background: var(--gray-50); }
+.wbsc-downloads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.wbsc-download-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; text-align: center; }
+.wbsc-download-icon { color: var(--gold); font-size: 1.8rem; margin-bottom: 1rem; }
+.wbsc-download-card h4 { font-family: var(--font-heading); font-size: 0.95rem; color: var(--navy); margin-bottom: 0.5rem; }
+.wbsc-download-status { font-size: 0.75rem; color: var(--gray-800); font-style: italic; }
+
+.wbsc-cta-section { padding: 5rem 0; background: var(--navy); color: var(--white); text-align: center; }
+.wbsc-cta-inner { max-width: 600px; margin: 0 auto; }
+.wbsc-cta-icon { color: var(--gold); font-size: 2.2rem; margin-bottom: 1rem; }
+.wbsc-cta-inner h2 { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 0.75rem; }
+.wbsc-cta-inner p { font-size: 0.9rem; opacity: 0.85; margin-bottom: 1.75rem; line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .wbsc-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .wbsc-eligibility-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .wbsc-downloads-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .wbsc-hero-section { height: 260px; }
+  .wbsc-title { font-size: 1.9rem; }
+  .wbsc-why-grid { grid-template-columns: 1fr; }
+}

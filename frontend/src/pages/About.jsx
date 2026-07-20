@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAboutData } from "../services/api";
-import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText } from "react-icons/fa";
+import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy } from "react-icons/fa";
 import "./About.css";
 
 const About = () => {
@@ -49,6 +49,8 @@ const About = () => {
       desc: "Comprised of more than 25,000 direct members and over 2,00,000 indirect members via affiliated regional builder bodies."
     }
   ];
+
+  const whatWeDoIcons = [<FaTools />, <FaLandmark />, <FaHandsHelping />, <FaGraduationCap />, <FaTrophy />];
 
   const handleToggleAccordion = (idx) => {
     setActiveAccordion(activeAccordion === idx ? null : idx);
@@ -145,6 +147,96 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* 3b. Who We Are / Mission */}
+      {content.who_we_are && (
+        <section className="about-whoweare-section">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="subtitle">Who We Are</span>
+              <h2 className="section-title">Our Vision &amp; Mission</h2>
+              <div className="section-title-line"></div>
+            </div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="whoweare-text"
+            >
+              {content.who_we_are}
+            </motion.p>
+            {content.mission && (
+              <ul className="mission-points-list">
+                {content.mission.map((point, idx) => (
+                  <li key={idx}><FaCheckCircle className="mission-check-icon" /> {point}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* 3c. What We Do */}
+      {content.what_we_do && (
+        <section className="about-whatwedo-section">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="subtitle">Our Focus Areas</span>
+              <h2 className="section-title">What We Do</h2>
+              <div className="section-title-line"></div>
+            </div>
+            <div className="whatwedo-grid">
+              {content.what_we_do.map((block, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  className="whatwedo-card glass-card"
+                >
+                  <div className="whatwedo-icon">{whatWeDoIcons[idx % whatWeDoIcons.length]}</div>
+                  <h3>{block.title}</h3>
+                  <ul>
+                    {block.items.map((item, iIdx) => (
+                      <li key={iIdx}>{item}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 3d. Why Join */}
+      {content.why_join && (
+        <section className="about-whyjoin-section">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="subtitle">Membership</span>
+              <h2 className="section-title">Why Join BAI Pune?</h2>
+              <div className="section-title-line"></div>
+            </div>
+            <div className="whyjoin-list">
+              {content.why_join.map((point, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="whyjoin-item"
+                >
+                  <FaCheckCircle className="whyjoin-icon" />
+                  <span>{point}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 4. Key Achievements Section */}
       <section className="about-achievements-section">

@@ -235,8 +235,8 @@ def generate_local_response(query: str, context: str) -> str:
         return (
             "🏗️ **BAI History & Foundation**\n\n"
             "Builders Association of India was founded in **1941** in Pune, under the guidance of Brig. C.V.S. Jackson of the Military Engineering Services (MES). "
-            "It initially began with 250 members across 3 regional centers to coordinate builder grievances. Today, its headquarters are in Mumbai, but the original "
-            "'Jackson Hut' office stands in Pune as a historical monument."
+            "It initially began with 250 members across 3 regional centers to coordinate builder grievances. This is the BAI Pune Centre site, based right where the "
+            "original 'Jackson Hut' office stands in Pune as a historical monument."
         )
     elif "president" in q or "tyagi" in q or "ravindra" in q:
         return (

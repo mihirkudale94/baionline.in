@@ -36,7 +36,7 @@ const Footer = () => {
               <img src={footerData.logo} alt="BAI Logo White" className="footer-logo" />
             </div>
             <p className="footer-tagline">
-              Connecting civil engineering construction companies across India to build solid foundations for an ever-changing world.
+              Building Better Infrastructure. Empowering the Construction Industry — BAI Pune Centre, part of India's nationwide builders' network since 1941.
             </p>
             <div className="footer-social-icons">
               {footerData.social.map((soc, idx) => (
@@ -55,7 +55,7 @@ const Footer = () => {
 
           {/* Registered Office column */}
           <div className="footer-col col-contact">
-            <h3 className="footer-col-title">Head Office</h3>
+            <h3 className="footer-col-title">{footerData.office.title.replace(/:$/, "")}</h3>
             <ul className="footer-contact-list">
               <li>
                 <FaMapMarkerAlt className="contact-icon" />

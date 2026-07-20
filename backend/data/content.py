@@ -517,6 +517,16 @@ NAV_LINKS = [
         ]
     },
     {"label": "BAI Centres", "path": "/centres", "mega_menu": True},
+    {"label": "Events", "path": "/events"},
+    {"label": "WBSC Awards", "path": "/wbsc-awards"},
+    {
+        "label": "Membership",
+        "path": "/membership",
+        "children": [
+            {"label": "Become a Member", "path": "/membership"},
+            {"label": "Patron Membership", "path": "/patron-membership"}
+        ]
+    },
     {"label": "Publications", "path": "/publications"},
     {"label": "BAI Services", "path": "/services"},
     {"label": "Tenders", "path": "/tenders"},
@@ -528,17 +538,21 @@ NAV_LINKS = [
 FOOTER_DATA = {
     "logo": "/images/logo-white-02.png",
     "office": {
-        "title": "Registered & Head Office:",
-        "address": "G-1/G-20, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai-400034",
-        "tel": "(91-22) 23514802, 23520507",
-        "phone": "(91-22) 23521328",
-        "email": "baihq.mumbai@gmail.com"
+        "title": "Pune Centre Office:",
+        "address": "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
+        "tel": "(020) 2444 0000",
+        "phone": "(020) 2444 0001",
+        "email": "bai.punecentre@gmail.com"
     },
     "quick_links": [
         {"label": "About BAI", "path": "/about"},
-        {"label": "BAI Team 2026-27", "path": "/team"},
-        {"label": "Trustees", "path": "/trustees"},
-        {"label": "Past Presidents", "path": "/past-presidents"}
+        {"label": "Committees", "path": "/committees"},
+        {"label": "Events", "path": "/events"},
+        {"label": "WBSC Awards", "path": "/wbsc-awards"},
+        {"label": "Membership", "path": "/membership"},
+        {"label": "Patron Membership", "path": "/patron-membership"},
+        {"label": "Gallery", "path": "/media"},
+        {"label": "Contact", "path": "/contact"}
     ],
     "notifications": [
         {"label": "Judgements", "path": "/judgements"},
@@ -557,17 +571,42 @@ FOOTER_DATA = {
         {"platform": "linkedin", "url": "https://in.linkedin.com/company/builders-association-of-india"},
         {"platform": "twitter", "url": "https://twitter.com/bainational"}
     ],
-    "copyright": "Copyright \u00a9 2026 BAI - Builders Association of India - All India Association of Civil Engineering Construction Contractors and Builders. All Rights Reserved."
+    "copyright": "Copyright \u00a9 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
 }
 
 ABOUT_CONTENT = {
-    "title": "About BAI",
-    "subtitle": "Builders Association of India",
+    "title": "About BAI Pune Centre",
+    "subtitle": "Builders' Association of India — Pune Centre",
     "founded": "1941",
     "paragraphs": [
-        "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
-        "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members.",
-        "Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
+        "Since its inception, the Builders' Association of India (BAI) Pune Centre has been one of India's most active construction industry associations, representing builders, contractors, consultants, engineers, developers, manufacturers and allied professionals.",
+        "For decades, BAI Pune has served as a bridge between Government authorities and the construction fraternity while promoting quality construction, professional ethics, technical excellence and sustainable development.",
+        "BAI itself was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services in 'Poona', now known as 'Pune', who suggested that builders working under his command form a body to find solutions to various problems. He made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name — making Pune the very birthplace of the Association."
+    ],
+    "who_we_are": "The Builders' Association of India (BAI) is one of India's oldest and largest apex organizations of engineering construction contractors, builders, developers and infrastructure professionals. The Pune Centre actively works towards Industry Development, Knowledge Sharing, Technical Seminars, Skill Development, Government Representation, Infrastructure Advocacy, Networking Opportunities, Student Development and the Construction Excellence Award.",
+    "mission": [
+        "Promote excellence in construction.",
+        "Encourage adoption of latest technologies.",
+        "Develop skilled professionals.",
+        "Strengthen collaboration between industry and academia.",
+        "Represent industry concerns before Government authorities.",
+        "Encourage safe, sustainable and innovative construction practices."
+    ],
+    "what_we_do": [
+        {"title": "Technical Activities", "items": ["Seminars", "Workshops", "Technical Conferences", "Site Visits", "Knowledge Sessions"]},
+        {"title": "Industry Representation", "items": ["Government Liaison", "Policy Discussions", "Industry Recommendations", "Statutory Representation"]},
+        {"title": "Member Services", "items": ["Networking", "Business Opportunities", "Knowledge Resources", "Training Programs"]},
+        {"title": "Student Initiatives", "items": ["Student Internship Programme (SIP)", "Industry Interaction", "Career Guidance"]},
+        {"title": "Awards & Recognition", "items": ["Well Built Structure Competition (WBSC)", "Recognition of Construction Excellence"]}
+    ],
+    "why_join": [
+        "Access to India's largest construction network",
+        "Industry recognition",
+        "Government interaction",
+        "Business networking",
+        "Technical knowledge",
+        "Professional growth",
+        "Leadership opportunities"
     ],
     "achievements": [
         "BAI has been instrumental for incorporation of Price Variation Clause in contract documents of various works authorities.",
@@ -582,6 +621,7 @@ ABOUT_CONTENT = {
         "BAI is one of the promoters of Construction Skill Development Council of India (CSDCI) formed under the National Skill Development Corporation.",
         "BAI obtained 'Stay' order restraining the E.S.I. Department taking action against contractors on coverage of Employees’ State Insurance Scheme to the construction site workers."
     ],
+    "vision_statement": "To create a progressive, technically advanced and ethically driven construction industry that contributes to nation building through quality infrastructure.",
     "vision": [
         "To promote and foster feelings of brotherhood, unity, co-operation, and mutual trust, and to eliminate unhealthy competition amongst the contractors fraternity.",
         "To build public confidence in the construction industry by advocating ethics in the business through transparency and accountability.",
@@ -598,11 +638,11 @@ ABOUT_CONTENT = {
 CONTACT_DATA = {
     "title": "Contact Us",
     "office": {
-        "name": "BAI - Builders Association of India",
-        "address": "G-1/G-20, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai-400034",
-        "tel": ["(91-22) 23514802", "(91-22) 23520507"],
-        "phone": "(91-22) 23521328",
-        "email": "baihq.mumbai@gmail.com"
+        "name": "BAI - Builders' Association of India, Pune Centre",
+        "address": "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
+        "tel": ["(020) 2444 0000", "(020) 2444 0001"],
+        "phone": "(020) 2444 0001",
+        "email": "bai.punecentre@gmail.com"
     }
 }
 
@@ -615,12 +655,31 @@ TRUSTEES = [
     {"name": "Shri Dr. Dharmesh Awasthi", "role": "Trustee"}
 ]
 
+EXECUTIVE_COMMITTEE = {
+    "chairman": {"role": "Chairman", "name": "[Placeholder — add Chairman name]"},
+    "vice_chairman": {"role": "Vice Chairman", "name": "[Placeholder — add Vice Chairman name]"},
+    "hon_secretary": {"role": "Hon. Secretary", "name": "[Placeholder — add Hon. Secretary name]"},
+    "hon_treasurer": {"role": "Hon. Treasurer", "name": "[Placeholder — add Hon. Treasurer name]"},
+    "members": [
+        "[Placeholder — Executive Member 1]",
+        "[Placeholder — Executive Member 2]",
+        "[Placeholder — Executive Member 3]",
+        "[Placeholder — Executive Member 4]"
+    ]
+}
+
 COMMITTEES = [
-    {"name": "Taxation Committee", "chairman": "Shri Mahesh Mudda", "desc": "Handles VAT, GST, and property tax indexes affecting construction companies."},
-    {"name": "Contracts & Tenders Committee", "chairman": "Shri Kaushal Kumar Singh", "desc": "Liaises with government departments on contract conditions and public tenders."},
-    {"name": "Materials & Price Index Committee", "chairman": "Shri Sanjay Tyagi", "desc": "Publishes index numbers for brick, cement, steel and logistics costs."},
-    {"name": "Labour & Welfare Committee", "chairman": "Shri R. Prakash", "desc": "Focuses on security, safety certifications, and insurance for construction workers."},
-    {"name": "Membership & Centres Committee", "chairman": "Shri V. Satya Murthy", "desc": "Manages coordination between 264+ local centers and handles index verification."}
+    {"name": "Housing Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Addresses housing policy, affordable housing initiatives and residential project matters for members.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Membership Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Manages new member enrolment, renewals and membership category administration.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Youth Wing", "chairman": "[Placeholder — add Chairperson]", "desc": "Engages young professionals and next-generation builders through mentorship and networking.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Seminar / Site Visit Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Organizes technical seminars, workshops and industrial site visits for members.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Office Renovation Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Oversees upkeep and renovation of the B.G. Shirke Activity Centre premises.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "WBSC Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Runs the Well Built Structure Competition — entries, jury coordination and awards ceremony.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Grievance Redressal Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Handles member grievances and disputes requiring committee-level resolution.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Diary Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Coordinates the annual BAI Pune Centre diary/publication and its content.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Media Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Manages press relations, social media and public communications for the Centre.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "SIP Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Runs the Student Internship Programme connecting students with member firms.", "members": ["[Placeholder member]", "[Placeholder member]"]},
+    {"name": "Internal Audit Committee", "chairman": "[Placeholder — add Chairperson]", "desc": "Reviews the Centre's internal accounts and financial controls.", "members": ["[Placeholder member]", "[Placeholder member]"]}
 ]
 
 # Complete list of 57 past presidents from 1941 to 2026

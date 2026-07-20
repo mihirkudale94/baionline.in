@@ -544,6 +544,16 @@ export const navLinks = [
     ]
   },
   { label: "BAI Centres", path: "/centres", mega_menu: true },
+  { label: "Events", path: "/events" },
+  { label: "WBSC Awards", path: "/wbsc-awards" },
+  {
+    label: "Membership",
+    path: "/membership",
+    children: [
+      { label: "Become a Member", path: "/membership" },
+      { label: "Patron Membership", path: "/patron-membership" }
+    ]
+  },
   { label: "Publications", path: "/publications" },
   { label: "BAI Services", path: "/services" },
   { label: "Tenders", path: "/tenders" },
@@ -555,17 +565,21 @@ export const navLinks = [
 export const footerData = {
   logo: "/images/logo-white-02.png",
   office: {
-    title: "Registered & Head Office:",
-    address: "G-1/G-20, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai-400034",
-    tel: "(91-22) 23514802, 23520507",
-    phone: "(91-22) 23521328",
-    email: "baihq.mumbai@gmail.com"
+    title: "Pune Centre Office:",
+    address: "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
+    tel: "(020) 2444 0000",
+    phone: "(020) 2444 0001",
+    email: "bai.punecentre@gmail.com"
   },
   quick_links: [
     { label: "About BAI", path: "/about" },
-    { label: "BAI Team 2026-27", path: "/team" },
-    { label: "Trustees", path: "/trustees" },
-    { label: "Past Presidents", path: "/past-presidents" }
+    { label: "Committees", path: "/committees" },
+    { label: "Events", path: "/events" },
+    { label: "WBSC Awards", path: "/wbsc-awards" },
+    { label: "Membership", path: "/membership" },
+    { label: "Patron Membership", path: "/patron-membership" },
+    { label: "Gallery", path: "/media" },
+    { label: "Contact", path: "/contact" }
   ],
   notifications: [
     { label: "Judgements", path: "/judgements" },
@@ -584,17 +598,42 @@ export const footerData = {
     { platform: "linkedin", url: "https://in.linkedin.com/company/builders-association-of-india" },
     { platform: "twitter", url: "https://twitter.com/bainational" }
   ],
-  copyright: "Copyright \u00a9 2026 BAI - Builders Association of India - All India Association of Civil Engineering Construction Contractors and Builders. All Rights Reserved."
+  copyright: "Copyright \u00a9 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
 };
 
 export const aboutContent = {
-  title: "About BAI",
-  subtitle: "Builders Association of India",
+  title: "About BAI Pune Centre",
+  subtitle: "Builders' Association of India \u2014 Pune Centre",
   founded: "1941",
   paragraphs: [
-    "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
-    "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members.",
-    "Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
+    "Since its inception, the Builders' Association of India (BAI) Pune Centre has been one of India's most active construction industry associations, representing builders, contractors, consultants, engineers, developers, manufacturers and allied professionals.",
+    "For decades, BAI Pune has served as a bridge between Government authorities and the construction fraternity while promoting quality construction, professional ethics, technical excellence and sustainable development.",
+    "BAI itself was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services in 'Poona', now known as 'Pune', who suggested that builders working under his command form a body to find solutions to various problems. He made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name \u2014 making Pune the very birthplace of the Association."
+  ],
+  who_we_are: "The Builders' Association of India (BAI) is one of India's oldest and largest apex organizations of engineering construction contractors, builders, developers and infrastructure professionals. The Pune Centre actively works towards Industry Development, Knowledge Sharing, Technical Seminars, Skill Development, Government Representation, Infrastructure Advocacy, Networking Opportunities, Student Development and the Construction Excellence Award.",
+  mission: [
+    "Promote excellence in construction.",
+    "Encourage adoption of latest technologies.",
+    "Develop skilled professionals.",
+    "Strengthen collaboration between industry and academia.",
+    "Represent industry concerns before Government authorities.",
+    "Encourage safe, sustainable and innovative construction practices."
+  ],
+  what_we_do: [
+    { title: "Technical Activities", items: ["Seminars", "Workshops", "Technical Conferences", "Site Visits", "Knowledge Sessions"] },
+    { title: "Industry Representation", items: ["Government Liaison", "Policy Discussions", "Industry Recommendations", "Statutory Representation"] },
+    { title: "Member Services", items: ["Networking", "Business Opportunities", "Knowledge Resources", "Training Programs"] },
+    { title: "Student Initiatives", items: ["Student Internship Programme (SIP)", "Industry Interaction", "Career Guidance"] },
+    { title: "Awards & Recognition", items: ["Well Built Structure Competition (WBSC)", "Recognition of Construction Excellence"] }
+  ],
+  why_join: [
+    "Access to India's largest construction network",
+    "Industry recognition",
+    "Government interaction",
+    "Business networking",
+    "Technical knowledge",
+    "Professional growth",
+    "Leadership opportunities"
   ],
   achievements: [
     "BAI has been instrumental for incorporation of Price Variation Clause in contract documents of various works authorities.",
@@ -609,6 +648,7 @@ export const aboutContent = {
     "BAI is one of the promoters of Construction Skill Development Council of India (CSDCI) formed under the National Skill Development Corporation.",
     "BAI obtained 'Stay' order restraining the E.S.I. Department taking action against contractors on coverage of Employees’ State Insurance Scheme to the construction site workers."
   ],
+  vision_statement: "To create a progressive, technically advanced and ethically driven construction industry that contributes to nation building through quality infrastructure.",
   vision: [
     "To promote and foster feelings of brotherhood, unity, co-operation, and mutual trust, and to eliminate unhealthy competition amongst the contractors fraternity.",
     "To build public confidence in the construction industry by advocating ethics in the business through transparency and accountability.",
@@ -625,11 +665,11 @@ export const aboutContent = {
 export const contactData = {
   title: "Contact Us",
   office: {
-    name: "BAI - Builders Association of India",
-    address: "G-1/G-20, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai-400034",
-    tel: ["(91-22) 23514802", "(91-22) 23520507"],
-    phone: "(91-22) 23521328",
-    email: "baihq.mumbai@gmail.com"
+    name: "BAI - Builders' Association of India, Pune Centre",
+    address: "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
+    tel: ["(020) 2444 0000", "(020) 2444 0001"],
+    phone: "(020) 2444 0001",
+    email: "bai.punecentre@gmail.com"
   }
 };
 
@@ -845,12 +885,31 @@ export const trusteesData = [
 ];
 
 export const committeesData = [
-  { name: "Taxation Committee", chairman: "Shri Mahesh Mudda", desc: "Handles VAT, GST, and property tax indexes affecting construction companies." },
-  { name: "Contracts & Tenders Committee", chairman: "Shri Kaushal Kumar Singh", desc: "Liaises with government departments on contract conditions and public tenders." },
-  { name: "Materials & Price Index Committee", chairman: "Shri Sanjay Tyagi", desc: "Publishes index numbers for brick, cement, steel and logistics costs." },
-  { name: "Labour & Welfare Committee", chairman: "Shri R. Prakash", desc: "Focuses on security, safety certifications, and insurance for construction workers." },
-  { name: "Membership & Centres Committee", chairman: "Shri V. Satya Murthy", desc: "Manages coordination between 264+ local centers and handles index verification." }
+  { name: "Housing Committee", chairman: "[Placeholder — add Chairperson]", desc: "Addresses housing policy, affordable housing initiatives and residential project matters for members.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Membership Committee", chairman: "[Placeholder — add Chairperson]", desc: "Manages new member enrolment, renewals and membership category administration.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Youth Wing", chairman: "[Placeholder — add Chairperson]", desc: "Engages young professionals and next-generation builders through mentorship and networking.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Seminar / Site Visit Committee", chairman: "[Placeholder — add Chairperson]", desc: "Organizes technical seminars, workshops and industrial site visits for members.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Office Renovation Committee", chairman: "[Placeholder — add Chairperson]", desc: "Oversees upkeep and renovation of the B.G. Shirke Activity Centre premises.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "WBSC Committee", chairman: "[Placeholder — add Chairperson]", desc: "Runs the Well Built Structure Competition — entries, jury coordination and awards ceremony.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Grievance Redressal Committee", chairman: "[Placeholder — add Chairperson]", desc: "Handles member grievances and disputes requiring committee-level resolution.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Diary Committee", chairman: "[Placeholder — add Chairperson]", desc: "Coordinates the annual BAI Pune Centre diary/publication and its content.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Media Committee", chairman: "[Placeholder — add Chairperson]", desc: "Manages press relations, social media and public communications for the Centre.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "SIP Committee", chairman: "[Placeholder — add Chairperson]", desc: "Runs the Student Internship Programme connecting students with member firms.", members: ["[Placeholder member]", "[Placeholder member]"] },
+  { name: "Internal Audit Committee", chairman: "[Placeholder — add Chairperson]", desc: "Reviews the Centre's internal accounts and financial controls.", members: ["[Placeholder member]", "[Placeholder member]"] }
 ];
+
+export const executiveCommittee = {
+  chairman: { role: "Chairman", name: "[Placeholder — add Chairman name]" },
+  vice_chairman: { role: "Vice Chairman", name: "[Placeholder — add Vice Chairman name]" },
+  hon_secretary: { role: "Hon. Secretary", name: "[Placeholder — add Hon. Secretary name]" },
+  hon_treasurer: { role: "Hon. Treasurer", name: "[Placeholder — add Hon. Treasurer name]" },
+  members: [
+    "[Placeholder — Executive Member 1]",
+    "[Placeholder — Executive Member 2]",
+    "[Placeholder — Executive Member 3]",
+    "[Placeholder — Executive Member 4]"
+  ]
+};
 
 export const pastPresidentsData = [
   { year: "2025-2026", name: "Dr. Dharmesh Awasthi" },
@@ -943,4 +1002,183 @@ export async function getPastPresidentsData() {
     return pastPresidentsData;
   }
 }
+
+export const wbscAwardsData = {
+  title: "BAI – SHIRKE Well Built Structure Competition 2026",
+  edition: "30th Edition",
+  tagline: "Recognizing excellence in structural quality across Pune's built environment",
+  about: "The Well Built Structure Competition (WBSC) is BAI Pune Centre's flagship recognition programme, instituted to encourage builders, developers and contractors to achieve the highest standards of structural quality, safety and workmanship. Held annually since its inception, WBSC has grown into one of the most respected quality benchmarks in the regional construction industry.",
+  whyParticipate: [
+    { title: "Industry Recognition", desc: "Winning entries receive public recognition at the annual WBSC awards function attended by industry leaders." },
+    { title: "Third-Party Quality Validation", desc: "An independent panel of engineers and architects evaluates every entry against objective technical criteria." },
+    { title: "Brand Visibility", desc: "Award-winning projects are featured in BAI publications, press coverage and the Pune Centre's promotional material." },
+    { title: "Continuous Improvement", desc: "Detailed evaluator feedback helps participating firms benchmark and improve their construction quality practices." }
+  ],
+  categoryGroups: [
+    {
+      group: "Residential",
+      categories: ["Residential – Low Rise", "Residential – High Rise", "Residential – Row Houses/Villas", "Residential – Affordable Housing"]
+    },
+    {
+      group: "Commercial",
+      categories: ["Commercial – Office Complex", "Commercial – Retail/Mall", "Commercial – Mixed Use"]
+    },
+    {
+      group: "Infrastructure",
+      categories: ["Infrastructure – Roads & Bridges", "Infrastructure – Water Supply/Drainage"]
+    },
+    {
+      group: "Industrial",
+      categories: ["Industrial – Factory/Warehouse", "Industrial – Special Structures"]
+    },
+    {
+      group: "Government",
+      categories: ["Government – Public Buildings", "Government – Institutional Projects"]
+    },
+    {
+      group: "Landscaping",
+      categories: ["Landscaping – Public Spaces", "Landscaping – Township Development"]
+    },
+    {
+      group: "Bare Shell",
+      categories: ["Bare Shell – Residential", "Bare Shell – Commercial"]
+    },
+    {
+      group: "Masters",
+      categories: ["Masters – Lifetime Achievement in Construction Quality"]
+    }
+  ],
+  eligibility: [
+    "Entrant firm must be a current BAI Pune Centre member in good standing.",
+    "Project must be substantially complete at the time of site evaluation.",
+    "Project must be located within the Pune Centre's jurisdiction.",
+    "Only one entry per project per category is permitted."
+  ],
+  evaluationCriteria: [
+    "Structural soundness and adherence to design specifications",
+    "Quality of finishing materials and workmanship",
+    "Safety compliance during and after construction",
+    "Adoption of sustainable/green building practices",
+    "Overall aesthetic and functional value delivered"
+  ],
+  process: [
+    { title: "Entry Submission", desc: "Firms submit the completed entry form along with project details before the deadline." },
+    { title: "Document Screening", desc: "The WBSC Committee screens entries for eligibility and completeness." },
+    { title: "Site Visit & Evaluation", desc: "An independent evaluator panel conducts on-site inspections of shortlisted projects." },
+    { title: "Scoring", desc: "Each project is scored against the published evaluation criteria." },
+    { title: "Jury Review", desc: "The final jury reviews evaluator scores and selects category winners." },
+    { title: "Awards Ceremony", desc: "Winners are felicitated at the annual WBSC awards function." }
+  ],
+  downloads: [
+    { label: "WBSC Brochure", status: "coming_soon" },
+    { label: "Entry Form", status: "coming_soon" },
+    { label: "Competition Rules", status: "coming_soon" }
+  ],
+  contactEmail: "bai.punecentre@gmail.com"
+};
+
+export const patronMembershipData = {
+  title: "Patron Membership",
+  tagline: "Join BAI Pune Centre's highest tier of membership and support the construction industry's collective voice",
+  whatIs: "Patron Membership is a special category of membership offered to organizations and individuals who wish to extend enhanced support to BAI Pune Centre's activities. Patron Members enjoy elevated visibility, priority access to Centre events, and a direct role in shaping the Centre's initiatives.",
+  benefits: [
+    { title: "Priority Event Access", desc: "Reserved seating and priority invitations at all Pune Centre seminars, conventions and networking meets." },
+    { title: "Enhanced Visibility", desc: "Logo placement on the Patron Directory, event backdrops and select BAI Pune Centre publications." },
+    { title: "Direct Representation", desc: "A voice in Centre-level committees and consultations on industry representation matters." },
+    { title: "Networking Access", desc: "Invitations to exclusive patron-only networking sessions with Centre leadership." }
+  ],
+  directory: [
+    { logo: "/images/logo-bg.png", name: "Sample Patron Co. — replace with real member", representative: "Sample Representative", category: "Residential Developer", location: "Pune", website: "#" },
+    { logo: "/images/logo-bg.png", name: "Sample Infrastructure Pvt. Ltd. — replace with real member", representative: "Sample Representative", category: "Infrastructure Contractor", location: "Pune", website: "#" },
+    { logo: "/images/logo-bg.png", name: "Sample Builders Group — replace with real member", representative: "Sample Representative", category: "Commercial Developer", location: "Pimpri-Chinchwad", website: "#" }
+  ],
+  becomePatron: {
+    eligibility: [
+      "Applicant must be a construction, real estate, or allied industry organization.",
+      "Applicant should have an active presence within the Pune Centre's jurisdiction.",
+      "Application is subject to review and approval by the Pune Centre managing committee."
+    ],
+    fee: "Fee details available on request — contact the Pune Centre office (sample placeholder, replace with actual fee structure).",
+    benefits: [
+      "All standard membership benefits, plus patron-exclusive visibility and access.",
+      "Recognition as a founding-tier supporter of BAI Pune Centre initiatives."
+    ]
+  },
+  contactEmail: "bai.punecentre@gmail.com",
+  contactPhone: "(020) 2444 0000"
+};
+
+export const eventsPageData = {
+  title: "Events",
+  subtitle: "Conventions, seminars, site visits and networking meets from BAI Pune Centre and BAI National",
+  upcoming: [
+    { title: "BAI Pune Centre Annual General Meeting 2026 — sample placeholder event", date: "15th September 2026", venue: "B.G. Shirke Activity Centre, Pune", image: "/images/event_mcgc_meet.webp" },
+    { title: "BAI Pune Centre Technical Seminar on Sustainable Construction — sample placeholder event", date: "10th October 2026", venue: "Pune Centre Office, Sangam Bridge, Pune", image: "/images/event_sponsorship.webp" }
+  ],
+  past: [
+    { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
+    { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
+    { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/event_sports_league.webp", links: ["Gallery — placeholder"] }
+  ],
+  regularActivities: [
+    "Technical Seminars",
+    "Industrial Visits",
+    "Networking Meets",
+    "Government Interaction Programs",
+    "Student Internship Programs",
+    "Training Workshops",
+    "Annual Convention",
+    "Leadership Meetings"
+  ],
+  gallery: [
+    { src: "/images/event_goa_convention.webp", caption: "32nd All India Builders Convention, Goa" },
+    { src: "/images/event_kochi_meeting.jpg", caption: "3rd MC-GC Meeting, Kochi" },
+    { src: "/images/event_mcgc_meet.webp", caption: "Managing Committee & General Council Meeting" },
+    { src: "/images/event_sponsorship.webp", caption: "Sponsorship Appeal, MC/GC Meeting" },
+    { src: "/images/event_sports_league.webp", caption: "BAI Sports League 2026" },
+    { src: "/images/event_redev_summit.webp", caption: "Redevelopment Summit" }
+  ],
+  calendar: [
+    { month: "September 2026", items: ["Pune Centre Annual General Meeting — sample placeholder"] },
+    { month: "October 2026", items: ["Technical Seminar on Sustainable Construction — sample placeholder"] }
+  ]
+};
+
+export const membershipPageData = {
+  title: "Become a Member",
+  subtitle: "Connecting Construction Professionals Since 1941",
+  whyJoin: [
+    "Be part of India's oldest and most respected apex construction body.",
+    "Access technical seminars, workshops and industry updates.",
+    "Get representation before government bodies on policy and taxation matters.",
+    "Network with fellow builders, contractors and developers in Pune.",
+    "Receive the monthly 'Indian Construction' bulletin."
+  ],
+  categories: [
+    { name: "Life Member", desc: "One-time fee, lifetime membership benefits and voting rights." },
+    { name: "Corporate Member", desc: "For registered construction companies and firms operating in Pune Centre's jurisdiction." },
+    { name: "Associate Member", desc: "For allied professionals and organizations supporting the construction industry." },
+    { name: "Student Member", desc: "For civil engineering students seeking mentorship and internship opportunities." },
+    { name: "Patron Member", desc: "The highest membership tier with enhanced visibility and access.", link: "/patron-membership" }
+  ],
+  benefits: [
+    { title: "Technical Activities", desc: "Seminars, workshops and site visits on the latest construction techniques." },
+    { title: "Industry Representation", desc: "A collective voice before government departments and regulatory bodies." },
+    { title: "Member Services", desc: "Price index numbers, legal guidance and dispute resolution support." },
+    { title: "Student Initiatives", desc: "Internship placements and mentorship through the SIP Committee." },
+    { title: "Awards & Recognition", desc: "Eligibility to participate in the WBSC Well Built Structure Competition." }
+  ],
+  howToJoin: [
+    { title: "Fill Membership Form", desc: "Complete the registration form with your firm and contact details.", link: "/non-members-area" },
+    { title: "Upload Documents", desc: "Submit firm registration proof and other supporting documents." },
+    { title: "Application Review", desc: "The Membership Committee reviews your application." },
+    { title: "Membership Approval", desc: "Approved applications are confirmed by the managing committee." },
+    { title: "Welcome to BAI", desc: "Receive your membership number and start accessing member benefits." }
+  ],
+  downloads: [
+    { label: "Membership Form", status: "coming_soon" },
+    { label: "Membership Rules", status: "coming_soon" },
+    { label: "Fee Structure", status: "coming_soon" }
+  ]
+};
 

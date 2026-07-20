@@ -1,0 +1,57 @@
+.membership-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("https://www.baionline.in/public/frontend/images/21.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+.membership-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 100%); }
+.membership-hero-container { position: relative; z-index: 10; }
+.membership-hero-content { max-width: 750px; }
+.membership-tag { background: rgba(26,115,232,0.16); color: var(--gold); padding: 0.35rem 1rem; border-radius: 20px; font-family: var(--font-heading); font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem; }
+.membership-title { font-size: 2.6rem; font-weight: 800; color: var(--white); line-height: 1.25; margin-bottom: 0.5rem; }
+.membership-subtitle { font-family: var(--font-heading); font-size: 1.05rem; color: rgba(255,255,255,0.85); font-weight: 600; }
+
+.membership-why-section { padding: 5rem 0; background: var(--white); }
+.membership-why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 2rem; max-width: 850px; margin: 0 auto; }
+.membership-why-item { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; font-size: 0.88rem; color: var(--gray-800); font-weight: 600; }
+.membership-why-icon { color: var(--gold); flex-shrink: 0; }
+
+.membership-categories-section { padding: 5rem 0; background: var(--gray-50); }
+.membership-categories-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+.membership-category-card { background: var(--white); border: 1px solid var(--gray-200); padding: 2rem 1.5rem; border-radius: 18px; text-align: center; transition: all 0.3s; }
+.membership-category-card:hover { transform: translateY(-5px); border-color: var(--gold-light); box-shadow: 0 10px 30px rgba(10,22,40,0.05); }
+.membership-category-icon { color: var(--gold); font-size: 1.6rem; margin-bottom: 1rem; }
+.membership-category-card h3 { font-family: var(--font-heading); font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 0.6rem; }
+.membership-category-card p { font-size: 0.8rem; color: var(--gray-800); line-height: 1.5; margin-bottom: 0.75rem; }
+.membership-category-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 700; color: var(--gold); }
+
+.membership-benefits-section { padding: 5rem 0; background: var(--white); }
+.membership-benefits-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+.membership-benefit-card { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 1.75rem; border-radius: 16px; }
+.membership-benefit-card h3 { font-family: var(--font-heading); font-size: 0.95rem; color: var(--navy); font-weight: 700; margin-bottom: 0.6rem; }
+.membership-benefit-card p { font-size: 0.8rem; color: var(--gray-800); line-height: 1.5; }
+
+.membership-howtojoin-section { padding: 5rem 0; background: var(--gray-50); }
+
+.membership-downloads-section { padding: 5rem 0; background: var(--white); }
+.membership-downloads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.membership-download-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; text-align: center; }
+.membership-download-icon { color: var(--gold); font-size: 1.8rem; margin-bottom: 1rem; }
+.membership-download-card h4 { font-family: var(--font-heading); font-size: 0.95rem; color: var(--navy); margin-bottom: 0.5rem; }
+.membership-download-status { font-size: 0.75rem; color: var(--gray-800); font-style: italic; }
+
+@media (max-width: 1024px) {
+  .membership-categories-grid, .membership-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .membership-downloads-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .membership-hero-section { height: 260px; }
+  .membership-title { font-size: 1.9rem; }
+  .membership-why-grid, .membership-categories-grid, .membership-benefits-grid { grid-template-columns: 1fr; }
+}

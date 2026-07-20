@@ -224,6 +224,145 @@
   }
 }
 
+/* 3b. Who We Are / Mission */
+.about-whoweare-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.whoweare-text {
+  max-width: 850px;
+  margin: 0 auto 2rem auto;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--gray-800);
+  text-align: center;
+}
+
+.mission-points-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.mission-points-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--gray-800);
+  line-height: 1.5;
+}
+
+.mission-check-icon {
+  color: var(--gold);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* 3c. What We Do */
+.about-whatwedo-section {
+  padding: 5rem 0;
+  background-color: var(--gray-50);
+}
+
+.whatwedo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.whatwedo-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 2rem;
+  border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatwedo-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-light);
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.05);
+}
+
+.whatwedo-icon {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--gold);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.whatwedo-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.whatwedo-card ul {
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.whatwedo-card ul li {
+  font-size: 0.82rem;
+  color: var(--gray-800);
+  line-height: 1.5;
+}
+
+/* 3d. Why Join */
+.about-whyjoin-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.whyjoin-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.whyjoin-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  font-size: 0.88rem;
+  color: var(--gray-800);
+  font-weight: 600;
+}
+
+.whyjoin-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .whatwedo-grid {
+    grid-template-columns: 1fr;
+  }
+  .mission-points-list, .whyjoin-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 4. Timeline Achievements Section */
 .about-achievements-section {
   padding: 6rem 0;

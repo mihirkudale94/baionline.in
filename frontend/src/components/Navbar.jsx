@@ -119,8 +119,8 @@ const Navbar = () => {
               className="navbar-logo"
             />
             <div className="logo-text">
-              <span className="logo-title">BUILDERS ASSOCIATION OF INDIA</span>
-              <span className="logo-subtitle">All India Association of Civil Engineering Construction Contractors</span>
+              <span className="logo-title">BUILDERS' ASSOCIATION OF INDIA</span>
+              <span className="logo-subtitle">Pune Centre — Building Better Infrastructure. Empowering the Construction Industry.</span>
             </div>
           </Link>
 
