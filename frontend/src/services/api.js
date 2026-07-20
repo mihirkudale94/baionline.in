@@ -547,11 +547,17 @@ export const navLinks = [
       { label: "Patron Membership", path: "/patron-membership" }
     ]
   },
-  { label: "Publications", path: "/publications" },
-  { label: "BAI Services", path: "/services" },
-  { label: "Tenders", path: "/tenders" },
-  { label: "BAI in Media", path: "/media" },
-  { label: "Sponsors Inquiry", path: "/sponsors-inquiry" },
+  {
+    label: "Resources",
+    path: "#",
+    children: [
+      { label: "Publications", path: "/publications" },
+      { label: "BAI Services", path: "/services" },
+      { label: "Tenders", path: "/tenders" },
+      { label: "BAI in Media", path: "/media" },
+      { label: "Sponsors Inquiry", path: "/sponsors-inquiry" }
+    ]
+  },
   { label: "Contact Us", path: "/contact" }
 ];
 

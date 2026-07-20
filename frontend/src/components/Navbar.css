@@ -416,6 +416,28 @@
   cursor: pointer;
 }
 
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--gray-200);
+  background: var(--surface);
+  color: var(--gold);
+  font-size: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--dur-fast) ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-tint);
+  border-color: var(--primary);
+}
+
 /* Responsive styles */
 @media (max-width: 1024px) {
   .logo-title {
