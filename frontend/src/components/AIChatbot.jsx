@@ -16,6 +16,29 @@ const INITIAL_MESSAGE = {
   text: "Namaste! I can help you explore BAI's history, leadership, regional centres, membership, and industry resources.",
 };
 
+const getFallbackReply = (query) => {
+  const q = query.toLowerCase();
+  if (q.includes("founded") || q.includes("history") || q.includes("1941") || q.includes("start") || q.includes("jackson")) {
+    return "🏗️ BAI History & Foundation\n\nBuilders Association of India was founded in 1941 in Pune, under the guidance of Brig. C.V.S. Jackson of the Military Engineering Services (MES). It started with 250 members across 3 regional centers. The BAI Pune Centre is located right where the historical 'Jackson Hut' office stands in Pune.";
+  }
+  if (q.includes("chairman") || q.includes("president") || q.includes("gujar") || q.includes("ajay") || q.includes("leader") || q.includes("vice chairman") || q.includes("secretary") || q.includes("treasurer") || q.includes("governing")) {
+    return "👤 BAI Pune Governing Council 2026-27\n\n• Chairman: Shri Ajay Gujar (Chairman BAI Pune)\n• Vice Chairman: Shri Rajaram Hajare (Vice Chairman BAI Pune)\n• Secretary: Shri Mahesh Rathi (Secretary BAI Pune)\n• Jt. Secretary: Shri Sanjay Apte (Jt Secretary BAI Pune)\n• Treasurer: Shri Sushil Agarwal (Treasurer BAI Pune)";
+  }
+  if (q.includes("member") || q.includes("join") || q.includes("register")) {
+    return "✍️ Membership Enrollment & Stats\n\nBAI represents over 25,000+ direct corporate members (construction companies, developers, contractors) and 2 Lakh+ indirect members across India. You can submit an inquiry via our About/Membership page to join.";
+  }
+  if (q.includes("centre") || q.includes("office") || q.includes("location") || q.includes("where")) {
+    return "📍 Regional Offices & Centres\n\nBAI operates through more than 264+ city centres across India organized into Northern, Western, Southern I & II, and Eastern regions. You can view all centres on our Centres page!";
+  }
+  if (q.includes("machinery") || q.includes("rent") || q.includes("jcb") || q.includes("equipment") || q.includes("wheeling")) {
+    return "🚜 Machinery Exchange (Wheeling & Dealing)\n\nThrough our Wheeling & Dealing portal, BAI members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators.";
+  }
+  if (q.includes("publication") || q.includes("journal") || q.includes("icj") || q.includes("magazine")) {
+    return "📖 Indian Construction Journal (ICJ)\n\nBAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, and legal circular updates. You can download PDF issues on our Publications page.";
+  }
+  return "👋 Welcome to BAI AI Assistant!\n\nI can assist you with:\n• BAI History: Ask about our 1941 foundation by Brig. C.V.S. Jackson.\n• Leadership: Ask about Chairman Shri Ajay Gujar & Governing Council.\n• Centres: Inquire about local centers and regional office addresses.\n• Machinery exchange: Rent machinery on Wheeling & Dealing.\n• Publications: Monthly Indian Construction cost indices.\n\nHow can I help you build today?";
+};
+
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
@@ -62,15 +85,12 @@ const AIChatbot = () => {
       }
 
       const data = await response.json();
-      setMessages((prev) => [...prev, { sender: "bot", text: data.reply }]);
+      const cleanReply = (data.reply || "").replaceAll("**", "");
+      setMessages((prev) => [...prev, { sender: "bot", text: cleanReply }]);
     } catch (err) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          sender: "bot",
-          text: "⚠️ Sorry, I'm having trouble connecting to the BAI server. Please try again in a few moments.",
-        },
-      ]);
+      console.warn("Backend chat API endpoint unavailable, providing instant local response:", err);
+      const fallbackReply = getFallbackReply(msgText);
+      setMessages((prev) => [...prev, { sender: "bot", text: fallbackReply }]);
     } finally {
       setIsTyping(false);
     }
@@ -127,7 +147,7 @@ const AIChatbot = () => {
                 </div>
                 <div>
                   <h4>BAI AI Assistant</h4>
-                  <span className="online-tag">Ready to help</span>
+                  <span className="online-tag">Online</span>
                 </div>
               </div>
               <div className="header-actions">
