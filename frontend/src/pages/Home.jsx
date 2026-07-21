@@ -276,7 +276,7 @@ const Home = () => {
 
             {/* Youtube Channel Widget */}
             <div className="widget-card youtube-widget">
-              <a href="https://youtube.com/user/baihqmumbai" target="_blank" rel="noreferrer">
+              <a href="https://www.youtube.com/@buildersassociationofindia73" target="_blank" rel="noreferrer">
                 <img src="/images/bai-on-youtube.gif" alt="BAI YouTube Channel" className="yt-gif-banner" loading="lazy" />
               </a>
             </div>

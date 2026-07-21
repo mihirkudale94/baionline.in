@@ -35,8 +35,9 @@ const Committees = () => {
     executiveCommittee.chairman,
     executiveCommittee.vice_chairman,
     executiveCommittee.hon_secretary,
+    executiveCommittee.hon_joint_secretary,
     executiveCommittee.hon_treasurer
-  ];
+  ].filter(Boolean);
 
   return (
     <div className="committees-page-wrapper">

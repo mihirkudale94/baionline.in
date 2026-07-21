@@ -11,11 +11,11 @@ const LeadershipTabs = ({ leadership }) => {
   if (!leadership) return null;
 
   const tabs = [
-    { id: "president", label: "President" },
-    { id: "imm_past_president", label: "Immediate Past President" },
-    { id: "vice_presidents", label: "Vice Presidents" },
-    { id: "state_chairmen", label: "State Chairmen" },
-    { id: "state_coordinators", label: "State Coordinators" }
+    { id: "president", label: "Chairman" },
+    { id: "imm_past_president", label: "Vice Chairman" },
+    { id: "hon_secretary", label: "Secretary" },
+    { id: "hon_joint_secretary", label: "Joint Secretary" },
+    { id: "hon_treasurer", label: "Treasurer" }
   ];
 
   const handleOpenModal = (person) => {
@@ -75,12 +75,12 @@ const LeadershipTabs = ({ leadership }) => {
         return renderPresident(leadership.president);
       case "imm_past_president":
         return renderPresident(leadership.imm_past_president);
-      case "vice_presidents":
-        return renderGridList(leadership.vice_presidents, "Vice President");
-      case "state_chairmen":
-        return renderGridList(leadership.state_chairmen, "State Chairman");
-      case "state_coordinators":
-        return renderGridList(leadership.state_coordinators, "State Coordinator");
+      case "hon_secretary":
+        return renderPresident(leadership.hon_secretary);
+      case "hon_joint_secretary":
+        return renderPresident(leadership.hon_joint_secretary);
+      case "hon_treasurer":
+        return renderPresident(leadership.hon_treasurer);
       default:
         return null;
     }
@@ -91,7 +91,7 @@ const LeadershipTabs = ({ leadership }) => {
       <div className="container">
         <div className="section-header text-center">
           <span className="subtitle">BAI National Leadership</span>
-          <h2 className="section-title">National Governing Council <span className="gradient-text">2026-27</span></h2>
+          <h2 className="section-title">Pune Governing Council <span className="gradient-text">2026-27</span></h2>
           <div className="section-title-line"></div>
           <p className="leadership-scope-note">
             BAI Pune Centre is a constituent centre of this national body. For Pune Centre's own leadership, see the{" "}
@@ -134,7 +134,7 @@ const LeadershipTabs = ({ leadership }) => {
                 <h3 className="modal-name">{modalContent.name}</h3>
               </div>
               <div className="modal-text-col">
-                <h4 className="modal-section-title">President's Message</h4>
+                <h4 className="modal-section-title">Chairman's Message</h4>
                 <div className="modal-text-scroll">
                   <p className="modal-bio-para">{modalContent.bio}</p>
                   {modalContent.bio_extended && (

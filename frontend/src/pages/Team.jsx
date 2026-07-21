@@ -87,24 +87,22 @@ const Team = () => {
       <section className="team-roster-section">
         <div className="container">
           
-          {/* President & Past President Row */}
-          <div className="roster-top-leaders">
-            <div className="leader-block">
-              <h2 className="roster-section-title">The President</h2>
-              <div className="title-line"></div>
-              {renderCard(team.president, "President")}
-            </div>
-            
-            <div className="leader-block">
-              <h2 className="roster-section-title">Immediate Past President</h2>
-              <div className="title-line"></div>
-              {renderCard(team.imm_past_president, "Immediate Past President")}
+          {/* Governing Council Office Bearers */}
+          <div className="roster-section-block">
+            <h2 className="roster-section-title text-center">Governing Council Office Bearers</h2>
+            <div className="title-line center"></div>
+            <div className="roster-grid grid-5">
+              {team.president && renderCard(team.president, "Chairman")}
+              {team.imm_past_president && renderCard(team.imm_past_president, "Vice Chairman")}
+              {team.hon_secretary && renderCard(team.hon_secretary, "Secretary")}
+              {team.hon_joint_secretary && renderCard(team.hon_joint_secretary, "Joint Secretary")}
+              {team.hon_treasurer && renderCard(team.hon_treasurer, "Treasurer")}
             </div>
           </div>
 
-          {/* Vice Presidents */}
+          {/* Vice Chairmen */}
           <div className="roster-section-block">
-            <h2 className="roster-section-title text-center">Vice Presidents</h2>
+            <h2 className="roster-section-title text-center">Vice Chairmen</h2>
             <div className="title-line center"></div>
             <div className="roster-grid grid-5">
               {team.vice_presidents.map((vp, idx) => (

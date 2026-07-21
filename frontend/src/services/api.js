@@ -31,7 +31,7 @@ export const heroSlides = [
   },
   {
     id: 3,
-    title: "Shri Ravindra Tyagi, unanimously elected as President of BAI for 2026-27",
+    title: "Ajay Gujar, unanimously elected as Chairman of BAI for 2026-27",
     image: "https://www.baionline.in/public/frontend/images/new_president_2026-27_02.jpg",
     link: "https://www.baionline.in/public/frontend/pdf/Election-Results 2026-27.pdf",
     linkText: "Click Here"
@@ -53,36 +53,54 @@ export const heroSlides = [
 ];
 
 export const stats = [
-  { label: "President", count: "1" },
-  { label: "Imm. Past President", count: "1" },
-  { label: "Vice Presidents", count: "5" },
+  { label: "Chairman", count: "1" },
+  { label: "Vice Chairman", count: "1" },
+  { label: "Vice Chairmen", count: "5" },
   { label: "State Chairmen", count: "16" },
   { label: "State Co-Ordinators", count: "3" },
   { label: "Members", count: "2 Lakh" },
-  { label: "Past Presidents", count: "57" }
+  { label: "Past Chairmen", count: "57" }
 ];
 
 export const leadership = {
   president: {
-    name: "Shri Ravindra Tyagi",
-    title: "President",
-    image: "/images/Shri_Ravindra_Tyagi.jpg",
+    name: "Ajay Gujar",
+    title: "Chairman BAI Pune",
+    image: "/images/Shri_Ajay_Gujar.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
     bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
   },
   imm_past_president: {
-    name: "Dr. Dharmesh Awasthi",
-    title: "Immediate Past President",
-    image: "/images/Dr_Dharmesh_Awasthi.jpg",
+    name: "Rajaram Hajare",
+    title: "Vice Chairman BAI Pune",
+    image: "/images/Shri_Rajaram_Hajare.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
     bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
   },
+  hon_secretary: {
+    name: "Mahesh Rathi",
+    title: "Secretary BAI Pune",
+    image: "/images/Shri_Mahesh_Rathi.jpg",
+    bio: "Secretary of Builders' Association of India Pune."
+  },
+  hon_joint_secretary: {
+    name: "Sanjay Apte",
+    title: "Jt Secretary BAI Pune",
+    image: "/images/Shri_Sanjay_Apte.jpg",
+    bio: "Jt. Secretary of Builders' Association of India Pune."
+  },
+  hon_treasurer: {
+    name: "Sushil Agarwal",
+    title: "Treasurer BAI Pune",
+    image: "/images/Shri_Sushil_Agarwal.jpg",
+    bio: "Treasurer of Builders' Association of India Pune."
+  },
   vice_presidents: [
-    { name: "Shri Kaushal Kumar Singh (Jamshedpur)", region: "VP - EAST", image: "/images/vice-president-profile.webp" },
-    { name: "Shri Sanjay Tyagi (Ghaziabad)", region: "VP - NORTH", image: "/images/vice-president-profile.webp" },
-    { name: "Shri V. Satya Murthy (Warangal)", region: "VP - SOUTH I", image: "/images/vice-president-profile.webp" },
-    { name: "Shri R. Prakash (Kanchipuram)", region: "VP - SOUTH II", image: "/images/vice-president-profile.webp" },
-    { name: "Shri Mahesh M. Mudda (Mumbai)", region: "VP - WEST", image: "/images/vice-president-profile.webp" }
+    { name: "Shri Kaushal Kumar Singh (Jamshedpur)", region: "VC - EAST", image: "/images/vice-president-profile.webp" },
+    { name: "Shri Sanjay Tyagi (Ghaziabad)", region: "VC - NORTH", image: "/images/vice-president-profile.webp" },
+    { name: "Shri V. Satya Murthy (Warangal)", region: "VC - SOUTH I", image: "/images/vice-president-profile.webp" },
+    { name: "Shri R. Prakash (Kanchipuram)", region: "VC - SOUTH II", image: "/images/vice-president-profile.webp" },
+    { name: "Shri Mahesh M. Mudda (Mumbai)", region: "VC - WEST", image: "/images/vice-president-profile.webp" }
   ],
   state_chairmen: [
     { name: "Shri P. Seshagiri Rao (NTR)", state: "ANDHRA PRADESH", image: "/images/state-chairmen-profile.webp" },
@@ -496,7 +514,7 @@ export const navLinks = [
       { label: "About BAI", path: "/about" },
       { label: "BAI Team 2026-27", path: "/team" },
       { label: "Trustees", path: "/trustees" },
-      { label: "Past Presidents", path: "/past-presidents" },
+      { label: "Past Chairmen", path: "/past-presidents" },
       { label: "Committees", path: "/committees" }
     ]
   },
@@ -593,7 +611,7 @@ export const footerData = {
   social: [
     { platform: "facebook", url: "https://www.facebook.com/BuildersAssociationOfIndia/" },
     { platform: "instagram", url: "https://www.instagram.com/p/B60c1Ljnk90/" },
-    { platform: "youtube", url: "https://www.youtube.com/@baihqmumbai/videos" },
+    { platform: "youtube", url: "https://www.youtube.com/@buildersassociationofindia73" },
     { platform: "linkedin", url: "https://in.linkedin.com/company/builders-association-of-india" },
     { platform: "twitter", url: "https://twitter.com/bainational" }
   ],
@@ -922,8 +940,9 @@ export const committeesData = [
 export const executiveCommittee = {
   chairman: { role: "Chairman", name: "" },
   vice_chairman: { role: "Vice Chairman", name: "Rajaram B. Hajare" },
-  hon_secretary: { role: "Hon. Secretary", name: "C. H. Ratlani" },
-  hon_treasurer: { role: "Hon. Treasurer", name: "Mahesh Rathi" },
+  hon_secretary: { role: "Secretary", name: "Mahesh Rathi" },
+  hon_joint_secretary: { role: "Jt. Secretary", name: "Sanjay Apte" },
+  hon_treasurer: { role: "Treasurer", name: "Sushil Agarwal" },
   members: [
     
   ]

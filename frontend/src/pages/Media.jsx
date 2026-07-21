@@ -7,7 +7,7 @@ const Media = () => {
   const news = [
     {
       title: "BAI representation on rising input materials cost discussed in Ministry",
-      desc: "Our delegation led by President Ravindra Tyagi met union representatives to address concrete, steel and bitumens price trends affecting developers.",
+      desc: "Our delegation led by Chairman Ajay Gujar met union representatives to address concrete, steel and bitumens price trends affecting developers.",
       date: "July 15, 2026",
       image: "https://www.baionline.in/public/frontend/images/22.png",
       tag: "Press Release"

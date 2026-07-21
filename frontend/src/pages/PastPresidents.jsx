@@ -19,7 +19,7 @@ const PastPresidents = () => {
     return (
       <div className="loader-screen">
         <div className="loader-ring"></div>
-        <span className="loader-text">Loading Presidents Archive...</span>
+        <span className="loader-text">Loading Chairmen Archive...</span>
       </div>
     );
   }
@@ -36,7 +36,7 @@ const PastPresidents = () => {
             className="presidents-hero-content"
           >
             <span className="presidents-tag">BAI Archives</span>
-            <h1 className="presidents-title">Past Presidents</h1>
+            <h1 className="presidents-title">Past Chairmen</h1>
             <p className="presidents-subtitle">Honor roll of our association leaders since 1941</p>
           </motion.div>
         </div>

@@ -66,8 +66,8 @@
 
 .exec-committee-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -334,9 +334,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+  .exec-committee-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .exec-committee-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
   .committees-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -352,5 +360,11 @@
   }
   .committees-list-section {
     padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .exec-committee-grid {
+    grid-template-columns: 1fr;
   }
 }

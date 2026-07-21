@@ -84,7 +84,7 @@ const AIChatbot = () => {
 
   const suggestions = [
     "Tell me about BAI History",
-    "Who is the current President?",
+    "Who is the current Chairman?",
     "Where is the closest Centre?",
     "How can I rent machinery?",
   ];
