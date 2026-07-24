@@ -221,6 +221,16 @@
   flex-shrink: 0;
 }
 
+.chat-bubble-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chat-bubble-row.user .chat-bubble-col {
+  align-items: flex-end;
+}
+
 .chat-bubble {
   padding: 0.8rem 1rem;
   border-radius: 16px;
@@ -246,6 +256,68 @@
   border-top-right-radius: 4px;
   font-weight: 500;
   box-shadow: 0 6px 16px rgba(11, 15, 25, 0.12);
+}
+
+/* Markdown content inside bot bubbles */
+.markdown-content p { margin: 0 0 0.6rem 0; }
+.markdown-content p:last-child { margin-bottom: 0; }
+.markdown-content ul, .markdown-content ol {
+  margin: 0 0 0.6rem 0;
+  padding-left: 1.25rem;
+}
+.markdown-content li { margin-bottom: 0.25rem; }
+.markdown-content li:last-child { margin-bottom: 0; }
+.markdown-content strong { color: var(--navy); font-weight: 700; }
+.markdown-content a { color: var(--primary); text-decoration: underline; }
+.markdown-content > *:last-child { margin-bottom: 0; }
+
+/* Streaming cursor */
+.chat-bubble.streaming .markdown-content > *:last-child::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 2px;
+  background: var(--primary);
+  vertical-align: text-bottom;
+  animation: cursor-blink 0.9s step-start infinite;
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+/* Message actions (copy / regenerate) */
+.message-actions {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  padding-left: 0.15rem;
+}
+
+.message-action-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: grid;
+  place-items: center;
+  transition: all 0.15s ease;
+}
+
+.message-action-btn:hover {
+  color: var(--primary);
+  background: var(--primary-tint);
+  border-color: rgba(26, 115, 232, 0.15);
+}
+
+.message-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 /* Typing Indicators */
@@ -278,6 +350,10 @@
   padding: 0.85rem 1.25rem 1rem;
   background: #f7f9fc;
   border-top: 1px solid #edf0f4;
+}
+
+.chatbot-suggestions.followups {
+  animation: fadeInUp 0.4s ease;
 }
 
 .suggestions-label {
