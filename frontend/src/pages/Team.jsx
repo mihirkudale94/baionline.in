@@ -77,8 +77,8 @@ const Team = () => {
             className="team-hero-content"
           >
             <span className="team-tag">Governing Council</span>
-            <h1 className="team-title">BAI Team 2026-27</h1>
-            <p className="team-subtitle">Office Bearers of Builders Association of India</p>
+            <h1 className="team-title">BAI Pune Centre Team 2026-27</h1>
+            <p className="team-subtitle">Office Bearers of BAI Pune Centre</p>
           </motion.div>
         </div>
       </section>
@@ -97,45 +97,6 @@ const Team = () => {
               {team.hon_secretary && renderCard(team.hon_secretary, "Secretary")}
               {team.hon_joint_secretary && renderCard(team.hon_joint_secretary, "Joint Secretary")}
               {team.hon_treasurer && renderCard(team.hon_treasurer, "Treasurer")}
-            </div>
-          </div>
-
-          {/* Vice Chairmen */}
-          <div className="roster-section-block">
-            <h2 className="roster-section-title text-center">Vice Chairmen</h2>
-            <div className="title-line center"></div>
-            <div className="roster-grid grid-5">
-              {team.vice_presidents.map((vp, idx) => (
-                <React.Fragment key={idx}>
-                  {renderCard(vp, vp.region)}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-
-          {/* State Chairmen */}
-          <div className="roster-section-block">
-            <h2 className="roster-section-title text-center">State Chairmen</h2>
-            <div className="title-line center"></div>
-            <div className="roster-grid grid-4">
-              {team.state_chairmen.map((chairman, idx) => (
-                <React.Fragment key={idx}>
-                  {renderCard(chairman, chairman.state)}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-
-          {/* State Coordinators */}
-          <div className="roster-section-block">
-            <h2 className="roster-section-title text-center">State Coordinators</h2>
-            <div className="title-line center"></div>
-            <div className="roster-grid grid-3">
-              {team.state_coordinators.map((coord, idx) => (
-                <React.Fragment key={idx}>
-                  {renderCard(coord, coord.state)}
-                </React.Fragment>
-              ))}
             </div>
           </div>
 

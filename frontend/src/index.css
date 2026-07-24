@@ -14,8 +14,8 @@
   --text-muted: #5f6368;       /* Google muted gray */
 
   --surface: #ffffff;
-  --surface-dim: #f8f9fa;      /* Google gray 50 */
-  --surface-border: #e8eaed;   /* Google hairline */
+  --surface-dim: #eef4fc;      /* Light blue tint — alternate section backgrounds */
+  --surface-border: #dfe8f7;   /* Light blue hairline */
 
   /* ---- Legacy aliases (existing components keep working) ---- */
   --navy: var(--ink);
@@ -273,7 +273,7 @@ ul {
 .animate-fadeInRight { animation: fadeInRight 0.8s var(--ease-out) forwards; }
 
 .gradient-text {
-  background: linear-gradient(90deg, #1a73e8, #8ab4f8 45%, #f9ab00);
+  background: linear-gradient(90deg, #1557b0, #1a73e8 55%, #8ab4f8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

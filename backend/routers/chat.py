@@ -4,7 +4,7 @@ import os
 import urllib.request
 import urllib.parse
 import json
-from data.content import LEADERSHIP, STATS, CENTRES_DATA
+from data.content import LEADERSHIP, STATS
 
 router = APIRouter(prefix="/api", tags=["chat"])
 
@@ -179,28 +179,20 @@ def get_local_context(query: str) -> str:
             "It started with 250 members and 3 Centres. The office was constructured and named 'Jackson Hut', which stands today as a monument in Pune."
         )
     
-    # 2. Check President / Leadership
-    if "president" in q or "tyagi" in q or "who is leading" in q or "ravindra" in q or "leader" in q:
+    # 2. Check Chairman / Leadership
+    if "chairman" in q or "president" in q or "gujar" in q or "who is leading" in q or "ajay" in q or "leader" in q:
         pres = LEADERSHIP.get("president", {})
         context_parts.append(
-            f"The President of BAI for 2026-27 is {pres.get('name', 'Shri Ravindra Tyagi')}. "
-            "He welcomes all builders and developers. The Immediate Past President is Dr. Dharmesh Awasthi."
+            f"The Chairman of BAI for 2026-27 is {pres.get('name', 'Ajay Gujar')}. "
+            "He welcomes all builders and developers. The Vice Chairman is Rajaram Hajare."
         )
         
     # 3. Check stats
     if "member" in q or "how many" in q or "count" in q or "statistics" in q:
       context_parts.append(
           f"BAI has more than {STATS[5]['count']} members (over 25,000 direct corporate members and 2 Lakh+ indirect members). "
-          f"It has {STATS[2]['count']} Vice Presidents and {STATS[3]['count']} State Chairmen representing regional state boards."
+          f"It has {STATS[2]['count']} Vice Chairmen and {STATS[3]['count']} State Chairmen representing regional state boards."
       )
-        
-    # 4. Check centres
-    if "centre" in q or "office" in q or "where is" in q or "location" in q or "zone" in q or "region" in q:
-        context_parts.append(
-            "BAI has 264+ city centres organized into 5 major zones across India: "
-            "Northern Region (Delhi, Rajasthan, Haryana), Western Region (Mumbai, Pune, Gujarat), "
-            "Southern Region I & II (Andhra Pradesh, Karnataka, Kerala, Tamil Nadu, Telangana), and Eastern Region (West Bengal, Jharkhand)."
-        )
         
     # 5. Check publications / ICJ
     if "publication" in q or "journal" in q or "magazine" in q or "icj" in q or "construction book" in q:
@@ -233,55 +225,57 @@ def generate_local_response(query: str, context: str) -> str:
     
     if "founded" in q or "history" in q or "1941" in q or "start" in q or "jackson" in q:
         return (
-            "🏗️ **BAI History & Foundation**\n\n"
-            "Builders Association of India was founded in **1941** in Pune, under the guidance of Brig. C.V.S. Jackson of the Military Engineering Services (MES). "
+            "🏗️ BAI History & Foundation\n\n"
+            "Builders Association of India was founded in 1941 in Pune, under the guidance of Brig. C.V.S. Jackson of the Military Engineering Services (MES). "
             "It initially began with 250 members across 3 regional centers to coordinate builder grievances. This is the BAI Pune Centre site, based right where the "
             "original 'Jackson Hut' office stands in Pune as a historical monument."
         )
-    elif "president" in q or "tyagi" in q or "ravindra" in q:
+    elif "chairman" in q or "president" in q or "gujar" in q or "ajay" in q or "secretary" in q or "treasurer" in q or "leader" in q or "governing" in q:
         return (
-            "👤 **BAI Leadership Bearers**\n\n"
-            "The current President of the Builders Association of India for the **2026-27 session** is **Shri Ravindra Tyagi**. "
-            "Under his presidency, BAI focuses on negotiating fairer arbitration clauses, standardizing tender contracts, and expanding city center boundaries. "
-            "You can contact the governing council bearing list on our **Governing Council** page."
+            "👤 BAI Pune Governing Council 2026-27\n\n"
+            "• Chairman: Shri Ajay Gujar (Chairman BAI Pune)\n"
+            "• Vice Chairman: Shri Rajaram Hajare (Vice Chairman BAI Pune)\n"
+            "• Secretary: Shri Mahesh Rathi (Secretary BAI Pune)\n"
+            "• Jt. Secretary: Shri Sanjay Apte (Jt Secretary BAI Pune)\n"
+            "• Treasurer: Shri Sushil Agarwal (Treasurer BAI Pune)"
         )
     elif "member" in q or "join" in q or "register" in q:
         return (
-            "✍️ **Membership Enrollment & Stats**\n\n"
-            "BAI represents over **25,000+ direct corporate members** (construction companies, developers, contractors) and **2 Lakh+ indirect members** across India. "
-            "To register, you can go to our **About Page** and fill out the *Membership Enrollment Inquiry Form* directly to trigger coordination from local secretaries."
+            "✍️ Membership Enrollment & Stats\n\n"
+            "BAI represents over 25,000+ direct corporate members (construction companies, developers, contractors) and 2 Lakh+ indirect members across India. "
+            "To register, you can go to our About Page and fill out the Membership Enrollment Inquiry Form directly to trigger coordination from local secretaries."
         )
     elif "centre" in q or "office" in q or "location" in q or "where is" in q:
         return (
-            "📍 **Regional Offices & Centres Directory**\n\n"
-            "BAI operates through more than **264+ city centres** across India. These are divided into:\n"
-            "*   **Northern Region:** Delhi, Ghaziabad, Jaipur, Haryana.\n"
-            "*   **Western Region:** Mumbai, Pune, Ahmedabad, Baroda.\n"
-            "*   **Southern Region I & II:** Bangalore, Chennai, Hyderabad, Calicut.\n"
-            "*   **Eastern Region:** Jamshedpur, Ranchi, Kolkata.\n\n"
-            "You can view center lists and look up contact details on our **Centres page**!"
+            "📍 Regional Offices & Centres Directory\n\n"
+            "BAI operates through more than 264+ city centres across India. These are divided into:\n"
+            "*   Northern Region: Delhi, Ghaziabad, Jaipur, Haryana.\n"
+            "*   Western Region: Mumbai, Pune, Ahmedabad, Baroda.\n"
+            "*   Southern Region I & II: Bangalore, Chennai, Hyderabad, Calicut.\n"
+            "*   Eastern Region: Jamshedpur, Ranchi, Kolkata.\n\n"
+            "You can view center lists and look up contact details on our Centres page!"
         )
     elif "machinery" in q or "rent" in q or "jcb" in q or "equipment" in q or "wheeling" in q:
         return (
-            "🚜 **Machinery Exchange (Wheeling & Dealing)**\n\n"
-            "Through our **Wheeling & Dealing** portal, BAI members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators. "
-            "Simply navigate to the *Wheeling & Dealing* tab in the header menu to browse the active rental catalog or post your own equipment listing."
+            "🚜 Machinery Exchange (Wheeling & Dealing)\n\n"
+            "Through our Wheeling & Dealing portal, BAI members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators. "
+            "Simply navigate to the Wheeling & Dealing tab in the header menu to browse the active rental catalog or post your own equipment listing."
         )
     elif "publication" in q or "journal" in q or "icj" in q or "magazine" in q:
         return (
-            "📖 **Indian Construction Journal (ICJ)**\n\n"
-            "BAI publishes the official monthly journal **'Indian Construction'**, which covers builders' cost indices, current cement/steel pricing trends, "
-            "government contract updates, and technical civil engineering papers. You can download recent month issues (PDF) or fill out the print subscription card on our **Publications page**."
+            "📖 Indian Construction Journal (ICJ)\n\n"
+            "BAI publishes the official monthly journal 'Indian Construction', which covers builders' cost indices, current cement/steel pricing trends, "
+            "government contract updates, and technical civil engineering papers. You can download recent month issues (PDF) or fill out the print subscription card on our Publications page."
         )
     
     return (
-        "👋 **Welcome to BAI AI Assistant!**\n\n"
+        "👋 Welcome to BAI AI Assistant!\n\n"
         "I can assist you with:\n"
-        "*   **BAI History:** Ask about our 1941 foundation by Brig. C.V.S. Jackson.\n"
-        "*   **Leadership:** Ask who is the current President (Shri Ravindra Tyagi).\n"
-        "*   **Centres:** Inquire about local centers and regional office addresses.\n"
-        "*   **Machinery exchange:** Inquire about renting loaders and cranes on our *Wheeling & Dealing* board.\n"
-        "*   **Publications:** Get monthly Indian Construction cost indices and subscription guidelines.\n\n"
+        "*   BAI History: Ask about our 1941 foundation by Brig. C.V.S. Jackson.\n"
+        "*   Leadership: Ask who is the current Chairman (Shri Ajay Gujar).\n"
+        "*   Centres: Inquire about local centers and regional office addresses.\n"
+        "*   Machinery exchange: Inquire about renting loaders and cranes on our Wheeling & Dealing board.\n"
+        "*   Publications: Get monthly Indian Construction cost indices and subscription guidelines.\n\n"
         "How can I help you build today?"
     )
 

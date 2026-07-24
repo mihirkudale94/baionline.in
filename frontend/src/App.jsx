@@ -9,19 +9,17 @@ import AIChatbot from "./components/AIChatbot";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
-import Centres from "./pages/Centres";
 import Contact from "./pages/Contact";
 import Publications from "./pages/Publications";
 import Tenders from "./pages/Tenders";
 import Media from "./pages/Media";
-import Trustees from "./pages/Trustees";
 import Committees from "./pages/Committees";
 import PastPresidents from "./pages/PastPresidents";
 import MembersArea from "./pages/MembersArea";
 import WBSCAwards from "./pages/WBSCAwards";
-import PatronMembership from "./pages/PatronMembership";
 import Events from "./pages/Events";
 import Membership from "./pages/Membership";
+import SocialActivities from "./pages/SocialActivities";
 
 import SponsorsInquiry from "./pages/SponsorsInquiry";
 import Links from "./pages/Links";
@@ -52,7 +50,6 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/centres" element={<Centres />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/publications" element={<Publications />} />
             <Route path="/tenders" element={<Tenders />} />
@@ -64,9 +61,9 @@ const App = () => {
             <Route path="/members-area" element={<MembersArea />} />
             <Route path="/non-members-area" element={<NonMembersArea />} />
             <Route path="/membership" element={<Membership />} />
-            <Route path="/patron-membership" element={<PatronMembership />} />
             <Route path="/wbsc-awards" element={<WBSCAwards />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/social-activities" element={<SocialActivities />} />
             <Route path="/activities" element={<PlaceholderPage title="BAI Activities" />} />
             <Route path="/judgements" element={<PlaceholderPage title="Judgements" />} />
             <Route path="/notifications" element={<PlaceholderPage title="Notifications" />} />
@@ -83,7 +80,6 @@ const App = () => {
             <Route path="/wd-display" element={<WheelingDealing defaultTab="listings" />} />
             <Route path="/links" element={<Links />} />
             
-            <Route path="/trustees" element={<Trustees />} />
             <Route path="/past-presidents" element={<PastPresidents />} />
             <Route path="/committees" element={<Committees />} />
             

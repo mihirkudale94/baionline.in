@@ -69,121 +69,7 @@
   margin-top: 2px;
 }
 
-/* Navbar search form styling */
-.navbar-search-form {
-  display: flex;
-  align-items: center;
-  background: var(--gray-100);
-  border: 1px solid var(--gray-200);
-  border-radius: 30px;
-  padding: 0.25rem;
-  width: 100%;
-  max-width: 580px;
-  transition: all 0.3s ease;
-}
 
-.navbar-search-form:focus-within {
-  border-color: var(--primary);
-  background: var(--white);
-  box-shadow: 0 4px 15px rgba(26, 115, 232, 0.18);
-}
-
-.search-input-wrapper {
-  display: flex;
-  align-items: center;
-  padding: 0 0.75rem;
-  flex: 1.2;
-  border-right: 1px solid var(--gray-300);
-}
-
-.city-input-wrapper {
-  display: flex;
-  align-items: center;
-  padding: 0 0.75rem;
-  flex: 0.8;
-  position: relative;
-}
-
-.search-icon, .location-icon {
-  color: var(--gray-800);
-  font-size: 0.9rem;
-  margin-right: 0.5rem;
-}
-
-.location-icon {
-  color: var(--orange);
-}
-
-.navbar-search-form input {
-  border: none;
-  background: transparent;
-  width: 100%;
-  font-size: 0.85rem;
-  color: var(--navy);
-  font-family: var(--font-body);
-  outline: none;
-  padding: 0.5rem 0;
-}
-
-.search-submit-btn {
-  background: var(--primary);
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: var(--r-pill);
-  padding: 0.5rem 1.35rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-  font-family: var(--font-heading);
-  transition: all 0.3s ease;
-}
-
-.search-submit-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.35);
-}
-
-/* City suggestions dropdown */
-.city-suggestions-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  z-index: 1100;
-  margin-top: 8px;
-  max-height: 250px;
-  overflow-y: auto;
-}
-
-.city-suggestions-dropdown li {
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid var(--gray-100);
-  transition: background 0.2s ease;
-}
-
-.city-suggestions-dropdown li:hover {
-  background: var(--gray-100);
-}
-
-.city-suggestions-dropdown .city-name {
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--navy);
-}
-
-.city-suggestions-dropdown .state-name {
-  font-size: 0.7rem;
-  color: var(--gray-800);
-  margin-top: 1px;
-}
 
 /* Bottom Main Nav menu */
 .navbar-main-nav {
@@ -319,93 +205,7 @@
   color: var(--gold);
 }
 
-/* Centres Mega Menu */
-.has-mega-menu {
-  position: static;
-}
 
-.mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--navy-light);
-  border-top: 2px solid var(--gold);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 2rem 0;
-  z-index: 1050;
-}
-
-.nav-item:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.mega-menu-grid {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-}
-
-.mega-menu-column {
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
-  padding-right: 1rem;
-}
-
-.mega-menu-column:last-child {
-  border-right: none;
-  padding-right: 0;
-}
-
-.mega-menu-region-title {
-  font-family: var(--font-heading);
-  color: var(--gold);
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.mega-menu-region-title a:hover {
-  color: var(--white);
-}
-
-.mega-menu-states-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.mega-menu-state-item {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.8rem;
-}
-
-.mega-menu-state-link {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.mega-menu-state-link:hover {
-  color: var(--white);
-  padding-left: 2px;
-}
-
-.mega-menu-centre-count {
-  color: var(--gold);
-  font-size: 0.7rem;
-  font-weight: 600;
-}
 
 .mobile-toggle-btn {
   display: none;
@@ -425,9 +225,6 @@
     max-width: 250px;
     font-size: 0.65rem;
   }
-  .navbar-search-form {
-    max-width: 400px;
-  }
   .nav-menu {
     gap: 0.25rem;
   }
@@ -435,17 +232,11 @@
     font-size: 0.75rem;
     padding: 1rem 0.3rem;
   }
-  .mega-menu-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
   .mobile-toggle-btn {
     display: block;
-  }
-  .navbar-search-form {
-    display: none; /* Hide top search in mobile header, can integrate into drawer */
   }
   .top-row-container {
     padding: 0.5rem 0;
@@ -487,7 +278,7 @@
   
   /* Dropdowns are conditionally rendered by React on tap, so when
      present in the DOM they must be fully visible (no max-height trap). */
-  .dropdown-menu, .sub-dropdown-menu, .mega-menu {
+  .dropdown-menu, .sub-dropdown-menu {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -499,18 +290,5 @@
     padding: 0.5rem 0;
     width: 100%;
     animation: slideDown 0.25s var(--ease-out);
-  }
-  
-  .mega-menu-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem 1.5rem;
-  }
-  
-  .mega-menu-column {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 1rem;
-    padding-right: 0;
   }
 }

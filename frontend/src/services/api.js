@@ -53,13 +53,10 @@ export const heroSlides = [
 ];
 
 export const stats = [
-  { label: "Chairman", count: "1" },
-  { label: "Vice Chairman", count: "1" },
-  { label: "Vice Chairmen", count: "5" },
-  { label: "State Chairmen", count: "16" },
-  { label: "State Co-Ordinators", count: "3" },
-  { label: "Members", count: "2 Lakh" },
-  { label: "Past Chairmen", count: "57" }
+  { label: "Founded", count: "1941" },
+  { label: "Office Bearers", count: "5" },
+  { label: "Standing Committees", count: "11" },
+  { label: "WBSC Editions", count: "30" }
 ];
 
 export const leadership = {
@@ -94,415 +91,7 @@ export const leadership = {
     title: "Treasurer BAI Pune",
     image: "/images/Shri_Sushil_Agarwal.jpg",
     bio: "Treasurer of Builders' Association of India Pune."
-  },
-  vice_presidents: [
-    { name: "Shri Kaushal Kumar Singh (Jamshedpur)", region: "VC - EAST", image: "/images/vice-president-profile.webp" },
-    { name: "Shri Sanjay Tyagi (Ghaziabad)", region: "VC - NORTH", image: "/images/vice-president-profile.webp" },
-    { name: "Shri V. Satya Murthy (Warangal)", region: "VC - SOUTH I", image: "/images/vice-president-profile.webp" },
-    { name: "Shri R. Prakash (Kanchipuram)", region: "VC - SOUTH II", image: "/images/vice-president-profile.webp" },
-    { name: "Shri Mahesh M. Mudda (Mumbai)", region: "VC - WEST", image: "/images/vice-president-profile.webp" }
-  ],
-  state_chairmen: [
-    { name: "Shri P. Seshagiri Rao (NTR)", state: "ANDHRA PRADESH", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Rupesh Kumar Singhal (Raipur)", state: "CHHATTISGARH", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Amit Pasricha (Delhi)", state: "DELHI", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Keval R. Parikh (Ahmedabad)", state: "GUJARAT", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Prem Khamesra (Faridabad)", state: "HARYANA", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Nipun Khurana (Una)", state: "HIMACHAL PRADESH", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Ravi Raj Agrawal (Ranchi)", state: "JHARKHAND", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri S. Shiva Prakash (Bangalore)", state: "KARNATAKA", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri K. Satheesh Kumar (Calicut)", state: "KERALA", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Prakash H. Menda (Ulhasnagar)", state: "MAHARASHTRA", image: "/images/state-chairmen-profile.webp" },
-    { name: "Ms. Khoobi Mehta (Mohali)", state: "PUNJAB", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Shubham Jain (Greater Jaipur)", state: "RAJASTHAN", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri N. Ramalingam (Erode)", state: "TAMIL NADU", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri V. Ravinder Reddy (Greater Hyderabad)", state: "TELANGANA", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Sanjay Tyagi (Modinagar)", state: "UTTAR PRADESH", image: "/images/state-chairmen-profile.webp" },
-    { name: "Shri Ram Chandra Singh Chouhan (Durgapur)", state: "WEST BENGAL", image: "/images/state-chairmen-profile.webp" }
-  ],
-  state_coordinators: [
-    { name: "Shri Govind Khaitan (Guwahati)", state: "ASSAM", image: "/images/state-co-ordinators-profile.webp" },
-    { name: "Shri Manish Kumar (Patna)", state: "BIHAR", image: "/images/state-co-ordinators-profile.webp" },
-    { name: "Shri Om Prakash Vijayvargiya (Indore)", state: "MADHYA PRADESH", image: "/images/state-co-ordinators-profile.webp" }
-  ]
-};
-
-export const centresData = {
-  regions: [
-    {
-      name: "Northern Region",
-      slug: "northern-region",
-      states: [
-        {
-          name: "Delhi",
-          slug: "delhi",
-          centres: [
-            { name: "Delhi", slug: "delhi" },
-            { name: "Delhi East Shahdara", slug: "delhi-east-shahdara" },
-            { name: "Delhi North", slug: "delhi-north" },
-            { name: "Delhi South", slug: "delhi-south" },
-            { name: "Delhi South East", slug: "delhi-south-east" },
-            { name: "Delhi West", slug: "delhi-west" }
-          ]
-        },
-        {
-          name: "Haryana",
-          slug: "haryana",
-          centres: [
-            { name: "Chandigarh", slug: "chandigarh-haryana" },
-            { name: "Faridabad", slug: "faridabad" },
-            { name: "Gurgaon", slug: "gurgaon" },
-            { name: "Karnal", slug: "karnal" },
-            { name: "Kundli", slug: "kundli" },
-            { name: "Panipat", slug: "panipat" }
-          ]
-        },
-        {
-          name: "Punjab",
-          slug: "punjab",
-          centres: [
-            { name: "Chandigarh", slug: "chandigarh-punjab" },
-            { name: "Mohali", slug: "mohali" }
-          ]
-        },
-        {
-          name: "Rajasthan",
-          slug: "rajasthan",
-          centres: [
-            { name: "Greater Jaipur", slug: "greater-jaipur" },
-            { name: "Jaipur", slug: "jaipur" },
-            { name: "Jaisalmer", slug: "jaisalmer" },
-            { name: "Jodhpur", slug: "jodhpur" },
-            { name: "Pink City Jaipur", slug: "pink-city-jaipur" }
-          ]
-        },
-        {
-          name: "Uttar Pradesh",
-          slug: "uttar-pradesh",
-          centres: [
-            { name: "Agra", slug: "agra" },
-            { name: "Agra Cantt", slug: "agra-cantt" },
-            { name: "Aligarh", slug: "aligarh" },
-            { name: "Allahabad", slug: "allahabad" },
-            { name: "Baghpat", slug: "baghpat" },
-            { name: "Bareilly", slug: "bareilly" },
-            { name: "Gautam Buddha Nagar", slug: "gautam-buddha-nagar" },
-            { name: "Ghaziabad", slug: "ghaziabad" },
-            { name: "Greater Noida", slug: "greater-noida" },
-            { name: "Hapur", slug: "hapur" },
-            { name: "Kanpur", slug: "kanpur" },
-            { name: "Kanpur South", slug: "kanpur-south" },
-            { name: "Loni", slug: "loni" },
-            { name: "Lucknow", slug: "lucknow" },
-            { name: "Meerut", slug: "meerut" },
-            { name: "Meerut Cantonment", slug: "meerut-cantonment" },
-            { name: "Modinagar", slug: "modinagar" },
-            { name: "Muzaffarnagar", slug: "muzaffarnagar" },
-            { name: "Sahibabad", slug: "sahibabad" },
-            { name: "Sitapur", slug: "sitapur" },
-            { name: "Western U.P. Electrical", slug: "western-up-electrical" }
-          ]
-        },
-        {
-          name: "Uttarakhand",
-          slug: "uttarakhand",
-          centres: [
-            { name: "Dehradun", slug: "dehradun" }
-          ]
-        }
-      ]
-    },
-    {
-      name: "Western Region",
-      slug: "western-region",
-      states: [
-        {
-          name: "Chattisgarh",
-          slug: "chattisgarh",
-          centres: [
-            { name: "Bilaspur", slug: "bilaspur" },
-            { name: "Durg-Bhilai", slug: "durg-bhilai" },
-            { name: "Jagdalpur", slug: "jagdalpur" },
-            { name: "Kanker", slug: "kanker" },
-            { name: "Raipur", slug: "raipur" }
-          ]
-        },
-        {
-          name: "Goa",
-          slug: "goa",
-          centres: [
-            { name: "Goa", slug: "goa" }
-          ]
-        },
-        {
-          name: "Gujarat",
-          slug: "gujarat",
-          centres: [
-            { name: "Ahmedabad", slug: "ahmedabad" },
-            { name: "Ahmedabad West", slug: "ahmedabad-west" },
-            { name: "Baroda", slug: "baroda" },
-            { name: "Bharuch", slug: "bharuch" },
-            { name: "Gandhinagar", slug: "gandhinagar" },
-            { name: "Karnavati", slug: "karnavati" },
-            { name: "Por-Ramangamdi", slug: "por-ramangamdi" },
-            { name: "Rajkot", slug: "rajkot" },
-            { name: "Surat", slug: "surat" }
-          ]
-        },
-        {
-          name: "Madhya Pradesh",
-          slug: "madhya-pradesh",
-          centres: [
-            { name: "Bhopal", slug: "bhopal" },
-            { name: "Indore", slug: "indore" },
-            { name: "Jabalpur", slug: "jabalpur" }
-          ]
-        },
-        {
-          name: "Maharashtra",
-          slug: "maharashtra",
-          centres: [
-            { name: "Ahmednagar", slug: "ahmednagar" },
-            { name: "Amravati", slug: "amravati" },
-            { name: "Aurangabad", slug: "aurangabad" },
-            { name: "Baramati", slug: "baramati" },
-            { name: "Butibori", slug: "butibori" },
-            { name: "Dhule", slug: "dhule" },
-            { name: "Ichalkaranji", slug: "ichalkaranji" },
-            { name: "Jalgaon", slug: "jalgaon" },
-            { name: "Kolhapur", slug: "kolhapur" },
-            { name: "Latur", slug: "latur" },
-            { name: "Malegaon", slug: "malegaon" },
-            { name: "Mumbai", slug: "mumbai" },
-            { name: "Nagpur", slug: "nagpur" },
-            { name: "Nanded", slug: "nanded" },
-            { name: "Nandurbar", slug: "nandurbar" },
-            { name: "Nasik", slug: "nasik" },
-            { name: "Pandharpur", slug: "pandharpur" },
-            { name: "Parbhani", slug: "parbhani" },
-            { name: "Phaltan", slug: "phaltan" },
-            { name: "Pune", slug: "pune" },
-            { name: "Raigad", slug: "raigad" },
-            { name: "Sangamner", slug: "sangamner" },
-            { name: "Sangli", slug: "sangli" },
-            { name: "Satara", slug: "satara" },
-            { name: "Shahda", slug: "shahda" },
-            { name: "Solapur", slug: "solapur" },
-            { name: "Ulhasnagar", slug: "ulhasnagar" },
-            { name: "Wai", slug: "wai" }
-          ]
-        }
-      ]
-    },
-    {
-      name: "Southern Region - I",
-      slug: "southern-region-one",
-      states: [
-        {
-          name: "Andhra Pradesh",
-          slug: "andhra-pradesh",
-          centres: [
-            { name: "Amaravathi", slug: "amaravathi" },
-            { name: "Anantpur", slug: "anantpur" },
-            { name: "Guntur", slug: "guntur" },
-            { name: "Nellore", slug: "nellore" },
-            { name: "Ongole", slug: "ongole" },
-            { name: "Rajahmundry", slug: "rajahmundry" },
-            { name: "Ravulapalem", slug: "ravulapalem" },
-            { name: "Tanuku", slug: "tanuku" },
-            { name: "Tirupati", slug: "tirupati" },
-            { name: "Vijayawada", slug: "vijayawada" },
-            { name: "Visakhapatnam", slug: "visakhapatnam" },
-            { name: "Vizag Steel City", slug: "vizag-steel-city" }
-          ]
-        },
-        {
-          name: "Karnataka",
-          slug: "karnataka",
-          centres: [
-            { name: "Chikamangalur", slug: "chikamangalur" },
-            { name: "Chitraduraga", "slug": "chitraduraga" },
-            { name: "Bangalore", slug: "karnataka-bangalore" },
-            { name: "Hasan", slug: "hasan" },
-            { name: "Mandya", slug: "mandya" },
-            { name: "Mangalore", slug: "mangalore" },
-            { name: "Mysore", slug: "mysore" },
-            { name: "Raichur", slug: "raichur" },
-            { name: "Shimoga", slug: "shimoga" }
-          ]
-        },
-        {
-          name: "Telangana",
-          slug: "telangana",
-          centres: [
-            { name: "Adilabad", slug: "adilabad" },
-            { name: "Greater Hyderabad", slug: "greater-hyderabad" },
-            { name: "Hyderabad", slug: "hyderabad" },
-            { name: "Jangaon", slug: "jangaon" },
-            { name: "Kamareddy", slug: "kamareddy" },
-            { name: "Karimnagar", slug: "karimnagar" },
-            { name: "Khamamm", slug: "khamamm" },
-            { name: "Mahaboobnagar", slug: "mahaboobnagar" },
-            { name: "Medachal", slug: "medachal" },
-            { name: "Medak", slug: "medak" },
-            { name: "Nalgonda", slug: "nalgonda" },
-            { name: "Nizamabad", slug: "nizamabad" },
-            { name: "Ranga Reddy", slug: "ranga-reddy" },
-            { name: "Siddipet", slug: "siddipet" },
-            { name: "Vikarabad", slug: "vikarabad" },
-            { name: "Warangal", slug: "warangal" },
-            { name: "Yadadri", slug: "yadadri" }
-          ]
-        }
-      ]
-    },
-    {
-      name: "Southern Region - II",
-      slug: "southern-region-two",
-      states: [
-        {
-          name: "Kerala",
-          slug: "kerala",
-          centres: [
-            { name: "Adoor", slug: "adoor" },
-            { name: "Alleppey", slug: "alleppey" },
-            { name: "Aluva", slug: "aluva" },
-            { name: "Angamali", slug: "angamali" },
-            { name: "Calicut", slug: "calicut" },
-            { name: "Changanacherry", slug: "changanacherry" },
-            { name: "Cochin", slug: "cochin" },
-            { name: "Ettumanoor", slug: "ettumanoor" },
-            { name: "Idukki", slug: "idukki" },
-            { name: "Kodungallur", slug: "kodungallur" },
-            { name: "Kollam", slug: "kollam" },
-            { name: "Kottayam", slug: "kottayam" },
-            { name: "Malappuram", slug: "malappuram" },
-            { name: "Muvattupuzha", slug: "muvattupuzha" },
-            { name: "North Malabar", slug: "north-malabar" },
-            { name: "Pathanamthitta", slug: "pathanamthitta" },
-            { name: "Thiruvalla", slug: "thiruvalla" },
-            { name: "Thrissur", slug: "thrissur" },
-            { name: "Trivandrum", slug: "kerala-trivandrum" },
-            { name: "Tripunithura", slug: "tripunithura" }
-          ]
-        },
-        {
-          name: "Tamil Nadu",
-          slug: "tamil-nadu",
-          centres: [
-            { name: "Avadi", slug: "avadi" },
-            { name: "Chengai", slug: "chengai" },
-            { name: "Chennai", slug: "chennai" },
-            { name: "Chettinadu", slug: "chettinadu" },
-            { name: "Coimbatore", slug: "coimbatore" },
-            { name: "Dharapuram", slug: "dharapuram" },
-            { name: "Dindigul", slug: "dindigul" },
-            { name: "Erode", slug: "erode" },
-            { name: "Hosur", slug: "hosur" },
-            { name: "Kalapakkam", slug: "kalapakkam" },
-            { name: "Kallakurichi", slug: "kallakurichi" },
-            { name: "Kanchipuram", slug: "kanchipuram" },
-            { name: "Kanyakumari", slug: "kanyakumari" },
-            { name: "Karur", slug: "karur" },
-            { name: "Kodaikanal", slug: "kodaikanal" },
-            { name: "Kumbakonam", slug: "kumbakonam" },
-            { name: "Madhuranthakam", slug: "madhuranthakam" },
-            { name: "Madurai", slug: "madurai" },
-            { name: "Mayiladuthurai", slug: "mayiladuthurai" },
-            { name: "Musiri", slug: "musiri" },
-            { name: "Nagapattnam", slug: "nagapattnam" },
-            { name: "Namakkal", slug: "namakkal" },
-            { name: "Neyveli", slug: "neyveli" },
-            { name: "Nilgiri", slug: "nilgiri" },
-            { name: "Palani", slug: "palani" },
-            { name: "Perambalur", slug: "perambalur" },
-            { name: "Ponneri", slug: "ponneri" },
-            { name: "Poonamallee", slug: "poonamallee" },
-            { name: "Pudukkottai", slug: "pudukkottai" },
-            { name: "Ramnathpuram", slug: "ramnathpuram" },
-            { name: "Salem", slug: "salem" },
-            { name: "Southern Chennai", slug: "southern-chennai" },
-            { name: "Tambaram", slug: "tambaram" },
-            { name: "Tenkasi", slug: "tenkasi" },
-            { name: "Thanjavur", slug: "thanjavur" },
-            { name: "Thenni", slug: "thenni" },
-            { name: "Thiruporur", slug: "thiruporur" },
-            { name: "Thiruthuraipoondi", slug: "thiruthuraipoondi" },
-            { name: "Thiruvannamalai", slug: "thiruvannamalai" },
-            { name: "Thiruvarur", slug: "thiruvarur" },
-            { name: "Tiruchirapalli", slug: "tiruchirapalli" },
-            { name: "Tirunelveli", slug: "tirunelveli" },
-            { name: "Tirupur", slug: "tirupur" },
-            { name: "Tiruvallur", slug: "tiruvallur" },
-            { name: "Tuticorin", slug: "tuticorin" },
-            { name: "Udumalpet", slug: "udumalpet" },
-            { name: "Vellore", slug: "vellore" },
-            { name: "Villupuram", slug: "villupuram" },
-            { name: "Jayankondam", slug: "jayankondam" }
-          ]
-        },
-        {
-          name: "Union Territories",
-          slug: "union-territories",
-          centres: [
-            { name: "Andaman & Nicobar", slug: "andaman-and-nicobar" },
-            { name: "Karaikal", slug: "karaikal" },
-            { name: "Pondicherry", slug: "pondicherry" }
-          ]
-        }
-      ]
-    },
-    {
-      name: "East Region",
-      slug: "east-region",
-      states: [
-        {
-          name: "Assam",
-          slug: "assam",
-          centres: [
-            { name: "Guwahati", slug: "guwahati" },
-            { name: "Silchar", slug: "silchar" },
-            { name: "Tezpur", slug: "tezpur" }
-          ]
-        },
-        {
-          name: "Bihar",
-          slug: "bihar",
-          centres: [
-            { name: "Danapur", slug: "danapur" },
-            { name: "Patna", slug: "patna" }
-          ]
-        },
-        {
-          name: "Jharkhand",
-          slug: "jharkhand",
-          centres: [
-            { name: "Adityapur", slug: "adityapur" },
-            { name: "Dhanbad", slug: "dhanbad" },
-            { name: "Hazaribagh", slug: "hazaribagh" },
-            { name: "Jamshedpur", slug: "jamshedpur" },
-            { name: "Ranchi", slug: "jharkhand-ranchi" }
-          ]
-        },
-        {
-          name: "Odisha",
-          slug: "odisha",
-          centres: [
-            { name: "Bhubaneswar", slug: "bhubaneswar" }
-          ]
-        },
-        {
-          name: "West Bengal",
-          slug: "west-bengal",
-          centres: [
-            { name: "Durgapur", slug: "durgapur" },
-            { name: "Eastern (Calcutta)", slug: "eastern-calcutta" },
-            { name: "Haldia", slug: "haldia" }
-          ]
-        }
-      ]
-    }
-  ]
+  }
 };
 
 export const navLinks = [
@@ -513,8 +102,7 @@ export const navLinks = [
     children: [
       { label: "About BAI", path: "/about" },
       { label: "BAI Team 2026-27", path: "/team" },
-      { label: "Trustees", path: "/trustees" },
-      { label: "Past Chairmen", path: "/past-presidents" },
+      { label: "Past Office Bearers", path: "/past-presidents" },
       { label: "Committees", path: "/committees" }
     ]
   },
@@ -554,17 +142,10 @@ export const navLinks = [
       }
     ]
   },
-  { label: "BAI Centres", path: "/centres", mega_menu: true },
+  { label: "Social Activities", path: "/social-activities" },
   { label: "Events", path: "/events" },
   { label: "WBSC Awards", path: "/wbsc-awards" },
-  {
-    label: "Membership",
-    path: "/membership",
-    children: [
-      { label: "Become a Member", path: "/membership" },
-      { label: "Patron Membership", path: "/patron-membership" }
-    ]
-  },
+  { label: "Membership", path: "/membership" },
   {
     label: "Resources",
     path: "#",
@@ -594,7 +175,7 @@ export const footerData = {
     { label: "Events", path: "/events" },
     { label: "WBSC Awards", path: "/wbsc-awards" },
     { label: "Membership", path: "/membership" },
-    { label: "Patron Membership", path: "/patron-membership" },
+    { label: "Social Activities", path: "/social-activities" },
     { label: "Gallery", path: "/media" },
     { label: "Contact", path: "/contact" }
   ],
@@ -814,16 +395,6 @@ export async function getAboutData() {
   }
 }
 
-export async function getCentresData() {
-  try {
-    const res = await fetchWithTimeout(`${API_BASE}/centres`);
-    if (!res.ok) throw new Error("Status " + res.status);
-    return await res.json();
-  } catch (err) {
-    console.warn("Using local fallback for Centres data:", err);
-    return centresData;
-  }
-}
 
 export async function getTeamData() {
   try {
@@ -862,6 +433,17 @@ export async function getNavigationData() {
   }
 }
 
+export async function getSocialActivitiesData() {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/social-activities`);
+    if (!res.ok) throw new Error("Status " + res.status);
+    return await res.json();
+  } catch (err) {
+    console.warn("Using local fallback for Social Activities data:", err);
+    return socialActivitiesContent;
+  }
+}
+
 export async function submitForm(formType, data) {
   const res = await fetchWithTimeout(`${API_BASE}/submissions`, {
     method: "POST",
@@ -872,56 +454,7 @@ export async function submitForm(formType, data) {
   return res.json();
 }
 
-export async function searchCentres(keyword, cityId) {
-  try {
-    const params = new URLSearchParams();
-    if (keyword) params.append("keyword", keyword);
-    if (cityId) params.append("city_id", cityId);
-    
-    const res = await fetchWithTimeout(`${API_BASE}/search?${params.toString()}`);
-    if (!res.ok) throw new Error("Status " + res.status);
-    const data = await res.json();
-    return data.results;
-  } catch (err) {
-    console.warn("Using local fallback search for Centres:", err);
-    const results = [];
-    const kw = keyword ? keyword.toLowerCase().trim() : "";
-    const city = cityId ? cityId.toLowerCase().trim() : "";
-    
-    for (const region of centresData.regions) {
-      for (const state of region.states) {
-        for (const centre of state.centres) {
-          const centreName = centre.name.toLowerCase();
-          const centreSlug = centre.slug.toLowerCase();
-          const stateName = state.name.toLowerCase();
-          const regionName = region.name.toLowerCase();
-          
-          const matchesKeyword = !kw || (centreName.includes(kw) || centreSlug.includes(kw) || stateName.includes(kw) || regionName.includes(kw));
-          const matchesCity = !city || (centreName.includes(city) || centreSlug.includes(city));
-          
-          if (matchesKeyword && matchesCity) {
-            results.push({
-              name: centre.name,
-              slug: centre.slug,
-              state: state.name,
-              region: region.name
-            });
-          }
-        }
-      }
-    }
-    return results;
-  }
-}
 
-export const trusteesData = [
-  { name: "Shri Lal Chand", role: "Chairman, Board of Trustees" },
-  { name: "Shri J. P. Nayak", role: "Trustee" },
-  { name: "Shri Muzaffar Ali", role: "Trustee" },
-  { name: "Shri A. S. Raju", role: "Trustee" },
-  { name: "Shri K. S. Kumar", role: "Trustee" },
-  { name: "Shri Dr. Dharmesh Awasthi", role: "Trustee" }
-];
 
 export const committeesData = [
   { name: "Housing Committee", chairman: "", desc: "Addresses housing policy, affordable housing initiatives and residential project matters for members.", members: [] },
@@ -1007,16 +540,45 @@ export const pastPresidentsData = [
   { year: "1941-1942", "name": "Shri M. P. Shah" }
 ];
 
-export async function getTrusteesData() {
-  try {
-    const res = await fetchWithTimeout(`${API_BASE}/trustees`);
-    if (!res.ok) throw new Error("Status " + res.status);
-    return await res.json();
-  } catch (err) {
-    console.warn("Using local fallback for Trustees:", err);
-    return trusteesData;
-  }
-}
+// Sample/placeholder data — pending real records from the Pune Centre office bearer display boards
+export const puneOfficeBearersData = {
+  note: "The entries below are sample placeholders. Real names and years will be added once the photographs of the Pune Centre office bearer display boards are shared.",
+  roles: [
+    {
+      id: "chairman",
+      label: "Chairman",
+      members: [
+        { year: "2024-2025", name: "Sample Name — to be added" },
+        { year: "2022-2024", name: "Sample Name — to be added" },
+        { year: "2020-2022", name: "Sample Name — to be added" }
+      ]
+    },
+    {
+      id: "vice_chairman",
+      label: "Vice Chairman",
+      members: [
+        { year: "2024-2025", name: "Sample Name — to be added" },
+        { year: "2022-2024", name: "Sample Name — to be added" }
+      ]
+    },
+    {
+      id: "secretary",
+      label: "Secretary",
+      members: [
+        { year: "2024-2025", name: "Sample Name — to be added" },
+        { year: "2022-2024", name: "Sample Name — to be added" }
+      ]
+    },
+    {
+      id: "treasurer",
+      label: "Treasurer",
+      members: [
+        { year: "2024-2025", name: "Sample Name — to be added" },
+        { year: "2022-2024", name: "Sample Name — to be added" }
+      ]
+    }
+  ]
+};
 
 export async function getCommitteesData() {
   try {
@@ -1043,67 +605,82 @@ export async function getPastPresidentsData() {
 export const wbscAwardsData = {
   title: "BAI – SHIRKE Well Built Structure Competition 2026",
   edition: "30th Edition",
-  tagline: "Recognizing excellence in structural quality across Pune's built environment",
-  about: "The Well Built Structure Competition (WBSC) is BAI Pune Centre's flagship recognition programme, instituted to encourage builders, developers and contractors to achieve the highest standards of structural quality, safety and workmanship. Held annually since its inception, WBSC has grown into one of the most respected quality benchmarks in the regional construction industry.",
+  tagline: "Celebrating Excellence in Construction.",
+  about: [
+    "The Well Built Structure Competition (WBSC) is one of India's most prestigious construction excellence awards organized annually by the Builders' Association of India – Pune Centre.",
+    "For nearly three decades, WBSC has recognized projects demonstrating outstanding quality, engineering excellence, innovation, safety, speed and economy in construction."
+  ],
   whyParticipate: [
-    { title: "Industry Recognition", desc: "Winning entries receive public recognition at the annual WBSC awards function attended by industry leaders." },
-    { title: "Third-Party Quality Validation", desc: "An independent panel of engineers and architects evaluates every entry against objective technical criteria." },
-    { title: "Brand Visibility", desc: "Award-winning projects are featured in BAI publications, press coverage and the Pune Centre's promotional material." },
-    { title: "Continuous Improvement", desc: "Detailed evaluator feedback helps participating firms benchmark and improve their construction quality practices." }
+    { title: "National Recognition", desc: "Winning entries earn recognition among the country's most respected construction quality benchmarks." },
+    { title: "Prestigious Trophy & Certificate", desc: "Category winners are felicitated with the WBSC trophy and certificate of excellence." },
+    { title: "Technical Evaluation by Eminent Jury", desc: "An independent jury of eminent engineers and architects evaluates every entry against rigorous technical standards." },
+    { title: "Industry Recognition", desc: "Award-winning projects gain visibility through BAI publications, press coverage and industry circles." },
+    { title: "Benchmark Your Projects", desc: "Detailed evaluator feedback helps you benchmark your project against the industry's best." },
+    { title: "Showcase Engineering Excellence", desc: "WBSC is a platform to showcase your firm's engineering excellence and construction quality practices." }
   ],
   categoryGroups: [
     {
       group: "Residential",
-      categories: ["Residential – Low Rise", "Residential – High Rise", "Residential – Row Houses/Villas", "Residential – Affordable Housing"]
+      categories: ["Bungalow / Row House", "Standalone Buildings", "Redevelopment", "Multi Building Projects"]
     },
     {
       group: "Commercial",
-      categories: ["Commercial – Office Complex", "Commercial – Retail/Mall", "Commercial – Mixed Use"]
+      categories: ["Offices", "Shopping Centres", "IT Parks", "Hospitals", "Institutional Buildings"]
     },
     {
       group: "Infrastructure",
-      categories: ["Infrastructure – Roads & Bridges", "Infrastructure – Water Supply/Drainage"]
+      categories: ["Roads", "Bridges", "Flyovers", "STP", "ESR", "GSR"]
     },
     {
       group: "Industrial",
-      categories: ["Industrial – Factory/Warehouse", "Industrial – Special Structures"]
+      categories: ["Industrial"]
     },
     {
       group: "Government",
-      categories: ["Government – Public Buildings", "Government – Institutional Projects"]
+      categories: ["Government Projects"]
     },
     {
       group: "Landscaping",
-      categories: ["Landscaping – Public Spaces", "Landscaping – Township Development"]
+      categories: ["Landscaping"]
     },
     {
       group: "Bare Shell",
-      categories: ["Bare Shell – Residential", "Bare Shell – Commercial"]
+      categories: ["Bare Shell Projects"]
     },
     {
       group: "Masters",
-      categories: ["Masters – Lifetime Achievement in Construction Quality"]
+      categories: ["Masters Category"]
     }
   ],
   eligibility: [
-    "Entrant firm must be a current BAI Pune Centre member in good standing.",
-    "Project must be substantially complete at the time of site evaluation.",
-    "Project must be located within the Pune Centre's jurisdiction.",
-    "Only one entry per project per category is permitted."
+    "Builders",
+    "Contractors",
+    "Developers",
+    "Infrastructure Companies",
+    "Government Contractors",
+    "Joint Ventures",
+    "Turnkey Contractors"
   ],
+  eligibilityNote: "Projects should satisfy WBSC eligibility requirements including commencement period and applicant's execution role.",
   evaluationCriteria: [
-    "Structural soundness and adherence to design specifications",
-    "Quality of finishing materials and workmanship",
-    "Safety compliance during and after construction",
-    "Adoption of sustainable/green building practices",
-    "Overall aesthetic and functional value delivered"
+    "Quality",
+    "Speed",
+    "Economy",
+    "Innovation",
+    "Safety",
+    "Sustainability",
+    "Site Management",
+    "Green Building Practices",
+    "Welfare Measures",
+    "Documentation"
   ],
+  evaluationNote: "Independent experts from multiple disciplines conduct the evaluation through presentations, site visits and confidential assessment.",
   process: [
-    { title: "Entry Submission", desc: "Firms submit the completed entry form along with project details before the deadline." },
-    { title: "Document Screening", desc: "The WBSC Committee screens entries for eligibility and completeness." },
-    { title: "Site Visit & Evaluation", desc: "An independent evaluator panel conducts on-site inspections of shortlisted projects." },
-    { title: "Scoring", desc: "Each project is scored against the published evaluation criteria." },
-    { title: "Jury Review", desc: "The final jury reviews evaluator scores and selects category winners." },
+    { title: "Submit Entry", desc: "Firms submit the completed entry form along with project details before the deadline." },
+    { title: "Document Verification", desc: "The WBSC Committee verifies entries for eligibility and completeness." },
+    { title: "Project Presentation", desc: "Entrants present their project to the evaluation panel." },
+    { title: "Jury Site Visit", desc: "An independent jury conducts on-site inspections of shortlisted projects." },
+    { title: "Final Evaluation", desc: "The jury completes its final evaluation and selects category winners." },
     { title: "Awards Ceremony", desc: "Winners are felicitated at the annual WBSC awards function." }
   ],
   downloads: [
@@ -1111,39 +688,115 @@ export const wbscAwardsData = {
     { label: "Entry Form", status: "coming_soon" },
     { label: "Competition Rules", status: "coming_soon" }
   ],
+  testimonials: [
+    {
+      id: 1,
+      name: "Er. Rajesh Patil",
+      role: "Managing Director",
+      company: "Patil Construction & Infrastructure",
+      category: "participant",
+      project: "Peak Plaza (Commercial Hub)",
+      year: "2024",
+      quote: "Participating in WBSC was an eye-opener for our site execution team. The rigorous inspection and detailed documentation check pushed our quality control standards to the next level.",
+      avatar: "RP"
+    },
+    {
+      id: 2,
+      name: "Ms. Arundhati Deshmukh",
+      role: "Head of Quality Assurance",
+      company: "Vasant Developers",
+      category: "winner",
+      project: "Vasant Woods (High-Rise Residential)",
+      award: "Gold Winner – Residential High Rise",
+      year: "2025",
+      quote: "Winning the WBSC award was a proud moment for Vasant Group. It validated our hard work, boosted our brand trust in the Pune market, and served as a powerful marketing asset.",
+      avatar: "AD"
+    },
+    {
+      id: 3,
+      name: "Dr. Sunil Kulkarni",
+      role: "Former Head of Civil Engineering, COEP",
+      company: "Senior Structural Consultant",
+      category: "jury",
+      project: "WBSC Jury Panel",
+      year: "2023 - 2026",
+      quote: "The evaluation process of WBSC is extremely objective. We inspect structural drawings, material testing records, safety compliance, and finishing quality. Only projects showing absolute excellence win.",
+      avatar: "SK"
+    },
+    {
+      id: 4,
+      name: "Er. Nitin Shah",
+      role: "Founder & Chief Architect",
+      company: "Nitin Shah Architects",
+      category: "jury",
+      project: "WBSC Jury Panel",
+      year: "2022 - 2025",
+      quote: "As a juror, it is inspiring to see Pune's construction community embrace sustainable design and smart materials. WBSC is instrumental in raising the bar for the entire industry.",
+      avatar: "NS"
+    },
+    {
+      id: 5,
+      name: "Mr. Satish Ranade",
+      role: "Project Head",
+      company: "Skyline InfraProjects",
+      category: "winner",
+      project: "Skyline Heights",
+      award: "Winner – Affordable Housing Category",
+      year: "2024",
+      quote: "WBSC's award gave our affordable housing project the credibility it deserved. Buyers are now more conscious about quality, and the BAI-Shirke WBSC seal is the ultimate mark of quality.",
+      avatar: "SR"
+    },
+    {
+      id: 6,
+      name: "Er. Meera Joshi",
+      role: "Chief Engineer",
+      company: "Joshi & Associates",
+      category: "participant",
+      project: "Metropolis Commercial Park",
+      year: "2025",
+      quote: "The feedback report provided by the WBSC engineering audit panel was highly constructive. It helped us identify gaps in our safety workflows and implement better onsite protocols.",
+      avatar: "MJ"
+    }
+  ],
   contactEmail: "bai.punecentre@gmail.com"
 };
 
-export const patronMembershipData = {
-  title: "Patron Membership",
-  tagline: "Join BAI Pune Centre's highest tier of membership and support the construction industry's collective voice",
-  whatIs: "Patron Membership is a special category of membership offered to organizations and individuals who wish to extend enhanced support to BAI Pune Centre's activities. Patron Members enjoy elevated visibility, priority access to Centre events, and a direct role in shaping the Centre's initiatives.",
-  benefits: [
-    { title: "Priority Event Access", desc: "Reserved seating and priority invitations at all Pune Centre seminars, conventions and networking meets." },
-    { title: "Enhanced Visibility", desc: "Logo placement on the Patron Directory, event backdrops and select BAI Pune Centre publications." },
-    { title: "Direct Representation", desc: "A voice in Centre-level committees and consultations on industry representation matters." },
-    { title: "Networking Access", desc: "Invitations to exclusive patron-only networking sessions with Centre leadership." }
+export const wbscArchiveData = {
+  history: "The Well Built Structure Competition began as a small, single-category recognition scheme for Pune's builder community and has since grown into a multi-category, jury-evaluated competition spanning residential, commercial, industrial, infrastructure and landscaping projects. Now in its 30th edition, WBSC's archive of winners, chief guests and jury panels reflects three decades of the Pune construction industry's evolving quality standards.",
+  years: [
+    {
+      year: "2025",
+      editionLabel: "29th Edition — sample placeholder entry",
+      chiefGuest: "To be added",
+      highlight: "Record number of entries received across the Residential and Commercial groups.",
+      winners: [
+        { category: "Residential – High Rise", project: "Vasant Woods", firm: "Vasant Developers" },
+        { category: "Affordable Housing", project: "Skyline Heights", firm: "Skyline InfraProjects" }
+      ]
+    },
+    {
+      year: "2024",
+      editionLabel: "28th Edition — sample placeholder entry",
+      chiefGuest: "To be added",
+      highlight: "Introduced the Green Building special mention for sustainable construction practices.",
+      winners: [
+        { category: "Commercial – Office Complex", project: "Peak Plaza", firm: "Patil Construction & Infrastructure" }
+      ]
+    },
+    {
+      year: "2023",
+      editionLabel: "27th Edition — sample placeholder entry",
+      chiefGuest: "To be added",
+      highlight: "Jury panel expanded to include independent structural consultants alongside COEP faculty.",
+      winners: []
+    }
   ],
-  directory: [],
-  becomePatron: {
-    eligibility: [
-      "Applicant must be a construction, real estate, or allied industry organization.",
-      "Applicant should have an active presence within the Pune Centre's jurisdiction.",
-      "Application is subject to review and approval by the Pune Centre managing committee."
-    ],
-    fee: "Fee details available on request — contact the Pune Centre office (sample placeholder, replace with actual fee structure).",
-    benefits: [
-      "All standard membership benefits, plus patron-exclusive visibility and access.",
-      "Recognition as a founding-tier supporter of BAI Pune Centre initiatives."
-    ]
-  },
-  contactEmail: "bai.punecentre@gmail.com",
-  contactPhone: "(020) 2444 0000"
+  note: "This archive currently shows sample placeholder entries. Real year-wise winners, chief guests and milestone details will be added once BAI Pune Centre shares the historical WBSC records."
 };
 
 export const eventsPageData = {
   title: "Events",
-  subtitle: "Conventions, seminars, site visits and networking meets from BAI Pune Centre and BAI National",
+  subtitle: "Knowledge • Networking • Growth",
   upcoming: [
     { title: "BAI Pune Centre Annual General Meeting 2026 — sample placeholder event", date: "15th September 2026", venue: "B.G. Shirke Activity Centre, Pune", image: "/images/event_mcgc_meet.webp" },
     { title: "BAI Pune Centre Technical Seminar on Sustainable Construction — sample placeholder event", date: "10th October 2026", venue: "Pune Centre Office, Sangam Bridge, Pune", image: "/images/event_sponsorship.webp" }
@@ -1159,6 +812,36 @@ export const eventsPageData = {
     { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
     { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
     { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/event_sports_league.webp", links: ["Gallery — placeholder"] }
+  ],
+  siteVisits: [
+    {
+      title: "Cable-Stayed Bridge Construction Site",
+      date: "January 2026",
+      venue: "Maharashtra",
+      image: "/images/events/event_bridge-site-visit-1.jpg",
+      desc: "Members toured an active cable-stayed bridge construction site to study advanced formwork, cable-stay tensioning and staged-construction sequencing techniques."
+    },
+    {
+      title: "Central Water and Power Research Station (CWPRS)",
+      date: "May 2026",
+      venue: "Khadakwasla, Pune",
+      image: "/images/events/event_cwprs-site-visit.jpg",
+      desc: "A technical visit to CWPRS to understand hydraulic model studies and their application to dam, canal and river-training structures."
+    },
+    {
+      title: "Industrial Facility Visit",
+      date: "July 2026",
+      venue: "Pune",
+      image: "/images/events/event_industrial-facility-visit-1.jpg",
+      desc: "Members toured a large-scale industrial facility to observe precast production, material handling and site safety systems in a live industrial setting."
+    },
+    {
+      title: "Courtesy Visit to Pune Municipal Corporation",
+      date: "February 2026",
+      venue: "Pune Municipal Corporation, Pune",
+      image: "/images/events/event_pmc-courtesy-visit-1.jpg",
+      desc: "A courtesy and coordination visit with PMC officials to discuss civic infrastructure projects and builder-body liaison matters."
+    }
   ],
   regularActivities: [
     "Technical Seminars",
@@ -1202,25 +885,30 @@ export const membershipPageData = {
   title: "Become a Member",
   subtitle: "Connecting Construction Professionals Since 1941",
   whyJoin: [
-    "Be part of India's oldest and most respected apex construction body.",
-    "Access technical seminars, workshops and industry updates.",
-    "Get representation before government bodies on policy and taxation matters.",
-    "Network with fellow builders, contractors and developers in Pune.",
-    "Receive the monthly 'Indian Construction' bulletin."
+    "Professional Recognition",
+    "Industry Networking",
+    "Government Representation",
+    "Business Opportunities",
+    "Technical Knowledge",
+    "Training",
+    "Leadership Roles",
+    "Industry Updates"
   ],
   categories: [
     { name: "Life Member", desc: "One-time fee, lifetime membership benefits and voting rights." },
     { name: "Corporate Member", desc: "For registered construction companies and firms operating in Pune Centre's jurisdiction." },
     { name: "Associate Member", desc: "For allied professionals and organizations supporting the construction industry." },
-    { name: "Student Member", desc: "For civil engineering students seeking mentorship and internship opportunities." },
-    { name: "Patron Member", desc: "The highest membership tier with enhanced visibility and access.", link: "/patron-membership" }
+    { name: "Student Member", desc: "For civil engineering students seeking mentorship and internship opportunities." }
   ],
   benefits: [
-    { title: "Technical Activities", desc: "Seminars, workshops and site visits on the latest construction techniques." },
-    { title: "Industry Representation", desc: "A collective voice before government departments and regulatory bodies." },
-    { title: "Member Services", desc: "Price index numbers, legal guidance and dispute resolution support." },
-    { title: "Student Initiatives", desc: "Internship placements and mentorship through the SIP Committee." },
-    { title: "Awards & Recognition", desc: "Eligibility to participate in the WBSC Well Built Structure Competition." }
+    { title: "Business Networking", desc: "Connect with fellow builders, contractors and developers across Pune." },
+    { title: "Technical Resources", desc: "Access price index numbers, technical guidelines and legal support." },
+    { title: "Discounted Event Access", desc: "Preferential rates for seminars, workshops and the annual convention." },
+    { title: "Committee Participation", desc: "Take part in Executive and Standing Committee activities." },
+    { title: "Government Advocacy", desc: "Have your concerns represented before Government departments." },
+    { title: "Industry Updates", desc: "Stay informed through the monthly 'Indian Construction' bulletin." },
+    { title: "Professional Recognition", desc: "Gain standing as a member of India's oldest apex construction body." },
+    { title: "Knowledge Sharing", desc: "Learn from peers through networking meets and technical sessions." }
   ],
   howToJoin: [
     { title: "Fill Membership Form", desc: "Complete the registration form with your firm and contact details.", link: "/non-members-area" },
@@ -1234,5 +922,74 @@ export const membershipPageData = {
     { label: "Membership Rules", status: "coming_soon" },
     { label: "Fee Structure", status: "coming_soon" }
   ]
+};
+
+export const socialActivitiesContent = {
+  title: "Social & CSR Initiatives",
+  subtitle: "Empowering Communities & Building a Sustainable Construction Ecosystem",
+  overview: "At Builders' Association of India (BAI) Pune Centre, we believe that true development goes hand-in-hand with social responsibility. Beyond concrete and steel, our mission is to uplift the lives of construction workers, support the local community, foster sustainable environmental practices, and train the next generation of builders.",
+  stats: [
+    { value: "50+", label: "Medical & Safety Camps" },
+    { value: "5,000+", label: "Workers Vaccinated" },
+    { value: "10,000+", label: "Tree Saplings Planted" },
+    { value: "1,200+", label: "Students Mentored (SIP)" }
+  ],
+  csrInitiatives: [
+    {
+      title: "Worker Health & Safety Camps",
+      description: "We host regular healthcare programs, eye check-up drives, and multi-speciality medical camps directly at construction sites across Pune. Laborers receive diagnostic testing, free basic medicines, safety guidelines, and health awareness counseling.",
+      icon: "FaHandsHelping"
+    },
+    {
+      title: "Safety Helmet & PPE Distribution",
+      description: "Ensuring zero-accident sites is our top priority. We organize safety drives to distribute free personal protective equipment (PPE), including ISI-marked safety helmets, reflective jackets, safety gloves, and reinforced boots to construction workers.",
+      icon: "FaTools"
+    },
+    {
+      title: "Educational Sponsorships",
+      description: "We believe in breaking the cycle of poverty. BAI Pune provides financial aid, study kits, and educational sponsorships to the children of site laborers, enabling them to attend schools and colleges and build brighter futures.",
+      icon: "FaGraduationCap"
+    }
+  ],
+  outreachPrograms: [
+    {
+      title: "Student Internship Programme (SIP)",
+      description: "Our landmark program bridges the gap between academic theory and practical construction. We place engineering, architectural, and project management students on active sites under the guidance of experienced BAI mentors.",
+      duration: "Ongoing (Annual)",
+      target: "Civil & Arch Students",
+      image: "/images/events/event_committee-meeting-office.jpg"
+    },
+    {
+      title: "Kaushalya Vardhan Skill Development",
+      description: "Free vocational training workshops for young and unskilled workers. We provide training in masonry, bar-bending, plumbing, safety operations, and digital basic skills to enhance employability.",
+      duration: "Quarterly Drives",
+      target: "Youth & Unskilled Laborers",
+      image: "/images/events/event_industrial-facility-visit-1.jpg"
+    },
+    {
+      title: "Annual Blood Donation Drives",
+      description: "BAI Pune collaborates with leading blood banks and hospitals to organize community blood donation camps. Members, staff, and construction professionals actively participate to support local emergency reserves.",
+      duration: "Every Independence Day",
+      target: "General Public & Members",
+      image: "/images/events/event_central-bank-outreach-campaign.jpg"
+    }
+  ],
+  sustainabilityCampaigns: [
+    {
+      title: "Vriksharopan (Tree Plantation)",
+      description: "To combat urban heat and reduce the carbon footprint of development, our green committee leads tree plantation drives. We target areas around major construction projects, public parks, and highways, planting indigenous tree species suited to Pune's ecology.",
+      impact: "10k+ saplings planted & maintained"
+    },
+    {
+      title: "Rainwater Harvesting & Water Security",
+      description: "Water scarcity is a major concern. We run awareness campaigns and provide technical consulting to housing societies and developer projects on installing efficient rainwater harvesting and groundwater recharging systems.",
+      impact: "50+ societies consulted"
+    }
+  ],
+  disasterRelief: {
+    title: "Disaster Response & Civic Aid",
+    description: "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune.",
+    image: "/images/events/event_worker-children-felicitation-2025-1.jpg"
+  }
 };
 

@@ -175,7 +175,7 @@
 }
 
 .pdf-download-link {
-  color: var(--orange);
+  color: var(--primary);
   font-weight: 700;
   display: flex;
   align-items: center;

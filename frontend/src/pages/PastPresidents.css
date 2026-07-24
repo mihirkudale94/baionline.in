@@ -100,7 +100,7 @@
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--primary);
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -143,4 +143,42 @@
   .presidents-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Pune Centre — Past Office Bearers */
+.pune-bearers-section { padding: 5rem 0; background: linear-gradient(180deg, var(--white) 0%, var(--primary-tint) 100%); }
+.pune-bearers-notice {
+  display: flex; align-items: center; gap: 0.6rem;
+  max-width: 750px; margin: 0 auto 2.5rem;
+  background: var(--primary-tint); border: 1px dashed var(--primary-soft);
+  border-radius: 12px; padding: 0.9rem 1.25rem;
+  font-size: 0.82rem; color: var(--navy); text-align: left;
+}
+.pune-bearers-notice svg { color: var(--primary); flex-shrink: 0; }
+.pune-bearers-role-tabs { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2.5rem; }
+.pune-bearers-role-tab {
+  padding: 0.6rem 1.4rem; border-radius: 20px; border: 1px solid var(--gray-200);
+  background: var(--white); color: var(--navy); font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s;
+}
+.pune-bearers-role-tab.active, .pune-bearers-role-tab:hover {
+  background: var(--primary); color: var(--white); border-color: var(--primary);
+}
+.pune-bearers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+.pune-bearer-card { padding: 1.5rem; text-align: center; border-radius: 16px; }
+.pune-bearer-tenure { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+.pune-bearer-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-top: 0.5rem; }
+.pune-bearers-photo-note {
+  display: flex; align-items: center; gap: 1rem; max-width: 700px; margin: 0 auto;
+  padding: 1.5rem; border-radius: 16px; text-align: left;
+}
+.pune-bearers-photo-icon { color: var(--primary); font-size: 1.6rem; flex-shrink: 0; }
+.pune-bearers-photo-note p { font-size: 0.85rem; color: var(--gray-800); margin: 0; }
+
+@media (max-width: 1024px) {
+  .pune-bearers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .pune-bearers-grid { grid-template-columns: 1fr; }
+  .pune-bearers-photo-note { flex-direction: column; text-align: center; }
 }

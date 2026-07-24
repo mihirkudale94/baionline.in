@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from routers import pages, search, chat, submissions
+from routers import pages, chat, submissions
 from dotenv import load_dotenv
 import os
 
@@ -20,15 +20,14 @@ allowed_origins = os.getenv(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type", "Authorization"],
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Include API Routers first
 app.include_router(pages.router)
-app.include_router(search.router)
 app.include_router(chat.router)
 app.include_router(submissions.router)
 

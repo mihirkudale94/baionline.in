@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { eventsPageData } from "../services/api";
 import { FaCalendarAlt, FaMapMarkerAlt, FaAward } from "react-icons/fa";
 import ImageLightbox from "../components/ImageLightbox";
@@ -59,6 +60,7 @@ const Events = () => {
                   <h3>{ev.title}</h3>
                   <div className="event-card-meta"><FaCalendarAlt /> {ev.date}</div>
                   <div className="event-card-meta"><FaMapMarkerAlt /> {ev.venue}</div>
+                  <Link to="/contact" className="btn btn-primary btn-sm event-register-btn">Register</Link>
                 </div>
               </motion.div>
             ))}
@@ -92,6 +94,39 @@ const Events = () => {
                       <span key={lIdx} className="event-timeline-link-chip">{l}</span>
                     ))}
                   </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="events-sitevisits-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">Learning On Site</span>
+            <h2 className="section-title">Technical Site Visits</h2>
+            <div className="section-title-line"></div>
+            <p className="section-intro">
+              Pune Centre regularly organizes technical site visits so members can see advanced construction, safety and civic infrastructure practices first-hand.
+            </p>
+          </div>
+          <div className="sitevisits-grid">
+            {data.siteVisits.map((visit, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="sitevisit-card glass-card"
+                onClick={() => openLightbox(visit.image, visit.title)}
+              >
+                <div className="sitevisit-card-img" style={{ backgroundImage: `url(${visit.image})` }}></div>
+                <div className="sitevisit-card-body">
+                  <h3>{visit.title}</h3>
+                  <div className="event-card-meta"><FaCalendarAlt /> {visit.date} &middot; <FaMapMarkerAlt /> {visit.venue}</div>
+                  <p className="sitevisit-desc">{visit.desc}</p>
                 </div>
               </motion.div>
             ))}

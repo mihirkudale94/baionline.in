@@ -1,0 +1,79 @@
+.bearers-banner-section {
+  padding: 4rem 0 5rem;
+  background: linear-gradient(180deg, var(--white) 0%, var(--primary-tint) 100%);
+  overflow: hidden;
+}
+
+.bearers-banner-track {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+}
+
+.bearers-banner-content {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  animation: bearersScroll 26s linear infinite;
+}
+
+.bearers-banner-track:hover .bearers-banner-content {
+  animation-play-state: paused;
+}
+
+@keyframes bearersScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.bearer-banner-chip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--white);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--r-lg);
+  padding: 0.85rem 1.75rem 0.85rem 0.85rem;
+  box-shadow: var(--elev-1);
+  flex-shrink: 0;
+  min-width: 280px;
+}
+
+.bearer-banner-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-soft);
+  flex-shrink: 0;
+}
+
+.bearer-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.bearer-banner-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.bearer-banner-designation {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .bearers-banner-section { padding: 3rem 0 3.5rem; }
+  .bearer-banner-chip { min-width: 230px; padding: 0.7rem 1.25rem 0.7rem 0.7rem; }
+  .bearer-banner-avatar { width: 44px; height: 44px; }
+}

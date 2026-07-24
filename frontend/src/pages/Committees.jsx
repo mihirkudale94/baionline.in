@@ -51,8 +51,8 @@ const Committees = () => {
             className="committees-hero-content"
           >
             <span className="committees-tag">Pune Centre Governance</span>
-            <h1 className="committees-title">Executive &amp; Standing Committees</h1>
-            <p className="committees-subtitle">Leadership and functional committees executing BAI Pune Centre's objectives</p>
+            <h1 className="committees-title">Committees 2026–27</h1>
+            <p className="committees-subtitle">Working Together for Industry Growth</p>
           </motion.div>
         </div>
       </section>

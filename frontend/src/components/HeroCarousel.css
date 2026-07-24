@@ -86,8 +86,8 @@
   top: 55%;
   right: 26%;
   border-radius: 50%;
-  border-color: rgba(249, 171, 0, 0.45);
-  background: linear-gradient(135deg, rgba(249, 171, 0, 0.2), transparent);
+  border-color: rgba(138, 180, 248, 0.45);
+  background: linear-gradient(135deg, rgba(138, 180, 248, 0.2), transparent);
   animation-delay: -3s;
   animation-duration: 11s;
 }

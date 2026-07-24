@@ -13,7 +13,7 @@ const API_BASE = (import.meta.env && import.meta.env.VITE_API_BASE_URL)
 
 const INITIAL_MESSAGE = {
   sender: "bot",
-  text: "Namaste! I can help you explore BAI's history, leadership, regional centres, membership, and industry resources.",
+  text: "Namaste! I can help you explore BAI's history, leadership, membership, and industry resources.",
 };
 
 const getFallbackReply = (query) => {
@@ -27,16 +27,13 @@ const getFallbackReply = (query) => {
   if (q.includes("member") || q.includes("join") || q.includes("register")) {
     return "✍️ Membership Enrollment & Stats\n\nBAI represents over 25,000+ direct corporate members (construction companies, developers, contractors) and 2 Lakh+ indirect members across India. You can submit an inquiry via our About/Membership page to join.";
   }
-  if (q.includes("centre") || q.includes("office") || q.includes("location") || q.includes("where")) {
-    return "📍 Regional Offices & Centres\n\nBAI operates through more than 264+ city centres across India organized into Northern, Western, Southern I & II, and Eastern regions. You can view all centres on our Centres page!";
-  }
   if (q.includes("machinery") || q.includes("rent") || q.includes("jcb") || q.includes("equipment") || q.includes("wheeling")) {
     return "🚜 Machinery Exchange (Wheeling & Dealing)\n\nThrough our Wheeling & Dealing portal, BAI members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators.";
   }
   if (q.includes("publication") || q.includes("journal") || q.includes("icj") || q.includes("magazine")) {
     return "📖 Indian Construction Journal (ICJ)\n\nBAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, and legal circular updates. You can download PDF issues on our Publications page.";
   }
-  return "👋 Welcome to BAI AI Assistant!\n\nI can assist you with:\n• BAI History: Ask about our 1941 foundation by Brig. C.V.S. Jackson.\n• Leadership: Ask about Chairman Shri Ajay Gujar & Governing Council.\n• Centres: Inquire about local centers and regional office addresses.\n• Machinery exchange: Rent machinery on Wheeling & Dealing.\n• Publications: Monthly Indian Construction cost indices.\n\nHow can I help you build today?";
+  return "👋 Welcome to BAI AI Assistant!\n\nI can assist you with:\n• BAI History: Ask about our 1941 foundation by Brig. C.V.S. Jackson.\n• Leadership: Ask about Chairman Shri Ajay Gujar & Governing Council.\n• Machinery exchange: Rent machinery on Wheeling & Dealing.\n• Publications: Monthly Indian Construction cost indices.\n\nHow can I help you build today?";
 };
 
 const AIChatbot = () => {

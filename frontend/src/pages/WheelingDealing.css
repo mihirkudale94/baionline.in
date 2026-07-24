@@ -203,8 +203,8 @@
 }
 
 .machinery-cat-badge {
-  background: rgba(224, 122, 95, 0.1);
-  color: var(--amber);
+  background: var(--primary-tint);
+  color: var(--primary);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.7rem;

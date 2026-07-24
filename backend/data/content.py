@@ -16,7 +16,7 @@ HERO_SLIDES = [
     },
     {
         "id": 3,
-        "title": "Shri Ravindra Tyagi, unanimously elected as President of BAI for 2026-27",
+        "title": "Ajay Gujar, unanimously elected as Chairman of BAI for 2026-27",
         "image": "https://www.baionline.in/public/frontend/images/new_president_2026-27_02.jpg",
         "link": "https://www.baionline.in/public/frontend/pdf/Election-Results 2026-27.pdf",
         "link_text": "Click Here"
@@ -38,438 +38,45 @@ HERO_SLIDES = [
 ]
 
 STATS = [
-    {"label": "President", "count": "1"},
-    {"label": "Imm. Past President", "count": "1"},
-    {"label": "Vice Presidents", "count": "5"},
-    {"label": "State Chairmen", "count": "16"},
-    {"label": "State Co-Ordinators", "count": "3"},
-    {"label": "Members", "count": "2 Lakh"},
-    {"label": "Past Presidents", "count": "57"}
+    {"label": "Founded", "count": "1941"},
+    {"label": "Office Bearers", "count": "5"},
+    {"label": "Standing Committees", "count": "11"},
+    {"label": "WBSC Editions", "count": "30"}
 ]
 
 LEADERSHIP = {
     "president": {
-        "name": "Shri Ravindra Tyagi",
-        "title": "President",
-        "image": "/images/Shri_Ravindra_Tyagi.jpg",
+        "name": "Ajay Gujar",
+        "title": "Chairman BAI Pune",
+        "image": "/images/Shri_Ajay_Gujar.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
         "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
     },
     "imm_past_president": {
-        "name": "Dr. Dharmesh Awasthi",
-        "title": "Immediate Past President",
-        "image": "/images/Dr_Dharmesh_Awasthi.jpg",
+        "name": "Rajaram Hajare",
+        "title": "Vice Chairman BAI Pune",
+        "image": "/images/Shri_Rajaram_Hajare.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
         "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
     },
-    "vice_presidents": [
-        {"name": "Shri Kaushal Kumar Singh (Jamshedpur)", "region": "VP - EAST", "image": "/images/vice-president-profile.webp"},
-        {"name": "Shri Sanjay Tyagi (Ghaziabad)", "region": "VP - NORTH", "image": "/images/vice-president-profile.webp"},
-        {"name": "Shri V. Satya Murthy (Warangal)", "region": "VP - SOUTH I", "image": "/images/vice-president-profile.webp"},
-        {"name": "Shri R. Prakash (Kanchipuram)", "region": "VP - SOUTH II", "image": "/images/vice-president-profile.webp"},
-        {"name": "Shri Mahesh M. Mudda (Mumbai)", "region": "VP - WEST", "image": "/images/vice-president-profile.webp"}
-    ],
-    "state_chairmen": [
-        {"name": "Shri P. Seshagiri Rao (NTR)", "state": "ANDHRA PRADESH", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Rupesh Kumar Singhal (Raipur)", "state": "CHHATTISGARH", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Amit Pasricha (Delhi)", "state": "DELHI", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Keval R. Parikh (Ahmedabad)", "state": "GUJARAT", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Prem Khamesra (Faridabad)", "state": "HARYANA", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Nipun Khurana (Una)", "state": "HIMACHAL PRADESH", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Ravi Raj Agrawal (Ranchi)", "state": "JHARKHAND", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri S. Shiva Prakash (Bangalore)", "state": "KARNATAKA", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri K. Satheesh Kumar (Calicut)", "state": "KERALA", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Prakash H. Menda (Ulhasnagar)", "state": "MAHARASHTRA", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Ms. Khoobi Mehta (Mohali)", "state": "PUNJAB", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Shubham Jain (Greater Jaipur)", "state": "RAJASTHAN", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri N. Ramalingam (Erode)", "state": "TAMIL NADU", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri V. Ravinder Reddy (Greater Hyderabad)", "state": "TELANGANA", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Sanjay Tyagi (Modinagar)", "state": "UTTAR PRADESH", "image": "/images/state-chairmen-profile.webp"},
-        {"name": "Shri Ram Chandra Singh Chouhan (Durgapur)", "state": "WEST BENGAL", "image": "/images/state-chairmen-profile.webp"}
-    ],
-    "state_coordinators": [
-        {"name": "Shri Govind Khaitan (Guwahati)", "state": "ASSAM", "image": "/images/state-co-ordinators-profile.webp"},
-        {"name": "Shri Manish Kumar (Patna)", "state": "BIHAR", "image": "/images/state-co-ordinators-profile.webp"},
-        {"name": "Shri Om Prakash Vijayvargiya (Indore)", "state": "MADHYA PRADESH", "image": "/images/state-co-ordinators-profile.webp"}
-    ]
-}
-
-CENTRES_DATA = {
-    "regions": [
-        {
-            "name": "Northern Region",
-            "slug": "northern-region",
-            "states": [
-                {
-                    "name": "Delhi",
-                    "slug": "delhi",
-                    "centres": [
-                        {"name": "Delhi", "slug": "delhi"},
-                        {"name": "Delhi East Shahdara", "slug": "delhi-east-shahdara"},
-                        {"name": "Delhi North", "slug": "delhi-north"},
-                        {"name": "Delhi South", "slug": "delhi-south"},
-                        {"name": "Delhi South East", "slug": "delhi-south-east"},
-                        {"name": "Delhi West", "slug": "delhi-west"}
-                    ]
-                },
-                {
-                    "name": "Haryana",
-                    "slug": "haryana",
-                    "centres": [
-                        {"name": "Chandigarh", "slug": "chandigarh-haryana"},
-                        {"name": "Faridabad", "slug": "faridabad"},
-                        {"name": "Gurgaon", "slug": "gurgaon"},
-                        {"name": "Karnal", "slug": "karnal"},
-                        {"name": "Kundli", "slug": "kundli"},
-                        {"name": "Panipat", "slug": "panipat"}
-                    ]
-                },
-                {
-                    "name": "Punjab",
-                    "slug": "punjab",
-                    "centres": [
-                        {"name": "Chandigarh", "slug": "chandigarh-punjab"},
-                        {"name": "Mohali", "slug": "mohali"}
-                    ]
-                },
-                {
-                    "name": "Rajasthan",
-                    "slug": "rajasthan",
-                    "centres": [
-                        {"name": "Greater Jaipur", "slug": "greater-jaipur"},
-                        {"name": "Jaipur", "slug": "jaipur"},
-                        {"name": "Jaisalmer", "slug": "jaisalmer"},
-                        {"name": "Jodhpur", "slug": "jodhpur"},
-                        {"name": "Pink City Jaipur", "slug": "pink-city-jaipur"}
-                    ]
-                },
-                {
-                    "name": "Uttar Pradesh",
-                    "slug": "uttar-pradesh",
-                    "centres": [
-                        {"name": "Agra", "slug": "agra"},
-                        {"name": "Agra Cantt", "slug": "agra-cantt"},
-                        {"name": "Aligarh", "slug": "aligarh"},
-                        {"name": "Allahabad", "slug": "allahabad"},
-                        {"name": "Baghpat", "slug": "baghpat"},
-                        {"name": "Bareilly", "slug": "bareilly"},
-                        {"name": "Gautam Buddha Nagar", "slug": "gautam-buddha-nagar"},
-                        {"name": "Ghaziabad", "slug": "ghaziabad"},
-                        {"name": "Greater Noida", "slug": "greater-noida"},
-                        {"name": "Hapur", "slug": "hapur"},
-                        {"name": "Kanpur", "slug": "kanpur"},
-                        {"name": "Kanpur South", "slug": "kanpur-south"},
-                        {"name": "Loni", "slug": "loni"},
-                        {"name": "Lucknow", "slug": "lucknow"},
-                        {"name": "Meerut", "slug": "meerut"},
-                        {"name": "Meerut Cantonment", "slug": "meerut-cantonment"},
-                        {"name": "Modinagar", "slug": "modinagar"},
-                        {"name": "Muzaffarnagar", "slug": "muzaffarnagar"},
-                        {"name": "Sahibabad", "slug": "sahibabad"},
-                        {"name": "Sitapur", "slug": "sitapur"},
-                        {"name": "Western U.P. Electrical", "slug": "western-up-electrical"}
-                    ]
-                },
-                {
-                    "name": "Uttarakhand",
-                    "slug": "uttarakhand",
-                    "centres": [
-                        {"name": "Dehradun", "slug": "dehradun"}
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Western Region",
-            "slug": "western-region",
-            "states": [
-                {
-                    "name": "Chattisgarh",
-                    "slug": "chattisgarh",
-                    "centres": [
-                        {"name": "Bilaspur", "slug": "bilaspur"},
-                        {"name": "Durg-Bhilai", "slug": "durg-bhilai"},
-                        {"name": "Jagdalpur", "slug": "jagdalpur"},
-                        {"name": "Kanker", "slug": "kanker"},
-                        {"name": "Raipur", "slug": "raipur"}
-                    ]
-                },
-                {
-                    "name": "Goa",
-                    "slug": "goa",
-                    "centres": [
-                        {"name": "Goa", "slug": "goa"}
-                    ]
-                },
-                {
-                    "name": "Gujarat",
-                    "slug": "gujarat",
-                    "centres": [
-                        {"name": "Ahmedabad", "slug": "ahmedabad"},
-                        {"name": "Ahmedabad West", "slug": "ahmedabad-west"},
-                        {"name": "Baroda", "slug": "baroda"},
-                        {"name": "Bharuch", "slug": "bharuch"},
-                        {"name": "Gandhinagar", "slug": "gandhinagar"},
-                        {"name": "Karnavati", "slug": "karnavati"},
-                        {"name": "Por-Ramangamdi", "slug": "por-ramangamdi"},
-                        {"name": "Rajkot", "slug": "rajkot"},
-                        {"name": "Surat", "slug": "surat"}
-                    ]
-                },
-                {
-                    "name": "Madhya Pradesh",
-                    "slug": "madhya-pradesh",
-                    "centres": [
-                        {"name": "Bhopal", "slug": "bhopal"},
-                        {"name": "Indore", "slug": "indore"},
-                        {"name": "Jabalpur", "slug": "jabalpur"}
-                    ]
-                },
-                {
-                    "name": "Maharashtra",
-                    "slug": "maharashtra",
-                    "centres": [
-                        {"name": "Ahmednagar", "slug": "ahmednagar"},
-                        {"name": "Amravati", "slug": "amravati"},
-                        {"name": "Aurangabad", "slug": "aurangabad"},
-                        {"name": "Baramati", "slug": "baramati"},
-                        {"name": "Butibori", "slug": "butibori"},
-                        {"name": "Dhule", "slug": "dhule"},
-                        {"name": "Ichalkaranji", "slug": "ichalkaranji"},
-                        {"name": "Jalgaon", "slug": "jalgaon"},
-                        {"name": "Kolhapur", "slug": "kolhapur"},
-                        {"name": "Latur", "slug": "latur"},
-                        {"name": "Malegaon", "slug": "malegaon"},
-                        {"name": "Mumbai", "slug": "mumbai"},
-                        {"name": "Nagpur", "slug": "nagpur"},
-                        {"name": "Nanded", "slug": "nanded"},
-                        {"name": "Nandurbar", "slug": "nandurbar"},
-                        {"name": "Nasik", "slug": "nasik"},
-                        {"name": "Pandharpur", "slug": "pandharpur"},
-                        {"name": "Parbhani", "slug": "parbhani"},
-                        {"name": "Phaltan", "slug": "phaltan"},
-                        {"name": "Pune", "slug": "pune"},
-                        {"name": "Raigad", "slug": "raigad"},
-                        {"name": "Sangamner", "slug": "sangamner"},
-                        {"name": "Sangli", "slug": "sangli"},
-                        {"name": "Satara", "slug": "satara"},
-                        {"name": "Shahda", "slug": "shahda"},
-                        {"name": "Solapur", "slug": "solapur"},
-                        {"name": "Ulhasnagar", "slug": "ulhasnagar"},
-                        {"name": "Wai", "slug": "wai"}
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Southern Region - I",
-            "slug": "southern-region-one",
-            "states": [
-                {
-                    "name": "Andhra Pradesh",
-                    "slug": "andhra-pradesh",
-                    "centres": [
-                        {"name": "Amaravathi", "slug": "amaravathi"},
-                        {"name": "Anantpur", "slug": "anantpur"},
-                        {"name": "Guntur", "slug": "guntur"},
-                        {"name": "Nellore", "slug": "nellore"},
-                        {"name": "Ongole", "slug": "ongole"},
-                        {"name": "Rajahmundry", "slug": "rajahmundry"},
-                        {"name": "Ravulapalem", "slug": "ravulapalem"},
-                        {"name": "Tanuku", "slug": "tanuku"},
-                        {"name": "Tirupati", "slug": "tirupati"},
-                        {"name": "Vijayawada", "slug": "vijayawada"},
-                        {"name": "Visakhapatnam", "slug": "visakhapatnam"},
-                        {"name": "Vizag Steel City", "slug": "vizag-steel-city"}
-                    ]
-                },
-                {
-                    "name": "Karnataka",
-                    "slug": "karnataka",
-                    "centres": [
-                        {"name": "Chikamangalur", "slug": "chikamangalur"},
-                        {"name": "Chitraduraga", "slug": "chitraduraga"},
-                        {"name": "Bangalore", "slug": "karnataka-bangalore"},
-                        {"name": "Hasan", "slug": "hasan"},
-                        {"name": "Mandya", "slug": "mandya"},
-                        {"name": "Mangalore", "slug": "mangalore"},
-                        {"name": "Mysore", "slug": "mysore"},
-                        {"name": "Raichur", "slug": "raichur"},
-                        {"name": "Shimoga", "slug": "shimoga"}
-                    ]
-                },
-                {
-                    "name": "Telangana",
-                    "slug": "telangana",
-                    "centres": [
-                        {"name": "Adilabad", "slug": "adilabad"},
-                        {"name": "Greater Hyderabad", "slug": "greater-hyderabad"},
-                        {"name": "Hyderabad", "slug": "hyderabad"},
-                        {"name": "Jangaon", "slug": "jangaon"},
-                        {"name": "Kamareddy", "slug": "kamareddy"},
-                        {"name": "Karimnagar", "slug": "karimnagar"},
-                        {"name": "Khamamm", "slug": "khamamm"},
-                        {"name": "Mahaboobnagar", "slug": "mahaboobnagar"},
-                        {"name": "Medachal", "slug": "medachal"},
-                        {"name": "Medak", "slug": "medak"},
-                        {"name": "Nalgonda", "slug": "nalgonda"},
-                        {"name": "Nizamabad", "slug": "nizamabad"},
-                        {"name": "Ranga Reddy", "slug": "ranga-reddy"},
-                        {"name": "Siddipet", "slug": "siddipet"},
-                        {"name": "Vikarabad", "slug": "vikarabad"},
-                        {"name": "Warangal", "slug": "warangal"},
-                        {"name": "Yadadri", "slug": "yadadri"}
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Southern Region - II",
-            "slug": "southern-region-two",
-            "states": [
-                {
-                    "name": "Kerala",
-                    "slug": "kerala",
-                    "centres": [
-                        {"name": "Adoor", "slug": "adoor"},
-                        {"name": "Alleppey", "slug": "alleppey"},
-                        {"name": "Aluva", "slug": "aluva"},
-                        {"name": "Angamali", "slug": "angamali"},
-                        {"name": "Calicut", "slug": "calicut"},
-                        {"name": "Changanacherry", "slug": "changanacherry"},
-                        {"name": "Cochin", "slug": "cochin"},
-                        {"name": "Ettumanoor", "slug": "ettumanoor"},
-                        {"name": "Idukki", "slug": "idukki"},
-                        {"name": "Kodungallur", "slug": "kodungallur"},
-                        {"name": "Kollam", "slug": "kollam"},
-                        {"name": "Kottayam", "slug": "kottayam"},
-                        {"name": "Malappuram", "slug": "malappuram"},
-                        {"name": "Muvattupuzha", "slug": "muvattupuzha"},
-                        {"name": "North Malabar", "slug": "north-malabar"},
-                        {"name": "Pathanamthitta", "slug": "pathanamthitta"},
-                        {"name": "Thiruvalla", "slug": "thiruvalla"},
-                        {"name": "Thrissur", "slug": "thrissur"},
-                        {"name": "Trivandrum", "slug": "kerala-trivandrum"},
-                        {"name": "Tripunithura", "slug": "tripunithura"}
-                    ]
-                },
-                {
-                    "name": "Tamil Nadu",
-                    "slug": "tamil-nadu",
-                    "centres": [
-                        {"name": "Avadi", "slug": "avadi"},
-                        {"name": "Chengai", "slug": "chengai"},
-                        {"name": "Chennai", "slug": "chennai"},
-                        {"name": "Chettinadu", "slug": "chettinadu"},
-                        {"name": "Coimbatore", "slug": "coimbatore"},
-                        {"name": "Dharapuram", "slug": "dharapuram"},
-                        {"name": "Dindigul", "slug": "dindigul"},
-                        {"name": "Erode", "slug": "erode"},
-                        {"name": "Hosur", "slug": "hosur"},
-                        {"name": "Kalapakkam", "slug": "kalapakkam"},
-                        {"name": "Kallakurichi", "slug": "kallakurichi"},
-                        {"name": "Kanchipuram", "slug": "kanchipuram"},
-                        {"name": "Kanyakumari", "slug": "kanyakumari"},
-                        {"name": "Karur", "slug": "karur"},
-                        {"name": "Kodaikanal", "slug": "kodaikanal"},
-                        {"name": "Kumbakonam", "slug": "kumbakonam"},
-                        {"name": "Madhuranthakam", "slug": "madhuranthakam"},
-                        {"name": "Madurai", "slug": "madurai"},
-                        {"name": "Mayiladuthurai", "slug": "mayiladuthurai"},
-                        {"name": "Musiri", "slug": "musiri"},
-                        {"name": "Nagapattnam", "slug": "nagapattnam"},
-                        {"name": "Namakkal", "slug": "namakkal"},
-                        {"name": "Neyveli", "slug": "neyveli"},
-                        {"name": "Nilgiri", "slug": "nilgiri"},
-                        {"name": "Palani", "slug": "palani"},
-                        {"name": "Perambalur", "slug": "perambalur"},
-                        {"name": "Ponneri", "slug": "ponneri"},
-                        {"name": "Poonamallee", "slug": "poonamallee"},
-                        {"name": "Pudukkottai", "slug": "pudukkottai"},
-                        {"name": "Ramnathpuram", "slug": "ramnathpuram"},
-                        {"name": "Salem", "slug": "salem"},
-                        {"name": "Southern Chennai", "slug": "southern-chennai"},
-                        {"name": "Tambaram", "slug": "tambaram"},
-                        {"name": "Tenkasi", "slug": "tenkasi"},
-                        {"name": "Thanjavur", "slug": "thanjavur"},
-                        {"name": "Thenni", "slug": "thenni"},
-                        {"name": "Thiruporur", "slug": "thiruporur"},
-                        {"name": "Thiruthuraipoondi", "slug": "thiruthuraipoondi"},
-                        {"name": "Thiruvannamalai", "slug": "thiruvannamalai"},
-                        {"name": "Thiruvarur", "slug": "thiruvarur"},
-                        {"name": "Tiruchirapalli", "slug": "tiruchirapalli"},
-                        {"name": "Tirunelveli", "slug": "tirunelveli"},
-                        {"name": "Tirupur", "slug": "tirupur"},
-                        {"name": "Tiruvallur", "slug": "tiruvallur"},
-                        {"name": "Tuticorin", "slug": "tuticorin"},
-                        {"name": "Udumalpet", "slug": "udumalpet"},
-                        {"name": "Vellore", "slug": "vellore"},
-                        {"name": "Villupuram", "slug": "villupuram"},
-                        {"name": "Jayankondam", "slug": "jayankondam"}
-                    ]
-                },
-                {
-                    "name": "Union Territories",
-                    "slug": "union-territories",
-                    "centres": [
-                        {"name": "Andaman & Nicobar", "slug": "andaman-and-nicobar"},
-                        {"name": "Karaikal", "slug": "karaikal"},
-                        {"name": "Pondicherry", "slug": "pondicherry"}
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "East Region",
-            "slug": "east-region",
-            "states": [
-                {
-                    "name": "Assam",
-                    "slug": "assam",
-                    "centres": [
-                        {"name": "Guwahati", "slug": "guwahati"},
-                        {"name": "Silchar", "slug": "silchar"},
-                        {"name": "Tezpur", "slug": "tezpur"}
-                    ]
-                },
-                {
-                    "name": "Bihar",
-                    "slug": "bihar",
-                    "centres": [
-                        {"name": "Danapur", "slug": "danapur"},
-                        {"name": "Patna", "slug": "patna"}
-                    ]
-                },
-                {
-                    "name": "Jharkhand",
-                    "slug": "jharkhand",
-                    "centres": [
-                        {"name": "Adityapur", "slug": "adityapur"},
-                        {"name": "Dhanbad", "slug": "dhanbad"},
-                        {"name": "Hazaribagh", "slug": "hazaribagh"},
-                        {"name": "Jamshedpur", "slug": "jamshedpur"},
-                        {"name": "Ranchi", "slug": "jharkhand-ranchi"}
-                    ]
-                },
-                {
-                    "name": "Odisha",
-                    "slug": "odisha",
-                    "centres": [
-                        {"name": "Bhubaneswar", "slug": "bhubaneswar"}
-                    ]
-                },
-                {
-                    "name": "West Bengal",
-                    "slug": "west-bengal",
-                    "centres": [
-                        {"name": "Durgapur", "slug": "durgapur"},
-                        {"name": "Eastern (Calcutta)", "slug": "eastern-calcutta"},
-                        {"name": "Haldia", "slug": "haldia"}
-                    ]
-                }
-            ]
-        }
-    ]
+    "hon_secretary": {
+        "name": "Mahesh Rathi",
+        "title": "Secretary BAI Pune",
+        "image": "/images/Shri_Mahesh_Rathi.jpg",
+        "bio": "Secretary of Builders' Association of India Pune."
+    },
+    "hon_joint_secretary": {
+        "name": "Sanjay Apte",
+        "title": "Jt Secretary BAI Pune",
+        "image": "/images/Shri_Sanjay_Apte.jpg",
+        "bio": "Jt. Secretary of Builders' Association of India Pune."
+    },
+    "hon_treasurer": {
+        "name": "Sushil Agarwal",
+        "title": "Treasurer BAI Pune",
+        "image": "/images/Shri_Sushil_Agarwal.jpg",
+        "bio": "Treasurer of Builders' Association of India Pune."
+    }
 }
 
 NAV_LINKS = [
@@ -480,8 +87,7 @@ NAV_LINKS = [
         "children": [
             {"label": "About BAI", "path": "/about"},
             {"label": "BAI Team 2026-27", "path": "/team"},
-            {"label": "Trustees", "path": "/trustees"},
-            {"label": "Past Presidents", "path": "/past-presidents"},
+            {"label": "Past Office Bearers", "path": "/past-presidents"},
             {"label": "Committees", "path": "/committees"}
         ]
     },
@@ -509,17 +115,10 @@ NAV_LINKS = [
             ]}
         ]
     },
-    {"label": "BAI Centres", "path": "/centres", "mega_menu": True},
+    {"label": "Social Activities", "path": "/social-activities"},
     {"label": "Events", "path": "/events"},
     {"label": "WBSC Awards", "path": "/wbsc-awards"},
-    {
-        "label": "Membership",
-        "path": "/membership",
-        "children": [
-            {"label": "Become a Member", "path": "/membership"},
-            {"label": "Patron Membership", "path": "/patron-membership"}
-        ]
-    },
+    {"label": "Membership", "path": "/membership"},
     {"label": "Publications", "path": "/publications"},
     {"label": "BAI Services", "path": "/services"},
     {"label": "Tenders", "path": "/tenders"},
@@ -543,7 +142,7 @@ FOOTER_DATA = {
         {"label": "Events", "path": "/events"},
         {"label": "WBSC Awards", "path": "/wbsc-awards"},
         {"label": "Membership", "path": "/membership"},
-        {"label": "Patron Membership", "path": "/patron-membership"},
+        {"label": "Social Activities", "path": "/social-activities"},
         {"label": "Gallery", "path": "/media"},
         {"label": "Contact", "path": "/contact"}
     ],
@@ -560,7 +159,7 @@ FOOTER_DATA = {
     "social": [
         {"platform": "facebook", "url": "https://www.facebook.com/BuildersAssociationOfIndia/"},
         {"platform": "instagram", "url": "https://www.instagram.com/p/B60c1Ljnk90/"},
-        {"platform": "youtube", "url": "https://www.youtube.com/@baihqmumbai/videos"},
+        {"platform": "youtube", "url": "https://www.youtube.com/@buildersassociationofindia73"},
         {"platform": "linkedin", "url": "https://in.linkedin.com/company/builders-association-of-india"},
         {"platform": "twitter", "url": "https://twitter.com/bainational"}
     ],
@@ -639,20 +238,12 @@ CONTACT_DATA = {
     }
 }
 
-TRUSTEES = [
-    {"name": "Shri Lal Chand", "role": "Chairman, Board of Trustees"},
-    {"name": "Shri J. P. Nayak", "role": "Trustee"},
-    {"name": "Shri Muzaffar Ali", "role": "Trustee"},
-    {"name": "Shri A. S. Raju", "role": "Trustee"},
-    {"name": "Shri K. S. Kumar", "role": "Trustee"},
-    {"name": "Shri Dr. Dharmesh Awasthi", "role": "Trustee"}
-]
-
 EXECUTIVE_COMMITTEE = {
     "chairman": {"role": "Chairman", "name": ""},
     "vice_chairman": {"role": "Vice Chairman", "name": "Rajaram B. Hajare"},
-    "hon_secretary": {"role": "Hon. Secretary", "name": "C. H. Ratlani"},
-    "hon_treasurer": {"role": "Hon. Treasurer", "name": "Mahesh Rathi"},
+    "hon_secretary": {"role": "Secretary", "name": "Mahesh Rathi"},
+    "hon_joint_secretary": {"role": "Jt. Secretary", "name": "Sanjay Apte"},
+    "hon_treasurer": {"role": "Treasurer", "name": "Sushil Agarwal"},
     "members": [
         
     ]
@@ -672,7 +263,7 @@ COMMITTEES = [
     {"name": "Internal Audit Committee", "chairman": "", "desc": "Reviews the Centre's internal accounts and financial controls.", "members": []}
 ]
 
-# Complete list of 57 past presidents from 1941 to 2026
+# Complete list of 57 past chairmen from 1941 to 2026
 PAST_PRESIDENTS = [
     {"year": "2025-2026", "name": "Dr. Dharmesh Awasthi"},
     {"year": "2024-2025", "name": "Shri Niwas Reddy"},
@@ -816,6 +407,75 @@ INDIAN_CONSTRUCTION = {
         "advertise": "https://www.baionline.in/indianconstruction",
         "archives": "https://www.baionline.in/archives",
         "subscribe": "https://www.baionline.in/public/frontend/pdf/Indian_Construction_Subscription_Form_2022-23.pdf"
+    }
+}
+
+SOCIAL_ACTIVITIES_DATA = {
+    "title": "Social & CSR Initiatives",
+    "subtitle": "Empowering Communities & Building a Sustainable Construction Ecosystem",
+    "overview": "At Builders' Association of India (BAI) Pune Centre, we believe that true development goes hand-in-hand with social responsibility. Beyond concrete and steel, our mission is to uplift the lives of construction workers, support the local community, foster sustainable environmental practices, and train the next generation of builders.",
+    "stats": [
+        {"value": "50+", "label": "Medical & Safety Camps"},
+        {"value": "5,000+", "label": "Workers Vaccinated"},
+        {"value": "10,000+", "label": "Tree Saplings Planted"},
+        {"value": "1,200+", "label": "Students Mentored (SIP)"}
+    ],
+    "csrInitiatives": [
+        {
+            "title": "Worker Health & Safety Camps",
+            "description": "We host regular healthcare programs, eye check-up drives, and multi-speciality medical camps directly at construction sites across Pune. Laborers receive diagnostic testing, free basic medicines, safety guidelines, and health awareness counseling.",
+            "icon": "FaHandsHelping"
+        },
+        {
+            "title": "Safety Helmet & PPE Distribution",
+            "description": "Ensuring zero-accident sites is our top priority. We organize safety drives to distribute free personal protective equipment (PPE), including ISI-marked safety helmets, reflective jackets, safety gloves, and reinforced boots to construction workers.",
+            "icon": "FaTools"
+        },
+        {
+            "title": "Educational Sponsorships",
+            "description": "We believe in breaking the cycle of poverty. BAI Pune provides financial aid, study kits, and educational sponsorships to the children of site laborers, enabling them to attend schools and colleges and build brighter futures.",
+            "icon": "FaGraduationCap"
+        }
+    ],
+    "outreachPrograms": [
+        {
+            "title": "Student Internship Programme (SIP)",
+            "description": "Our landmark program bridges the gap between academic theory and practical construction. We place engineering, architectural, and project management students on active sites under the guidance of experienced BAI mentors.",
+            "duration": "Ongoing (Annual)",
+            "target": "Civil & Arch Students",
+            "image": "/images/events/event_committee-meeting-office.jpg"
+        },
+        {
+            "title": "Kaushalya Vardhan Skill Development",
+            "description": "Free vocational training workshops for young and unskilled workers. We provide training in masonry, bar-bending, plumbing, safety operations, and digital basic skills to enhance employability.",
+            "duration": "Quarterly Drives",
+            "target": "Youth & Unskilled Laborers",
+            "image": "/images/events/event_industrial-facility-visit-1.jpg"
+        },
+        {
+            "title": "Annual Blood Donation Drives",
+            "description": "BAI Pune collaborates with leading blood banks and hospitals to organize community blood donation camps. Members, staff, and construction professionals actively participate to support local emergency reserves.",
+            "duration": "Every Independence Day",
+            "target": "General Public & Members",
+            "image": "/images/events/event_central-bank-outreach-campaign.jpg"
+        }
+    ],
+    "sustainabilityCampaigns": [
+        {
+            "title": "Vriksharopan (Tree Plantation)",
+            "description": "To combat urban heat and reduce the carbon footprint of development, our green committee leads tree plantation drives. We target areas around major construction projects, public parks, and highways, planting indigenous tree species suited to Pune's ecology.",
+            "impact": "10k+ saplings planted & maintained"
+        },
+        {
+            "title": "Rainwater Harvesting & Water Security",
+            "description": "Water scarcity is a major concern. We run awareness campaigns and provide technical consulting to housing societies and developer projects on installing efficient rainwater harvesting and groundwater recharging systems.",
+            "impact": "50+ societies consulted"
+        }
+    ],
+    "disasterRelief": {
+        "title": "Disaster Response & Civic Aid",
+        "description": "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune.",
+        "image": "/images/events/event_worker-children-felicitation-2025-1.jpg"
     }
 }
 

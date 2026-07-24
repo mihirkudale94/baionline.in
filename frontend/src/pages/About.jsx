@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAboutData, submitForm } from "../services/api";
-import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy } from "react-icons/fa";
+import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy, FaImage } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./About.css";
 
@@ -18,6 +18,10 @@ const About = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState("");
+
+  // Heritage photo load state — falls back to a placeholder until real archival photos are supplied
+  const [founderImgError, setFounderImgError] = useState(false);
+  const [jacksonHutImgError, setJacksonHutImgError] = useState(false);
 
   useEffect(() => {
     getAboutData().then((res) => {
@@ -126,6 +130,69 @@ const About = () => {
         </div>
       </section>
 
+      {/* 2b. Historical Heritage — Founder & Jackson Hut */}
+      <section className="about-heritage-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">Rich Legacy</span>
+            <h2 className="section-title">Our Historical Heritage</h2>
+            <div className="section-title-line"></div>
+          </div>
+
+          <div className="heritage-photos-grid">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="heritage-photo-tile"
+            >
+              {!founderImgError ? (
+                <img
+                  src="/images/heritage/founder-portrait.jpg"
+                  alt="Brig. C.V.S. Jackson, Founder of BAI"
+                  onError={() => setFounderImgError(true)}
+                />
+              ) : (
+                <div className="heritage-photo-placeholder">
+                  <FaImage />
+                  <span>Archival photo coming soon</span>
+                </div>
+              )}
+              <div className="heritage-photo-caption">
+                <h4>The Founder</h4>
+                <p>Brig. C.V.S. Jackson, Military Engineering Services, whose guidance led to BAI's founding in 1941.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="heritage-photo-tile"
+            >
+              {!jacksonHutImgError ? (
+                <img
+                  src="/images/heritage/jackson-hut-archival.jpg"
+                  alt="Jackson Hut — BAI's founding monument in Pune"
+                  onError={() => setJacksonHutImgError(true)}
+                />
+              ) : (
+                <div className="heritage-photo-placeholder">
+                  <FaImage />
+                  <span>Archival photo coming soon</span>
+                </div>
+              )}
+              <div className="heritage-photo-caption">
+                <h4>Jackson Hut</h4>
+                <p>The original office built within Southern Command Headquarters, Pune — still standing as BAI's founding monument.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Core Pillars Grid */}
       <section className="about-values-section">
         <div className="container">
@@ -172,6 +239,18 @@ const About = () => {
             >
               {content.who_we_are}
             </motion.p>
+            {content.vision_statement && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="vision-statement-card"
+              >
+                <h3 className="vision-statement-label">Our Vision</h3>
+                <p className="vision-statement-text">{content.vision_statement}</p>
+              </motion.div>
+            )}
             {content.mission && (
               <ul className="mission-points-list">
                 {content.mission.map((point, idx) => (

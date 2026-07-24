@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { getHomeData } from "../services/api";
 import HeroCarousel from "../components/HeroCarousel";
 import StatsBar from "../components/StatsBar";
-import LeadershipTabs from "../components/LeadershipTabs";
+import OfficeBearersBanner from "../components/OfficeBearersBanner";
 import ImageLightbox from "../components/ImageLightbox";
 import TiltCard from "../components/TiltCard";
-import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAlt, FaNewspaper, FaFilePdf } from "react-icons/fa";
+import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAlt, FaNewspaper, FaFilePdf, FaLandmark } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -45,6 +45,17 @@ const Home = () => {
     <div className="home-page-wrapper">
       {/* 1. Hero Carousel */}
       <HeroCarousel slides={data.heroSlides} />
+
+      {/* 1b. Mother Centre Highlight Banner */}
+      <section className="mother-centre-banner">
+        <div className="container mother-centre-inner">
+          <div className="mother-centre-icon"><FaLandmark /></div>
+          <div className="mother-centre-text">
+            <h2>BAI Pune Centre — The Mother Centre</h2>
+            <p>Founded right here in Pune in 1941, this Centre is the birthplace of the Builders' Association of India — the origin of a movement that has since grown into a nationwide network of 264+ centres.</p>
+          </div>
+        </div>
+      </section>
 
       {/* 2. News Alert Marquee Bar */}
       <div className="news-ticker-bar">
@@ -318,7 +329,7 @@ const Home = () => {
       </section>
 
       {/* 5. Leadership Section */}
-      <LeadershipTabs leadership={data.leadership} />
+      <OfficeBearersBanner leadership={data.leadership} />
 
       {/* 6. Quick Links CTA Area */}
       <section className="cta-action-section">

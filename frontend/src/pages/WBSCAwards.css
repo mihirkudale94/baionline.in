@@ -37,7 +37,8 @@
 .wbsc-subtitle { font-family: var(--font-heading); font-size: 1.05rem; color: rgba(255,255,255,0.85); font-weight: 600; }
 
 .wbsc-about-section { padding: 5rem 0; background: var(--white); }
-.wbsc-about-text { max-width: 850px; margin: 0 auto; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--gray-800); }
+.wbsc-about-text { max-width: 850px; margin: 0 auto 1.25rem auto; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--gray-800); }
+.wbsc-about-text:last-child { margin-bottom: 0; }
 
 .wbsc-why-section { padding: 5rem 0; background: var(--gray-50); }
 .wbsc-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
@@ -85,6 +86,7 @@
 .wbsc-block-title { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-heading); font-size: 1.2rem; color: var(--navy); font-weight: 800; margin-bottom: 1.25rem; }
 .wbsc-list { display: flex; flex-direction: column; gap: 0.85rem; padding-left: 1.25rem; }
 .wbsc-list li { font-size: 0.88rem; color: var(--gray-800); line-height: 1.6; list-style-type: square; }
+.wbsc-block-note { font-size: 0.82rem; color: var(--text-muted); font-style: italic; line-height: 1.6; margin-top: 1.25rem; }
 
 .wbsc-process-section { padding: 5rem 0; background: var(--white); }
 
@@ -101,14 +103,209 @@
 .wbsc-cta-inner h2 { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 0.75rem; }
 .wbsc-cta-inner p { font-size: 0.9rem; opacity: 0.85; margin-bottom: 1.75rem; line-height: 1.6; }
 
+/* Testimonials Section Styles */
+.wbsc-testimonials-section {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.wbsc-testimonial-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.wbsc-testimonial-filter-btn {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--navy);
+  padding: 0.55rem 1.35rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.wbsc-testimonial-filter-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.wbsc-testimonial-filter-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--gold);
+  box-shadow: 0 4px 12px rgba(10,22,40,0.12);
+}
+
+.wbsc-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.wbsc-testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.01);
+}
+
+.wbsc-testimonial-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-light);
+  box-shadow: 0 15px 35px rgba(10, 22, 40, 0.08);
+}
+
+.wbsc-testimonial-quote-icon {
+  color: rgba(26, 115, 232, 0.15);
+  font-size: 2.2rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  pointer-events: none;
+}
+
+.wbsc-testimonial-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--gray-800);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.wbsc-testimonial-divider {
+  height: 1px;
+  background: linear-gradient(to right, var(--gray-200) 0%, rgba(238, 238, 238, 0) 100%);
+  margin-bottom: 1.5rem;
+}
+
+.wbsc-testimonial-author {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.wbsc-testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, #1a3a60 100%);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border: 1.5px solid rgba(138, 180, 248, 0.35);
+  flex-shrink: 0;
+}
+
+.wbsc-testimonial-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.wbsc-testimonial-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+}
+
+.wbsc-testimonial-role {
+  font-size: 0.76rem;
+  color: var(--gray-800);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.wbsc-testimonial-company {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.wbsc-testimonial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+.winner-badge {
+  background: rgba(220, 160, 41, 0.08);
+  color: #b2851a;
+  border: 1px dashed rgba(220, 160, 41, 0.25);
+}
+
+.participant-badge {
+  background: rgba(26, 115, 232, 0.08);
+  color: #1a73e8;
+  border: 1px dashed rgba(26, 115, 232, 0.2);
+}
+
+.jury-badge {
+  background: rgba(40, 167, 69, 0.08);
+  color: #28a745;
+  border: 1px dashed rgba(40, 167, 69, 0.2);
+}
+
+/* WBSC Archive Section */
+.wbsc-archive-section { padding: 5rem 0; background: linear-gradient(180deg, var(--primary-tint) 0%, var(--white) 100%); }
+.wbsc-archive-history { max-width: 850px; margin: 0 auto 3rem; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--gray-800); }
+.wbsc-archive-timeline { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+.wbsc-archive-year-card { border: 1px solid var(--gray-200); border-radius: 16px; background: var(--white); overflow: hidden; transition: border-color 0.25s; }
+.wbsc-archive-year-card.active { border-color: var(--primary-soft); box-shadow: var(--elev-2); }
+.wbsc-archive-year-trigger {
+  width: 100%; display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.5rem; background: none; border: none; cursor: pointer; text-align: left;
+}
+.wbsc-archive-year-icon { color: var(--primary); font-size: 1.1rem; flex-shrink: 0; }
+.wbsc-archive-year-label { flex-grow: 1; font-size: 0.9rem; color: var(--navy); }
+.wbsc-archive-arrow { color: var(--text-muted); transition: transform 0.25s; }
+.wbsc-archive-year-card.active .wbsc-archive-arrow { transform: rotate(180deg); }
+.wbsc-archive-year-panel { padding: 0 1.5rem 1.5rem; }
+.wbsc-archive-chief-guest { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--gray-800); margin-bottom: 0.75rem; }
+.wbsc-archive-highlight { font-size: 0.88rem; color: var(--gray-800); line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+.wbsc-archive-winners-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.wbsc-archive-winners-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; color: var(--gray-800); }
+.wbsc-archive-winner-icon { color: var(--primary); flex-shrink: 0; margin-top: 0.15rem; }
+.wbsc-archive-note { max-width: 700px; margin: 2.5rem auto 0; text-align: center; font-size: 0.78rem; font-style: italic; color: var(--text-muted); }
+
 @media (max-width: 1024px) {
   .wbsc-why-grid { grid-template-columns: repeat(2, 1fr); }
   .wbsc-eligibility-grid { grid-template-columns: 1fr; gap: 2rem; }
   .wbsc-downloads-grid { grid-template-columns: 1fr; }
+  .wbsc-testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
 
 @media (max-width: 768px) {
   .wbsc-hero-section { height: 260px; }
   .wbsc-title { font-size: 1.9rem; }
   .wbsc-why-grid { grid-template-columns: 1fr; }
+  .wbsc-testimonials-grid { grid-template-columns: 1fr; }
+  .wbsc-testimonials-section { padding: 4rem 0; }
+  .wbsc-testimonial-filters { gap: 0.5rem; margin-bottom: 2rem; }
+  .wbsc-testimonial-filter-btn { padding: 0.45rem 1rem; font-size: 0.78rem; }
 }

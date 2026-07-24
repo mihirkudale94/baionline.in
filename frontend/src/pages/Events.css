@@ -24,6 +24,7 @@
 .event-card-body { padding: 1.5rem; }
 .event-card-body h3 { font-family: var(--font-heading); font-size: 1.05rem; color: var(--navy); font-weight: 700; margin-bottom: 0.75rem; }
 .event-card-meta { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--gray-800); margin-bottom: 0.4rem; }
+.event-register-btn { margin-top: 1rem; display: inline-block; }
 
 .events-past-section { padding: 5rem 0; background: var(--gray-50); }
 .events-timeline-list { display: flex; flex-direction: column; gap: 1.25rem; max-width: 900px; margin: 0 auto; }
@@ -32,6 +33,15 @@
 .event-timeline-content h4 { font-family: var(--font-heading); font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 0.5rem; }
 .event-timeline-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
 .event-timeline-link-chip { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.72rem; color: var(--gray-800); font-style: italic; }
+
+.events-sitevisits-section { padding: 5rem 0; background: linear-gradient(180deg, var(--primary-tint) 0%, var(--white) 100%); }
+.sitevisits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.sitevisit-card { cursor: pointer; overflow: hidden; padding: 0; border: 1px solid var(--gray-200); border-radius: 18px; background: var(--white); transition: all 0.3s; }
+.sitevisit-card:hover { transform: translateY(-5px); border-color: var(--primary-soft); box-shadow: var(--elev-primary); }
+.sitevisit-card-img { height: 200px; background-size: cover; background-position: center; }
+.sitevisit-card-body { padding: 1.5rem; }
+.sitevisit-card-body h3 { font-family: var(--font-heading); font-size: 1.05rem; color: var(--navy); font-weight: 700; margin-bottom: 0.75rem; }
+.sitevisit-desc { font-size: 0.85rem; color: var(--gray-800); margin-top: 0.75rem; line-height: 1.6; }
 
 .events-activities-section { padding: 5rem 0; background: var(--white); }
 .events-activities-list { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 900px; margin: 0 auto; }
@@ -54,11 +64,11 @@
 .events-calendar-month li { font-size: 0.85rem; color: var(--gray-800); line-height: 1.6; }
 
 @media (max-width: 1024px) {
-  .events-card-grid, .events-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .events-card-grid, .events-gallery-grid, .sitevisits-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
   .events-hero-section { height: 260px; }
   .events-title { font-size: 1.9rem; }
-  .events-card-grid, .events-gallery-grid, .events-calendar-list { grid-template-columns: 1fr; }
+  .events-card-grid, .events-gallery-grid, .events-calendar-list, .sitevisits-grid { grid-template-columns: 1fr; }
 }
