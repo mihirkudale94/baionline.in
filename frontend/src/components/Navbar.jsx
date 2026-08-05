@@ -44,37 +44,33 @@ const Navbar = () => {
 
   return (
     <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
-      {/* Top Header Row with Logo & Search */}
-      <div className="navbar-top-row">
-        <div className="container top-row-container">
-          <Link to="/" className="navbar-logo-container">
-            <img
-              src="/images/logo-bg.png"
-              alt="BAI Logo"
-              className="navbar-logo"
-            />
-            <div className="logo-text">
-              <span className="logo-title">BUILDERS' ASSOCIATION OF INDIA</span>
-              <span className="logo-subtitle">Pune Centre — Building Better Infrastructure. Empowering the Construction Industry.</span>
-            </div>
-          </Link>
+      {/* Single row: logo on the left with the navigation sitting right beside it */}
+      <div className="container navbar-inner">
+        <Link to="/" className="navbar-logo-container">
+          <img
+            src="/images/logo-bg.png"
+            alt="BAI Logo"
+            className="navbar-logo"
+          />
+          <div className="logo-text">
+            <span className="logo-title">BUILDERS' ASSOCIATION OF INDIA</span>
+            <span className="logo-subtitle">
+              Pune Centre
+              <span className="logo-subtitle-extra"> — Building Better Infrastructure</span>
+            </span>
+          </div>
+        </Link>
 
+        <button
+          className="mobile-toggle-btn"
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
-
-          <button
-            className="mobile-toggle-btn"
-            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={mobileMenuOpen}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-      </div>
-
-      {/* Bottom Main Navigation Menu */}
-      <nav className={`navbar-main-nav ${mobileMenuOpen ? "mobile-open" : ""}`}>
-        <div className="container nav-container">
+        <nav className={`navbar-main-nav ${mobileMenuOpen ? "mobile-open" : ""}`}>
           <ul className="nav-menu">
             {navLinks.map((link, idx) => {
               const hasChildren = link.children && link.children.length > 0;
@@ -159,8 +155,8 @@ const Navbar = () => {
               );
             })}
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 };

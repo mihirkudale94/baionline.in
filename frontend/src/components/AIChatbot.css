@@ -10,22 +10,22 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  box-shadow: 0 14px 34px rgba(11, 15, 25, 0.2);
+  box-shadow: 0 14px 34px rgba(26, 115, 232, 0.32);
   cursor: pointer;
   position: relative;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .chatbot-float-btn:hover {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  box-shadow: 0 10px 32px rgba(26, 115, 232, 0.35);
+  background: linear-gradient(135deg, var(--primary-dark), #0f3f80);
+  box-shadow: 0 10px 32px rgba(26, 115, 232, 0.45);
   transform: translateY(-2px);
 }
 

@@ -1,28 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { footerData } from "../services/api";
+import { getSocialIcon, socialLabels } from "./socialIcons";
 import "./Footer.css";
 
 const Footer = () => {
   if (!footerData) return null;
-
-  const getSocialIcon = (platform) => {
-    switch (platform) {
-      case "facebook":
-        return <FaFacebookF />;
-      case "instagram":
-        return <FaInstagram />;
-      case "youtube":
-        return <FaYoutube />;
-      case "linkedin":
-        return <FaLinkedinIn />;
-      case "twitter":
-        return <FaTwitter />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <footer className="footer-wrapper">
@@ -46,6 +30,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`social-icon-btn ${soc.platform}`}
+                  aria-label={socialLabels[soc.platform] || soc.platform}
                 >
                   {getSocialIcon(soc.platform)}
                 </a>

@@ -9,7 +9,7 @@
   color: var(--white);
   overflow: hidden;
 }
-.events-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 100%); }
+.events-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 22, 40, 0.55); }
 .events-hero-container { position: relative; z-index: 10; }
 .events-hero-content { max-width: 750px; }
 .events-tag { background: rgba(26,115,232,0.16); color: var(--gold); padding: 0.35rem 1rem; border-radius: 20px; font-family: var(--font-heading); font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem; }
@@ -48,13 +48,61 @@
 .events-activity-chip { background: var(--navy); color: var(--gold); padding: 0.75rem 1.5rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; }
 
 .events-gallery-section { padding: 5rem 0; background: var(--gray-50); }
-.events-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.events-gallery-card { cursor: pointer; overflow: hidden; padding: 0; border: 1px solid var(--gray-200); border-radius: 18px; background: var(--white); transition: all 0.3s; }
-.events-gallery-card:hover { transform: translateY(-5px); border-color: var(--gold-light); box-shadow: 0 10px 30px rgba(10,22,40,0.06); }
-.events-gallery-card .news-img-wrapper { position: relative; }
-.events-gallery-card .news-img-bg { height: 200px; background-size: cover; background-position: center; }
-.events-gallery-card .news-content { padding: 1.25rem 1.5rem; }
-.events-gallery-card .news-desc { font-size: 0.85rem; color: var(--gray-800); }
+/* Photo gallery — image-first tiles, caption reveals over the image on hover */
+.events-gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+
+.events-gallery-tile {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: none;
+  background: var(--gray-100);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 4 / 3;
+  transition: box-shadow var(--dur-fast) ease;
+}
+
+.events-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+
+.events-gallery-tile:hover .events-gallery-img,
+.events-gallery-tile:focus-visible .events-gallery-img { transform: scale(1.06); }
+
+.events-gallery-tile:hover { box-shadow: 0 10px 28px rgba(10, 22, 40, 0.18); }
+
+.events-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.25rem 0.85rem 0.75rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #fff;
+  text-align: left;
+  background: linear-gradient(to top, rgba(7, 11, 22, 0.88) 30%, transparent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+.events-gallery-tile:hover .events-gallery-caption,
+.events-gallery-tile:focus-visible .events-gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Touch devices get no hover, so keep captions permanently visible */
+@media (hover: none) {
+  .events-gallery-caption { opacity: 1; transform: none; }
+}
 
 .events-calendar-section { padding: 5rem 0; background: var(--white); }
 .events-calendar-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
@@ -64,11 +112,14 @@
 .events-calendar-month li { font-size: 0.85rem; color: var(--gray-800); line-height: 1.6; }
 
 @media (max-width: 1024px) {
-  .events-card-grid, .events-gallery-grid, .sitevisits-grid { grid-template-columns: repeat(2, 1fr); }
+  .events-card-grid, .sitevisits-grid { grid-template-columns: repeat(2, 1fr); }
+  .events-gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
   .events-hero-section { height: 260px; }
   .events-title { font-size: 1.9rem; }
-  .events-card-grid, .events-gallery-grid, .events-calendar-list, .sitevisits-grid { grid-template-columns: 1fr; }
+  .events-card-grid, .events-calendar-list, .sitevisits-grid { grid-template-columns: 1fr; }
+  .events-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .events-gallery-caption { font-size: 0.7rem; padding: 1.75rem 0.6rem 0.55rem; }
 }

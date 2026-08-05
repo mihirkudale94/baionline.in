@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AIChatbot from "./components/AIChatbot";
+import FloatingSocials from "./components/FloatingSocials";
 
 // Pages
 import Home from "./pages/Home";
@@ -20,6 +21,7 @@ import WBSCAwards from "./pages/WBSCAwards";
 import Events from "./pages/Events";
 import Membership from "./pages/Membership";
 import SocialActivities from "./pages/SocialActivities";
+import Activities from "./pages/Activities";
 
 import SponsorsInquiry from "./pages/SponsorsInquiry";
 import Links from "./pages/Links";
@@ -64,7 +66,7 @@ const App = () => {
             <Route path="/wbsc-awards" element={<WBSCAwards />} />
             <Route path="/events" element={<Events />} />
             <Route path="/social-activities" element={<SocialActivities />} />
-            <Route path="/activities" element={<PlaceholderPage title="BAI Activities" />} />
+            <Route path="/activities" element={<Activities />} />
             <Route path="/judgements" element={<PlaceholderPage title="Judgements" />} />
             <Route path="/notifications" element={<PlaceholderPage title="Notifications" />} />
             <Route path="/circular" element={<PlaceholderPage title="Circulars" />} />
@@ -89,6 +91,7 @@ const App = () => {
         </main>
         <Footer />
         <AIChatbot />
+        <FloatingSocials />
       </div>
     </Router>
   );

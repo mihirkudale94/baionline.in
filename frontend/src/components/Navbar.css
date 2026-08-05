@@ -5,6 +5,7 @@
   z-index: 1000;
   width: 100%;
   background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -16,34 +17,38 @@
   box-shadow: 0 10px 30px rgba(10, 22, 40, 0.08);
 }
 
-/* Top Row styling */
-.navbar-top-row {
-  border-bottom: 1px solid var(--gray-200);
-  padding: 0.75rem 0;
+/* Header gets a wider container than the page so the logo can grow
+   while the full menu still sits beside it on one row. */
+.navbar-header .container {
+  max-width: 1500px;
 }
 
-.top-row-container {
+.navbar-inner {
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  min-height: 104px;
 }
 
+/* ---- Logo block ---- */
 .navbar-logo-container {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
+  padding: 0.75rem 0;
 }
 
 .navbar-logo {
-  height: 55px;
+  height: 84px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .navbar-logo-container:hover .navbar-logo {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .logo-text {
@@ -54,61 +59,77 @@
 .logo-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   color: var(--navy);
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+  letter-spacing: 0.4px;
+  line-height: 1.15;
 }
 
 .logo-subtitle {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--gray-800);
-  font-weight: 500;
-  max-width: 320px;
+  font-weight: 600;
   line-height: 1.3;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
-
-
-/* Bottom Main Nav menu */
+/* ---- Main navigation, inline beside the logo ---- */
 .navbar-main-nav {
-  background: var(--navy);
-  color: var(--white);
-}
-
-.nav-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  min-width: 0;
 }
 
 .nav-menu {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  align-items: stretch;
 }
 
 .nav-item {
   position: relative;
+  display: flex;
+  align-items: stretch;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 1.1rem 0.5rem;
+  padding: 0 0.4rem;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--ink);
   border: none;
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  position: relative;
+  transition: color 0.25s ease;
 }
 
-.nav-link:hover, .nav-item:hover .nav-link {
-  color: var(--gold);
+/* Underline indicator on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  right: 0.4rem;
+  bottom: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.nav-link:hover, .nav-item:hover > .nav-link {
+  color: var(--primary);
+}
+
+.nav-item:hover > .nav-link::after {
+  transform: scaleX(1);
 }
 
 .dropdown-arrow {
@@ -125,10 +146,10 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--navy-light);
-  border-top: 2px solid var(--gold);
-  min-width: 220px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: var(--white);
+  border-top: 3px solid var(--primary);
+  min-width: 240px;
+  box-shadow: 0 12px 28px rgba(10, 22, 40, 0.14);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -143,9 +164,29 @@
   transform: translateY(0);
 }
 
+/* The menu now sits flush right, so trailing dropdowns open inward
+   instead of running past the viewport edge. */
+.nav-menu > .nav-item:nth-last-child(-n + 3) .dropdown-menu {
+  left: auto;
+  right: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.nav-menu > .nav-item:nth-last-child(-n + 3) .sub-dropdown-menu {
+  left: auto;
+  right: 100%;
+  border-left: none;
+  border-right: 3px solid var(--primary);
+  border-radius: 8px 0 8px 8px;
+}
+
+.nav-menu > .nav-item:nth-last-child(-n + 3) .sub-arrow {
+  transform: rotate(90deg);
+}
+
 .dropdown-item {
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .dropdown-item:last-child {
@@ -156,10 +197,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
   padding: 0.85rem 1.25rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--gray-800);
   border: none;
   background: transparent;
   width: 100%;
@@ -168,8 +210,8 @@
 }
 
 .dropdown-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--gold);
+  background: var(--primary-tint);
+  color: var(--primary);
 }
 
 /* Sub-Dropdown Menu */
@@ -177,10 +219,10 @@
   position: absolute;
   top: 0;
   left: 100%;
-  background: var(--navy-light);
-  border-left: 2px solid var(--gold);
-  min-width: 220px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: var(--white);
+  border-left: 3px solid var(--primary);
+  min-width: 240px;
+  box-shadow: 0 12px 28px rgba(10, 22, 40, 0.14);
   border-radius: 0 8px 8px 8px;
 }
 
@@ -190,92 +232,156 @@
 }
 
 .sub-dropdown-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.sub-dropdown-item:last-child {
+  border-bottom: none;
 }
 
 .sub-dropdown-link {
   display: block;
   padding: 0.8rem 1.25rem;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  color: var(--gray-800);
 }
 
 .sub-dropdown-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--gold);
+  background: var(--primary-tint);
+  color: var(--primary);
 }
-
-
 
 .mobile-toggle-btn {
   display: none;
+  align-self: center;
   background: transparent;
   border: none;
   color: var(--navy);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
 
 /* Responsive styles */
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
+  /* Trim the strapline first so the menu keeps its full row */
+  .logo-subtitle-extra {
+    display: none;
+  }
+  .navbar-inner {
+    min-height: 98px;
+    gap: 1.5rem;
+  }
+  .navbar-logo {
+    height: 78px;
+  }
   .logo-title {
-    font-size: 1rem;
-  }
-  .logo-subtitle {
-    max-width: 250px;
-    font-size: 0.65rem;
-  }
-  .nav-menu {
-    gap: 0.25rem;
+    font-size: 1.08rem;
   }
   .nav-link {
-    font-size: 0.75rem;
-    padding: 1rem 0.3rem;
+    font-size: 0.95rem;
+    padding: 0 0.42rem;
+  }
+  .nav-link::after {
+    left: 0.42rem;
+    right: 0.42rem;
+    bottom: 20px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1420px) {
+  .navbar-inner {
+    min-height: 92px;
+    gap: 1rem;
+  }
+  .navbar-logo {
+    height: 72px;
+  }
+  /* The wordmark wraps to two lines here, which frees ~80px and keeps the
+     menu legible instead of shrinking it. Header height is unchanged.
+     185px breaks it cleanly after "BUILDERS' ASSOCIATION" (which needs 176px);
+     going narrower spills it onto a third line. */
+  .logo-title {
+    font-size: 0.9rem;
+    max-width: 185px;
+  }
+  .logo-subtitle {
+    font-size: 0.7rem;
+  }
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0 0.4rem;
+  }
+  .nav-link::after {
+    left: 0.4rem;
+    right: 0.4rem;
+    bottom: 17px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .navbar-inner {
+    min-height: 84px;
+    align-items: center;
+  }
+  .navbar-logo {
+    height: 64px;
+  }
+  .logo-title {
+    font-size: 1.05rem;
+  }
+  .logo-subtitle {
+    font-size: 0.75rem;
+  }
+
   .mobile-toggle-btn {
     display: block;
+    order: 3;
   }
-  .top-row-container {
-    padding: 0.5rem 0;
-  }
-  
+
   /* Mobile main nav drawer styling */
   .navbar-main-nav {
-    position: fixed;
-    top: 73px;
+    position: absolute;
+    top: 100%;
     left: -100%;
-    width: 280px;
-    height: calc(100vh - 73px);
+    width: 300px;
+    max-height: 80vh;
     background: var(--navy);
-    transition: all 0.4s ease;
+    transition: left 0.4s ease;
     overflow-y: auto;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 1.25rem 0;
   }
-  
+
   .navbar-main-nav.mobile-open {
     left: 0;
   }
-  
-  .nav-container {
-    padding: 1.5rem 0;
-  }
-  
+
   .nav-menu {
     flex-direction: column;
-    gap: 0;
+    width: 100%;
   }
-  
+
+  .nav-item {
+    display: block;
+  }
+
   .nav-link {
     padding: 1rem 1.5rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     width: 100%;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
-  
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link:hover, .nav-item:hover > .nav-link {
+    color: var(--primary-soft);
+  }
+
   /* Dropdowns are conditionally rendered by React on tap, so when
      present in the DOM they must be fully visible (no max-height trap). */
   .dropdown-menu, .sub-dropdown-menu {
@@ -283,12 +389,43 @@
     opacity: 1;
     visibility: visible;
     transform: none;
-    background: rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.25);
     box-shadow: none;
     border: none;
     border-radius: 0;
     padding: 0.5rem 0;
     width: 100%;
     animation: slideDown 0.25s var(--ease-out);
+  }
+
+  .dropdown-item, .sub-dropdown-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .dropdown-link, .sub-dropdown-link {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .dropdown-link:hover, .sub-dropdown-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--primary-soft);
+  }
+}
+
+@media (max-width: 620px) {
+  .navbar-inner {
+    min-height: 76px;
+  }
+  .navbar-logo {
+    height: 56px;
+  }
+  .logo-title {
+    font-size: 0.92rem;
+  }
+  .logo-subtitle {
+    font-size: 0.68rem;
+  }
+  .navbar-main-nav {
+    width: 280px;
   }
 }

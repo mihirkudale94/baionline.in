@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getCommitteesData, executiveCommittee } from "../services/api";
 import { FaUserCircle, FaBookOpen, FaChevronDown, FaUsers } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import useHashScroll from "../hooks/useHashScroll";
 import "./Committees.css";
 
 const Committees = () => {
@@ -10,6 +11,9 @@ const Committees = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeAccordion, setActiveAccordion] = useState(null);
+
+  // Wait for the committee data before jumping to #executive / #standing.
+  useHashScroll(!loading);
 
   useEffect(() => {
     getCommitteesData().then((res) => {
@@ -58,7 +62,7 @@ const Committees = () => {
       </section>
 
       {/* Executive Committee */}
-      <section className="exec-committee-section">
+      <section className="exec-committee-section" id="executive">
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">Leadership</span>
@@ -100,7 +104,7 @@ const Committees = () => {
       </section>
 
       {/* Functional Committees Accordion */}
-      <section className="committees-list-section">
+      <section className="committees-list-section" id="standing">
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">Functional Committees</span>

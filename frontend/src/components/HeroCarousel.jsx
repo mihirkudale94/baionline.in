@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 
@@ -23,49 +22,23 @@ const HeroCarousel = ({ slides }) => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+        }}
+        speed={900}
         loop={true}
         className="hero-swiper"
       >
-        {slides.map((slide) => (
+        {slides.map((slide, idx) => (
           <SwiperSlide key={slide.id}>
-            <div className="hero-slide-wrapper">
-              <div
-                className="hero-slide-bg"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              >
-                <div className="hero-slide-overlay"></div>
-              </div>
-              
-              <div className="hero-3d-layer" aria-hidden="true">
-                <span className="hero-shape hero-shape-1"></span>
-                <span className="hero-shape hero-shape-2"></span>
-                <span className="hero-shape hero-shape-3"></span>
-              </div>
-
-              <div className="container hero-slide-content-container">
-                <div className="hero-slide-content">
-                  <span className="hero-eyebrow">Builders' Association of India · Since 1941</span>
-                  <h1 className="hero-slide-title">{slide.title}</h1>
-                  {slide.link && (
-                    slide.link.startsWith("http") ? (
-                      <a
-                        href={slide.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary hero-slide-btn"
-                      >
-                        {slide.linkText || slide.link_text || "Learn More"}
-                      </a>
-                    ) : (
-                      <Link to={slide.link} className="btn btn-primary hero-slide-btn">
-                        {slide.linkText || slide.link_text || "Learn More"}
-                      </Link>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
+            <img
+              src={slide.image}
+              alt={slide.alt || ""}
+              className="hero-slide-img"
+              loading={idx === 0 ? "eager" : "lazy"}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -158,22 +158,25 @@ const Events = () => {
           </div>
           <div className="events-gallery-grid">
             {data.gallery.map((img, idx) => (
-              <motion.div
+              <motion.button
+                type="button"
                 key={idx}
-                className="news-card glass-card events-gallery-card"
+                className="events-gallery-tile"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.08 }}
+                transition={{ duration: 0.6, delay: idx * 0.05 }}
                 onClick={() => openLightbox(img.src, img.caption)}
+                aria-label={`View photo: ${img.caption}`}
               >
-                <div className="news-img-wrapper">
-                  <div className="news-img-bg" style={{ backgroundImage: `url(${img.src})` }}></div>
-                </div>
-                <div className="news-content">
-                  <p className="news-desc">{img.caption}</p>
-                </div>
-              </motion.div>
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  className="events-gallery-img"
+                  loading="lazy"
+                />
+                <span className="events-gallery-caption">{img.caption}</span>
+              </motion.button>
             ))}
           </div>
         </div>

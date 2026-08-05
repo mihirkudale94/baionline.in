@@ -709,6 +709,86 @@
   display: block;
 }
 
+/* YouTube widget in video-thumbnail mode */
+.youtube-widget:has(.yt-video-list) {
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+}
+
+.youtube-widget .widget-icon.yt-icon {
+  color: #ff0000;
+}
+
+.yt-video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.yt-video-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.yt-thumb-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 110px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.yt-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.yt-play-badge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  background: rgba(7, 11, 22, 0.35);
+  transition: background var(--dur-fast) ease;
+}
+
+.yt-video-item:hover .yt-play-badge {
+  background: rgba(255, 0, 0, 0.55);
+}
+
+.yt-video-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--navy);
+}
+
+.yt-video-item:hover .yt-video-title {
+  color: var(--primary);
+}
+
+.yt-channel-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.yt-channel-link:hover {
+  text-decoration: underline;
+}
+
 .news-feed-widget .widget-header {
   display: flex;
   align-items: center;
@@ -761,26 +841,6 @@
 
 .feed-download-link:hover {
   color: var(--primary-dark);
-}
-
-.sponsor-ad-widget {
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.ad-label {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: var(--gray-800);
-  margin-bottom: 0.75rem;
-}
-
-.sponsor-ad-logo {
-  max-width: 140px;
-  height: auto;
 }
 
 /* Responsive configurations */

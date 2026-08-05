@@ -11,13 +11,19 @@
   overflow: hidden;
 }
 
+/* Clear the sticky header when arriving via #executive / #standing */
+.exec-committee-section,
+.committees-list-section {
+  scroll-margin-top: 110px;
+}
+
 .committees-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 100%);
+  background: rgba(10, 22, 40, 0.55);
 }
 
 .committees-hero-container {

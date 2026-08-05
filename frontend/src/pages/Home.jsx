@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getHomeData } from "../services/api";
+import { getHomeData, youtubeVideos, youtubeChannel } from "../services/api";
 import HeroCarousel from "../components/HeroCarousel";
 import StatsBar from "../components/StatsBar";
-import OfficeBearersBanner from "../components/OfficeBearersBanner";
+import SponsorsBanner from "../components/SponsorsBanner";
 import ImageLightbox from "../components/ImageLightbox";
 import TiltCard from "../components/TiltCard";
-import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAlt, FaNewspaper, FaFilePdf, FaLandmark } from "react-icons/fa";
+import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAlt, FaNewspaper, FaFilePdf, FaLandmark, FaYoutube, FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -287,9 +287,51 @@ const Home = () => {
 
             {/* Youtube Channel Widget */}
             <div className="widget-card youtube-widget">
-              <a href="https://www.youtube.com/@buildersassociationofindia73" target="_blank" rel="noreferrer">
-                <img src="/images/bai-on-youtube.gif" alt="BAI YouTube Channel" className="yt-gif-banner" loading="lazy" />
-              </a>
+              {youtubeVideos.length > 0 ? (
+                <>
+                  <div className="widget-header">
+                    <FaYoutube className="widget-icon yt-icon" />
+                    <h3>BAI on YouTube</h3>
+                  </div>
+                  <ul className="yt-video-list">
+                    {youtubeVideos.map((video) => (
+                      <li key={video.id}>
+                        <a
+                          href={`https://www.youtube.com/watch?v=${video.id}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="yt-video-item"
+                        >
+                          <span className="yt-thumb-wrap">
+                            <img
+                              src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                              alt=""
+                              className="yt-thumb"
+                              loading="lazy"
+                            />
+                            <span className="yt-play-badge" aria-hidden="true">
+                              <FaPlay />
+                            </span>
+                          </span>
+                          <span className="yt-video-title">{video.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={youtubeChannel}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="yt-channel-link"
+                  >
+                    Visit our channel
+                  </a>
+                </>
+              ) : (
+                <a href={youtubeChannel} target="_blank" rel="noreferrer">
+                  <img src="/images/bai-on-youtube.gif" alt="BAI YouTube Channel" className="yt-gif-banner" loading="lazy" />
+                </a>
+              )}
             </div>
 
             {/* Latest News Feed Widget */}
@@ -311,25 +353,14 @@ const Home = () => {
               </ul>
             </div>
 
-            {/* Cloud Partner / Sponsor Ad */}
-            <div className="widget-card sponsor-ad-widget">
-              <span className="ad-label">SPONSOR PARTNER</span>
-              <img 
-                src="/images/sponsor_ad.png" 
-                alt="BAI Cloud Sponsor Partner" 
-                className="sponsor-ad-logo" 
-                onClick={() => handleOpenLightbox("/images/sponsor_ad.png", "BAI Cloud Sponsor Partner")}
-                style={{ cursor: "zoom-in" }}
-              />
-            </div>
 
           </div>
 
         </div>
       </section>
 
-      {/* 5. Leadership Section */}
-      <OfficeBearersBanner leadership={data.leadership} />
+      {/* 5. Our Sponsors */}
+      <SponsorsBanner />
 
       {/* 6. Quick Links CTA Area */}
       <section className="cta-action-section">

@@ -1,0 +1,156 @@
+.activities-page-wrapper {
+  background-color: var(--surface-dim);
+}
+
+/* Hero — flat scrim, matching the rest of the site's banners */
+.activities-hero-section {
+  position: relative;
+  height: 350px;
+  background-image: url("/images/events/event_committee-meeting-office.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.activities-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 22, 40, 0.55);
+}
+
+.activities-hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+.activities-hero-content {
+  max-width: 700px;
+}
+
+.activities-tag {
+  background: rgba(26, 115, 232, 0.16);
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.activities-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.activities-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Activity rows */
+.activities-list-section {
+  padding: 5rem 0;
+}
+
+.activity-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  /* Clears the sticky header when jumped to via an anchor link */
+  scroll-margin-top: 130px;
+}
+
+.activity-row:last-child {
+  margin-bottom: 0;
+}
+
+.activity-row-reverse .activity-media {
+  order: 2;
+}
+
+.activity-media {
+  height: 100%;
+  min-height: 280px;
+}
+
+.activity-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.activity-body {
+  padding: 2.5rem 3rem 2.5rem 0;
+}
+
+.activity-row-reverse .activity-body {
+  padding: 2.5rem 0 2.5rem 3rem;
+}
+
+.activity-index {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary);
+}
+
+.activity-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0.4rem 0 0.85rem;
+}
+
+.activity-summary {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .activity-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .activity-row-reverse .activity-media {
+    order: 0;
+  }
+  .activity-media {
+    min-height: 220px;
+    max-height: 260px;
+  }
+  .activity-body,
+  .activity-row-reverse .activity-body {
+    padding: 2rem 1.75rem;
+  }
+  .activities-hero-section {
+    height: 260px;
+  }
+  .activities-title {
+    font-size: 1.9rem;
+  }
+}

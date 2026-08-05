@@ -14,41 +14,39 @@ function fetchWithTimeout(url, options = {}) {
     .finally(() => clearTimeout(timer));
 }
 
+/* Hero carousel — Pune Centre's own photographs, shown clean with no text
+   overlay. `alt` is never displayed; it is read by screen readers and search
+   engines only. To change the carousel, swap the image paths below. */
 export const heroSlides = [
   {
     id: 1,
-    title: "Builders' Day Celebration 2025 — BAI Pune Centre",
     image: "/images/events/event_builders-day-2025.jpg",
-    link: "/events",
-    linkText: "See Our Events"
+    alt: "Builders' Day Celebration 2025 at BAI Pune Centre"
   },
   {
     id: 2,
-    title: "Felicitating the Meritorious Children of Construction Workers",
     image: "/images/events/event_worker-children-felicitation-2025-1.jpg",
-    link: "/events",
-    linkText: "See Our Events"
+    alt: "Felicitation of meritorious children of construction workers"
   },
   {
     id: 3,
-    title: "Ajay Gujar, unanimously elected as Chairman of BAI for 2026-27",
-    image: "https://www.baionline.in/public/frontend/images/new_president_2026-27_02.jpg",
-    link: "https://www.baionline.in/public/frontend/pdf/Election-Results 2026-27.pdf",
-    linkText: "Click Here"
+    image: "/images/events/event_bridge-site-visit-1.jpg",
+    alt: "Technical site visit to a cable-stayed bridge construction project"
   },
   {
     id: 4,
-    title: "Quality construction begins with a quality association",
-    image: "https://www.baionline.in/public/frontend/images/21.jpg",
-    link: "/membership",
-    linkText: "Be a Member of BAI"
+    image: "/images/events/event_pmc-courtesy-visit-1.jpg",
+    alt: "Courtesy visit to the Pune Municipal Corporation"
+  },
+  {
+    id: 5,
+    image: "/images/events/event_industrial-facility-visit-1.jpg",
+    alt: "Members on an industrial facility visit"
   },
   {
     id: 6,
-    title: "BAI Representation to Union Ministry",
-    image: "https://www.baionline.in/public/frontend/images/22.png",
-    link: "https://www.baionline.in/public/frontend/pdf/BAI-Representation-Dated-1st-April-2026.pdf",
-    linkText: "Details"
+    image: "/images/events/event_central-bank-outreach-campaign.jpg",
+    alt: "Central Bank of India mega retail credit outreach campaign"
   }
 ];
 
@@ -94,6 +92,84 @@ export const leadership = {
   }
 };
 
+/* ------------------------------------------------------------------
+   YOUTUBE — drives the video thumbnails in the home page YouTube widget.
+   To add a video: paste its 11-character id (the v= part of the watch URL,
+   e.g. youtube.com/watch?v=dQw4w9WgXcQ -> "dQw4w9WgXcQ") and a title.
+   Thumbnails are pulled from img.youtube.com automatically.
+   With an empty list the widget falls back to the channel banner.
+   ------------------------------------------------------------------ */
+export const youtubeChannel = "https://www.youtube.com/@buildersassociationofindia73";
+
+export const youtubeVideos = [
+  { id: "O6J1DaA4Bok", title: "Builders' Day Celebration 2026" },
+  { id: "zYVFoAVSFGI", title: "Students' Internship Programme 2026 — Valedictory Function" },
+  { id: "wp-cLZq4PI4", title: "BAI Pune Centre: 2025–26 Overview" },
+  { id: "s6jdW3DPBS8", title: "WBSC 2026 Launching Ceremony — Chief Guest Mr. Atul Kapole" }
+];
+
+/* ------------------------------------------------------------------
+   OUR SPONSORS — drives the scrolling section on the home page.
+   To add a sponsor: drop the logo in /public/images/sponsors/ and add a
+   row below. `logo` may be omitted — the chip then shows the name alone.
+
+   !! DEMO DATA !! The eight entries below are FICTIONAL firms with
+   generated placeholder logos, used only to show how the section looks
+   when populated. They are NOT real sponsors. Replace this whole array
+   with the real sponsor list before the site goes public, and delete
+   /public/images/sponsors/*.svg.
+   ------------------------------------------------------------------ */
+export const sponsors = [
+  { name: "Sahyadri Cement Works", logo: "/images/sponsors/sahyadri-cement.svg", url: "" },
+  { name: "Deccan Steel & Alloys", logo: "/images/sponsors/deccan-steel.svg", url: "" },
+  { name: "Mutha Infra Equipment", logo: "/images/sponsors/mutha-infra.svg", url: "" },
+  { name: "Shivneri Ready-Mix", logo: "/images/sponsors/shivneri-rmc.svg", url: "" },
+  { name: "Pashan Build Solutions", logo: "/images/sponsors/pashan-build.svg", url: "" },
+  { name: "Godavari Waterproofing", logo: "/images/sponsors/godavari-waterproof.svg", url: "" },
+  { name: "Kesari Elevators", logo: "/images/sponsors/kesari-elevators.svg", url: "" },
+  { name: "Prabhat Formwork Systems", logo: "/images/sponsors/prabhat-formwork.svg", url: "" }
+];
+
+/* The five regular activities of BAI Pune Centre. Drives both the
+   "BAI Activities" dropdown and the /activities page sections. */
+export const activities = [
+  {
+    slug: "technical-seminars",
+    title: "Technical Seminars",
+    summary:
+      "Regular seminars on construction technology, sustainable practices, statutory compliance and industry standards, led by domain experts and senior practitioners.",
+    image: "/images/events/event_committee-meeting-office.jpg"
+  },
+  {
+    slug: "site-visits",
+    title: "Industrial & Site Visits",
+    summary:
+      "Organised visits to major infrastructure projects and research institutions across Pune, giving members first-hand exposure to construction methods and site practice.",
+    image: "/images/events/event_bridge-site-visit-1.jpg"
+  },
+  {
+    slug: "networking-meets",
+    title: "Networking Meets",
+    summary:
+      "Member meets that connect builders, contractors, consultants and developers across the Pune Centre and BAI's nationwide network of centres.",
+    image: "/images/events/event_office-meeting-1.jpg"
+  },
+  {
+    slug: "government-interaction",
+    title: "Government Interaction Programmes",
+    summary:
+      "Structured engagement with civic bodies and government departments — including PMC and state authorities — to represent the industry on policy, tendering and regulatory matters.",
+    image: "/images/events/event_pmc-courtesy-visit-1.jpg"
+  },
+  {
+    slug: "training-workshops",
+    title: "Training Workshops",
+    summary:
+      "Skill-building workshops for member firms and their teams, covering site safety, project management, statutory documentation and emerging construction practice.",
+    image: "/images/events/event_central-bank-outreach-campaign.jpg"
+  }
+];
+
 export const navLinks = [
   { label: "Home", path: "/" },
   {
@@ -101,46 +177,22 @@ export const navLinks = [
     path: "/about",
     children: [
       { label: "About BAI", path: "/about" },
-      { label: "BAI Team 2026-27", path: "/team" },
-      { label: "Past Office Bearers", path: "/past-presidents" },
-      { label: "Committees", path: "/committees" }
+      { label: "Past Office Bearers", path: "/past-presidents" }
+    ]
+  },
+  {
+    label: "Team",
+    path: "/team",
+    children: [
+      { label: "Office Bearers", path: "/team" },
+      { label: "Executive Committee", path: "/committees#executive" },
+      { label: "Standing Committee", path: "/committees#standing" }
     ]
   },
   {
     label: "BAI Activities",
     path: "/activities",
-    children: [
-      {
-        label: "Members Area",
-        path: "/members-area",
-        children: [
-          { label: "Price Index Numbers", path: "/members-area?form=one" },
-          { label: "Membership Data Updation form", path: "/members-area?form=two" },
-          { label: "Please inform me my membership number.", path: "/members-area?form=three" },
-          { label: "Feedback", path: "/members-area?form=four" }
-        ]
-      },
-      { label: "Non Members Area", path: "/non-members-area" },
-      {
-        label: "Wheeling & Dealing",
-        path: "#",
-        children: [
-          { label: "Member", path: "/wd-member" },
-          { label: "Non Member", path: "/wd-non-member" },
-          { label: "Display Area", path: "/wd-display" }
-        ]
-      },
-      { label: "Links", path: "/links" },
-      {
-        label: "Upcoming Services",
-        path: "#",
-        children: [
-          { label: "Email", path: "/up-email" },
-          { label: "News and Discussion Board", path: "/up-news" },
-          { label: "Meeting Room", path: "/up-meeting" }
-        ]
-      }
-    ]
+    children: activities.map((a) => ({ label: a.title, path: `/activities#${a.slug}` })),
   },
   { label: "Social Activities", path: "/social-activities" },
   { label: "Events", path: "/events" },
@@ -154,7 +206,13 @@ export const navLinks = [
       { label: "BAI Services", path: "/services" },
       { label: "Tenders", path: "/tenders" },
       { label: "BAI in Media", path: "/media" },
-      { label: "Sponsors Inquiry", path: "/sponsors-inquiry" }
+      { label: "Sponsors Inquiry", path: "/sponsors-inquiry" },
+      /* Relocated here when the BAI Activities tab was cut to five activities —
+         these are live pages, so they keep a route into the site. */
+      { label: "Members Area", path: "/members-area" },
+      { label: "Non Members Area", path: "/non-members-area" },
+      { label: "Wheeling & Dealing", path: "/wd-display" },
+      { label: "Links", path: "/links" }
     ]
   },
   { label: "Contact Us", path: "/contact" }
@@ -193,8 +251,7 @@ export const footerData = {
     { platform: "facebook", url: "https://www.facebook.com/BuildersAssociationOfIndia/" },
     { platform: "instagram", url: "https://www.instagram.com/p/B60c1Ljnk90/" },
     { platform: "youtube", url: "https://www.youtube.com/@buildersassociationofindia73" },
-    { platform: "linkedin", url: "https://in.linkedin.com/company/builders-association-of-india" },
-    { platform: "twitter", url: "https://twitter.com/bainational" }
+    { platform: "linkedin", url: "https://in.linkedin.com/company/builders-association-of-india" }
   ],
   copyright: "Copyright \u00a9 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
 };

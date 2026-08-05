@@ -1,0 +1,119 @@
+.floating-socials {
+  position: fixed;
+  right: 0;
+  /* Sits above centre so it clears the chatbot launcher in the bottom-right */
+  top: 42%;
+  transform: translateY(-50%);
+  /* Wide enough for the hover label so the buttons expand leftwards, into the
+     page, instead of overflowing off the right edge. The empty area is
+     click-through; only the buttons themselves capture the pointer. */
+  width: 148px;
+  pointer-events: none;
+  /* Below the chatbot (9999) but above page content */
+  z-index: 900;
+}
+
+.floating-socials-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.floating-social-btn {
+  display: flex;
+  align-items: center;
+  /* Icon stays pinned to the right edge; the label slides out to its left,
+     so the button grows inward instead of off-screen. */
+  flex-direction: row-reverse;
+  margin-left: auto;
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.05rem;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 2px 10px rgba(10, 22, 40, 0.22);
+  transition: width var(--dur-med) var(--ease-out), background var(--dur-fast) ease;
+}
+
+/* The icon sits in its own fixed-width box. Without flex-shrink:0 the label
+   competes for room inside the collapsed button and crushes the icon to 0px. */
+.floating-social-btn > svg {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 1.05rem;
+  color: #fff;
+  fill: currentColor;
+}
+
+/* Slide out to reveal the platform name on hover */
+.floating-social-btn:hover,
+.floating-social-btn:focus-visible {
+  width: 148px;
+}
+
+.floating-social-label {
+  flex: 0 0 auto;
+  padding-left: 14px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transition: opacity var(--dur-fast) ease;
+}
+
+.floating-social-btn:hover .floating-social-label,
+.floating-social-btn:focus-visible .floating-social-label {
+  opacity: 1;
+}
+
+/* Each button wears its own platform's brand colour */
+.floating-social-btn.facebook { background: #1877f2; }
+.floating-social-btn.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+}
+.floating-social-btn.youtube { background: #ff0000; }
+.floating-social-btn.linkedin { background: #0a66c2; }
+
+/* Hover deepens the same brand colour rather than changing hue */
+.floating-social-btn.facebook:hover,
+.floating-social-btn.facebook:focus-visible { background: #0d5cc4; }
+.floating-social-btn.instagram:hover,
+.floating-social-btn.instagram:focus-visible {
+  background: linear-gradient(45deg, #d97b1c, #c9522a 25%, #b81c37 50%, #a81a54 75%, #96116d);
+}
+.floating-social-btn.youtube:hover,
+.floating-social-btn.youtube:focus-visible { background: #cc0000; }
+.floating-social-btn.linkedin:hover,
+.floating-social-btn.linkedin:focus-visible { background: #084d94; }
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-social-btn { transition: background var(--dur-fast) ease; }
+}
+
+/* Narrow screens: smaller bar, no slide-out (no hover to trigger it) */
+@media (max-width: 768px) {
+  .floating-social-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+    border-radius: 6px 0 0 6px;
+  }
+  .floating-social-btn > svg {
+    flex-basis: 38px;
+    width: 38px;
+    height: 0.9rem;
+  }
+  .floating-social-btn:hover,
+  .floating-social-btn:focus-visible {
+    width: 38px;
+  }
+  .floating-social-label {
+    display: none;
+  }
+}

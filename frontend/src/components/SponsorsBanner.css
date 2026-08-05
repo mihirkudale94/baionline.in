@@ -1,0 +1,74 @@
+.sponsors-banner-section {
+  padding: 4rem 0 5rem;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.sponsors-banner-track {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+}
+
+.sponsors-banner-content {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  animation: sponsorsScroll 30s linear infinite;
+}
+
+.sponsors-banner-track:hover .sponsors-banner-content {
+  animation-play-state: paused;
+}
+
+@keyframes sponsorsScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-banner-content { animation: none; }
+}
+
+.sponsor-chip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--white);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--r-lg);
+  padding: 1rem 1.75rem;
+  box-shadow: var(--elev-1);
+  flex-shrink: 0;
+  min-width: 260px;
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+}
+
+a.sponsor-chip:hover {
+  border-color: var(--primary-soft);
+  box-shadow: var(--elev-2);
+}
+
+.sponsor-chip-logo {
+  width: 64px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.sponsor-chip-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sponsors-banner-section { padding: 3rem 0 3.5rem; }
+  .sponsor-chip { min-width: 210px; padding: 0.8rem 1.25rem; gap: 0.75rem; }
+  .sponsor-chip-logo { width: 50px; height: 38px; }
+  .sponsor-chip-name { font-size: 0.85rem; }
+}
