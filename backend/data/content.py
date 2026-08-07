@@ -1,39 +1,37 @@
+# Hero carousel — Pune Centre's own photographs, shown clean with no text
+# overlay. "alt" is never displayed; it is read by screen readers and search
+# engines only. To change the carousel, swap the image paths below.
 HERO_SLIDES = [
     {
         "id": 1,
-        "title": "Builders' Day Celebration 2025 — BAI Pune Centre",
         "image": "/images/events/event_builders-day-2025.jpg",
-        "link": "/events",
-        "link_text": "See Our Events",
+        "alt": "Builders' Day Celebration 2025 at BAI Pune Centre",
         "active": True
     },
     {
         "id": 2,
-        "title": "Felicitating the Meritorious Children of Construction Workers",
         "image": "/images/events/event_worker-children-felicitation-2025-1.jpg",
-        "link": "/events",
-        "link_text": "See Our Events"
+        "alt": "Felicitation of meritorious children of construction workers"
     },
     {
         "id": 3,
-        "title": "Ajay Gujar, unanimously elected as Chairman of BAI for 2026-27",
-        "image": "https://www.baionline.in/public/frontend/images/new_president_2026-27_02.jpg",
-        "link": "https://www.baionline.in/public/frontend/pdf/Election-Results 2026-27.pdf",
-        "link_text": "Click Here"
+        "image": "/images/events/event_bridge-site-visit-1.jpg",
+        "alt": "Technical site visit to a cable-stayed bridge construction project"
     },
     {
         "id": 4,
-        "title": "Quality construction begins with a quality association",
-        "image": "https://www.baionline.in/public/frontend/images/21.jpg",
-        "link": "/membership",
-        "link_text": "Be a Member of BAI"
+        "image": "/images/events/event_pmc-courtesy-visit-1.jpg",
+        "alt": "Courtesy visit to the Pune Municipal Corporation"
+    },
+    {
+        "id": 5,
+        "image": "/images/events/event_industrial-facility-visit-1.jpg",
+        "alt": "Members on an industrial facility visit"
     },
     {
         "id": 6,
-        "title": "BAI Representation to Union Ministry",
-        "image": "https://www.baionline.in/public/frontend/images/22.png",
-        "link": "https://www.baionline.in/public/frontend/pdf/BAI-Representation-Dated-1st-April-2026.pdf",
-        "link_text": "Details"
+        "image": "/images/events/event_central-bank-outreach-campaign.jpg",
+        "alt": "Central Bank of India mega retail credit outreach campaign"
     }
 ]
 
@@ -46,7 +44,7 @@ STATS = [
 
 LEADERSHIP = {
     "president": {
-        "name": "Ajay Gujar",
+        "name": "Ajay R. Gujar",
         "title": "Chairman BAI Pune",
         "image": "/images/Shri_Ajay_Gujar.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
@@ -60,7 +58,7 @@ LEADERSHIP = {
         "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
     },
     "hon_secretary": {
-        "name": "Mahesh Rathi",
+        "name": "Dr. Mahesh Rathi",
         "title": "Secretary BAI Pune",
         "image": "/images/Shri_Mahesh_Rathi.jpg",
         "bio": "Secretary of Builders' Association of India Pune."
@@ -72,13 +70,34 @@ LEADERSHIP = {
         "bio": "Jt. Secretary of Builders' Association of India Pune."
     },
     "hon_treasurer": {
-        "name": "Sushil Agarwal",
+        "name": "Sushil N. Agarwal",
         "title": "Treasurer BAI Pune",
         "image": "/images/Shri_Sushil_Agarwal.jpg",
         "bio": "Treasurer of Builders' Association of India Pune."
+    },
+    # Listed alongside the office bearers in the WBSC 2026 booklet (p5).
+    # No photograph supplied yet — the Team card falls back to an initials
+    # avatar when "image" is empty.
+    "wbsc_chairman": {
+        "name": "Sunil Mate",
+        "title": "Chairman - WBSC 2026",
+        "image": "",
+        "bio": "Chairman of the Well Built Structure Competition 2026, Builders' Association of India Pune Centre."
     }
 }
 
+# The five regular activities of BAI Pune Centre. Mirrors `activities` in
+# frontend/src/services/api.js and drives the "BAI Activities" dropdown.
+ACTIVITIES = [
+    {"slug": "technical-seminars", "title": "Technical Seminars"},
+    {"slug": "site-visits", "title": "Industrial & Site Visits"},
+    {"slug": "networking-meets", "title": "Networking Meets"},
+    {"slug": "government-interaction", "title": "Government Interaction Programmes"},
+    {"slug": "training-workshops", "title": "Training Workshops"}
+]
+
+# Must stay in step with `navLinks` in frontend/src/services/api.js — the
+# navbar renders from that static list, and this is the API's copy of it.
 NAV_LINKS = [
     {"label": "Home", "path": "/"},
     {
@@ -86,44 +105,47 @@ NAV_LINKS = [
         "path": "/about",
         "children": [
             {"label": "About BAI", "path": "/about"},
-            {"label": "BAI Team 2026-27", "path": "/team"},
-            {"label": "Past Office Bearers", "path": "/past-presidents"},
-            {"label": "Committees", "path": "/committees"}
+            {"label": "Past Office Bearers", "path": "/past-presidents"}
+        ]
+    },
+    {
+        "label": "Team",
+        "path": "/team",
+        "children": [
+            {"label": "Office Bearers", "path": "/team"},
+            {"label": "Executive Committee", "path": "/committees#executive"},
+            {"label": "Standing Committee", "path": "/committees#standing"}
         ]
     },
     {
         "label": "BAI Activities",
         "path": "/activities",
         "children": [
-            {"label": "Members Area", "path": "/members-area", "children": [
-                {"label": "Price Index Numbers", "path": "/members-area?form=one"},
-                {"label": "Membership Data Updation form", "path": "/members-area?form=two"},
-                {"label": "Please inform me my membership number.", "path": "/members-area?form=three"},
-                {"label": "Feedback", "path": "/members-area?form=four"}
-            ]},
-            {"label": "Non Members Area", "path": "/non-members-area"},
-            {"label": "Wheeling & Dealing", "path": "#", "children": [
-                {"label": "Member", "path": "/wd-member"},
-                {"label": "Non Member", "path": "/wd-non-member"},
-                {"label": "Display Area", "path": "/wd-display"}
-            ]},
-            {"label": "Links", "path": "/links"},
-            {"label": "Upcoming Services", "path": "#", "children": [
-                {"label": "Email", "path": "/up-email"},
-                {"label": "News and Discussion Board", "path": "/up-news"},
-                {"label": "Meeting Room", "path": "/up-meeting"}
-            ]}
+            {"label": a["title"], "path": "/activities#" + a["slug"]}
+            for a in ACTIVITIES
         ]
     },
     {"label": "Social Activities", "path": "/social-activities"},
     {"label": "Events", "path": "/events"},
     {"label": "WBSC Awards", "path": "/wbsc-awards"},
     {"label": "Membership", "path": "/membership"},
-    {"label": "Publications", "path": "/publications"},
-    {"label": "BAI Services", "path": "/services"},
-    {"label": "Tenders", "path": "/tenders"},
-    {"label": "BAI in Media", "path": "/media"},
-    {"label": "Sponsors Inquiry", "path": "/sponsors-inquiry"},
+    {
+        "label": "Resources",
+        "path": "#",
+        "children": [
+            {"label": "Publications", "path": "/publications"},
+            {"label": "BAI Services", "path": "/services"},
+            {"label": "Tenders", "path": "/tenders"},
+            {"label": "BAI in Media", "path": "/media"},
+            {"label": "Sponsors Inquiry", "path": "/sponsors-inquiry"},
+            # Relocated here when the BAI Activities tab was cut to five
+            # activities — these are live pages, so they keep a route in.
+            {"label": "Members Area", "path": "/members-area"},
+            {"label": "Non Members Area", "path": "/non-members-area"},
+            {"label": "Wheeling & Dealing", "path": "/wd-display"},
+            {"label": "Links", "path": "/links"}
+        ]
+    },
     {"label": "Contact Us", "path": "/contact"}
 ]
 
@@ -131,10 +153,10 @@ FOOTER_DATA = {
     "logo": "/images/logo-white-02.png",
     "office": {
         "title": "Pune Centre Office:",
-        "address": "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
-        "tel": "(020) 2444 0000",
-        "phone": "(020) 2444 0001",
-        "email": "bai.punecentre@gmail.com"
+        "address": "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
+        "tel": "(020) 2605 9255",
+        "phone": "(020) 2605 7441",
+        "email": "baipune1@gmail.com"
     },
     "quick_links": [
         {"label": "About BAI", "path": "/about"},
@@ -160,8 +182,7 @@ FOOTER_DATA = {
         {"platform": "facebook", "url": "https://www.facebook.com/BuildersAssociationOfIndia/"},
         {"platform": "instagram", "url": "https://www.instagram.com/p/B60c1Ljnk90/"},
         {"platform": "youtube", "url": "https://www.youtube.com/@buildersassociationofindia73"},
-        {"platform": "linkedin", "url": "https://in.linkedin.com/company/builders-association-of-india"},
-        {"platform": "twitter", "url": "https://twitter.com/bainational"}
+        {"platform": "linkedin", "url": "https://in.linkedin.com/company/builders-association-of-india"}
     ],
     "copyright": "Copyright \u00a9 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
 }
@@ -231,19 +252,20 @@ CONTACT_DATA = {
     "title": "Contact Us",
     "office": {
         "name": "BAI - Builders' Association of India, Pune Centre",
-        "address": "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
-        "tel": ["(020) 2444 0000", "(020) 2444 0001"],
-        "phone": "(020) 2444 0001",
-        "email": "bai.punecentre@gmail.com"
+        "address": "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
+        "tel": ["(020) 2605 9255", "(020) 2605 7441"],
+        "phone": "(020) 2605 7441",
+        "email": "baipune1@gmail.com"
     }
 }
 
 EXECUTIVE_COMMITTEE = {
-    "chairman": {"role": "Chairman", "name": ""},
+    # Apr 2026 – Mar 2027 term, per the Centre's Chairman display board.
+    "chairman": {"role": "Chairman", "name": "Ajay R. Gujar"},
     "vice_chairman": {"role": "Vice Chairman", "name": "Rajaram B. Hajare"},
-    "hon_secretary": {"role": "Secretary", "name": "Mahesh Rathi"},
+    "hon_secretary": {"role": "Secretary", "name": "Dr. Mahesh Rathi"},
     "hon_joint_secretary": {"role": "Jt. Secretary", "name": "Sanjay Apte"},
-    "hon_treasurer": {"role": "Treasurer", "name": "Sushil Agarwal"},
+    "hon_treasurer": {"role": "Treasurer", "name": "Sushil N. Agarwal"},
     "members": [
         
     ]
@@ -322,6 +344,184 @@ PAST_PRESIDENTS = [
     {"year": "1942-1943", "name": "Shri Motichand G. Shah"},
     {"year": "1941-1942", "name": "Shri M. P. Shah"}
 ]
+
+# BAI Pune Centre's own honour roll, transcribed from the office bearer display
+# boards at the Centre. The first three roles are Head Quarters (national) posts
+# held by Pune Centre members; the rest are Centre-level posts. Chairman and Hon.
+# Secretary come from two boards each — "1941-2011: 70 years" and the 2012-2027
+# board — though the 70-year boards only start recording names from 1959.
+# Vice Chairman and Treasurer have no display board yet, so they stay empty and
+# render an "records being compiled" state on /past-presidents.
+PUNE_OFFICE_BEARERS = {
+    "note": "Transcribed from the office bearer display boards at BAI Pune Centre. Chairman and Hon. Secretary records begin in 1959 — earlier years are not listed on the boards.",
+    "roles": [
+        {
+            "id": "hq_president",
+            "label": "HQ President",
+            "members": [
+                {"year": "1991-1992", "name": "Lalit Sangtani"},
+                {"year": "1978-1980", "name": "Harbans Lal Aurora"}
+            ]
+        },
+        {
+            "id": "hq_vice_president",
+            "label": "HQ Vice President (West Zone)",
+            "members": [
+                {"year": "2016-2017", "name": "Dr. Rajeev B. Krishnani"},
+                {"year": "2012-2013", "name": "Ranjeet More"},
+                {"year": "2007-2008", "name": "Kishan P. Baney"},
+                {"year": "1999-2000", "name": "Amar Mulchandani"},
+                {"year": "1996-1997", "name": "Madhavrao Jog"},
+                {"year": "1990-1991", "name": "D. S. Vajram"}
+            ]
+        },
+        {
+            "id": "state_chairman",
+            "label": "State Chairman (Maharashtra)",
+            "members": [
+                {"year": "2025-2026", "name": "Jagannath S. Jadhav"},
+                {"year": "2014-2015", "name": "Neelkanth S. Joshi"},
+                {"year": "2005-2006", "name": "Jassu Panjwani"}
+            ]
+        },
+        {
+            "id": "chairman",
+            "label": "Centre Chairman",
+            "members": [
+                {"year": "Apr 2026 – Mar 2027", "name": "Ajay R. Gujar"},
+                {"year": "Apr 2025 – Mar 2026", "name": "Ajay R. Gujar"},
+                {"year": "Apr 2024 – Mar 2025", "name": "Sunil Mate"},
+                {"year": "Apr 2023 – Mar 2024", "name": "D. S. Chaudhari"},
+                {"year": "Apr 2022 – Mar 2023", "name": "H. S. Anand"},
+                {"year": "Apr 2021 – Mar 2022", "name": "Ashok Atkekar"},
+                {"year": "Apr 2020 – Mar 2021", "name": "Jai Pinjani"},
+                {"year": "Apr 2019 – Mar 2020", "name": "Manoj Deshmukh"},
+                {"year": "Apr 2018 – Mar 2019", "name": "Pradeep Garge"},
+                {"year": "Apr 2017 – Mar 2018", "name": "Jagannath S. Jadhav"},
+                {"year": "Apr 2016 – Mar 2017", "name": "Siddharth Shah"},
+                {"year": "Apr 2015 – Mar 2016", "name": "Mahesh Mirani"},
+                {"year": "Apr 2014 – Mar 2015", "name": "R. B. Suryavanshi"},
+                {"year": "Apr 2013 – Mar 2014", "name": "C. S. Parhar"},
+                {"year": "Apr 2012 – Mar 2013", "name": "Jaideep Raje"},
+                {"year": "Apr 2011 – Mar 2012", "name": "Subhash Deshpande"},
+                {"year": "Apr 2009 – Mar 2011", "name": "Ranjeet More"},
+                {"year": "Apr 2008 – Mar 2009", "name": "Neelkanth S. Joshi"},
+                {"year": "Apr 2007 – Mar 2008", "name": "Dr. Rajeev B. Krishnani"},
+                {"year": "Apr 2006 – Mar 2007", "name": "Sanjay Vaichal"},
+                {"year": "Apr 2005 – Mar 2006", "name": "S. G. Moorjani"},
+                {"year": "Apr 2003 – Mar 2005", "name": "Vishwas Lokare"},
+                {"year": "Jul 2002 – Mar 2003", "name": "Naren Kothari"},
+                {"year": "Apr 2001 – Jul 2002", "name": "Manikram Halbe"},
+                {"year": "Apr 1999 – Mar 2001", "name": "D. S. Shirole"},
+                {"year": "Apr 1998 – Mar 1999", "name": "S. I. Chunkhare"},
+                {"year": "Apr 1997 – Mar 1998", "name": "S. M. Mehta"},
+                {"year": "Apr 1996 – Mar 1997", "name": "Jassu Panjwani"},
+                {"year": "Jun 1995 – Mar 1996", "name": "K. M. Jain"},
+                {"year": "Apr 1994 – Jun 1995", "name": "J. P. Shroff"},
+                {"year": "Oct 1992 – Mar 1994", "name": "Kumar Vaswani"},
+                {"year": "Apr 1990 – Sep 1992", "name": "Amar Mulchandani"},
+                {"year": "Apr 1989 – Mar 1990", "name": "H. B. Punjabi"},
+                {"year": "Apr 1988 – Mar 1989", "name": "N. V. Kanetkar"},
+                {"year": "Apr 1987 – Mar 1988", "name": "R. R. Dhoot"},
+                {"year": "Apr 1985 – Mar 1987", "name": "D. S. Vajram"},
+                {"year": "Apr 1983 – Mar 1985", "name": "Kishan P. Baney"},
+                {"year": "Apr 1981 – Mar 1983", "name": "J. S. Khalsa"},
+                {"year": "Apr 1980 – Mar 1981", "name": "Lalit Sangtani"},
+                {"year": "Mar 1978 – Mar 1980", "name": "Raisahib P. Gera"},
+                {"year": "1977", "name": "B. N. Shah"},
+                {"year": "1976", "name": "Raisahib P. Gera"},
+                {"year": "Jun 1975 – Dec 1975", "name": "S. K. Arunachalam"},
+                {"year": "1974–1975", "name": "Harbans Lal Aurora"},
+                {"year": "1972–1974", "name": "Raisahib P. Gera"},
+                {"year": "1970–1971", "name": "G. K. Sharotri"},
+                {"year": "1969", "name": "Wadhumal Shahaney"},
+                {"year": "1968", "name": "Atur Sangtani"},
+                {"year": "1967", "name": "A. U. Mansukhani"},
+                {"year": "1966", "name": "Col. V. P. Kapur"},
+                {"year": "1965", "name": "Raisahib P. Gera"},
+                {"year": "1963–1964", "name": "Harbans Lal Aurora"},
+                {"year": "1959–1962", "name": "K. J. Sapra"}
+            ]
+        },
+        {
+            "id": "secretary",
+            "label": "Centre Hon. Secretary",
+            "members": [
+                {"year": "Apr 2026 – Mar 2027", "name": "Dr. Mahesh Rathi"},
+                {"year": "Apr 2025 – Mar 2026", "name": "C. H. Ratlani"},
+                {"year": "Apr 2024 – Mar 2025", "name": "Rajaram Hajare"},
+                {"year": "Apr 2023 – Mar 2024", "name": "Ajay R. Gujar"},
+                {"year": "Apr 2022 – Mar 2023", "name": "Ajay R. Gujar"},
+                {"year": "Apr 2021 – Mar 2022", "name": "H. S. Anand"},
+                {"year": "Apr 2020 – Mar 2021", "name": "H. S. Anand"},
+                {"year": "Apr 2019 – Mar 2020", "name": "Sanjay Apte"},
+                {"year": "Apr 2018 – Mar 2019", "name": "Ashok Atkekar"},
+                {"year": "Apr 2017 – Mar 2018", "name": "Manoj Deshmukh"},
+                {"year": "Apr 2016 – Mar 2017", "name": "Manoj Deshmukh"},
+                {"year": "Apr 2015 – Mar 2016", "name": "Jagannath S. Jadhav"},
+                {"year": "Apr 2014 – Mar 2015", "name": "Nandkumar Jethani"},
+                {"year": "Apr 2013 – Mar 2014", "name": "Jaikishan Pinjani"},
+                {"year": "Apr 2012 – Mar 2013", "name": "Mahesh Mirani"},
+                {"year": "Apr 2011 – Mar 2012", "name": "Nandkumar Jethani"},
+                {"year": "Apr 2010 – Mar 2011", "name": "Mahesh Mirani"},
+                {"year": "Apr 2009 – Mar 2010", "name": "Jaikishan Pinjani"},
+                {"year": "Apr 2008 – Mar 2009", "name": "Mahesh Mirani"},
+                {"year": "Apr 2007 – Mar 2008", "name": "D. S. Chaudhari"},
+                {"year": "Apr 2006 – Mar 2007", "name": "Neelkanth S. Joshi"},
+                {"year": "Apr 2005 – Mar 2006", "name": "Shivkumar Bhalla"},
+                {"year": "Apr 2003 – Mar 2005", "name": "S. G. Moorjani"},
+                {"year": "Jul 2002 – Mar 2003", "name": "Sanjay Vaichal"},
+                {"year": "Apr 2001 – Jul 2002", "name": "Neelkanth S. Joshi"},
+                {"year": "Apr 1999 – Mar 2001", "name": "Manikram Halbe"},
+                {"year": "Apr 1997 – Mar 1999", "name": "Neelkanth S. Joshi"},
+                {"year": "Apr 1996 – Mar 1997", "name": "Manikram Halbe"},
+                {"year": "Apr 1994 – Mar 1996", "name": "S. I. Chunkhare"},
+                {"year": "Apr 1993 – Mar 1994", "name": "Jassu Panjwani"},
+                {"year": "Apr 1990 – Mar 1993", "name": "J. P. Shroff"},
+                {"year": "Apr 1989 – Mar 1990", "name": "Kumar Vaswani"},
+                {"year": "Apr 1988 – Mar 1989", "name": "V. K. Khinvsara"},
+                {"year": "Apr 1987 – Mar 1988", "name": "N. V. Kanetkar"},
+                {"year": "Apr 1985 – Mar 1987", "name": "Amar Mulchandani"},
+                {"year": "Apr 1983 – Mar 1985", "name": "R. R. Dhoot"},
+                {"year": "Apr 1981 – Mar 1983", "name": "Mohan Lal Mathrani"},
+                {"year": "Apr 1980 – Mar 1981", "name": "Kishan P. Baney"},
+                {"year": "Mar 1978 – Mar 1980", "name": "N. S. Rangaswamy"},
+                {"year": "1977", "name": "B. G. Mahajan"},
+                {"year": "1976", "name": "D. G. Gupta"},
+                {"year": "1974–1975", "name": "Kumar Gera"},
+                {"year": "1972–1973", "name": "S. K. Arunachalam"},
+                {"year": "1969–1971", "name": "R. V. Joshi"},
+                {"year": "1968", "name": "G. K. Sharotri"},
+                {"year": "1967", "name": "R. M. Shah"},
+                {"year": "1966", "name": "N. V. Sanghavi"},
+                {"year": "1965", "name": "A. U. Mansukhani"},
+                {"year": "1964", "name": "Col. V. P. Kapur"},
+                {"year": "1959–1963", "name": "Raisahib P. Gera"}
+            ]
+        },
+        {"id": "vice_chairman", "label": "Centre Vice Chairman", "members": []},
+        {"id": "treasurer", "label": "Centre Treasurer", "members": []}
+    ]
+}
+
+# Commemorative plaque for the Centre's Platinum Jubilee (1941-2015), listing the
+# office bearers of that year plus the celebration's organising committee.
+PLATINUM_JUBILEE_2015 = {
+    "title": "Platinum Jubilee Celebration",
+    "subtitle": "75 Years · 1941–2015",
+    "office_bearers": [
+        {"name": "Mahesh R. Mirani", "role": "Chairman"},
+        {"name": "Siddharth J. Shah", "role": "Vice Chairman"},
+        {"name": "Jagannath S. Jadhav", "role": "Hon. Secretary"},
+        {"name": "Manoj Deshmukh", "role": "Hon. Jt. Secretary"},
+        {"name": "C. H. Ratlani", "role": "Hon. Treasurer"}
+    ],
+    "organising_committee": [
+        "R. B. Suryavanshi", "Neelkanth S. Joshi", "S. I. Chunkhare", "Jaideep Raje",
+        "C. S. Parhar", "D. S. Shirole", "Subhash Deshpande", "Jai Pinjani",
+        "Shivkumar Bhalla"
+    ]
+}
 
 ANNOUNCEMENTS = [
     {

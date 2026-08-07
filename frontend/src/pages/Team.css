@@ -117,6 +117,13 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* A lone card (e.g. the WBSC Chairman) sits centred at one-fifth width so
+   it lines up with the office-bearer row above it. */
+.grid-single {
+  grid-template-columns: minmax(0, calc((100% - 8rem) / 5));
+  justify-content: center;
+}
+
 /* Member card inside roster */
 .team-member-card {
   background: var(--gray-50);
@@ -152,6 +159,22 @@
 
 .team-member-card:hover .team-member-img {
   transform: scale(1.06);
+}
+
+/* Shown when no photograph has been supplied for a member. */
+.team-member-img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.team-member-initials {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fff;
 }
 
 .team-member-overlay {
@@ -216,6 +239,9 @@
   .grid-5 {
     grid-template-columns: repeat(4, 1fr);
   }
+  .grid-single {
+    grid-template-columns: minmax(0, calc((100% - 6rem) / 4));
+  }
 }
 
 @media (max-width: 1024px) {
@@ -229,11 +255,18 @@
   .grid-5 {
     grid-template-columns: repeat(3, 1fr);
   }
+  .grid-single {
+    grid-template-columns: minmax(0, calc((100% - 4rem) / 3));
+  }
 }
 
 @media (max-width: 768px) {
   .grid-3, .grid-4, .grid-5 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .grid-single {
+    grid-template-columns: minmax(0, calc((100% - 1.25rem) / 2));
     gap: 1.25rem;
   }
   .team-title {
@@ -251,7 +284,7 @@
 }
 
 @media (max-width: 480px) {
-  .grid-3, .grid-4, .grid-5 {
+  .grid-3, .grid-4, .grid-5, .grid-single {
     grid-template-columns: 1fr;
   }
 }

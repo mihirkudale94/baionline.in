@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getHomeData, youtubeVideos, youtubeChannel } from "../services/api";
+import { getHomeData, youtubeVideos, youtubeChannel, wbscAwardsData } from "../services/api";
 import HeroCarousel from "../components/HeroCarousel";
 import StatsBar from "../components/StatsBar";
 import SponsorsBanner from "../components/SponsorsBanner";
@@ -76,6 +76,68 @@ const Home = () => {
 
       {/* 3. Stats Bar */}
       <StatsBar stats={data.stats} />
+
+      {/* 3b. WBSC 2026 — the Centre's flagship competition, given its own
+             band on the home page rather than being buried in the nav. */}
+      <section className="wbsc-home-band">
+        <div className="container wbsc-home-inner">
+          <motion.img
+            src={wbscAwardsData.logo}
+            alt="Well Built Structure Competition — Since 1997"
+            className="wbsc-home-logo"
+            /* Intrinsic size reserves the box before the image arrives, so
+               the band doesn't shift as it loads. */
+            width={640}
+            height={640}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            loading="lazy"
+          />
+          <motion.div
+            className="wbsc-home-text"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <span className="wbsc-home-tag">
+              {wbscAwardsData.edition} · {wbscAwardsData.since}
+            </span>
+            <h2>{wbscAwardsData.title}</h2>
+            <p className="wbsc-home-tagline">{wbscAwardsData.tagline}</p>
+            <p className="wbsc-home-blurb">
+              BAI Pune Centre's flagship competition, honouring the best-built
+              structures across {wbscAwardsData.categoryCount} categories — judged by an
+              independent panel of juries through project presentations and site visits.
+            </p>
+            <div className="wbsc-home-actions">
+              <Link to="/wbsc-awards" className="btn btn-primary">
+                Explore WBSC 2026 <FaArrowRight />
+              </Link>
+              <Link to="/wbsc-awards#wbsc-entry-terms" className="btn btn-outline wbsc-home-btn-ghost">
+                Entry details
+              </Link>
+            </div>
+            {wbscAwardsData.openEntriesNote && (
+              <p className="wbsc-home-open">{wbscAwardsData.openEntriesNote}</p>
+            )}
+          </motion.div>
+          <motion.img
+            src={wbscAwardsData.trophy}
+            alt="The WBSC trophy"
+            className="wbsc-home-trophy"
+            width={334}
+            height={720}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            loading="lazy"
+          />
+        </div>
+      </section>
 
       {/* 4. Split Layout: Main Content (Left) & Widgets (Right) */}
       <section className="home-main-layout">

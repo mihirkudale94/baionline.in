@@ -59,7 +59,7 @@ export const stats = [
 
 export const leadership = {
   president: {
-    name: "Ajay Gujar",
+    name: "Ajay R. Gujar",
     title: "Chairman BAI Pune",
     image: "/images/Shri_Ajay_Gujar.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
@@ -73,7 +73,7 @@ export const leadership = {
     bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
   },
   hon_secretary: {
-    name: "Mahesh Rathi",
+    name: "Dr. Mahesh Rathi",
     title: "Secretary BAI Pune",
     image: "/images/Shri_Mahesh_Rathi.jpg",
     bio: "Secretary of Builders' Association of India Pune."
@@ -85,10 +85,19 @@ export const leadership = {
     bio: "Jt. Secretary of Builders' Association of India Pune."
   },
   hon_treasurer: {
-    name: "Sushil Agarwal",
+    name: "Sushil N. Agarwal",
     title: "Treasurer BAI Pune",
     image: "/images/Shri_Sushil_Agarwal.jpg",
     bio: "Treasurer of Builders' Association of India Pune."
+  },
+  /* Listed alongside the office bearers in the WBSC 2026 booklet (p5).
+     No photograph supplied yet — the Team card falls back to an initials
+     avatar when `image` is empty. */
+  wbsc_chairman: {
+    name: "Sunil Mate",
+    title: "Chairman - WBSC 2026",
+    image: "",
+    bio: "Chairman of the Well Built Structure Competition 2026, Builders' Association of India Pune Centre."
   }
 };
 
@@ -222,10 +231,10 @@ export const footerData = {
   logo: "/images/logo-white-02.png",
   office: {
     title: "Pune Centre Office:",
-    address: "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
-    tel: "(020) 2444 0000",
-    phone: "(020) 2444 0001",
-    email: "bai.punecentre@gmail.com"
+    address: "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
+    tel: "(020) 2605 9255",
+    phone: "(020) 2605 7441",
+    email: "baipune1@gmail.com"
   },
   quick_links: [
     { label: "About BAI", path: "/about" },
@@ -321,10 +330,10 @@ export const contactData = {
   title: "Contact Us",
   office: {
     name: "BAI - Builders' Association of India, Pune Centre",
-    address: "B.G. Shirke Activity Centre, 23, 24 & 25 \"Sangam\", Phase II, Near Sangam Bridge, Pune - 411001",
-    tel: ["(020) 2444 0000", "(020) 2444 0001"],
-    phone: "(020) 2444 0001",
-    email: "bai.punecentre@gmail.com"
+    address: "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
+    tel: ["(020) 2605 9255", "(020) 2605 7441"],
+    phone: "(020) 2605 7441",
+    email: "baipune1@gmail.com"
   }
 };
 
@@ -530,9 +539,9 @@ export const committeesData = [
 export const executiveCommittee = {
   chairman: { role: "Chairman", name: "" },
   vice_chairman: { role: "Vice Chairman", name: "Rajaram B. Hajare" },
-  hon_secretary: { role: "Secretary", name: "Mahesh Rathi" },
+  hon_secretary: { role: "Secretary", name: "Dr. Mahesh Rathi" },
   hon_joint_secretary: { role: "Jt. Secretary", name: "Sanjay Apte" },
-  hon_treasurer: { role: "Treasurer", name: "Sushil Agarwal" },
+  hon_treasurer: { role: "Treasurer", name: "Sushil N. Agarwal" },
   members: [
     
   ]
@@ -597,45 +606,565 @@ export const pastPresidentsData = [
   { year: "1941-1942", "name": "Shri M. P. Shah" }
 ];
 
-// Sample/placeholder data — pending real records from the Pune Centre office bearer display boards
+// Mirrors PUNE_OFFICE_BEARERS in backend/data/content.py — transcribed from the
+// office bearer display board at the Centre. Centre-level roles are still being
+// compiled from the Centre's archives and render an empty state until filled.
+// Mirrors PUNE_OFFICE_BEARERS / PLATINUM_JUBILEE_2015 in backend/data/content.py —
+// transcribed from the office bearer display boards at the Centre. Used as the
+// offline fallback when the API is unreachable.
+// Mirrors PUNE_OFFICE_BEARERS / PLATINUM_JUBILEE_2015 in backend/data/content.py —
+// transcribed from the office bearer display boards at the Centre. Used as the
+// offline fallback when the API is unreachable.
 export const puneOfficeBearersData = {
-  note: "The entries below are sample placeholders. Real names and years will be added once the photographs of the Pune Centre office bearer display boards are shared.",
-  roles: [
+  "note": "Transcribed from the office bearer display boards at BAI Pune Centre. Chairman and Hon. Secretary records begin in 1959 — earlier years are not listed on the boards.",
+  "roles": [
     {
-      id: "chairman",
-      label: "Chairman",
-      members: [
-        { year: "2024-2025", name: "Sample Name — to be added" },
-        { year: "2022-2024", name: "Sample Name — to be added" },
-        { year: "2020-2022", name: "Sample Name — to be added" }
+      "id": "hq_president",
+      "label": "HQ President",
+      "members": [
+        {
+          "year": "1991-1992",
+          "name": "Lalit Sangtani"
+        },
+        {
+          "year": "1978-1980",
+          "name": "Harbans Lal Aurora"
+        }
       ]
     },
     {
-      id: "vice_chairman",
-      label: "Vice Chairman",
-      members: [
-        { year: "2024-2025", name: "Sample Name — to be added" },
-        { year: "2022-2024", name: "Sample Name — to be added" }
+      "id": "hq_vice_president",
+      "label": "HQ Vice President (West Zone)",
+      "members": [
+        {
+          "year": "2016-2017",
+          "name": "Dr. Rajeev B. Krishnani"
+        },
+        {
+          "year": "2012-2013",
+          "name": "Ranjeet More"
+        },
+        {
+          "year": "2007-2008",
+          "name": "Kishan P. Baney"
+        },
+        {
+          "year": "1999-2000",
+          "name": "Amar Mulchandani"
+        },
+        {
+          "year": "1996-1997",
+          "name": "Madhavrao Jog"
+        },
+        {
+          "year": "1990-1991",
+          "name": "D. S. Vajram"
+        }
       ]
     },
     {
-      id: "secretary",
-      label: "Secretary",
-      members: [
-        { year: "2024-2025", name: "Sample Name — to be added" },
-        { year: "2022-2024", name: "Sample Name — to be added" }
+      "id": "state_chairman",
+      "label": "State Chairman (Maharashtra)",
+      "members": [
+        {
+          "year": "2025-2026",
+          "name": "Jagannath S. Jadhav"
+        },
+        {
+          "year": "2014-2015",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "2005-2006",
+          "name": "Jassu Panjwani"
+        }
       ]
     },
     {
-      id: "treasurer",
-      label: "Treasurer",
-      members: [
-        { year: "2024-2025", name: "Sample Name — to be added" },
-        { year: "2022-2024", name: "Sample Name — to be added" }
+      "id": "chairman",
+      "label": "Centre Chairman",
+      "members": [
+        {
+          "year": "Apr 2026 – Mar 2027",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2025 – Mar 2026",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2024 – Mar 2025",
+          "name": "Sunil Mate"
+        },
+        {
+          "year": "Apr 2023 – Mar 2024",
+          "name": "D. S. Chaudhari"
+        },
+        {
+          "year": "Apr 2022 – Mar 2023",
+          "name": "H. S. Anand"
+        },
+        {
+          "year": "Apr 2021 – Mar 2022",
+          "name": "Ashok Atkekar"
+        },
+        {
+          "year": "Apr 2020 – Mar 2021",
+          "name": "Jai Pinjani"
+        },
+        {
+          "year": "Apr 2019 – Mar 2020",
+          "name": "Manoj Deshmukh"
+        },
+        {
+          "year": "Apr 2018 – Mar 2019",
+          "name": "Pradeep Garge"
+        },
+        {
+          "year": "Apr 2017 – Mar 2018",
+          "name": "Jagannath S. Jadhav"
+        },
+        {
+          "year": "Apr 2016 – Mar 2017",
+          "name": "Siddharth Shah"
+        },
+        {
+          "year": "Apr 2015 – Mar 2016",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2014 – Mar 2015",
+          "name": "R. B. Suryavanshi"
+        },
+        {
+          "year": "Apr 2013 – Mar 2014",
+          "name": "C. S. Parhar"
+        },
+        {
+          "year": "Apr 2012 – Mar 2013",
+          "name": "Jaideep Raje"
+        },
+        {
+          "year": "Apr 2011 – Mar 2012",
+          "name": "Subhash Deshpande"
+        },
+        {
+          "year": "Apr 2009 – Mar 2011",
+          "name": "Ranjeet More"
+        },
+        {
+          "year": "Apr 2008 – Mar 2009",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 2007 – Mar 2008",
+          "name": "Dr. Rajeev B. Krishnani"
+        },
+        {
+          "year": "Apr 2006 – Mar 2007",
+          "name": "Sanjay Vaichal"
+        },
+        {
+          "year": "Apr 2005 – Mar 2006",
+          "name": "S. G. Moorjani"
+        },
+        {
+          "year": "Apr 2003 – Mar 2005",
+          "name": "Vishwas Lokare"
+        },
+        {
+          "year": "Jul 2002 – Mar 2003",
+          "name": "Naren Kothari"
+        },
+        {
+          "year": "Apr 2001 – Jul 2002",
+          "name": "Manikram Halbe"
+        },
+        {
+          "year": "Apr 1999 – Mar 2001",
+          "name": "D. S. Shirole"
+        },
+        {
+          "year": "Apr 1998 – Mar 1999",
+          "name": "S. I. Chunkhare"
+        },
+        {
+          "year": "Apr 1997 – Mar 1998",
+          "name": "S. M. Mehta"
+        },
+        {
+          "year": "Apr 1996 – Mar 1997",
+          "name": "Jassu Panjwani"
+        },
+        {
+          "year": "Jun 1995 – Mar 1996",
+          "name": "K. M. Jain"
+        },
+        {
+          "year": "Apr 1994 – Jun 1995",
+          "name": "J. P. Shroff"
+        },
+        {
+          "year": "Oct 1992 – Mar 1994",
+          "name": "Kumar Vaswani"
+        },
+        {
+          "year": "Apr 1990 – Sep 1992",
+          "name": "Amar Mulchandani"
+        },
+        {
+          "year": "Apr 1989 – Mar 1990",
+          "name": "H. B. Punjabi"
+        },
+        {
+          "year": "Apr 1988 – Mar 1989",
+          "name": "N. V. Kanetkar"
+        },
+        {
+          "year": "Apr 1987 – Mar 1988",
+          "name": "R. R. Dhoot"
+        },
+        {
+          "year": "Apr 1985 – Mar 1987",
+          "name": "D. S. Vajram"
+        },
+        {
+          "year": "Apr 1983 – Mar 1985",
+          "name": "Kishan P. Baney"
+        },
+        {
+          "year": "Apr 1981 – Mar 1983",
+          "name": "J. S. Khalsa"
+        },
+        {
+          "year": "Apr 1980 – Mar 1981",
+          "name": "Lalit Sangtani"
+        },
+        {
+          "year": "Mar 1978 – Mar 1980",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "1977",
+          "name": "B. N. Shah"
+        },
+        {
+          "year": "1976",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "Jun 1975 – Dec 1975",
+          "name": "S. K. Arunachalam"
+        },
+        {
+          "year": "1974–1975",
+          "name": "Harbans Lal Aurora"
+        },
+        {
+          "year": "1972–1974",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "1970–1971",
+          "name": "G. K. Sharotri"
+        },
+        {
+          "year": "1969",
+          "name": "Wadhumal Shahaney"
+        },
+        {
+          "year": "1968",
+          "name": "Atur Sangtani"
+        },
+        {
+          "year": "1967",
+          "name": "A. U. Mansukhani"
+        },
+        {
+          "year": "1966",
+          "name": "Col. V. P. Kapur"
+        },
+        {
+          "year": "1965",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "1963–1964",
+          "name": "Harbans Lal Aurora"
+        },
+        {
+          "year": "1959–1962",
+          "name": "K. J. Sapra"
+        }
       ]
+    },
+    {
+      "id": "secretary",
+      "label": "Centre Hon. Secretary",
+      "members": [
+        {
+          "year": "Apr 2026 – Mar 2027",
+          "name": "Dr. Mahesh Rathi"
+        },
+        {
+          "year": "Apr 2025 – Mar 2026",
+          "name": "C. H. Ratlani"
+        },
+        {
+          "year": "Apr 2024 – Mar 2025",
+          "name": "Rajaram Hajare"
+        },
+        {
+          "year": "Apr 2023 – Mar 2024",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2022 – Mar 2023",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2021 – Mar 2022",
+          "name": "H. S. Anand"
+        },
+        {
+          "year": "Apr 2020 – Mar 2021",
+          "name": "H. S. Anand"
+        },
+        {
+          "year": "Apr 2019 – Mar 2020",
+          "name": "Sanjay Apte"
+        },
+        {
+          "year": "Apr 2018 – Mar 2019",
+          "name": "Ashok Atkekar"
+        },
+        {
+          "year": "Apr 2017 – Mar 2018",
+          "name": "Manoj Deshmukh"
+        },
+        {
+          "year": "Apr 2016 – Mar 2017",
+          "name": "Manoj Deshmukh"
+        },
+        {
+          "year": "Apr 2015 – Mar 2016",
+          "name": "Jagannath S. Jadhav"
+        },
+        {
+          "year": "Apr 2014 – Mar 2015",
+          "name": "Nandkumar Jethani"
+        },
+        {
+          "year": "Apr 2013 – Mar 2014",
+          "name": "Jaikishan Pinjani"
+        },
+        {
+          "year": "Apr 2012 – Mar 2013",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2011 – Mar 2012",
+          "name": "Nandkumar Jethani"
+        },
+        {
+          "year": "Apr 2010 – Mar 2011",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2009 – Mar 2010",
+          "name": "Jaikishan Pinjani"
+        },
+        {
+          "year": "Apr 2008 – Mar 2009",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2007 – Mar 2008",
+          "name": "D. S. Chaudhari"
+        },
+        {
+          "year": "Apr 2006 – Mar 2007",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 2005 – Mar 2006",
+          "name": "Shivkumar Bhalla"
+        },
+        {
+          "year": "Apr 2003 – Mar 2005",
+          "name": "S. G. Moorjani"
+        },
+        {
+          "year": "Jul 2002 – Mar 2003",
+          "name": "Sanjay Vaichal"
+        },
+        {
+          "year": "Apr 2001 – Jul 2002",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 1999 – Mar 2001",
+          "name": "Manikram Halbe"
+        },
+        {
+          "year": "Apr 1997 – Mar 1999",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 1996 – Mar 1997",
+          "name": "Manikram Halbe"
+        },
+        {
+          "year": "Apr 1994 – Mar 1996",
+          "name": "S. I. Chunkhare"
+        },
+        {
+          "year": "Apr 1993 – Mar 1994",
+          "name": "Jassu Panjwani"
+        },
+        {
+          "year": "Apr 1990 – Mar 1993",
+          "name": "J. P. Shroff"
+        },
+        {
+          "year": "Apr 1989 – Mar 1990",
+          "name": "Kumar Vaswani"
+        },
+        {
+          "year": "Apr 1988 – Mar 1989",
+          "name": "V. K. Khinvsara"
+        },
+        {
+          "year": "Apr 1987 – Mar 1988",
+          "name": "N. V. Kanetkar"
+        },
+        {
+          "year": "Apr 1985 – Mar 1987",
+          "name": "Amar Mulchandani"
+        },
+        {
+          "year": "Apr 1983 – Mar 1985",
+          "name": "R. R. Dhoot"
+        },
+        {
+          "year": "Apr 1981 – Mar 1983",
+          "name": "Mohan Lal Mathrani"
+        },
+        {
+          "year": "Apr 1980 – Mar 1981",
+          "name": "Kishan P. Baney"
+        },
+        {
+          "year": "Mar 1978 – Mar 1980",
+          "name": "N. S. Rangaswamy"
+        },
+        {
+          "year": "1977",
+          "name": "B. G. Mahajan"
+        },
+        {
+          "year": "1976",
+          "name": "D. G. Gupta"
+        },
+        {
+          "year": "1974–1975",
+          "name": "Kumar Gera"
+        },
+        {
+          "year": "1972–1973",
+          "name": "S. K. Arunachalam"
+        },
+        {
+          "year": "1969–1971",
+          "name": "R. V. Joshi"
+        },
+        {
+          "year": "1968",
+          "name": "G. K. Sharotri"
+        },
+        {
+          "year": "1967",
+          "name": "R. M. Shah"
+        },
+        {
+          "year": "1966",
+          "name": "N. V. Sanghavi"
+        },
+        {
+          "year": "1965",
+          "name": "A. U. Mansukhani"
+        },
+        {
+          "year": "1964",
+          "name": "Col. V. P. Kapur"
+        },
+        {
+          "year": "1959–1963",
+          "name": "Raisahib P. Gera"
+        }
+      ]
+    },
+    {
+      "id": "vice_chairman",
+      "label": "Centre Vice Chairman",
+      "members": []
+    },
+    {
+      "id": "treasurer",
+      "label": "Centre Treasurer",
+      "members": []
     }
   ]
 };
+
+export const platinumJubileeData = {
+  "title": "Platinum Jubilee Celebration",
+  "subtitle": "75 Years · 1941–2015",
+  "office_bearers": [
+    {
+      "name": "Mahesh R. Mirani",
+      "role": "Chairman"
+    },
+    {
+      "name": "Siddharth J. Shah",
+      "role": "Vice Chairman"
+    },
+    {
+      "name": "Jagannath S. Jadhav",
+      "role": "Hon. Secretary"
+    },
+    {
+      "name": "Manoj Deshmukh",
+      "role": "Hon. Jt. Secretary"
+    },
+    {
+      "name": "C. H. Ratlani",
+      "role": "Hon. Treasurer"
+    }
+  ],
+  "organising_committee": [
+    "R. B. Suryavanshi",
+    "Neelkanth S. Joshi",
+    "S. I. Chunkhare",
+    "Jaideep Raje",
+    "C. S. Parhar",
+    "D. S. Shirole",
+    "Subhash Deshpande",
+    "Jai Pinjani",
+    "Shivkumar Bhalla"
+  ]
+};
+
+export async function getPuneOfficeBearersData() {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/pune-office-bearers`);
+    if (!res.ok) throw new Error("Status " + res.status);
+    return await res.json();
+  } catch (err) {
+    console.warn("Using local fallback for Pune Office Bearers:", err);
+    return puneOfficeBearersData;
+  }
+}
 
 export async function getCommitteesData() {
   try {
@@ -659,196 +1188,779 @@ export async function getPastPresidentsData() {
   }
 }
 
+/* ------------------------------------------------------------------
+   WELL BUILT STRUCTURE COMPETITION
+   Every value below is transcribed from BAI Pune Centre's official
+   "WBSC Booklet 2026" (38pp, issued 18 June 2026). Do not edit these
+   figures, names or category titles without checking that document —
+   they are the Centre's own published record.
+
+   Edition numbering: 1997-98 was the 1st in series, so 2024-25 = 28th,
+   2025-26 = 29th and 2026 = 30th. The booklet cover reads "30th in Series".
+   ------------------------------------------------------------------ */
 export const wbscAwardsData = {
-  title: "BAI – SHIRKE Well Built Structure Competition 2026",
-  edition: "30th Edition",
-  tagline: "Celebrating Excellence in Construction.",
+  title: "Well Built Structure Competition 2026",
+  edition: "30th in Series",
+  since: "Since 1997",
+  tagline: "Quality • Speed • Economy • Safety & Welfare",
+  logo: "/images/wbsc/wbsc-logo.png",
+  trophy: "/images/wbsc/wbsc-trophy.png",
+  openEntriesNote: "Entries for WBSC 2027 and 2028 are open",
   about: [
-    "The Well Built Structure Competition (WBSC) is one of India's most prestigious construction excellence awards organized annually by the Builders' Association of India – Pune Centre.",
-    "For nearly three decades, WBSC has recognized projects demonstrating outstanding quality, engineering excellence, innovation, safety, speed and economy in construction."
+    "A few decades ago it was felt that the Association should give due recognition to good quality works being done by fellow contractors, constructors and builders. This would help not only to enhance the image of the construction industry but also be a source of inspiration to all fellow contractors for improvement and betterment of their work. With this primary intention BAI Pune Centre instituted these awards and declared this competition in the year 1997.",
+    "The awards have gained reputation and standing only because of the meticulous evaluation of works by an Independent Panel of Juries to decide award winning work. A team of leading consultants, architects and engineers form the panel of juries. They first check all the entries and, after presentation at the BAI Office, the Panel of Juries physically visits each site checking the works and assessing the project from various aspects of construction methods and techniques utilised."
   ],
+  /* The five aspects the entry is judged on (booklet pp8, 11). */
+  criteria: ["Quality", "Speed", "Economy", "Safety", "Welfare"],
   whyParticipate: [
-    { title: "National Recognition", desc: "Winning entries earn recognition among the country's most respected construction quality benchmarks." },
-    { title: "Prestigious Trophy & Certificate", desc: "Category winners are felicitated with the WBSC trophy and certificate of excellence." },
-    { title: "Technical Evaluation by Eminent Jury", desc: "An independent jury of eminent engineers and architects evaluates every entry against rigorous technical standards." },
-    { title: "Industry Recognition", desc: "Award-winning projects gain visibility through BAI publications, press coverage and industry circles." },
-    { title: "Benchmark Your Projects", desc: "Detailed evaluator feedback helps you benchmark your project against the industry's best." },
-    { title: "Showcase Engineering Excellence", desc: "WBSC is a platform to showcase your firm's engineering excellence and construction quality practices." }
+    { title: "Independent Jury Evaluation", desc: "A panel of eminent civil engineers, structural designers, architects, project managers, green building and construction safety consultants assesses every entry." },
+    { title: "Prestigious Trophy & Certificate", desc: "Winners receive the WBSC trophy and a certificate at the grand WBSC 2026 Award Ceremony." },
+    { title: "Recognition Since 1997", desc: "Three decades of standing make the WBSC one of Pune's most respected construction quality benchmarks." },
+    { title: "Rigorous, Documented Assessment", desc: "100 marks per project — 20 for the presentation and 80 for the site visit — scored on standard assessment sheets." },
+    { title: "Weightage for Green Building", desc: "Implementation of Green Building concepts in the construction process is given more weightage during evaluation." },
+    { title: "Showcase Your Site Practices", desc: "Workmanship, innovative techniques, site management, health and hygiene of workmen and training programmes are all considered." }
   ],
+  /* The 11 official 2026 categories (booklet p8), grouped for the tab UI. */
+  categoryCount: 11,
   categoryGroups: [
     {
       group: "Residential",
-      categories: ["Bungalow / Row House", "Standalone Buildings", "Redevelopment", "Multi Building Projects"]
+      categories: [
+        "Residential (Bungalow, Row Houses, Standalone Buildings)",
+        "Residential (Housing Complex)",
+        "Residential (Redevelopment Projects)"
+      ]
     },
     {
-      group: "Commercial",
-      categories: ["Offices", "Shopping Centres", "IT Parks", "Hospitals", "Institutional Buildings"]
+      group: "Commercial & Industrial",
+      categories: [
+        "Commercial (Malls, Office, Institution, Hotel, Hospital, Cinema etc.)",
+        "Industrial Construction Projects"
+      ]
     },
     {
-      group: "Infrastructure",
-      categories: ["Roads", "Bridges", "Flyovers", "STP", "ESR", "GSR"]
-    },
-    {
-      group: "Industrial",
-      categories: ["Industrial"]
+      group: "Infrastructure & Roads",
+      categories: [
+        "Infrastructure (Bridges, Flyovers, ESR, Metro Stations etc.)",
+        "Roads (Concrete & Bituminous)"
+      ]
     },
     {
       group: "Government",
-      categories: ["Government Projects"]
+      categories: ["Government (State & Central), Semi-Govt., Public Works"]
     },
     {
-      group: "Landscaping",
-      categories: ["Landscaping"]
-    },
-    {
-      group: "Bare Shell",
-      categories: ["Bare Shell Projects"]
-    },
-    {
-      group: "Masters",
-      categories: ["Masters Category"]
+      group: "Specialised",
+      categories: [
+        "Landscapes (Horticulture work etc.)",
+        "Work up to Bare Shell (includes RCC, Masonry and Plaster works)",
+        "Mastery Category"
+      ]
     }
   ],
   eligibility: [
-    "Builders",
-    "Contractors",
-    "Developers",
-    "Infrastructure Companies",
-    "Government Contractors",
-    "Joint Ventures",
-    "Turnkey Contractors"
+    "Any individual, company, firm, joint venture, turnkey contractor, promoter or developer engaged in construction activity may participate.",
+    "The applicant must be from in and around Pune, or from the nearby BAI centres: Ahmednagar, Baramati, Ichalkaranji, Kolhapur, Mumbai, Nashik, Phaltan, Sangali, Satara, Solapur, Sangamner and Ulhasnagar.",
+    "The applicant must have had a major role in the execution of the project.",
+    "The project must be within 250 km from Pune.",
+    "Work must be nearing completion and shall have commenced preferably not before March 2024.",
+    "A project entered in a previous competition shall not be considered."
   ],
-  eligibilityNote: "Projects should satisfy WBSC eligibility requirements including commencement period and applicant's execution role.",
+  eligibilityNote: "One project may be proposed for two categories by filling in two separate entry forms. The category is subject to confirmation by the Juries.",
   evaluationCriteria: [
-    "Quality",
-    "Speed",
-    "Economy",
-    "Innovation",
-    "Safety",
-    "Sustainability",
-    "Site Management",
-    "Green Building Practices",
-    "Welfare Measures",
-    "Documentation"
+    "100 marks per project — 20 for the presentation, 80 for the site visit",
+    "Quality, Speed, Economy, Safety and Welfare achieved on site",
+    "Documents and records maintained right from the beginning",
+    "Workmanship and innovative construction techniques",
+    "Site management and monitoring methods",
+    "Health and hygiene of workmen at site",
+    "Training and motivational programmes conducted",
+    "Implementation of Green Building concepts (given more weightage)"
   ],
-  evaluationNote: "Independent experts from multiple disciplines conduct the evaluation through presentations, site visits and confidential assessment.",
+  evaluationNote: "Evaluation is done through standard assessment sheets by each Jury member separately and is kept confidential. This data is not available for review or discussion. The decision of the Panel of Juries is final.",
+  entryTerms: [
+    { label: "Entry fee", value: "₹25,000 + GST @ 18% per entry, payable with the application" },
+    { label: "Cheque in favour of", value: "Builders' Association of India – Pune Centre" },
+    { label: "Presentation", value: "Maximum 30 minutes to the Panel of Juries, including PowerPoint and video" },
+    { label: "Submission", value: "PPT on pen-drive with 2 hard copies, at the BAI Office at least 10 days before the presentation date" },
+    { label: "Video format", value: "AVI only, maximum 10 minutes" },
+    { label: "Invalid entries", value: "Returned, and the entry fee refunded" }
+  ],
   process: [
-    { title: "Submit Entry", desc: "Firms submit the completed entry form along with project details before the deadline." },
-    { title: "Document Verification", desc: "The WBSC Committee verifies entries for eligibility and completeness." },
-    { title: "Project Presentation", desc: "Entrants present their project to the evaluation panel." },
-    { title: "Jury Site Visit", desc: "An independent jury conducts on-site inspections of shortlisted projects." },
-    { title: "Final Evaluation", desc: "The jury completes its final evaluation and selects category winners." },
-    { title: "Awards Ceremony", desc: "Winners are felicitated at the annual WBSC awards function." }
+    { title: "Submit Entry", desc: "Complete the entry form with all mandatory information and submit it with supporting photographs, documents and certificates, well bound or filed, along with the entry fee." },
+    { title: "Scrutiny by Juries", desc: "The Juries scrutinise the entries as they are received and confirm the category of each entry." },
+    { title: "Project Presentation", desc: "Applicants present the project to the Panel of Juries in not more than 30 minutes, including PowerPoint and video." },
+    { title: "Shortlisting", desc: "Entries are short listed after the presentation for the site visit stage." },
+    { title: "Jury Site Visit", desc: "The Panel of Juries physically visits every shortlisted site, assessing construction methods, records, site management and welfare measures." },
+    { title: "Award Ceremony", desc: "Awards are declared and distributed at the grand WBSC 2026 Award Ceremony, in the form of a trophy and a certificate." }
+  ],
+  presentationGuidelines: [
+    "30 minute project presentation to the Panel of Juries.",
+    "Where possible, provide a video recording of the project (max 10 minutes, AVI format) to supplement the PowerPoint.",
+    "PPT should be submitted on a pen-drive with 2 hard copies.",
+    "Photographs of project execution from excavation to finish.",
+    "Labour camp and safety measures taken for the project.",
+    "New methodology / techniques adopted for time and economy constraints.",
+    "Methods for selection of construction materials and quality."
   ],
   downloads: [
-    { label: "WBSC Brochure", status: "coming_soon" },
-    { label: "Entry Form", status: "coming_soon" },
+    { label: "WBSC 2026 Entry Form", status: "coming_soon" },
+    { label: "WBSC 2026 Booklet", status: "coming_soon" },
     { label: "Competition Rules", status: "coming_soon" }
   ],
-  testimonials: [
-    {
-      id: 1,
-      name: "Er. Rajesh Patil",
-      role: "Managing Director",
-      company: "Patil Construction & Infrastructure",
-      category: "participant",
-      project: "Peak Plaza (Commercial Hub)",
-      year: "2024",
-      quote: "Participating in WBSC was an eye-opener for our site execution team. The rigorous inspection and detailed documentation check pushed our quality control standards to the next level.",
-      avatar: "RP"
-    },
-    {
-      id: 2,
-      name: "Ms. Arundhati Deshmukh",
-      role: "Head of Quality Assurance",
-      company: "Vasant Developers",
-      category: "winner",
-      project: "Vasant Woods (High-Rise Residential)",
-      award: "Gold Winner – Residential High Rise",
-      year: "2025",
-      quote: "Winning the WBSC award was a proud moment for Vasant Group. It validated our hard work, boosted our brand trust in the Pune market, and served as a powerful marketing asset.",
-      avatar: "AD"
-    },
-    {
-      id: 3,
-      name: "Dr. Sunil Kulkarni",
-      role: "Former Head of Civil Engineering, COEP",
-      company: "Senior Structural Consultant",
-      category: "jury",
-      project: "WBSC Jury Panel",
-      year: "2023 - 2026",
-      quote: "The evaluation process of WBSC is extremely objective. We inspect structural drawings, material testing records, safety compliance, and finishing quality. Only projects showing absolute excellence win.",
-      avatar: "SK"
-    },
-    {
-      id: 4,
-      name: "Er. Nitin Shah",
-      role: "Founder & Chief Architect",
-      company: "Nitin Shah Architects",
-      category: "jury",
-      project: "WBSC Jury Panel",
-      year: "2022 - 2025",
-      quote: "As a juror, it is inspiring to see Pune's construction community embrace sustainable design and smart materials. WBSC is instrumental in raising the bar for the entire industry.",
-      avatar: "NS"
-    },
-    {
-      id: 5,
-      name: "Mr. Satish Ranade",
-      role: "Project Head",
-      company: "Skyline InfraProjects",
-      category: "winner",
-      project: "Skyline Heights",
-      award: "Winner – Affordable Housing Category",
-      year: "2024",
-      quote: "WBSC's award gave our affordable housing project the credibility it deserved. Buyers are now more conscious about quality, and the BAI-Shirke WBSC seal is the ultimate mark of quality.",
-      avatar: "SR"
-    },
-    {
-      id: 6,
-      name: "Er. Meera Joshi",
-      role: "Chief Engineer",
-      company: "Joshi & Associates",
-      category: "participant",
-      project: "Metropolis Commercial Park",
-      year: "2025",
-      quote: "The feedback report provided by the WBSC engineering audit panel was highly constructive. It helped us identify gaps in our safety workflows and implement better onsite protocols.",
-      avatar: "MJ"
-    }
-  ],
-  contactEmail: "bai.punecentre@gmail.com"
+  /* Removed: the six "testimonials" previously here were invented quotes
+     attributed to named individuals. Nothing goes back in this array
+     unless BAI Pune Centre supplies real, attributable quotes. */
+  testimonials: [],
+  contactEmail: "baipune1@gmail.com"
 };
 
+/* BAI – Padmashree B. G. Shirke Lifetime Achievement Award (booklet p37).
+   Declared for exemplary services to BAI, the construction industry,
+   society and the educational field. A citation with memento and a purse
+   of ₹1,11,000 is presented. Sponsored by M/s B G Shirke Construction
+   Technology Pvt. Ltd., Pune. */
+export const nirmanRatnaData = {
+  title: "Nirman Ratna",
+  subtitle: "BAI – Padmashree B. G. Shirke Lifetime Achievement Award",
+  about: "Associated with the Well Built Structure Competition Awards, BAI Pune Centre also declared the BAI – P B G S Lifetime Achievement Award \"Nirman Ratna\" for exemplary services to BAI and the construction industry, society and the educational field. A citation, along with a memento and a purse of One Lac Eleven Thousand, is presented. The award is sponsored by M/s B G Shirke Construction Technology Pvt. Ltd., Pune.",
+  awardees: [
+    { year: "2025-26", name: "Shri. Rohidas Haribhau More (Dadasaheb)" },
+    { year: "2024-25", name: "Er. R. R. Dhoot" },
+    { year: "2023-24", name: "Er. J. P. Shroff" },
+    { year: "2022-23", name: "Er. D. S. Shirole" },
+    { year: "2021-22", name: "Er. R. B. Suryavanshi" },
+    { year: "2019-20", name: "Er. M. B. Nambiar" },
+    { year: "2018-19", name: "Er. V. G. Jana" },
+    { year: "2017-18", name: "Shri. G. H. Ajwani" },
+    { year: "2016-17", name: "Shri. D. L. Desai (Shankarbhai)" },
+    { year: "2015-16", name: "Er. P. R. Mundle" },
+    { year: "2014-15", name: "Er. Burjor F. Bode" },
+    { year: "2013-14", name: "Er. Kumar Pritamdas Gera" },
+    { year: "2012-13", name: "Er. Kishan P. Baney" },
+    { year: "2011-12", name: "Er. Shrikant Vinayak Gadgil" },
+    { year: "2010-11", name: "Shri Dore Sarvepulle Vajram" },
+    { year: "2009-10", name: "Padmashree Baburaoji Shirke" }
+  ]
+};
+
+/* Year-wise WBSC record, 1997-98 to 2025-26 (booklet pp13-15 and pp16-28).
+   `winners` carries the firm and the category exactly as printed; the
+   booklet does not record project names, so there is no project field.
+   2025-26 has no winners list in the booklet — only the office bearers
+   and chief guest for that edition are published. */
 export const wbscArchiveData = {
-  history: "The Well Built Structure Competition began as a small, single-category recognition scheme for Pune's builder community and has since grown into a multi-category, jury-evaluated competition spanning residential, commercial, industrial, infrastructure and landscaping projects. Now in its 30th edition, WBSC's archive of winners, chief guests and jury panels reflects three decades of the Pune construction industry's evolving quality standards.",
+  history: "The Well Built Structure Competition was instituted by BAI Pune Centre in 1997 to give due recognition to good quality work by fellow contractors, constructors and builders. From a handful of entries in its first year it has grown into an eleven-category, jury-evaluated competition covering residential, commercial, industrial, infrastructure, government, roads and landscape projects. The record below is reproduced from the Centre's own WBSC 2026 booklet.",
   years: [
     {
-      year: "2025",
-      editionLabel: "29th Edition — sample placeholder entry",
-      chiefGuest: "To be added",
-      highlight: "Record number of entries received across the Residential and Commercial groups.",
-      winners: [
-        { category: "Residential – High Rise", project: "Vasant Woods", firm: "Vasant Developers" },
-        { category: "Affordable Housing", project: "Skyline Heights", firm: "Skyline InfraProjects" }
-      ]
-    },
-    {
-      year: "2024",
-      editionLabel: "28th Edition — sample placeholder entry",
-      chiefGuest: "To be added",
-      highlight: "Introduced the Green Building special mention for sustainable construction practices.",
-      winners: [
-        { category: "Commercial – Office Complex", project: "Peak Plaza", firm: "Patil Construction & Infrastructure" }
-      ]
-    },
-    {
-      year: "2023",
-      editionLabel: "27th Edition — sample placeholder entry",
-      chiefGuest: "To be added",
-      highlight: "Jury panel expanded to include independent structural consultants alongside COEP faculty.",
+      year: "2025-26",
+      editionLabel: "29th in Series",
+      chiefGuest: "Shri. R. Radhakrishnan, Past President All India – BAI",
+      guestOfHonour: "Dr Rajendra Dahale (IPS), Spl. Inspector General of Police, Crime Investigation Department (CID)",
+      convenor: "Manoj Deshmukh",
+      chairman: "Sunil Mate",
+      highlight: "The winners' list for this edition is not published in the WBSC 2026 booklet.",
       winners: []
+    },
+    {
+      year: "2024-25",
+      editionLabel: "28th in Series",
+      chiefGuest: "Shri. Annasahebji Chavan, Additional Commissioner (Revenue)",
+      guestOfHonour: "Shri. Avinashji Patil, Director, Town Planning – Govt of Maharashtra; Shri. Anandji Gupta, Vice President BAI West Zone; Shri. Anilji Sonawane, State Chairman BAI Maharashtra",
+      convenor: "Siddharth Shah",
+      chairman: "Dhairyshil Khairepatil",
+      highlight: "Twenty awards across residential, commercial, industrial, infrastructure, government, roads and landscape categories.",
+      winners: [
+        { firm: "Shree Om Construction", category: "Residential (Bungalow, Row Houses)" },
+        { firm: "Shivalay Construction", category: "Residential (Bungalow, Row Houses)" },
+        { firm: "Kamakshie Constructions", category: "Residential (Standalone)" },
+        { firm: "Nirman Developers", category: "Residential (Standalone)" },
+        { firm: "Pride Builder's LLP", category: "Residential (Multi Building Project)" },
+        { firm: "Bhate & Raje Construction Co. Pvt. Ltd.", category: "Commercial (Institutional / Hospitals / Recreational Centre / IT Parks)" },
+        { firm: "Tejus Infratech LLP", category: "Commercial (Malls / Shopping Centre / Offices / Hostels)" },
+        { firm: "Kangralkar Infrastructure", category: "Outside Pune (Commercial)" },
+        { firm: "SCON Projects Pvt. Ltd.", category: "Industrial (Any Type, Any Size) – 1" },
+        { firm: "Ratilal Bhagwandas Const. Comp.", category: "Industrial (Any Type, Any Size)" },
+        { firm: "SCON Projects Pvt. Ltd.", category: "Industrial (Any Type, Any Size) – 2" },
+        { firm: "T And T Infra Ltd", category: "Infrastructure (Bridges, Flyovers)" },
+        { firm: "T And T Infra Ltd", category: "Infrastructure (ESR, GSR, STP, ETP etc.)" },
+        { firm: "Vascon Engineers Ltd.", category: "Government (State, Central, Semi-Govt.)" },
+        { firm: "S. S. Sathe Infra Pvt. Ltd.", category: "Government (State, Central, Semi-Govt.)" },
+        { firm: "A P Associates", category: "Government (State, Central, Semi-Govt.)" },
+        { firm: "Sumedha Infra Projects Pvt. Ltd.", category: "Infrastructure (Roads Projects)" },
+        { firm: "Millennium Engineers & Contractors Ltd.", category: "Work up to Bare Shell" },
+        { firm: "SUGAM Constructions", category: "Landscapes (Garden, Open Space)" },
+        { firm: "Design Building Workshop, Pune", category: "Landscapes (Garden)" }
+      ]
+    },
+    {
+      year: "2023-24",
+      editionLabel: "27th in Series",
+      chiefGuest: "Shri. Ajit Gulabchand, Past President All India BAI",
+      guestOfHonour: "Shri. Sunil Mundada, Vice President BAI; Shri. Sachin Deshmukh, State Chairman BAI Maharashtra",
+      convenor: "Sunil Mate",
+      chairman: "Harpreet Singh Anand",
+      highlight: "Entries from outside Pune and a dedicated landscape category feature in this edition.",
+      winners: [
+        { firm: "GRIT – Environmental", category: "Residential (Bungalow, Row Houses)" },
+        { firm: "Pride Builders LLP", category: "Residential (Housing Complex)" },
+        { firm: "Nirman Developers", category: "Residential (Affordable Housing)" },
+        { firm: "(K Raheja) Cavalcade Properties Pvt Ltd.", category: "Residential" },
+        { firm: "Pride Builders LLP", category: "Commercial (Malls, Office, Institutional, Hotel, Theatre)" },
+        { firm: "Phoenix Group – Hyderabad", category: "Commercial" },
+        { firm: "Uddhav S. Gawade", category: "Outside Pune – Commercial" },
+        { firm: "P C M C", category: "Industrial (Any Size, Any Type)" },
+        { firm: "Scon Projects Pvt. Ltd.", category: "Industrial" },
+        { firm: "Rohan Builders (India) Pvt Ltd.", category: "Infrastructure" },
+        { firm: "A. S. Desai Infrastructure Pvt. Ltd.", category: "Infrastructure" },
+        { firm: "Harsh Construction Pvt Ltd.", category: "Government" },
+        { firm: "Millennium Engineers & Contractors Ltd.", category: "Work up to Bare Shell" },
+        { firm: "Across Nodes Transit Solution", category: "BBP" },
+        { firm: "Vruksha Landscapes", category: "Landscapes (Horticulture work etc.)" }
+      ]
+    },
+    {
+      year: "2022-23",
+      editionLabel: "26th in Series",
+      chiefGuest: "Shri. Rajendra Athawale, Vice President BAI West Zone",
+      guestOfHonour: "Shri. Dattatray Mule, State Chairman BAI Maharashtra",
+      convenor: "Sunil Mate",
+      chairman: "Ashok Atkekar",
+      highlight: "Twelve awards, including the first landscape award of the modern category structure.",
+      winners: [
+        { firm: "SCON Projects Pvt. Ltd.", category: "Residential (Bungalow, Row Houses, Standalone Building)" },
+        { firm: "Rohan Builders (India) Pvt Ltd.", category: "Residential (Housing Complex)" },
+        { firm: "B. G. Shirke Construction Technology Pvt. Ltd.", category: "Residential" },
+        { firm: "Ratnarup Projects Pvt. Ltd.", category: "Commercial (Malls, Office, Institutional, Hotel, Hospital, Theatre)" },
+        { firm: "Ratilal Bhagwandas Construction Company", category: "Industrial Construction Projects" },
+        { firm: "Suroj Buildcon Pvt. Ltd.", category: "Industrial Construction Projects" },
+        { firm: "T and T Infra Ltd.", category: "Infrastructure (Bridges, Flyovers, ESR, Metro Stations)" },
+        { firm: "Ajwani Infrastructure Pvt. Ltd.", category: "Infrastructure" },
+        { firm: "B G Shirke Construction Technology Pvt Ltd", category: "Government (State & Central), Semi-Govt., Public Works" },
+        { firm: "Shubham EPC Private Ltd.", category: "Government" },
+        { firm: "Millennium Engineers & Contractors Pvt Ltd.", category: "Work up to Bare Shell (includes RCC, Masonry and Plaster works)" },
+        { firm: "Sugam Construction", category: "Landscapes (Horticulture work etc.)" }
+      ]
+    },
+    {
+      year: "2021-22",
+      editionLabel: "25th in Series — Silver Jubilee",
+      chiefGuest: "Shri. R. N. Gupta, President All India BAI",
+      guestOfHonour: "Shri. Atul Gadgil, Director (Works), Metro Rail Corporation Ltd.",
+      convenor: "",
+      chairman: "Jai Pinjani",
+      highlight: "The Silver Jubilee edition, marking twenty-five years of the competition.",
+      winners: [
+        { firm: "Gera Developments Pvt. Ltd.", category: "Residential (Bungalow, Row Houses)" },
+        { firm: "Vilas Javdekar Eco Shelters Pvt. Ltd.", category: "Residential (Housing Complex)" },
+        { firm: "Pride Builder's LLP", category: "Residential (Affordable Housing)" },
+        { firm: "City Corporation Limited", category: "Commercial (Malls, Office, Institutional, Hotel, Hospital, Theatre)" },
+        { firm: "SCON Projects Pvt. Ltd.", category: "Industrial (Any Size, Any Type)" },
+        { firm: "T and T Infra Ltd.", category: "Infrastructure" },
+        { firm: "Raj Path Infracon Private Limited", category: "Government" },
+        { firm: "Millennium Engineers & Contractors Ltd.", category: "Work up to Bare Shell" }
+      ]
+    },
+    {
+      year: "2020-21",
+      editionLabel: "24th in Series",
+      chiefGuest: "",
+      guestOfHonour: "",
+      convenor: "",
+      chairman: "Manoj Deshmukh",
+      highlight: "No chief guest is recorded for this edition in the booklet.",
+      winners: [
+        { firm: "Pride Builders LLP", category: "Residential (Standalone Bldg)" },
+        { firm: "Pride Builders LLP", category: "Residential (Housing Complex)" },
+        { firm: "B. G. Shirke Construction Technology Pvt. Ltd", category: "Residential (Affordable Housing)" },
+        { firm: "Ratnarup Projects Pvt. Ltd.", category: "Commercial" },
+        { firm: "Bhate & Raje Construction Co. Pvt. Ltd.", category: "Industrial" },
+        { firm: "T and T Infra Ltd.", category: "Infrastructure" },
+        { firm: "Vruksha Landscapes", category: "Infrastructure" },
+        { firm: "SCON Projects Pvt. Ltd.", category: "Government" },
+        { firm: "Millennium Engineers & Contractors Ltd", category: "Work up to Bare Shell" }
+      ]
+    },
+    {
+      year: "2019-20",
+      editionLabel: "23rd in Series",
+      chiefGuest: "Shri. Prataprao G. Pawar, Chairman, Sakal Papers Pvt. Ltd.",
+      guestOfHonour: "Shri. Sachin Chandra, President All India BAI; Shri. Vikram Kumar (IAS), Commissioner PMRDA Pune",
+      convenor: "Jai Pinjani",
+      chairman: "Pradeep Garge",
+      highlight: "The R1/R2/R3 residential sub-categories are used for the first time in this edition.",
+      winners: [
+        { firm: "Gera Developments Pvt. Ltd.", category: "Residential (R1) — Bungalow, Row Houses, Standalone Buildings" },
+        { firm: "B. G Shirke Construction Technology Pvt. Ltd", category: "Residential (R2) — Housing Complex" },
+        { firm: "B. G Shirke Construction Technology Pvt. Ltd", category: "Residential (R3) — Affordable Housing" },
+        { firm: "Nyati Engineers & Consultants", category: "Commercial — Malls, Office, Institution, Hotel, Hospital, Theater" },
+        { firm: "SCON Project Pvt Ltd.", category: "Industrial — Any Size, Any Type" },
+        { firm: "J. Kumar Infraprojects Ltd.", category: "Infrastructure — Bridge, Flyover, ESR etc." },
+        { firm: "S. J. Contracts Pvt. Ltd.", category: "Work up to Bare Shell" },
+        { firm: "K. R. Traders", category: "Government, Semi Government, Public Work" },
+        { firm: "S. T. Biradar", category: "Work up to Bare Shell" }
+      ]
+    },
+    {
+      year: "2018-19",
+      editionLabel: "22nd in Series",
+      chiefGuest: "Shri. A. Puhazhendi, President All India BAI",
+      guestOfHonour: "Shri Pratap B. Salunkhe, Vice President BAI West Zone",
+      convenor: "Nandkumar Jethani",
+      chairman: "Jagannath Jadhav",
+      highlight: "",
+      winners: [
+        { firm: "Vaichal Construction Pvt. Ltd.", category: "Residential (Bungalow, Row Houses, Standalone Buildings)" },
+        { firm: "Pride Builder's LLP", category: "Residential (Housing Complex)" },
+        { firm: "Kamakshie Constructions", category: "Commercial" },
+        { firm: "RMK Infrastructure Pvt. Ltd.", category: "Industrial" },
+        { firm: "RMK Infrastructure Pvt. Ltd.", category: "Infrastructure" },
+        { firm: "S J Contracts Pvt. Ltd.", category: "Well Equipped, Well Mechanized" },
+        { firm: "V M Matere Infrastructures (I) Pvt. Ltd.", category: "Government" },
+        { firm: "Millennium Engineers & Contractors Pvt. Ltd.", category: "Work up to Cold Shell (RCC, Masonry and Plaster Works)" }
+      ]
+    },
+    {
+      year: "2017-18",
+      editionLabel: "21st in Series",
+      chiefGuest: "Mr. Kiran Gitte, Metropolitan Commissioner & Chief Executive Officer (CEO) of Pune Metro (PMRDA)",
+      guestOfHonour: "Mr. V V Gaikwad, (Retd) Secretary, Water Resources, Govt of Maharashtra",
+      convenor: "Sunil Mate",
+      chairman: "Siddharth Shah",
+      highlight: "The Young Entrepreneurs award category features in this edition.",
+      winners: [
+        { firm: "Ana Constructors", category: "Residential (Bungalow, Row Houses, Standalone Buildings)" },
+        { firm: "Mohor Housing LLP", category: "Residential (Housing Complex)" },
+        { firm: "B G Shirke Construction Technology Pvt. Ltd.", category: "Residential (Affordable Housing)" },
+        { firm: "S J Contracts Pvt. Ltd.", category: "Commercial (Malls, Office, Institution, Hotel, Hospital, Theatre)" },
+        { firm: "Precast India Infrastructures Pvt. Ltd.", category: "Industrial (Any Size, Any Type)" },
+        { firm: "J Kumar Infra Project Ltd.", category: "Infrastructure (Bridges, Flyovers, ESR etc.)" },
+        { firm: "Shubham Civil Projects Pvt. Ltd.", category: "Government (Semi-Govt, Public Work)" },
+        { firm: "S J Contracts Pvt. Ltd.", category: "Well Equipped, Well Mechanized Site" },
+        { firm: "Gargate & Sons", category: "Jury's Recommendation Award" },
+        { firm: "Mr. Saurabh Jangle", category: "Young Entrepreneurs Award" },
+        { firm: "Mr. Kapilesh Ajit Bhate", category: "Certificate of Commendation (Young Entrepreneurs)" }
+      ]
+    },
+    {
+      year: "2016-17",
+      editionLabel: "20th in Series",
+      chiefGuest: "Shri. Abhai Sinha, Director General (CPWD)",
+      guestOfHonour: "Shri L. Moorthy, President All India BAI",
+      convenor: "Manoj Deshmukh",
+      chairman: "Mahesh Mirani",
+      highlight: "",
+      winners: [
+        { firm: "Paranjape Schemes Construction Ltd.", category: "Residential — Single Building" },
+        { firm: "P Square Builders LLP", category: "Residential — Multiple Building" },
+        { firm: "B. G. Shirke Construction & Technology Pvt. Ltd.", category: "Residential (Affordable Housing / Semi Urban)" },
+        { firm: "Ratnarup Projects Pvt. Ltd.", category: "Commercial" },
+        { firm: "Precast India Infrastructures Pvt. Ltd.", category: "Industrial" },
+        { firm: "J. Kumar Infra Projects Ltd.", category: "Infrastructure" },
+        { firm: "Shubham Civil Projects Pvt. Ltd.", category: "Government" },
+        { firm: "S J Contracts Pvt. Ltd.", category: "Well Equipped, Well Mechanized Site" },
+        { firm: "Precast India Infrastructures Pvt. Ltd.", category: "Jury's Recommendation" }
+      ]
+    },
+    {
+      year: "2015-16",
+      editionLabel: "19th in Series",
+      chiefGuest: "Dr. E. Sreedharan, Principal Adviser / DMRC & LMRC",
+      guestOfHonour: "Mr. Lalchand Sharma, President All India BAI",
+      convenor: "Jagannath S Jadhav",
+      coConvenor: "Manoj Deshmukh",
+      chairman: "R B Suryawanshi",
+      highlight: "",
+      winners: [
+        { firm: "Ana Constructions", category: "Residential (Bungalow)" },
+        { firm: "Lunkad Realty", category: "Residential (Apartment)" },
+        { firm: "Bhate & Raje Construction Company Pvt. Ltd.", category: "Commercial — Institutional, Hotel, Hospital, Cinema" },
+        { firm: "Ratilal Bhagwandas Construction Company Pvt. Ltd.", category: "Industrial" },
+        { firm: "J Kumar Infra Projects Ltd.", category: "Infrastructure" },
+        { firm: "B. G. Shirke Construction Technology Pvt. Ltd.", category: "Government" },
+        { firm: "Bhate & Raje Construction Company Pvt. Ltd.", category: "Well Equipped / Well Mechanised" },
+        { firm: "Nyati Builders", category: "Young Entrepreneur" },
+        { firm: "Sobha Ltd. (Pune)", category: "Jury's Recommendation Award" },
+        { firm: "V M Matere Infrastructure (I) Pvt. Ltd.", category: "Jury's Recommendation Award" }
+      ]
+    },
+    {
+      year: "2014-15",
+      editionLabel: "18th in Series",
+      chiefGuest: "Dr. P R Swarup, Director General CIDC",
+      guestOfHonour: "Mr. Sushanta Kumar Basu, President All India BAI",
+      convenor: "Nandkumar Jethani",
+      coConvenor: "Sanjay Vaichal",
+      chairman: "C S Parhar",
+      highlight: "",
+      winners: [
+        { firm: "Architectonics Design Consultancy Pvt Ltd", category: "Residential (Bungalow, Single Unit)" },
+        { firm: "Pride Purple Group", category: "Residential (Apartment, Complex)" },
+        { firm: "Ratnarup Projects Pvt. Ltd.", category: "Commercial (Malls, Office)" },
+        { firm: "Kangralkar Associates", category: "Commercial (Institution, Hotel, Hospital)" },
+        { firm: "Ratilal Bhagwandas", category: "Industrial" },
+        { firm: "Patel Construction Company", category: "Infrastructure" },
+        { firm: "Bhate & Raje Construction Pvt. Ltd.", category: "Well Equipped & Mechanised Site" },
+        { firm: "PVM Construction Pvt. Ltd.", category: "Government" },
+        { firm: "Mr. Amit Avinash Bhosale", category: "Young Entrepreneur" },
+        { firm: "Mr. Nilesh Chavan", category: "Young Entrepreneur" },
+        { firm: "Naman Associates", category: "Juries Recommendation Award" }
+      ]
+    },
+    {
+      year: "2013-14",
+      editionLabel: "17th in Series",
+      chiefGuest: "Maj Gen R K Mattu vsm, Chief Engineer, Head Quarters, Southern Command",
+      guestOfHonour: "Mr. B D Yamgar, Chief Engineer, Maharashtra Jeevan Pradhikarn, PMCS",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Nandkumar Jethani",
+      chairman: "Jaideep Raje",
+      highlight: "Awards this year were split between the BAI–Shirke and BAI–Universal award streams.",
+      winners: [
+        { firm: "City Corporation Limited", category: "Residential, Apartment, Complex (BAI–Shirke Award)" },
+        { firm: "Lunkad Realty", category: "Commercial, Offices, Malls etc. (BAI–Universal Award)" },
+        { firm: "Adwitya Projects", category: "Commercial, Institutional, Hotel, Hospital, Cinema (BAI–Universal Award)" },
+        { firm: "Bhate & Raje Construction Co. Pvt. Ltd.", category: "Industrial (BAI–Shirke Award)" },
+        { firm: "B G Shirke Construction Technology Pvt. Ltd.", category: "Infrastructure (BAI–Shirke Award)" },
+        { firm: "Horizon Construction", category: "Government (BAI–Shirke Award)" },
+        { firm: "S J Contracts Pvt. Ltd.", category: "Well Equipped / Well Mechanised (BAI–Universal Award)" },
+        { firm: "Gokhale Constructions", category: "Young Entrepreneur (BAI–Universal Award)" },
+        { firm: "Sobha Developers Ltd.", category: "Jury's Recommendation (BAI–Universal Award)" },
+        { firm: "Deep Enterprises", category: "Residential, Bungalow, Single Unit — Certificate of Commendation (BAI–Universal Award)" }
+      ]
+    },
+    {
+      year: "2012-13",
+      editionLabel: "16th in Series",
+      chiefGuest: "B. Seenaiah, President, All India BAI",
+      guestOfHonour: "",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Nandkumar Jethani",
+      chairman: "Subhash Deshpande",
+      highlight: "Pune Municipal Corporation received a Commendation Award (Trophy) in the Government category.",
+      winners: [
+        { firm: "Paranjape Schemes Construction Ltd.", category: "Residential" },
+        { firm: "Adwitya Projects (I) P. Ltd.", category: "Commercial (I Position)" },
+        { firm: "Narendra Bakale Constructions", category: "Commercial (II Position)" },
+        { firm: "SCON Projects P. Ltd.", category: "Industrial" },
+        { firm: "Devi Construction Company", category: "Well Equipped / Well Mechanised" },
+        { firm: "Tricon Infra Buildtech Pvt. Ltd.", category: "Young Entrepreneur" },
+        { firm: "Om Engineers and Builders", category: "Jury's Recommendation" },
+        { firm: "Pune Municipal Corporation", category: "Government, Semi-Govt., Public Works — Commendation Award (Trophy)" },
+        { firm: "Ajwani Infrastructure P. Ltd.", category: "Infrastructure — Certificate of Commendation" }
+      ]
+    },
+    {
+      year: "2011-12",
+      editionLabel: "15th in Series",
+      chiefGuest: "Dr. Prem C Jain, Chairman – Indian Green Building Council",
+      guestOfHonour: "",
+      convenor: "Subhash Deshpande",
+      chairman: "Subhash Deshpande",
+      highlight: "",
+      winners: [
+        { firm: "Annachhatre & Gokhale Constructions", category: "Residential Complexes" },
+        { firm: "Bhate & Raje Construction Company Pvt. Ltd.", category: "Large Industrial Project" },
+        { firm: "Patel Construction Company", category: "Infrastructure Projects" },
+        { firm: "Vascon Engineers Ltd.", category: "Well Mechanized Project" },
+        { firm: "Lunkad Realty", category: "Interior Works" },
+        { firm: "S T Biradar Engineers & Contractors Pvt. Ltd.", category: "Juries' Recommendation Award" },
+        { firm: "Lunkad Realty", category: "Best out of Best" }
+      ]
+    },
+    {
+      year: "2010-11",
+      editionLabel: "14th in Series",
+      chiefGuest: "Mr. Bhagwan Deokar, President, All India BAI",
+      guestOfHonour: "",
+      convenor: "Nandkumar Jethani",
+      chairman: "Neelkanth S Joshi",
+      highlight: "",
+      winners: [
+        { firm: "Rohan Builders (I) Pvt Ltd.", category: "Residential — Group Housing Scheme" },
+        { firm: "Vaichal Constructions Pvt. Ltd.", category: "Industrial (Small)" },
+        { firm: "Ratilal Bhagwandas Construction Co. Pvt. Ltd.", category: "Industrial (Large)" },
+        { firm: "Ghalsasi Constructions Pvt. Ltd.", category: "Commercial — Institutional" },
+        { firm: "T & T Group, Civil Engineers & Contractors", category: "Infrastructure" },
+        { firm: "Millennium Engineers & Contractors Pvt. Ltd", category: "Well Equipped & Mechanised Site" },
+        { firm: "Sobha Developers Ltd.", category: "Best of The Best" },
+        { firm: "Lunkad Realty", category: "Juries Recommendation Award" }
+      ]
+    },
+    {
+      year: "2009-10",
+      editionLabel: "13th in Series",
+      chiefGuest: "Mr. A K Yussouf, President, All India BAI",
+      guestOfHonour: "",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Raman T Changede",
+      chairman: "Neelkanth S Joshi",
+      highlight: "",
+      winners: [
+        { firm: "R. B. Chaphalkar Homes Pvt Ltd", category: "Residential — Housing Scheme (II Position)" },
+        { firm: "Millennium Engineers & Contractors Pvt Ltd", category: "Residential — Bungalow and Row Houses (II Position)" },
+        { firm: "Devi Constructions Company", category: "Industrial (I Position)" },
+        { firm: "Akruti Projects", category: "Industrial (II Position)" },
+        { firm: "Aditya Constructions", category: "Industrial (Certificate of Special Appreciation)" },
+        { firm: "Mohanlal Mathrani Construction Pvt. Ltd.", category: "Infrastructure (Certificate of Special Appreciation)" },
+        { firm: "Lunkad Realty", category: "Commercial (I Position)" },
+        { firm: "Ratilal Bhagwandas Construction Co. Pvt. Ltd.", category: "Commercial (II Position)" },
+        { firm: "Akruti Projects", category: "Commercial (Certificate of Special Appreciation)" },
+        { firm: "Shobha Bhopatkar", category: "Landscape" },
+        { firm: "Vascon Engineers Ltd.", category: "Well Equipped & Mechanised Site" },
+        { firm: "Rohan Builders (India) Pvt. Ltd.", category: "Well Equipped & Mechanised Site" },
+        { firm: "Bakale Constructions", category: "Juries Recommendation Award" }
+      ]
+    },
+    {
+      year: "2008-09",
+      editionLabel: "12th in Series",
+      chiefGuest: "Maj. Gen. S S Sengupta vsm, Chief Engineer Head Quarters – Southern Command",
+      guestOfHonour: "Mr. Ashok Khurana, Chief Engineer, CPWD (West Zone)",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Raman T Changede",
+      chairman: "R B Krishnani",
+      highlight: "",
+      winners: [
+        { firm: "Ana Constructions", category: "Residential — Housing Scheme (Certificate of Special Appreciation)" },
+        { firm: "Lunkad Realty", category: "Residential — Housing Scheme (I Position)" },
+        { firm: "Bhate & Raje Construction Co Pvt Ltd", category: "Residential — Bungalow and Row Houses (I Position)" },
+        { firm: "Shree Sai Erectors", category: "Industrial — Small Scale (Certificate of Special Appreciation)" },
+        { firm: "Ratilal Bhagwandas Construction Co. Pvt. Ltd.", category: "Industrial — Small Scale (I Position)" },
+        { firm: "Devi Constructions Company", category: "Industrial — Large Scale (I Position)" },
+        { firm: "Tejaswini Constructions", category: "Infrastructure (I Position)" },
+        { firm: "M. B. Chitale Constructions", category: "Commercial (I Position)" },
+        { firm: "Bhate & Raje Construction Co Pvt Ltd", category: "Well Equipped & Mechanised Site (I Position)" },
+        { firm: "Millennium Engineers & Contractors Pvt. Ltd.", category: "Juries Recommendation Award" },
+        { firm: "Sobha Developers Ltd.", category: "Best of The Best" }
+      ]
+    },
+    {
+      year: "2007-08",
+      editionLabel: "11th in Series",
+      chiefGuest: "Mr. P R Mundle, President, All India BAI",
+      guestOfHonour: "Mr. Ashok Sinha, Chief Engineer – MES Pune Zone",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Ashok Atkekar",
+      chairman: "Sanjay Vaichal",
+      highlight: "",
+      winners: [
+        { firm: "Kumar Properties", category: "Residential (I Position)" },
+        { firm: "Amit Enterprises", category: "Residential (II Position)" },
+        { firm: "Madhav Limaye & Associates", category: "Residential (II Position)" },
+        { firm: "S. J. Construction", category: "Commercial (I Position)" },
+        { firm: "Sobha Developers Ltd.", category: "Commercial (II Position)" },
+        { firm: "I.V.R.C.L Infrastructures & Project Ltd.", category: "Infrastructure (II Position)" },
+        { firm: "S. J. Constructions", category: "Industrial (II Position)" },
+        { firm: "Bhate & Raje Constructions Pvt Ltd", category: "Well Equipped & Well Mechanized Site" },
+        { firm: "Devi Construction Co. Pvt. Ltd.", category: "Best of The Best" },
+        { firm: "Vascon Engineers Pvt. Ltd.", category: "Juries Recommendation Award" }
+      ]
+    },
+    {
+      year: "2006-07",
+      editionLabel: "10th in Series",
+      chiefGuest: "Maj. Gen. Brajesh Kumar, Chief Engineer – Head Quarters Southern Command",
+      guestOfHonour: "Mr. C. Raghava Reddy, President All India BAI; Mr. Bikramjit Ahluwalia, Vice President BAI (North Zone)",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "Devi Constructions Company", category: "Commercial Buildings (II Position)" },
+        { firm: "Vascon Engineers Pvt Ltd.", category: "Commercial Buildings (II Position)" },
+        { firm: "Omega Promoters Pvt Ltd.", category: "Residential Buildings (Appreciation Award)" },
+        { firm: "Lunkad Realty", category: "Residential Buildings (I Position)" },
+        { firm: "Madhav Limaye Associates", category: "Residential Buildings (II Position)" },
+        { firm: "Ivrcl Infrastructure & Project Ltd.", category: "Infrastructure (I Position)" },
+        { firm: "Prachi Construction Company", category: "Infrastructure (Appreciation Award)" },
+        { firm: "Associated Constructions", category: "Industrial Buildings (Appreciation Award)" },
+        { firm: "Rohan Builders (India) Pvt Ltd.", category: "BAI – Universal Well Equipped & Mechanised Project Award" },
+        { firm: "Ivrcl Infrastructure & Project Ltd.", category: "BAI – Universal Well Equipped & Mechanised Project Award" },
+        { firm: "Rohan Builders (India) Pvt Ltd.", category: "BAI – Birla Super Best of The Best Structures Award" }
+      ]
+    },
+    {
+      year: "2005-06",
+      editionLabel: "9th in Series",
+      chiefGuest: "Mr. Dilip Band, Commissioner PCMC",
+      guestOfHonour: "Mr. B N Dikshit, President All India BAI; Mr. Naresh Grover, Vice President (West Zone)",
+      convenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "Kamdar Constructions", category: "Residential (I Position)" },
+        { firm: "Rohan Builders", category: "Residential (II Position)" },
+        { firm: "Vascon Engineers Pvt. Ltd.", category: "Commercial (I Position)" },
+        { firm: "Sobha Space Private Ltd.", category: "Commercial (II Position)" },
+        { firm: "Bhate & Raje Constructions Co. Pvt. Ltd.", category: "Industrial (I Position)" },
+        { firm: "Ratilal Bhagwandas Pvt. Ltd.", category: "Industrial (II Position)" },
+        { firm: "S.M.S. Pvt Ltd", category: "Infrastructure (I Position)" },
+        { firm: "Vaichal Constructions Pvt Ltd.", category: "Jury's Recommendation Award" },
+        { firm: "Devi Constructions Company", category: "BAI – Birla Super Best of the Best Award" }
+      ]
+    },
+    {
+      year: "2004-05",
+      editionLabel: "8th in Series",
+      chiefGuest: "Mr. Nitin Kareer, Commissioner PMC",
+      guestOfHonour: "Mr. J B Sharma, Chief Engineer MES Pune Zone",
+      convenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "V. Y. Javdekar Const. Pvt Ltd.", category: "Residential (I Position)" },
+        { firm: "Kamdar Construction", category: "Residential (II Position)" },
+        { firm: "Millennium Engineers & Contractor Pvt Ltd.", category: "Commercial (I Position)" },
+        { firm: "Nyati Builders Pvt Ltd.", category: "Commercial (II Position)" },
+        { firm: "S.M.S. Pvt. Ltd.", category: "Infrastructure (I Position)" },
+        { firm: "Petron Civil Engg Pvt. Ltd.", category: "Infrastructure (II Position)" },
+        { firm: "Ratilal Bhagwandas", category: "Institutional (I Position)" },
+        { firm: "Om Engineers Builders", category: "Jury's Recommendation Award" },
+        { firm: "B. J. Samson Constructions", category: "Special Project" },
+        { firm: "Vascon Engineers Pvt Ltd.", category: "BAI – Birla Super Best of The Best Award" }
+      ]
+    },
+    {
+      year: "2003-04",
+      editionLabel: "7th in Series",
+      chiefGuest: "Mr. Prataraoji Pawar, Director SAKAL",
+      guestOfHonour: "Mr. Kumar Gera",
+      convenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "Petron Civil Engineering Co.", category: "Infrastructures" },
+        { firm: "Ratilal Bhagwandas Construction Co.", category: "Industrial Buildings" },
+        { firm: "Kakkad Constructions & Engineering Co.", category: "Industrial Buildings" },
+        { firm: "Lunkad Housing Corporation", category: "Residential Buildings (I Position)" },
+        { firm: "Vascon Engineers Pvt Ltd.", category: "Residential Buildings (I Position)" },
+        { firm: "R. B. Chaphalkar Constructions Co.", category: "Residential Buildings (II Position)" },
+        { firm: "Devi Construction", category: "Commercial Buildings (II Position)" },
+        { firm: "M. B. Chitale Constructions", category: "Commercial Buildings (II Position)" },
+        { firm: "Suresh Athavale", category: "Residential Buildings (Juries' Recommendation Award)" },
+        { firm: "Bhate & Raje Construction Co. Pvt. Ltd", category: "Commercial Buildings (Best Structure Award)" }
+      ]
+    },
+    {
+      year: "2002-03",
+      editionLabel: "6th in Series",
+      chiefGuest: "Mr. Bramh Datt, President All India BAI",
+      guestOfHonour: "Maj. Gen. Gautam Datt, Chief Engineer Head Quarters, Southern Command",
+      convenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "Millennium Engg & Constr P Ltd", category: "Special Structure" },
+        { firm: "R. B. Chaphalkar Construction Co.", category: "Residential Apartment" },
+        { firm: "R. S. Construction", category: "Residential Apartment" },
+        { firm: "Lunkad Housing Corporation", category: "Group Housing – Residential" },
+        { firm: "Gawade Construction", category: "Group Housing – Residential" },
+        { firm: "Rohan Builders I Pvt Ltd.", category: "Industrial" },
+        { firm: "Bhate & Raje Constr. Co P Ltd.", category: "Industrial" },
+        { firm: "Ratilal Bhagwandas Constr. Co.", category: "Industrial" },
+        { firm: "Khivsara Construction", category: "Industrial" },
+        { firm: "Rohan Builders I Pvt Ltd.", category: "Institutional" },
+        { firm: "Petron Civil Engg Pvt Ltd.", category: "Special Purpose Structure" },
+        { firm: "Mr. R. B. Krishnani", category: "Special Purpose Structure" },
+        { firm: "Bhate & Raje Constr Co Pvt Ltd.", category: "Residential – Bungalow" },
+        { firm: "Om Engineers & Builders", category: "Commercial" }
+      ]
+    },
+    {
+      year: "2001-02",
+      editionLabel: "5th in Series",
+      chiefGuest: "Mr. Bhagwan J. Deokar, Vice President BAI (West Zone)",
+      guestOfHonour: "Mr. P M Harshe, Trustee BAI Hqrs.",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "The first year for which chief guest records are published in the booklet.",
+      winners: [
+        { firm: "Ameya Developers Pvt Ltd.", category: "Special Structure – Bridge at Dharamatar" },
+        { firm: "R B Krishnani", category: "Special Structure – Design, Construction & Testing of RCC ESR of 22.5 lacs Ltr." },
+        { firm: "Raja Bahadur Mills Ltd", category: "Commercial" },
+        { firm: "Shonan Engineering Works Ltd", category: "Specialized Structure – Designing & Construction RCC / ESR" },
+        { firm: "H N Bhat & Co.", category: "Specialized Structure – Sewage Treatment Plant" },
+        { firm: "Rohan Construction Co.", category: "Residential Building – Bungalow / Row House" },
+        { firm: "R B Chaphalkar Const. Co.", category: "Residential Building – Bungalow / Row House" },
+        { firm: "Nyati Engineering & Consultants", category: "Residential Building – Ownership Scheme" },
+        { firm: "Associated Civil Engg. Services", category: "Residential Building – Ownership Scheme" },
+        { firm: "Choice Group & J P Venture", category: "Residential Building – Ownership Scheme" },
+        { firm: "Nyati Engineering & Consultants", category: "Institutional / Public Building" },
+        { firm: "Kalbhor Associates, Baramati", category: "Institutional" },
+        { firm: "Sanjay Vaichal", category: "Institutional" }
+      ]
+    },
+    {
+      year: "2000-01",
+      editionLabel: "4th in Series",
+      chiefGuest: "",
+      guestOfHonour: "",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "Vascons Engineers Ltd.", category: "Residential Bungalow" },
+        { firm: "Nyati Engineers", category: "Residential Complex" },
+        { firm: "Ishwar Construction", category: "Commercial Building" },
+        { firm: "D.S.K. Developers Ltd.", category: "Industrial Building" },
+        { firm: "Rohan Builders (I) Pvt. Ltd.", category: "Bldg. for Software Industries" },
+        { firm: "Style Interiors, Decorators & Civil Contractors", category: "Major renovation & reconstruction of McDonald's family restaurant" }
+      ]
+    },
+    {
+      year: "1999-2000",
+      editionLabel: "3rd in Series",
+      chiefGuest: "",
+      guestOfHonour: "",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "Ameya Developers Pvt. Ltd.", category: "Bridges" },
+        { firm: "Sanjay V. Vaichal", category: "Industrial Building" },
+        { firm: "Ishwar Construction — Parmar Trade Centre", category: "Commercial Building" },
+        { firm: "D.S.K. Developers Ltd. — Toyota Showroom", category: "Industrial Building" },
+        { firm: "Rohan Builders (I) Pvt. Ltd.", category: "Bldg. for Software Industries" }
+      ]
+    },
+    {
+      year: "1998-99",
+      editionLabel: "2nd in Series",
+      chiefGuest: "",
+      guestOfHonour: "",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "Ashok Atkekar",
+      chairman: "",
+      highlight: "",
+      winners: [
+        { firm: "R. B. Krishnani", category: "Elevated water reservoir" },
+        { firm: "Ashoka Buildcon", category: "Private Building" },
+        { firm: "Suresh Construction", category: "Public Building" },
+        { firm: "Bharucha Motiwala", category: "HDFC Building" },
+        { firm: "Shah Construction", category: "Residential Complex" },
+        { firm: "Om Construction", category: "Certificate for Different Structure (Temple) — innovative FRP form work" },
+        { firm: "Adept Construction", category: "Certificate — Public Building" }
+      ]
+    },
+    {
+      year: "1997-98",
+      editionLabel: "1st in Series",
+      chiefGuest: "",
+      guestOfHonour: "",
+      convenor: "Neelkanth S Joshi",
+      coConvenor: "",
+      chairman: "",
+      highlight: "The inaugural edition of the competition.",
+      winners: [
+        { firm: "Ashoka Buildcon", category: "Hospital Building for Ruby Hall, Bund Garden Road" }
+      ]
     }
   ],
-  note: "This archive currently shows sample placeholder entries. Real year-wise winners, chief guests and milestone details will be added once BAI Pune Centre shares the historical WBSC records."
+  note: "Reproduced from the BAI Pune Centre WBSC 2026 booklet. The booklet does not record project names against winners, and does not publish a winners list for the 2025-26 edition."
 };
 
 export const eventsPageData = {

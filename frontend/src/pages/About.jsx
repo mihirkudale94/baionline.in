@@ -19,8 +19,7 @@ const About = () => {
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState("");
 
-  // Heritage photo load state — falls back to a placeholder until real archival photos are supplied
-  const [founderImgError, setFounderImgError] = useState(false);
+  // Heritage photo load state — falls back to a placeholder if the archival photo is missing
   const [jacksonHutImgError, setJacksonHutImgError] = useState(false);
 
   useEffect(() => {
@@ -130,7 +129,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* 2b. Historical Heritage — Founder & Jackson Hut */}
+      {/* 2b. Historical Heritage — Jackson Hut */}
       <section className="about-heritage-section">
         <div className="container">
           <div className="section-header text-center">
@@ -145,31 +144,6 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="heritage-photo-tile"
-            >
-              {!founderImgError ? (
-                <img
-                  src="/images/heritage/founder-portrait.jpg"
-                  alt="Brig. C.V.S. Jackson, Founder of BAI"
-                  onError={() => setFounderImgError(true)}
-                />
-              ) : (
-                <div className="heritage-photo-placeholder">
-                  <FaImage />
-                  <span>Archival photo coming soon</span>
-                </div>
-              )}
-              <div className="heritage-photo-caption">
-                <h4>The Founder</h4>
-                <p>Brig. C.V.S. Jackson, Military Engineering Services, whose guidance led to BAI's founding in 1941.</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
               className="heritage-photo-tile"
             >
               {!jacksonHutImgError ? (

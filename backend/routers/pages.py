@@ -2,8 +2,8 @@ from fastapi import APIRouter
 from data.content import (
     HERO_SLIDES, STATS, LEADERSHIP, NAV_LINKS, FOOTER_DATA,
     ABOUT_CONTENT, CONTACT_DATA, COMMITTEES, PAST_PRESIDENTS,
-    ANNOUNCEMENTS, EVENTS, NEWS_TICKER, INDIAN_CONSTRUCTION,
-    SOCIAL_ACTIVITIES_DATA
+    PUNE_OFFICE_BEARERS, PLATINUM_JUBILEE_2015, ANNOUNCEMENTS, EVENTS,
+    NEWS_TICKER, INDIAN_CONSTRUCTION, SOCIAL_ACTIVITIES_DATA
 )
 
 router = APIRouter()
@@ -49,6 +49,10 @@ def get_committees():
 @router.get("/api/past-presidents")
 def get_past_presidents():
     return PAST_PRESIDENTS
+
+@router.get("/api/pune-office-bearers")
+def get_pune_office_bearers():
+    return {**PUNE_OFFICE_BEARERS, "platinum_jubilee": PLATINUM_JUBILEE_2015}
 
 @router.get("/api/social-activities")
 def get_social_activities():

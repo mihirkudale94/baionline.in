@@ -43,12 +43,24 @@ const Team = () => {
     setModalOpen(true);
   };
 
+  // Members whose photograph hasn't been supplied yet get an initials tile
+  // instead of a broken image, and the tile isn't click-to-zoom.
+  const initialsOf = (name) =>
+    name.split(/\s+/).filter((w) => !/^(dr\.?|shri|mr\.?|ms\.?|er\.?)$/i.test(w))
+      .slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+
   const renderCard = (person, subtitle) => (
     <div className="team-member-card">
-      <div className="team-member-img-wrapper" onClick={() => handleOpenLightbox(person.image, `${person.name} (${subtitle})`)} style={{ cursor: "zoom-in" }}>
-        <img src={person.image} alt={person.name} className="team-member-img" />
-        <div className="team-member-overlay"></div>
-      </div>
+      {person.image ? (
+        <div className="team-member-img-wrapper" onClick={() => handleOpenLightbox(person.image, `${person.name} (${subtitle})`)} style={{ cursor: "zoom-in" }}>
+          <img src={person.image} alt={person.name} className="team-member-img" />
+          <div className="team-member-overlay"></div>
+        </div>
+      ) : (
+        <div className="team-member-img-wrapper team-member-img-fallback" aria-hidden="true">
+          <span className="team-member-initials">{initialsOf(person.name)}</span>
+        </div>
+      )}
       <div className="team-member-info">
         <span className="team-member-role">{subtitle}</span>
         <h4 className="team-member-name">{person.name}</h4>
@@ -99,6 +111,18 @@ const Team = () => {
               {team.hon_treasurer && renderCard(team.hon_treasurer, "Treasurer")}
             </div>
           </div>
+
+          {/* WBSC 2026 Chairman — listed with the office bearers in the
+              competition booklet, but held as a separate appointment. */}
+          {team.wbsc_chairman && (
+            <div className="roster-section-block">
+              <h2 className="roster-section-title text-center">Well Built Structure Competition 2026</h2>
+              <div className="title-line center"></div>
+              <div className="roster-grid grid-single">
+                {renderCard(team.wbsc_chairman, "Chairman - WBSC 2026")}
+              </div>
+            </div>
+          )}
 
         </div>
       </section>

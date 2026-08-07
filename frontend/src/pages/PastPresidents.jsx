@@ -1,22 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getPastPresidentsData, puneOfficeBearersData } from "../services/api";
+import {
+  getPastPresidentsData,
+  getPuneOfficeBearersData,
+  puneOfficeBearersData,
+  platinumJubileeData
+} from "../services/api";
 import { FaAward, FaInfoCircle } from "react-icons/fa";
 import "./PastPresidents.css";
 
 const PastPresidents = () => {
   const [list, setList] = useState([]);
+  const [bearers, setBearers] = useState(puneOfficeBearersData);
   const [loading, setLoading] = useState(true);
   const [activeRole, setActiveRole] = useState(puneOfficeBearersData.roles[0].id);
 
   useEffect(() => {
-    getPastPresidentsData().then((res) => {
-      setList(res);
-      setLoading(false);
-    });
+    Promise.all([getPastPresidentsData(), getPuneOfficeBearersData()]).then(
+      ([presidents, puneBearers]) => {
+        setList(presidents);
+        setBearers(puneBearers);
+        setActiveRole(puneBearers.roles[0].id);
+        setLoading(false);
+      }
+    );
   }, []);
 
-  const activeRoleData = puneOfficeBearersData.roles.find((r) => r.id === activeRole);
+  const activeRoleData = bearers.roles.find((r) => r.id === activeRole);
+  const jubilee = bearers.platinum_jubilee || platinumJubileeData;
 
   if (loading) {
     return (
@@ -54,11 +65,11 @@ const PastPresidents = () => {
           </div>
 
           <div className="pune-bearers-notice">
-            <FaInfoCircle /> <span>{puneOfficeBearersData.note}</span>
+            <FaInfoCircle /> <span>{bearers.note}</span>
           </div>
 
           <div className="pune-bearers-role-tabs">
-            {puneOfficeBearersData.roles.map((role) => (
+            {bearers.roles.map((role) => (
               <button
                 key={role.id}
                 className={`pune-bearers-role-tab ${activeRole === role.id ? "active" : ""}`}
@@ -69,18 +80,53 @@ const PastPresidents = () => {
             ))}
           </div>
 
-          <div className="pune-bearers-grid animate-fadeInUp">
-            {activeRoleData.members.map((m, idx) => (
-              <div key={idx} className="pune-bearer-card glass-card">
-                <span className="pune-bearer-tenure">{m.year}</span>
-                <h4 className="pune-bearer-name">{m.name}</h4>
+          {activeRoleData.members.length > 0 ? (
+            <div key={activeRole} className="pune-bearers-grid animate-fadeInUp">
+              {activeRoleData.members.map((m, idx) => (
+                <div key={idx} className="pune-bearer-card glass-card">
+                  <span className="pune-bearer-tenure">{m.year}</span>
+                  <h4 className="pune-bearer-name">{m.name}</h4>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="pune-bearers-empty glass-card">
+              <FaInfoCircle className="pune-bearers-photo-icon" />
+              <p>Records for {activeRoleData.label} are being compiled from the Centre's archives and will be published here shortly.</p>
+            </div>
+          )}
+
+          <div className="pune-bearers-photo-note glass-card">
+            <FaAward className="pune-bearers-photo-icon" />
+            <p>Transcribed from the office bearer display boards at BAI Pune Centre.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="jubilee-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">{jubilee.subtitle}</span>
+            <h2 className="section-title">{jubilee.title}</h2>
+            <div className="section-title-line"></div>
+          </div>
+
+          <div className="jubilee-grid">
+            {jubilee.office_bearers.map((m, idx) => (
+              <div key={idx} className="jubilee-bearer-card glass-card">
+                <h4 className="jubilee-bearer-name">{m.name}</h4>
+                <span className="jubilee-bearer-role">{m.role}</span>
               </div>
             ))}
           </div>
 
-          <div className="pune-bearers-photo-note glass-card">
-            <FaAward className="pune-bearers-photo-icon" />
-            <p>Photographs of the Pune Centre office bearer display boards will be added here once provided.</p>
+          <div className="jubilee-committee glass-card">
+            <h4 className="jubilee-committee-title">Organising Committee</h4>
+            <ul className="jubilee-committee-list">
+              {jubilee.organising_committee.map((name, idx) => (
+                <li key={idx}>{name}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
