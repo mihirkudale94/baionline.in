@@ -429,3 +429,52 @@
     width: 280px;
   }
 }
+
+/* WBSC 2026 Glowing Multicolored Navbar Tab */
+.nav-item .nav-link-wbsc-glow {
+  background: linear-gradient(115deg, #ff2a5f, #7f00ff, #00d2ff, #ff8c00, #ff2a5f);
+  background-size: 300% 300%;
+  animation: wbscGradientShift 4s ease infinite;
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(127, 0, 255, 0.55), 0 0 22px rgba(0, 210, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  align-self: center;
+  margin: 0 0.25rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.nav-item .nav-link-wbsc-glow::after {
+  display: none !important;
+}
+
+.nav-item .nav-link-wbsc-glow:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: #ffffff !important;
+  box-shadow: 0 0 18px rgba(255, 42, 95, 0.75), 0 0 30px rgba(0, 210, 255, 0.65);
+  filter: brightness(1.15);
+}
+
+@keyframes wbscGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-item .nav-link-wbsc-glow {
+    margin: 0.6rem 1.5rem;
+    width: calc(100% - 3rem);
+    justify-content: center;
+    border-bottom: none !important;
+    padding: 0.6rem 1rem;
+  }
+}

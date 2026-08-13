@@ -20,7 +20,7 @@ const Footer = () => {
               <img src={footerData.logo} alt="BAI Logo White" className="footer-logo" />
             </div>
             <p className="footer-tagline">
-              Building Better Infrastructure. Empowering the Construction Industry — BAI Pune Centre, part of India's nationwide builders' network since 1941.
+              BAI Pune Centre, part of India's nationwide builders' network since 1941.
             </p>
             <div className="footer-social-icons">
               {footerData.social.map((soc, idx) => (

@@ -56,7 +56,7 @@ const Navbar = () => {
             <span className="logo-title">BUILDERS' ASSOCIATION OF INDIA</span>
             <span className="logo-subtitle">
               Pune Centre
-              <span className="logo-subtitle-extra"> — Building Better Infrastructure</span>
+              <span className="logo-subtitle-extra"></span>
             </span>
           </div>
         </Link>
@@ -90,7 +90,11 @@ const Navbar = () => {
                       {link.label} <FaChevronDown className="dropdown-arrow" />
                     </button>
                   ) : (
-                    <Link to={link.path} className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+                    <Link
+                      to={link.path}
+                      className={`nav-link ${link.highlight || link.path === "/wbsc-awards" ? "nav-link-wbsc-glow" : ""}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       {link.label}
                     </Link>
                   )}

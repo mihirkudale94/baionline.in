@@ -38,6 +38,39 @@ const Events = () => {
         </div>
       </section>
 
+      <section className="events-gallery-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">Snapshots</span>
+            <h2 className="section-title">Photo Gallery</h2>
+            <div className="section-title-line"></div>
+          </div>
+          <div className="events-gallery-grid">
+            {data.gallery.map((img, idx) => (
+              <motion.button
+                type="button"
+                key={idx}
+                className="events-gallery-tile"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.05 }}
+                onClick={() => openLightbox(img.src, img.caption)}
+                aria-label={`View photo: ${img.caption}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  className="events-gallery-img"
+                  loading="lazy"
+                />
+                <span className="events-gallery-caption">{img.caption}</span>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="events-upcoming-section">
         <div className="container">
           <div className="section-header text-center">
@@ -149,38 +182,6 @@ const Events = () => {
         </div>
       </section>
 
-      <section className="events-gallery-section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="subtitle">Snapshots</span>
-            <h2 className="section-title">Photo Gallery</h2>
-            <div className="section-title-line"></div>
-          </div>
-          <div className="events-gallery-grid">
-            {data.gallery.map((img, idx) => (
-              <motion.button
-                type="button"
-                key={idx}
-                className="events-gallery-tile"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.05 }}
-                onClick={() => openLightbox(img.src, img.caption)}
-                aria-label={`View photo: ${img.caption}`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  className="events-gallery-img"
-                  loading="lazy"
-                />
-                <span className="events-gallery-caption">{img.caption}</span>
-              </motion.button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="events-calendar-section">
         <div className="container">

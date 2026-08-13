@@ -180,7 +180,6 @@ export const activities = [
 ];
 
 export const navLinks = [
-  { label: "Home", path: "/" },
   {
     label: "About",
     path: "/about",
@@ -194,8 +193,7 @@ export const navLinks = [
     path: "/team",
     children: [
       { label: "Office Bearers", path: "/team" },
-      { label: "Executive Committee", path: "/committees#executive" },
-      { label: "Standing Committee", path: "/committees#standing" }
+      { label: "Executive Committee", path: "/committees#executive" }
     ]
   },
   {
@@ -205,7 +203,7 @@ export const navLinks = [
   },
   { label: "Social Activities", path: "/social-activities" },
   { label: "Events", path: "/events" },
-  { label: "WBSC Awards", path: "/wbsc-awards" },
+  { label: "WBSC 2026", path: "/wbsc-awards", highlight: true },
   { label: "Membership", path: "/membership" },
   {
     label: "Resources",
@@ -215,13 +213,7 @@ export const navLinks = [
       { label: "BAI Services", path: "/services" },
       { label: "Tenders", path: "/tenders" },
       { label: "BAI in Media", path: "/media" },
-      { label: "Sponsors Inquiry", path: "/sponsors-inquiry" },
-      /* Relocated here when the BAI Activities tab was cut to five activities —
-         these are live pages, so they keep a route into the site. */
-      { label: "Members Area", path: "/members-area" },
-      { label: "Non Members Area", path: "/non-members-area" },
-      { label: "Wheeling & Dealing", path: "/wd-display" },
-      { label: "Links", path: "/links" }
+      { label: "Sponsors Inquiry", path: "/sponsors-inquiry" }
     ]
   },
   { label: "Contact Us", path: "/contact" }
