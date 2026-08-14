@@ -2,9 +2,9 @@
 .members-hero-section {
   position: relative;
   height: 350px;
-  background-image: url("https://www.baionline.in/public/frontend/images/Banner-2-11.jpg");
+  background-image: url("/images/events/event_industrial-facility-visit-1.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   color: var(--white);

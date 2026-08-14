@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Magna Logo">
+  <rect x="4" y="4" width="152" height="112" rx="16" fill="#0891B2" fill-opacity="0.1" stroke="#0891B2" stroke-opacity="0.3" stroke-width="2"/>
+  <polygon points="80,28 102,44 102,68 80,80 58,68 58,44" fill="#0891B2" fill-opacity="0.25" stroke="#0891B2" stroke-width="2.5"/>
+  <text x="80" y="96" text-anchor="middle" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="700" fill="#0891B2" letter-spacing="1">MAGNA</text>
+</svg>

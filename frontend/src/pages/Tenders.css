@@ -2,9 +2,9 @@
 .tenders-hero-section {
   position: relative;
   height: 350px;
-  background-image: url("https://www.baionline.in/public/frontend/images/Banner-3-1.jpg");
+  background-image: url("/images/events/event_cwprs-site-visit.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   color: var(--white);

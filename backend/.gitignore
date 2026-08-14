@@ -2,3 +2,5 @@
 __pycache__/
 *.py[cod]
 data/submissions.db
+# Logos uploaded by paying sponsors — user content, not source.
+data/sponsor_logos/

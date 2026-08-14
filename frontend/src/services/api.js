@@ -214,7 +214,7 @@ export const footerData = {
     { label: "About BAI", path: "/about" },
     { label: "Committees", path: "/committees" },
     { label: "Events", path: "/events" },
-    { label: "WBSC Awards", path: "/wbsc-awards" },
+    { label: "WBSC Awards 2026", path: "/wbsc-awards" },
     { label: "Membership", path: "/membership" },
     { label: "Social Activities", path: "/social-activities" },
     { label: "Gallery", path: "/media" },

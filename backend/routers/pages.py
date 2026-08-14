@@ -1,7 +1,8 @@
 from fastapi import APIRouter
 from data.content import (
     HERO_SLIDES, STATS, LEADERSHIP, NAV_LINKS, FOOTER_DATA,
-    ABOUT_CONTENT, CONTACT_DATA, COMMITTEES, PAST_PRESIDENTS,
+    ABOUT_CONTENT, CONTACT_DATA, COMMITTEES, COMMITTEE_GUIDELINES,
+    EXECUTIVE_COMMITTEE, PAST_PRESIDENTS,
     PUNE_OFFICE_BEARERS, PLATINUM_JUBILEE_2015, ANNOUNCEMENTS, EVENTS,
     NEWS_TICKER, INDIAN_CONSTRUCTION, SOCIAL_ACTIVITIES_DATA
 )
@@ -45,6 +46,14 @@ def get_team():
 @router.get("/api/committees")
 def get_committees():
     return COMMITTEES
+
+@router.get("/api/committee-guidelines")
+def get_committee_guidelines():
+    return COMMITTEE_GUIDELINES
+
+@router.get("/api/executive-committee")
+def get_executive_committee():
+    return EXECUTIVE_COMMITTEE
 
 @router.get("/api/past-presidents")
 def get_past_presidents():

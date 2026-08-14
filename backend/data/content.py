@@ -74,15 +74,6 @@ LEADERSHIP = {
         "title": "Treasurer BAI Pune",
         "image": "/images/Shri_Sushil_Agarwal.jpg",
         "bio": "Treasurer of Builders' Association of India Pune."
-    },
-    # Listed alongside the office bearers in the WBSC 2026 booklet (p5).
-    # No photograph supplied yet — the Team card falls back to an initials
-    # avatar when "image" is empty.
-    "wbsc_chairman": {
-        "name": "Sunil Mate",
-        "title": "Chairman - WBSC 2026",
-        "image": "",
-        "bio": "Chairman of the Well Built Structure Competition 2026, Builders' Association of India Pune Centre."
     }
 }
 
@@ -99,7 +90,6 @@ ACTIVITIES = [
 # Must stay in step with `navLinks` in frontend/src/services/api.js — the
 # navbar renders from that static list, and this is the API's copy of it.
 NAV_LINKS = [
-    {"label": "Home", "path": "/"},
     {
         "label": "About",
         "path": "/about",
@@ -113,12 +103,11 @@ NAV_LINKS = [
         "path": "/team",
         "children": [
             {"label": "Office Bearers", "path": "/team"},
-            {"label": "Executive Committee", "path": "/committees#executive"},
-            {"label": "Standing Committee", "path": "/committees#standing"}
+            {"label": "Executive Committee", "path": "/committees#executive"}
         ]
     },
     {
-        "label": "BAI Activities",
+        "label": "BAI Activities Pune",
         "path": "/activities",
         "children": [
             {"label": a["title"], "path": "/activities#" + a["slug"]}
@@ -127,7 +116,7 @@ NAV_LINKS = [
     },
     {"label": "Social Activities", "path": "/social-activities"},
     {"label": "Events", "path": "/events"},
-    {"label": "WBSC Awards", "path": "/wbsc-awards"},
+    {"label": "WBSC 2026", "path": "/wbsc-awards", "highlight": True},
     {"label": "Membership", "path": "/membership"},
     {
         "label": "Resources",
@@ -137,13 +126,7 @@ NAV_LINKS = [
             {"label": "BAI Services", "path": "/services"},
             {"label": "Tenders", "path": "/tenders"},
             {"label": "BAI in Media", "path": "/media"},
-            {"label": "Sponsors Inquiry", "path": "/sponsors-inquiry"},
-            # Relocated here when the BAI Activities tab was cut to five
-            # activities — these are live pages, so they keep a route in.
-            {"label": "Members Area", "path": "/members-area"},
-            {"label": "Non Members Area", "path": "/non-members-area"},
-            {"label": "Wheeling & Dealing", "path": "/wd-display"},
-            {"label": "Links", "path": "/links"}
+            {"label": "Sponsors Inquiry", "path": "/sponsors-inquiry"}
         ]
     },
     {"label": "Contact Us", "path": "/contact"}
@@ -162,7 +145,7 @@ FOOTER_DATA = {
         {"label": "About BAI", "path": "/about"},
         {"label": "Committees", "path": "/committees"},
         {"label": "Events", "path": "/events"},
-        {"label": "WBSC Awards", "path": "/wbsc-awards"},
+        {"label": "WBSC Awards 2026", "path": "/wbsc-awards"},
         {"label": "Membership", "path": "/membership"},
         {"label": "Social Activities", "path": "/social-activities"},
         {"label": "Gallery", "path": "/media"},
@@ -179,10 +162,10 @@ FOOTER_DATA = {
         {"label": "Disclaimer", "path": "/disclaimer"}
     ],
     "social": [
-        {"platform": "facebook", "url": "https://www.facebook.com/BuildersAssociationOfIndia/"},
-        {"platform": "instagram", "url": "https://www.instagram.com/p/B60c1Ljnk90/"},
+        {"platform": "facebook", "url": "https://www.facebook.com/people/Builders-Association-of-India-Pune/61550732771835/"},
+        {"platform": "instagram", "url": "https://www.instagram.com/baipunecentre/"},
         {"platform": "youtube", "url": "https://www.youtube.com/@buildersassociationofindia73"},
-        {"platform": "linkedin", "url": "https://in.linkedin.com/company/builders-association-of-india"}
+        {"platform": "linkedin", "url": "https://www.linkedin.com/in/builders-association-of-india-pune-21b37152/"}
     ],
     "copyright": "Copyright \u00a9 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
 }
@@ -259,30 +242,104 @@ CONTACT_DATA = {
     }
 }
 
+# Executive Committee 2026-27, exactly as declared in the Centre's
+# "Constitution of Committees for the Year 2026-27" circular. The circular
+# lists 24 members and names no office bearers; the office bearers live in
+# LEADERSHIP and are shown on the Team page.
 EXECUTIVE_COMMITTEE = {
-    # Apr 2026 – Mar 2027 term, per the Centre's Chairman display board.
-    "chairman": {"role": "Chairman", "name": "Ajay R. Gujar"},
-    "vice_chairman": {"role": "Vice Chairman", "name": "Rajaram B. Hajare"},
-    "hon_secretary": {"role": "Secretary", "name": "Dr. Mahesh Rathi"},
-    "hon_joint_secretary": {"role": "Jt. Secretary", "name": "Sanjay Apte"},
-    "hon_treasurer": {"role": "Treasurer", "name": "Sushil N. Agarwal"},
+    "term": "2026–27",
     "members": [
-        
+        "Mr. Sanjay D. Gaikwad",
+        "Mr. Shivdatta Patane",
+        "Mr. T. L. Mate",
+        "Mr. Kirankant Dhiman",
+        "Mr. Sidhram Sathe",
+        "Mr. Ashok Atkekar",
+        "Mr. S. B. Thorave",
+        "Mr. D. S. Choudhari",
+        "Mrs. Arati Bhat",
+        "Mr. Ramesh Lal",
+        "Mr. C. D. Rathod",
+        "Mr. Shashikant K. Killedarpatil",
+        "Miss Shweta Thakur",
+        "Mr. Karan Pawar",
+        "Mr. Madhur Daga",
+        "Mrs. Jyoti Choughule",
+        "Mr. Shivkumar Bhalla",
+        "Mr. Bhalchandra Powar",
+        "Mr. Rajendra Shelke",
+        "Mr. Manikram Halbe",
+        "Mr. Pradeep Garge",
+        "Mr. Nandkumar Jethani",
+        "Mr. Sunil Mate",
+        "Mr. Mahesh Maideo"
     ]
 }
 
+# The circular's preamble and its seven general guidelines, verbatim.
+COMMITTEE_GUIDELINES = {
+    "subject": "Constitution of Committees for the Year 2026–27",
+    "intro": "Based on the discussions held during the First General Body Meeting, the following "
+             "committees have been constituted for the smooth functioning and effective execution "
+             "of activities at the BAI Pune Centre for the year 2026–27.",
+    "heading": "General Guidelines for All Committees",
+    "lead": "All committee members are requested to adhere to the following guidelines:",
+    "rules": [
+        "Members should demonstrate a genuine willingness to contribute to BAI activities.",
+        "Members must be able to devote adequate time to organizational responsibilities.",
+        "A minimum of 75% attendance is mandatory for all meetings and events.",
+        "Active participation and contribution to committee work is expected.",
+        "Each committee may mutually select a Chairperson, who shall coordinate activities and report to BAI.",
+        "The annual action plan should be submitted on or before 15th May 2026.",
+        "A monthly progress report must be submitted by each committee."
+    ],
+    "closing": "All committee members are requested to actively participate and contribute towards "
+               "achieving the objectives of the Centre. Your cooperation and commitment are essential "
+               "for the success of our initiatives. We look forward to your continued support.",
+    "signoff": "Builders' Association of India, Pune Centre"
+}
+
+# Committees and their members, exactly as listed in the circular.
+#
+# Spellings are reproduced per location, as the circular prints them. It is
+# internally inconsistent for four people, so the same person appears under
+# two spellings below — that is intentional, not a typo:
+#   Ashok Ashtekar (SIP)       vs Ashok Atkekar (EC #6)
+#   D. S. Chaudhari (Audit)    vs D. S. Choudhari (EC #8)
+#   Manikrao Halbe (Grievance) vs Manikram Halbe (EC #20)
+#   Shivdutta Patane (Seminar) / Shivdatt Patane (WBSC, Diary)
+#                              / Shivdatta Patane (EC #2)
+# Only the circular's missing word-spaces were closed up (JyotiChoughule ->
+# Jyoti Choughule). Confirm with the Centre before unifying any of these.
 COMMITTEES = [
-    {"name": "Housing Committee", "chairman": "", "desc": "Addresses housing policy, affordable housing initiatives and residential project matters for members.", "members": []},
-    {"name": "Membership Committee", "chairman": "", "desc": "Manages new member enrolment, renewals and membership category administration.", "members": []},
-    {"name": "Youth Wing", "chairman": "", "desc": "Engages young professionals and next-generation builders through mentorship and networking.", "members": []},
-    {"name": "Seminar / Site Visit Committee", "chairman": "", "desc": "Organizes technical seminars, workshops and industrial site visits for members.", "members": []},
-    {"name": "Office Renovation Committee", "chairman": "", "desc": "Oversees upkeep and renovation of the B.G. Shirke Activity Centre premises.", "members": []},
-    {"name": "WBSC Committee", "chairman": "", "desc": "Runs the Well Built Structure Competition — entries, jury coordination and awards ceremony.", "members": []},
-    {"name": "Grievance Redressal Committee", "chairman": "", "desc": "Handles member grievances and disputes requiring committee-level resolution.", "members": []},
-    {"name": "Diary Committee", "chairman": "", "desc": "Coordinates the annual BAI Pune Centre diary/publication and its content.", "members": []},
-    {"name": "Media Committee", "chairman": "", "desc": "Manages press relations, social media and public communications for the Centre.", "members": []},
-    {"name": "SIP Committee", "chairman": "", "desc": "Runs the Student Internship Programme connecting students with member firms.", "members": []},
-    {"name": "Internal Audit Committee", "chairman": "", "desc": "Reviews the Centre's internal accounts and financial controls.", "members": []}
+    {"name": "Housing Committee", "members": [
+        "Jyoti Choughule", "S. B. Thorave", "Mahesh Rathi",
+        "Sanjay Apte", "Sidhram Sathe", "Sanjay Gaikwad"]},
+    {"name": "Membership Committee", "members": [
+        "Manoj Deshmukh", "Jyoti Choughule", "Shivkumar Bhalla", "Mahesh Rathi"]},
+    {"name": "Youth Wing", "members": [
+        "Madhur Daga", "Shweta Thakur", "Viha Chitroda", "Karan Pawar"]},
+    {"name": "Seminar / Site Visit Committee", "members": [
+        "Arati Bhat", "Shivdutta Patane", "Madhur Daga",
+        "Rajendra Shelke", "Rajaram Hajare"]},
+    {"name": "Office Renovation Committee", "members": [
+        "Ranjeet More", "Manoj Deshmukh", "Kirankant Dhiman", "Sidhram Sathe",
+        "Sanjay Apte", "Pradeep Garge", "Jagannath Jadhav", "T. L. Mate",
+        "R. B. Krishnani", "Jyoti Choughule", "Mahesh Maideo", "Ajay Gujar"]},
+    {"name": "WBSC Committee", "members": [
+        "Sunil Mate", "Jagannath Jadhav", "Manoj Deshmukh",
+        "Shivdatt Patane", "Madhur Daga"]},
+    {"name": "Grievance Redressal Committee", "members": [
+        "C. S. Parhar", "Pradeep Garge", "Manikrao Halbe"]},
+    {"name": "Diary Committee", "members": [
+        "Shivkumar Bhalla", "Shashikant Killedar Patil",
+        "Shivdatt Patane", "Madhur Daga"]},
+    {"name": "Media Committee", "members": [
+        "Mahesh Rathi", "Nandkumar Jethani", "Ajay Gujar"]},
+    {"name": "SIP Committee", "members": [
+        "Ashok Ashtekar", "Shweta Thakur"]},
+    {"name": "Internal Audit Committee", "members": [
+        "D. S. Chaudhari"]}
 ]
 
 # Complete list of 57 past chairmen from 1941 to 2026

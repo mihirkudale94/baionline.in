@@ -2,9 +2,9 @@
   position: relative;
   min-height: 380px;
   padding: 3rem 0;
-  background-image: url("https://www.baionline.in/public/frontend/images/21.jpg");
+  background-image: url("/images/events/event_pmc-courtesy-visit-2.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   color: var(--white);

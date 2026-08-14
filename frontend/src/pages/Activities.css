@@ -6,9 +6,9 @@
 .activities-hero-section {
   position: relative;
   height: 350px;
-  background-image: url("/images/events/event_committee-meeting-office.jpg");
+  background-image: url("/images/events/event_worker-children-felicitation-2025-2.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   color: var(--white);

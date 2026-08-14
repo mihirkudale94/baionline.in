@@ -2,9 +2,9 @@
 .sponsors-hero-section {
   position: relative;
   height: 350px;
-  background-image: url("https://www.baionline.in/public/frontend/images/Banner-2-11.jpg");
+  background-image: url("/images/event_sponsorship.webp");
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   color: var(--white);

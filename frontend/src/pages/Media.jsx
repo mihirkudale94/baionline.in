@@ -9,21 +9,21 @@ const Media = () => {
       title: "BAI representation on rising input materials cost discussed in Ministry",
       desc: "Our delegation led by Chairman Ajay Gujar met union representatives to address concrete, steel and bitumens price trends affecting developers.",
       date: "July 15, 2026",
-      image: "https://www.baionline.in/public/frontend/images/22.png",
+      image: "/images/events/event_builders-day-2025.jpg",
       tag: "Press Release"
     },
     {
       title: "Builders Association calls for unified regulatory compliance system",
       desc: "BAI members discuss structural development permissions, environmental certifications and tax index compliance across states during the 2026 conference.",
       date: "June 20, 2026",
-      image: "https://www.baionline.in/public/frontend/images/Banner-1.jpg",
+      image: "/images/event_mcgc_meet.webp",
       tag: "Conference"
     },
     {
       title: "National safety standards compliance workshop organized at Jackson Hut",
       desc: "Providing builders and site construction companies with structural safety checklists, materials validation metrics and workers security guidelines.",
       date: "May 10, 2026",
-      image: "https://www.baionline.in/public/frontend/images/21.jpg",
+      image: "/images/events/event_central-bank-outreach-campaign.jpg",
       tag: "Workshop"
     }
   ];

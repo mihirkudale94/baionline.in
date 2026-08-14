@@ -2,12 +2,10 @@
 .team-hero-section {
   position: relative;
   height: 350px;
-  /* Photo gallery image — Builders' Day 2025, Pune Centre office bearers.
-     The vertical position is biased upward so the wide banner crop keeps
-     faces in frame instead of centring on the table. */
-  background-image: url("/images/events/event_builders-day-2025.jpg");
+  /* Photo gallery image — Pune Centre office bearers meeting. */
+  background-image: url("/images/events/event_office-meeting-1.jpg");
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 30%;
   display: flex;
   align-items: center;
   color: var(--white);

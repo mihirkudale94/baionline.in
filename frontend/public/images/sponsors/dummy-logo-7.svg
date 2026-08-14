@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Minim Logo">
+  <rect x="4" y="4" width="152" height="112" rx="16" fill="#EA580C" fill-opacity="0.1" stroke="#EA580C" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="80" cy="48" r="20" fill="none" stroke="#EA580C" stroke-width="4"/>
+  <path d="M68 48 L92 48" stroke="#EA580C" stroke-width="4"/>
+  <text x="80" y="94" text-anchor="middle" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="700" fill="#EA580C" letter-spacing="1">MINIM</text>
+</svg>

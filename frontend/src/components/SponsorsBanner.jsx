@@ -4,18 +4,12 @@ import { getSponsors } from "../services/sponsors";
 import "./SponsorsBanner.css";
 
 const DEFAULT_PLACEHOLDER_SPONSORS = [
-  { name: "B. G. Shirke Construction Tech", logo: "/images/sponsors/bg-shirke.svg", url: "https://shirke.co.in" },
-  { name: "UltraTech Cement", logo: "/images/sponsors/ultratech-cement.svg", url: "" },
-  { name: "Tata Steel", logo: "/images/sponsors/tata-steel.svg", url: "" },
-  { name: "ACC Limited", logo: "/images/sponsors/acc-limited.svg", url: "" },
-  { name: "Ambuja Cements", logo: "/images/sponsors/ambuja-cements.svg", url: "" },
-  { name: "JSW Steel", logo: "/images/sponsors/jsw-steel.svg", url: "" },
-  { name: "Asian Paints", logo: "/images/sponsors/asian-paints.svg", url: "" },
-  { name: "Dr. Fixit", logo: "/images/sponsors/dr-fixit.svg", url: "" },
-  { name: "Finolex Industries", logo: "/images/sponsors/finolex-industries.svg", url: "" },
-  { name: "Kirloskar Brothers", logo: "/images/sponsors/kirloskar-brothers.svg", url: "" },
-  { name: "Otis Elevators", logo: "/images/sponsors/otis-elevators.svg", url: "" },
-  { name: "Thermax", logo: "/images/sponsors/thermax.svg", url: "" }
+  { name: "Aether Systems", logo: "/images/sponsors/aether-systems.jpg", url: "" },
+  { name: "Apex Build Corp", logo: "/images/sponsors/apex-build.jpg", url: "" },
+  { name: "Vanguard Steel", logo: "/images/sponsors/vanguard-steel.jpg", url: "" },
+  { name: "Verdant Infra", logo: "/images/sponsors/verdant-infra.jpg", url: "" },
+  { name: "Titan Heavy Industries", logo: "/images/sponsors/titan-heavy.jpg", url: "" },
+  { name: "Solaris Power", logo: "/images/sponsors/solaris-power.jpg", url: "" }
 ];
 
 /* Shows verified paid sponsors from backend merged with placeholder industry sponsors */

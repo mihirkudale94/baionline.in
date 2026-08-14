@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Lorem Ipsum Logo">
+  <rect x="4" y="4" width="152" height="112" rx="16" fill="#2563EB" fill-opacity="0.1" stroke="#2563EB" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="80" cy="50" r="22" fill="#2563EB" fill-opacity="0.2"/>
+  <path d="M72 40 L88 40 L88 60 L72 60 Z" fill="none" stroke="#2563EB" stroke-width="3.5" stroke-linejoin="round"/>
+  <text x="80" y="94" text-anchor="middle" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="700" fill="#2563EB" letter-spacing="1">LOREM</text>
+</svg>

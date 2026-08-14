@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Tempor Logo">
+  <rect x="4" y="4" width="152" height="112" rx="16" fill="#DC2626" fill-opacity="0.1" stroke="#DC2626" stroke-opacity="0.3" stroke-width="2"/>
+  <path d="M60 58 L80 32 L100 58 Z" fill="#DC2626" fill-opacity="0.3" stroke="#DC2626" stroke-width="2"/>
+  <rect x="70" y="58" width="20" height="12" fill="#DC2626" fill-opacity="0.5"/>
+  <text x="80" y="94" text-anchor="middle" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="700" fill="#DC2626" letter-spacing="1">TEMPOR</text>
+</svg>

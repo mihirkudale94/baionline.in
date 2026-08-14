@@ -8,9 +8,9 @@
 /* 1. Hero Section */
 .social-hero-section {
   position: relative;
-  background-image: linear-gradient(rgba(10, 22, 40, 0.55), rgba(10, 22, 40, 0.55)), url("/images/events/event_central-bank-outreach-campaign.jpg");
+  background-image: linear-gradient(rgba(10, 22, 40, 0.55), rgba(10, 22, 40, 0.55)), url("/images/events/event_worker-children-felicitation-2025-1.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   padding: 8rem 0 6rem 0;
   color: var(--white);
   text-align: center;
