@@ -89,15 +89,6 @@ export const leadership = {
     title: "Treasurer BAI Pune",
     image: "/images/Shri_Sushil_Agarwal.jpg",
     bio: "Treasurer of Builders' Association of India Pune."
-  },
-  /* Listed alongside the office bearers in the WBSC 2026 booklet (p5).
-     No photograph supplied yet — the Team card falls back to an initials
-     avatar when `image` is empty. */
-  wbsc_chairman: {
-    name: "Sunil Mate",
-    title: "Chairman - WBSC 2026",
-    image: "",
-    bio: "Chairman of the Well Built Structure Competition 2026, Builders' Association of India Pune Centre."
   }
 };
 
@@ -118,26 +109,17 @@ export const youtubeVideos = [
 ];
 
 /* ------------------------------------------------------------------
-   OUR SPONSORS — drives the scrolling section on the home page.
-   To add a sponsor: drop the logo in /public/images/sponsors/ and add a
-   row below. `logo` may be omitted — the chip then shows the name alone.
+   OUR SPONSORS — no longer defined here.
 
-   !! DEMO DATA !! The eight entries below are FICTIONAL firms with
-   generated placeholder logos, used only to show how the section looks
-   when populated. They are NOT real sponsors. Replace this whole array
-   with the real sponsor list before the site goes public, and delete
-   /public/images/sponsors/*.svg.
+   The home page banner is now driven by paid listings: SponsorsBanner
+   reads GET /api/sponsors, which returns only companies whose Razorpay
+   payment has been verified server side (backend/routers/sponsors.py).
+   A hard-coded array here would have put unpaid names on the banner,
+   which is exactly what the paid flow exists to prevent.
+
+   To list a sponsor who paid offline (DD / NEFT / cheque), use the CLI:
+       python backend/add_sponsor.py --help
    ------------------------------------------------------------------ */
-export const sponsors = [
-  { name: "Sahyadri Cement Works", logo: "/images/sponsors/sahyadri-cement.svg", url: "" },
-  { name: "Deccan Steel & Alloys", logo: "/images/sponsors/deccan-steel.svg", url: "" },
-  { name: "Mutha Infra Equipment", logo: "/images/sponsors/mutha-infra.svg", url: "" },
-  { name: "Shivneri Ready-Mix", logo: "/images/sponsors/shivneri-rmc.svg", url: "" },
-  { name: "Pashan Build Solutions", logo: "/images/sponsors/pashan-build.svg", url: "" },
-  { name: "Godavari Waterproofing", logo: "/images/sponsors/godavari-waterproof.svg", url: "" },
-  { name: "Kesari Elevators", logo: "/images/sponsors/kesari-elevators.svg", url: "" },
-  { name: "Prabhat Formwork Systems", logo: "/images/sponsors/prabhat-formwork.svg", url: "" }
-];
 
 /* The five regular activities of BAI Pune Centre. Drives both the
    "BAI Activities" dropdown and the /activities page sections. */
@@ -197,7 +179,7 @@ export const navLinks = [
     ]
   },
   {
-    label: "BAI Activities",
+    label: "BAI Activities Pune",
     path: "/activities",
     children: activities.map((a) => ({ label: a.title, path: `/activities#${a.slug}` })),
   },
@@ -249,10 +231,10 @@ export const footerData = {
     { label: "Disclaimer", path: "/disclaimer" }
   ],
   social: [
-    { platform: "facebook", url: "https://www.facebook.com/BuildersAssociationOfIndia/" },
-    { platform: "instagram", url: "https://www.instagram.com/p/B60c1Ljnk90/" },
+    { platform: "facebook", url: "https://www.facebook.com/people/Builders-Association-of-India-Pune/61550732771835/" },
+    { platform: "instagram", url: "https://www.instagram.com/baipunecentre/" },
     { platform: "youtube", url: "https://www.youtube.com/@buildersassociationofindia73" },
-    { platform: "linkedin", url: "https://in.linkedin.com/company/builders-association-of-india" }
+    { platform: "linkedin", url: "https://www.linkedin.com/in/builders-association-of-india-pune-21b37152/" }
   ],
   copyright: "Copyright \u00a9 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
 };
@@ -514,29 +496,101 @@ export async function submitForm(formType, data) {
 
 
 
+/* Committees and their members, exactly as listed in the Centre's
+   "Constitution of Committees for the Year 2026–27" circular.
+
+   Spellings are reproduced per location, as the circular prints them. It is
+   internally inconsistent for four people, so the same person appears under
+   two spellings across this file — that is intentional, not a typo:
+     Ashok Ashtekar (SIP)      vs Ashok Atkekar (EC #6)
+     D. S. Chaudhari (Audit)   vs D. S. Choudhari (EC #8)
+     Manikrao Halbe (Grievance) vs Manikram Halbe (EC #20)
+     Shivdutta Patane (Seminar) / Shivdatt Patane (WBSC, Diary)
+                               / Shivdatta Patane (EC #2)
+   Only the circular's missing word-spaces were closed up (JyotiChoughule ->
+   Jyoti Choughule). Confirm with the Centre before unifying any of these. */
 export const committeesData = [
-  { name: "Housing Committee", chairman: "", desc: "Addresses housing policy, affordable housing initiatives and residential project matters for members.", members: [] },
-  { name: "Membership Committee", chairman: "", desc: "Manages new member enrolment, renewals and membership category administration.", members: [] },
-  { name: "Youth Wing", chairman: "", desc: "Engages young professionals and next-generation builders through mentorship and networking.", members: [] },
-  { name: "Seminar / Site Visit Committee", chairman: "", desc: "Organizes technical seminars, workshops and industrial site visits for members.", members: [] },
-  { name: "Office Renovation Committee", chairman: "", desc: "Oversees upkeep and renovation of the B.G. Shirke Activity Centre premises.", members: [] },
-  { name: "WBSC Committee", chairman: "", desc: "Runs the Well Built Structure Competition — entries, jury coordination and awards ceremony.", members: [] },
-  { name: "Grievance Redressal Committee", chairman: "", desc: "Handles member grievances and disputes requiring committee-level resolution.", members: [] },
-  { name: "Diary Committee", chairman: "", desc: "Coordinates the annual BAI Pune Centre diary/publication and its content.", members: [] },
-  { name: "Media Committee", chairman: "", desc: "Manages press relations, social media and public communications for the Centre.", members: [] },
-  { name: "SIP Committee", chairman: "", desc: "Runs the Student Internship Programme connecting students with member firms.", members: [] },
-  { name: "Internal Audit Committee", chairman: "", desc: "Reviews the Centre's internal accounts and financial controls.", members: [] }
+  { name: "Housing Committee", members: [
+    "Jyoti Choughule", "S. B. Thorave", "Mahesh Rathi",
+    "Sanjay Apte", "Sidhram Sathe", "Sanjay Gaikwad"] },
+  { name: "Membership Committee", members: [
+    "Manoj Deshmukh", "Jyoti Choughule", "Shivkumar Bhalla", "Mahesh Rathi"] },
+  { name: "Youth Wing", members: [
+    "Madhur Daga", "Shweta Thakur", "Viha Chitroda", "Karan Pawar"] },
+  { name: "Seminar / Site Visit Committee", members: [
+    "Arati Bhat", "Shivdutta Patane", "Madhur Daga",
+    "Rajendra Shelke", "Rajaram Hajare"] },
+  { name: "Office Renovation Committee", members: [
+    "Ranjeet More", "Manoj Deshmukh", "Kirankant Dhiman", "Sidhram Sathe",
+    "Sanjay Apte", "Pradeep Garge", "Jagannath Jadhav", "T. L. Mate",
+    "R. B. Krishnani", "Jyoti Choughule", "Mahesh Maideo", "Ajay Gujar"] },
+  { name: "WBSC Committee", members: [
+    "Sunil Mate", "Jagannath Jadhav", "Manoj Deshmukh",
+    "Shivdatt Patane", "Madhur Daga"] },
+  { name: "Grievance Redressal Committee", members: [
+    "C. S. Parhar", "Pradeep Garge", "Manikrao Halbe"] },
+  { name: "Diary Committee", members: [
+    "Shivkumar Bhalla", "Shashikant Killedar Patil",
+    "Shivdatt Patane", "Madhur Daga"] },
+  { name: "Media Committee", members: [
+    "Mahesh Rathi", "Nandkumar Jethani", "Ajay Gujar"] },
+  { name: "SIP Committee", members: [
+    "Ashok Ashtekar", "Shweta Thakur"] },
+  { name: "Internal Audit Committee", members: [
+    "D. S. Chaudhari"] }
 ];
 
+/* Executive Committee 2026–27 as declared in the circular: 24 members,
+   no office bearers. Office bearers live in `leadership` (Team page). */
 export const executiveCommittee = {
-  chairman: { role: "Chairman", name: "" },
-  vice_chairman: { role: "Vice Chairman", name: "Rajaram B. Hajare" },
-  hon_secretary: { role: "Secretary", name: "Dr. Mahesh Rathi" },
-  hon_joint_secretary: { role: "Jt. Secretary", name: "Sanjay Apte" },
-  hon_treasurer: { role: "Treasurer", name: "Sushil N. Agarwal" },
+  term: "2026–27",
   members: [
-    
+    "Mr. Sanjay D. Gaikwad",
+    "Mr. Shivdatta Patane",
+    "Mr. T. L. Mate",
+    "Mr. Kirankant Dhiman",
+    "Mr. Sidhram Sathe",
+    "Mr. Ashok Atkekar",
+    "Mr. S. B. Thorave",
+    "Mr. D. S. Choudhari",
+    "Mrs. Arati Bhat",
+    "Mr. Ramesh Lal",
+    "Mr. C. D. Rathod",
+    "Mr. Shashikant K. Killedarpatil",
+    "Miss Shweta Thakur",
+    "Mr. Karan Pawar",
+    "Mr. Madhur Daga",
+    "Mrs. Jyoti Choughule",
+    "Mr. Shivkumar Bhalla",
+    "Mr. Bhalchandra Powar",
+    "Mr. Rajendra Shelke",
+    "Mr. Manikram Halbe",
+    "Mr. Pradeep Garge",
+    "Mr. Nandkumar Jethani",
+    "Mr. Sunil Mate",
+    "Mr. Mahesh Maideo"
   ]
+};
+
+/* The circular's preamble and its seven general guidelines, verbatim. */
+export const committeeGuidelines = {
+  subject: "Constitution of Committees for the Year 2026–27",
+  intro:
+    "Based on the discussions held during the First General Body Meeting, the following committees have been constituted for the smooth functioning and effective execution of activities at the BAI Pune Centre for the year 2026–27.",
+  heading: "General Guidelines for All Committees",
+  lead: "All committee members are requested to adhere to the following guidelines:",
+  rules: [
+    "Members should demonstrate a genuine willingness to contribute to BAI activities.",
+    "Members must be able to devote adequate time to organizational responsibilities.",
+    "A minimum of 75% attendance is mandatory for all meetings and events.",
+    "Active participation and contribution to committee work is expected.",
+    "Each committee may mutually select a Chairperson, who shall coordinate activities and report to BAI.",
+    "The annual action plan should be submitted on or before 15th May 2026.",
+    "A monthly progress report must be submitted by each committee."
+  ],
+  closing:
+    "All committee members are requested to actively participate and contribute towards achieving the objectives of the Centre. Your cooperation and commitment are essential for the success of our initiatives. We look forward to your continued support.",
+  signoff: "Builders' Association of India, Pune Centre"
 };
 
 export const pastPresidentsData = [
@@ -1169,6 +1223,28 @@ export async function getCommitteesData() {
   }
 }
 
+export async function getExecutiveCommitteeData() {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/executive-committee`);
+    if (!res.ok) throw new Error("Status " + res.status);
+    return await res.json();
+  } catch (err) {
+    console.warn("Using local fallback for Executive Committee:", err);
+    return executiveCommittee;
+  }
+}
+
+export async function getCommitteeGuidelines() {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/committee-guidelines`);
+    if (!res.ok) throw new Error("Status " + res.status);
+    return await res.json();
+  } catch (err) {
+    console.warn("Using local fallback for Committee Guidelines:", err);
+    return committeeGuidelines;
+  }
+}
+
 export async function getPastPresidentsData() {
   try {
     const res = await fetchWithTimeout(`${API_BASE}/past-presidents`);
@@ -1182,22 +1258,35 @@ export async function getPastPresidentsData() {
 
 /* ------------------------------------------------------------------
    WELL BUILT STRUCTURE COMPETITION
-   Every value below is transcribed from BAI Pune Centre's official
-   "WBSC Booklet 2026" (38pp, issued 18 June 2026). Do not edit these
-   figures, names or category titles without checking that document —
-   they are the Centre's own published record.
+   Sources, in order of precedence:
+     1. "Invitation for participation for WBSC 2026 (30th in series)" —
+        the Centre's official circular signed by Sunil Mate (Chairman,
+        WBSC 2026) and Ajay R. Gujar (Chairman, BAI Pune Centre).
+     2. "Entry Form WBSC 2026 (30th in series)" — the prescribed form,
+        which also carries the WBSC 2027 & 2028 advance-reservation form.
+     3. "WBSC Booklet 2026" (38pp) — used only where the circulars are
+        silent (e.g. the 100-mark split, the archive and Nirman Ratna).
+
+   The circulars supersede the booklet on categories (16, not 11) and on
+   eligibility — the booklet's "within 250 km of Pune" / nearby-centres
+   restriction is gone, replaced by dedicated "Outside Pune / Mumbai"
+   categories and an online-presentation rule for sites beyond 300 km.
+   Do not edit these figures, names or category titles without checking
+   the circulars — they are the Centre's own published record.
 
    Edition numbering: 1997-98 was the 1st in series, so 2024-25 = 28th,
-   2025-26 = 29th and 2026 = 30th. The booklet cover reads "30th in Series".
+   2025-26 = 29th and 2026 = 30th. The cover reads "30th in Series".
    ------------------------------------------------------------------ */
 export const wbscAwardsData = {
   title: "Well Built Structure Competition 2026",
+  officialName: "BAI – SHIRKE “Well Built Structure Competition – 2026”",
   edition: "30th in Series",
   since: "Since 1997",
   tagline: "Quality • Speed • Economy • Safety & Welfare",
   logo: "/images/wbsc/wbsc-logo.png",
   trophy: "/images/wbsc/wbsc-trophy.png",
-  openEntriesNote: "Entries for WBSC 2027 and 2028 are open",
+  banner: "/images/wbsc/wbsc-2026-banner.jpg",
+  openEntriesNote: "Advance registration is also open for WBSC 2027–28 and WBSC 2028–29",
   about: [
     "A few decades ago it was felt that the Association should give due recognition to good quality works being done by fellow contractors, constructors and builders. This would help not only to enhance the image of the construction industry but also be a source of inspiration to all fellow contractors for improvement and betterment of their work. With this primary intention BAI Pune Centre instituted these awards and declared this competition in the year 1997.",
     "The awards have gained reputation and standing only because of the meticulous evaluation of works by an Independent Panel of Juries to decide award winning work. A team of leading consultants, architects and engineers form the panel of juries. They first check all the entries and, after presentation at the BAI Office, the Panel of Juries physically visits each site checking the works and assessing the project from various aspects of construction methods and techniques utilised."
@@ -1212,53 +1301,67 @@ export const wbscAwardsData = {
     { title: "Weightage for Green Building", desc: "Implementation of Green Building concepts in the construction process is given more weightage during evaluation." },
     { title: "Showcase Your Site Practices", desc: "Workmanship, innovative techniques, site management, health and hygiene of workmen and training programmes are all considered." }
   ],
-  /* The 11 official 2026 categories (booklet p8), grouped for the tab UI. */
-  categoryCount: 11,
+  /* The 16 official 2026 categories, verbatim from the invitation
+     circular, grouped for the tab UI. "Masters Category" is not a 17th
+     entry category — it is the conversion rule in mastersCategoryNote. */
+  categoryCount: 16,
   categoryGroups: [
     {
       group: "Residential",
       categories: [
-        "Residential (Bungalow, Row Houses, Standalone Buildings)",
-        "Residential (Housing Complex)",
-        "Residential (Redevelopment Projects)"
+        "Residential (Bungalow / Row Houses / Farm House)",
+        "Residential (Standalone – Single Plot Buildings)",
+        "Residential (Standalone – Single Plot Redevelopment)",
+        "Residential (Multi Building Project)"
       ]
     },
     {
-      group: "Commercial & Industrial",
+      group: "Commercial",
       categories: [
-        "Commercial (Malls, Office, Institution, Hotel, Hospital, Cinema etc.)",
-        "Industrial Construction Projects"
+        "Commercial (Malls, Shopping Centre, Offices, Hostels / combination of this use)",
+        "Commercial (Institutional / Hospitals / Recreational Centre / IT Parks)"
       ]
     },
     {
-      group: "Infrastructure & Roads",
+      group: "Outside Pune / Mumbai",
       categories: [
-        "Infrastructure (Bridges, Flyovers, ESR, Metro Stations etc.)",
-        "Roads (Concrete & Bituminous)"
+        "Outside Pune / Mumbai Structure (Residential Bungalow, Standalone Building)",
+        "Outside Pune / Mumbai Structure (Commercial)"
       ]
     },
     {
-      group: "Government",
-      categories: ["Government (State & Central), Semi-Govt., Public Works"]
+      group: "Industrial & Infrastructure",
+      categories: [
+        "Industrial (Any Type, Any Size)",
+        "Infrastructure (Bridges, Flyovers, Underpass)",
+        "Infrastructure (ESR, GSR, STP, ETP etc.)",
+        "Infrastructure (Road projects of different types, Viaduct / Aqueduct)"
+      ]
+    },
+    {
+      group: "Government & Public Works",
+      categories: [
+        "Government (State & Central), Semi-Govt., Public Works (Residential / Housing / Offices)",
+        "Government (State & Central), Semi-Govt., Public Works (Commercial, Public Buildings, Multi-use Buildings, Special Buildings)"
+      ]
     },
     {
       group: "Specialised",
       categories: [
-        "Landscapes (Horticulture work etc.)",
-        "Work up to Bare Shell (includes RCC, Masonry and Plaster works)",
-        "Mastery Category"
+        "Landscapes (Garden, Open Space Development, Public Parks) — minimum 80% of area in softscape",
+        "Work up to Bare Shell (includes RCC, Masonry and Plaster works)"
       ]
     }
   ],
+  mastersCategoryNote: "Participants and organisations that have secured WBSC awards five (5) times or more are automatically converted to, and compete under, the “Masters Category” for all subsequent competitions.",
   eligibility: [
-    "Any individual, company, firm, joint venture, turnkey contractor, promoter or developer engaged in construction activity may participate.",
-    "The applicant must be from in and around Pune, or from the nearby BAI centres: Ahmednagar, Baramati, Ichalkaranji, Kolhapur, Mumbai, Nashik, Phaltan, Sangali, Satara, Solapur, Sangamner and Ulhasnagar.",
+    "Entries are invited from any person or organisation engaged in construction — any individual, company, firm, joint venture, turnkey contractor, promoter or developer engaged in construction activity may participate.",
     "The applicant must have had a major role in the execution of the project.",
-    "The project must be within 250 km from Pune.",
+    "A project entered in a previous competition shall not be considered.",
     "Work must be nearing completion and shall have commenced preferably not before March 2024.",
-    "A project entered in a previous competition shall not be considered."
+    "For the Government category, the applicant must be a registered contractor — Government works are executed under special circumstances of rates, specifications, location, time, decisions, changes and accounts."
   ],
-  eligibilityNote: "One project may be proposed for two categories by filling in two separate entry forms. The category is subject to confirmation by the Juries.",
+  eligibilityNote: "Please indicate the category on the entry form. One project may be proposed for two categories by filling in two separate entry forms and paying two entry fees.",
   evaluationCriteria: [
     "100 marks per project — 20 for the presentation, 80 for the site visit",
     "Quality, Speed, Economy, Safety and Welfare achieved on site",
@@ -1269,14 +1372,74 @@ export const wbscAwardsData = {
     "Training and motivational programmes conducted",
     "Implementation of Green Building concepts (given more weightage)"
   ],
-  evaluationNote: "Evaluation is done through standard assessment sheets by each Jury member separately and is kept confidential. This data is not available for review or discussion. The decision of the Panel of Juries is final.",
+  evaluationNote: "Evaluation is done through standard assessment sheets by each Jury member separately and is kept confidential. This data is not available for review or discussion. Selecting an entry for the citation is not binding on the Panel of Juries — a minimum number of entries is necessary for the citation of an award in a category, and if no suitable entry is found the award may be cancelled. The decision of the Panel of Juries is final.",
   entryTerms: [
-    { label: "Entry fee", value: "₹25,000 + GST @ 18% per entry, payable with the application" },
+    { label: "Entry fee", value: "₹25,000 + GST @ 18% per entry (and other taxes as applicable), payable with the application" },
+    { label: "Entry form", value: "Free of cost — use a photocopy, or complete the soft copy and submit a printout" },
     { label: "Cheque in favour of", value: "Builders' Association of India – Pune Centre" },
     { label: "Presentation", value: "Maximum 30 minutes to the Panel of Juries, including PowerPoint and video" },
-    { label: "Submission", value: "PPT on pen-drive with 2 hard copies, at the BAI Office at least 10 days before the presentation date" },
+    { label: "Submission", value: "A copy of the presentation must reach the BAI Office at least 10 days before the presentation date" },
     { label: "Video format", value: "AVI only, maximum 10 minutes" },
+    { label: "Sites beyond 300 km", value: "Sites more than 300 km from Pune Centre present online — 45 minutes of video plus 30 minutes of presentation" },
     { label: "Invalid entries", value: "Returned, and the entry fee refunded" }
+  ],
+  /* Tentative programme, verbatim from the invitation circular. */
+  schedule: {
+    note: "Tentative programme. Dates for the presentations, site visits and award ceremony will be conveyed in advance to the contact person named on the entry form.",
+    milestones: [
+      { date: "1 June 2026", description: "Issue & Submission of Entry Forms", confirmed: true },
+      { date: "To be announced", description: "Presentations by the Participants at the BAI Office", confirmed: false },
+      { date: "To be announced", description: "Site Visits by the Panel of Juries", confirmed: false },
+      { date: "To be announced", description: "WBSC 2026 Award Ceremony", confirmed: false }
+    ]
+  },
+  /* Advance reservation scheme introduced with the 2026 circular. */
+  advanceRegistration: {
+    title: "Advance Registration for WBSC 2027–28 & 2028–29",
+    body: "BAI Well Built Structure Competition also accepts advance registrations from interested participants for forthcoming editions, including WBSC 2027–28 and WBSC 2028–29.",
+    points: [
+      "Reserve your entry by submitting the prescribed application along with a refundable booking fee.",
+      "If you choose not to submit an entry for the reserved year, the booking fee is refunded, subject to the terms and conditions prescribed by the Organizing Committee.",
+      "Acceptance of advance reservations is at the sole discretion of the WBSC Organizing Committee.",
+      "The advance-reservation form is part of the WBSC 2026 Entry Form download — complete the WBSC 2027 & 2028 section and state the year you wish to reserve."
+    ]
+  },
+  /* Field checklist drawn from the prescribed entry form, so applicants
+     can assemble their papers before opening the document. */
+  entryChecklist: [
+    {
+      heading: "About the applicant",
+      items: [
+        "Category applied for",
+        "Name and designation of the applicant",
+        "Name of the firm / company and full address",
+        "Telephone numbers — residence, office and site",
+        "E-mail ID",
+        "Memberships of construction-related associations other than BAI",
+        "Contact person, with site, office and personal numbers and e-mail"
+      ]
+    },
+    {
+      heading: "About the project",
+      items: [
+        "Name of the project, and address with site map and landmark",
+        "Name of the client / owner and the project cost",
+        "The applicant's role and scope, and the cost of the applicant's works",
+        "Time limit of the project and date of commencement",
+        "Scheduled completion date, and actual date of virtual completion",
+        "Cost of the project completed till date",
+        "Approvals, NOCs and certificates from PMC, PH Dept., CFO, MoEF, GRIHA etc. (attach copies)"
+      ]
+    },
+    {
+      heading: "Attachments & sign-off",
+      items: [
+        "Supporting photographs, documents, certificates and other appropriate data",
+        "The entry form and supporting documents, well bound or filed",
+        "Applicant's signature, name and company stamp",
+        "Cheque for the entry fee in favour of Builders' Association of India – Pune Centre"
+      ]
+    }
   ],
   process: [
     { title: "Submit Entry", desc: "Complete the entry form with all mandatory information and submit it with supporting photographs, documents and certificates, well bound or filed, along with the entry fee." },
@@ -1287,18 +1450,39 @@ export const wbscAwardsData = {
     { title: "Award Ceremony", desc: "Awards are declared and distributed at the grand WBSC 2026 Award Ceremony, in the form of a trophy and a certificate." }
   ],
   presentationGuidelines: [
-    "30 minute project presentation to the Panel of Juries.",
-    "Where possible, provide a video recording of the project (max 10 minutes, AVI format) to supplement the PowerPoint.",
-    "PPT should be submitted on a pen-drive with 2 hard copies.",
+    "A project presentation of not more than 30 minutes before the Panel of Juries, including the PowerPoint and video, if any.",
+    "Where possible, provide a video recording of the project (max 10 minutes, AVI format only) to supplement the PowerPoint.",
+    "A copy of the presentation must be submitted to the BAI Office at least 10 days before the presentation date, and is retained by BAI Pune Centre for evaluation, presentation and promotional purposes.",
+    "Sites more than 300 km from Pune Centre present online — a 45 minute video presentation plus 30 minutes of presentation.",
     "Photographs of project execution from excavation to finish.",
     "Labour camp and safety measures taken for the project.",
     "New methodology / techniques adopted for time and economy constraints.",
-    "Methods for selection of construction materials and quality."
+    "Methods for selection of construction materials and quality.",
+    "Other data is presented during the site visit of the Panel of Juries."
   ],
   downloads: [
-    { label: "WBSC 2026 Entry Form", status: "coming_soon" },
-    { label: "WBSC 2026 Booklet", status: "coming_soon" },
-    { label: "Competition Rules", status: "coming_soon" }
+    {
+      key: "invitation",
+      label: "Invitation for Participation (WBSC 2026 - 30th in series)",
+      desc: "Official invitation document for participation in the 30th WBSC 2026 competition.",
+      file: "/documents/WBSC-2026-Invitation-for-Participation.docx",
+      format: "DOCX",
+      size: "159 KB",
+      status: "available"
+    },
+    {
+      key: "booklet",
+      label: "WBSC 2026 Official Booklet",
+      desc: "Complete 38-page official WBSC 2026 booklet with guidelines, categories, jury panel and award records.",
+      file: "/documents/WBSC-2026-Booklet-Official.pdf",
+      format: "PDF",
+      size: "35.5 MB",
+      status: "available"
+    }
+  ],
+  /* Signatories on the WBSC 2026 invitation circular. */
+  signatories: [
+    { name: "Ajay R. Gujar", role: "Chairman, BAI Pune Centre" }
   ],
   /* Removed: the six "testimonials" previously here were invented quotes
      attributed to named individuals. Nothing goes back in this array
@@ -2043,46 +2227,224 @@ export const eventsPageData = {
 };
 
 export const membershipPageData = {
-  title: "Become a Member",
-  subtitle: "Connecting Construction Professionals Since 1941",
-  whyJoin: [
-    "Professional Recognition",
-    "Industry Networking",
-    "Government Representation",
-    "Business Opportunities",
-    "Technical Knowledge",
-    "Training",
-    "Leadership Roles",
-    "Industry Updates"
+  title: "Membership Application",
+  subtitle: "Join the All-India Association of Engineering Construction Contractors & Builders",
+  headOffice: {
+    name: "Builders' Association of India",
+    tagline: "All-India Association of Engineering Construction Contractors & Builders",
+    address: "G-1/G-20, 7th Floor, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai 400034",
+    phones: "022-2351 4802 · 022-2352 0507 · 022-2352 1328",
+    email: "baihq.mumbai@gmail.com",
+    website: "www.baionline.in",
+    gstin: "27AAATB0212F1ZI",
+    established: "Estd. 1941",
+    network: "232 Centres across India"
+  },
+  // Every Centre printed on the Head Office application form letterhead.
+  centres: [
+    "Adilabad", "Adityapur", "Adoor", "Agra", "Agra Cantt.", "Ahmedabad",
+    "Ahmedabad West", "Ahmednagar", "Aligarh", "Allahabad", "Alleppy", "Aluva",
+    "Ambikapur", "Amravati", "Amaravathi", "Amaravathi Capital", "Amaravathi Rural", "Anakapalle",
+    "Anantnag", "Anantapur", "Andaman & Nicobar", "Angamali", "Aurangabad", "Avadi",
+    "Baghpat", "Bangalore", "Baramati", "Bareilly", "Baroda", "Beed",
+    "Bharuch", "Bhopal", "Bhubaneswar", "Bilaspur", "Butibori", "Calicut",
+    "Chandigarh", "Changanacherry", "Chengai", "Chennai", "Chettinadu", "Chikkmagalur",
+    "Chitradurga", "Coimbatore", "Danapur", "Delhi", "Delhi East Shahadra", "Delhi North",
+    "Delhi South", "Delhi West", "Dhanbad", "Dharapuram", "Dhule", "Dehradun",
+    "Dindigul", "Durgapur", "Durg-Bhillai", "Erode", "Ettumanoor", "Faridabad",
+    "Gautam Buddha Nagar", "Gandhinagar", "Ghaziabad", "Goa", "Greater Hyderabad", "Greater Jaipur",
+    "Greater Noida", "Guntur", "Gurgaon", "Guwahati", "Haldia", "Hapur",
+    "Hasan", "Hosur", "Hyderabad", "Ichalkaranji", "Idukki", "Indore",
+    "Jabalpur", "Jagdalpur", "Jaipur", "Jalgaon", "Jaisalmer", "Jammu",
+    "Jamshedpur", "Jangaon", "Jayankondam", "Jodhpur", "Kalpakkam", "Kallakurichi",
+    "Kamareddy", "Kanchipuram", "Kanker", "Kannur", "Kanpur", "Kanpur–South",
+    "Kanyakumari", "Karaikal", "Karimnagar", "Karnal", "Karnavati", "Karur",
+    "Kavali", "Khammam", "Kochi", "Kodaikanal", "Kodungullar", "Kokapet",
+    "Kolhapur", "Kolkata", "Kollam", "Kottayam", "Kovilpatti", "Kumbakonam",
+    "Kundli", "Latur", "L.B. Nagar", "Loni", "Lucknow", "Madhuranthakam",
+    "Madurai", "Mahaboobnagar", "Malappuram", "Malegaon", "Mangalore", "Mandya",
+    "Mayiladuthurai", "Medachal", "Medak", "Meerut", "Meerut Cantt.", "Modinagar",
+    "Mohali", "Moradabad", "Moradabad Nor. Rly.", "Mumbai", "Muvattupuzha", "Muzaffarnagar",
+    "Mysore", "Nagapattnam", "Nagpur", "Nalgonda", "Namakkal", "Nanded",
+    "Nandurbar", "Nasik", "Nellore", "Neyveli", "Nilgiri", "Nizamabad",
+    "NTR", "Ongole", "Palakkad", "Palani", "Pandharpur", "Panipat",
+    "Parbhani", "Pathanamthitta", "Patna", "Perambalur", "Perumbavoor", "Phaltan",
+    "Pink City Jaipur", "Pondicherry", "Ponneri", "Poonamallee", "Por-Ramangamdi", "Pudukkottai",
+    "Pune", "Raichur", "Raigad", "Raipur", "Rajahmundry", "Rajapalayam",
+    "Rajkot", "Rajnandgaon", "Ramanathapuram", "Ranchi", "Ranga Reddy", "Ravulapalem",
+    "Sahibabad", "Salem", "Sangamner", "Sangli", "Satara", "Secunderabad",
+    "Shahda", "Shimala", "Shimoga", "Siddipet", "Silchar", "Siliguri",
+    "Sitapur", "Solapur", "South-East Delhi", "Srinagar", "Surat", "Tambaram",
+    "Tanuku", "Tenkasi", "Tezpur", "Thanjavur", "Theni", "Thiruporur",
+    "Thiruthuraipoondi", "Thiruvalla", "Thiruvannamalai", "Thiruvarur", "Thripunithura", "Thrissur",
+    "Tiruchirapalli", "Tirunelveli", "Tirupati", "Tirupur", "Tiruvallur", "Thiruvananthapuram",
+    "Tuticorin", "Udumalpet", "Udupi", "Ulhasnagar", "Vaddeswaram SABCA", "Vellore",
+    "Vijayawada", "Vikarabad", "Villupuram", "Visakhapatnam", "Vizag Steel City", "Wai",
+    "Warangal", "Western U.P. Electrical", "Yadadri", "YSR Kadapa"
   ],
-  categories: [
-    { name: "Life Member", desc: "One-time fee, lifetime membership benefits and voting rights." },
-    { name: "Corporate Member", desc: "For registered construction companies and firms operating in Pune Centre's jurisdiction." },
-    { name: "Associate Member", desc: "For allied professionals and organizations supporting the construction industry." },
-    { name: "Student Member", desc: "For civil engineering students seeking mentorship and internship opportunities." }
-  ],
-  benefits: [
-    { title: "Business Networking", desc: "Connect with fellow builders, contractors and developers across Pune." },
-    { title: "Technical Resources", desc: "Access price index numbers, technical guidelines and legal support." },
-    { title: "Discounted Event Access", desc: "Preferential rates for seminars, workshops and the annual convention." },
-    { title: "Committee Participation", desc: "Take part in Executive and Standing Committee activities." },
-    { title: "Government Advocacy", desc: "Have your concerns represented before Government departments." },
-    { title: "Industry Updates", desc: "Stay informed through the monthly 'Indian Construction' bulletin." },
-    { title: "Professional Recognition", desc: "Gain standing as a member of India's oldest apex construction body." },
-    { title: "Knowledge Sharing", desc: "Learn from peers through networking meets and technical sessions." }
+  applicationForm: {
+    label: "Membership Application Form",
+    file: "/documents/Membership-Application-Form-HQ-2026.pdf",
+    size: "65 KB",
+    pages: "2 Pages",
+    note: "Issued by BAI Head Office, Mumbai. Complete it in BLOCK LETTERS, strike out whatever does not apply, and affix the rubber stamp of the company."
+  },
+  feeStructure: {
+    note: "Subscription amounts and the GST shown are exactly as printed in the membership subscription table on the Head Office application form.",
+    plans: [
+      {
+        id: "annual",
+        name: "Annual Membership",
+        total: "4,087",
+        cycle: "per year",
+        breakup: [
+          { label: "Entrance Fee", value: "100" },
+          { label: "Annual Subscription", value: "3,194" },
+          { label: "Indian Construction Subscription", value: "200" },
+          { label: "GST", value: "593" }
+        ]
+      },
+      {
+        id: "patron",
+        name: "Patron Membership",
+        total: "29,700",
+        cycle: "one time",
+        breakup: [
+          { label: "One Time Subscription", value: "25,000" },
+          { label: "Indian Construction Subscription", value: "200" },
+          { label: "GST", value: "4,500" }
+        ]
+      },
+      {
+        id: "affiliated",
+        name: "Affiliated Association Patron",
+        total: "35,400",
+        cycle: "one time",
+        breakup: [
+          { label: "One Time Subscription", value: "30,000" },
+          { label: "GST", value: "5,400" }
+        ]
+      },
+      {
+        id: "corporate",
+        name: "Corporate Membership",
+        total: "3,65,800",
+        cycle: "one time + annual",
+        breakup: [
+          { label: "One Time Subscription", value: "3,00,000" },
+          { label: "Annual Subscription", value: "10,000" },
+          { label: "GST", value: "55,800" }
+        ]
+      }
+    ]
+  },
+  eligibility: {
+    intro: "Membership is open to organisations and professionals connected with the building profession, trade and construction industry:",
+    trades: [
+      "Construction Contractor",
+      "Real Estate Developer",
+      "Engineer",
+      "Consultant",
+      "Architect",
+      "Interior Decorator",
+      "Engineering Colleges / Polytechnics",
+      "Service Provider",
+      "Manufacturer, dealer or hirer in construction material and equipment",
+      "Repairs & Rehabilitation Contractor"
+    ]
+  },
+  formSections: {
+    intro: "The printed form runs to two pages. These are the parts you will need to complete, in the order they appear on the document.",
+    parts: [
+      {
+        title: "Membership Type",
+        fields: [
+          "Category applied for — Annual, Patron, Corporate or Affiliated Association",
+          "Whether the membership is to be held in your own name or in the company name"
+        ]
+      },
+      {
+        title: "Applicant Details",
+        fields: [
+          "Full name of the applicant or member company",
+          "Complete postal address with PIN code — the form marks this 'Very Important'",
+          "Telephone and fax numbers",
+          "E-mail address and website"
+        ]
+      },
+      {
+        title: "Statutory Registrations",
+        fields: [
+          "Company Registration Number with MSME",
+          "PAN Number",
+          "GST Number",
+          "Contractor License Number",
+          "Company Identification Number (CIN)"
+        ]
+      },
+      {
+        title: "Constitution & Representation",
+        fields: [
+          "Partnership firm — names of the major working partners",
+          "Corporate company — names of the Managing and Executive Directors",
+          "Representatives authorised to attend and vote at meetings, stating for each whether Director, Partner or Executive Attorney, with residence address and telephone, fax and mobile numbers",
+          "Manager authorised by Power of Attorney"
+        ]
+      },
+      {
+        title: "Business Profile",
+        fields: [
+          "The field your company specialises in",
+          "Your company's registration with various works authorities, with details"
+        ]
+      },
+      {
+        title: "Endorsement & Execution",
+        fields: [
+          "Proposed By — an existing member of the Association",
+          "Seconded By — an existing member of the Association",
+          "Date and place of application",
+          "Signed for and on behalf of the firm, with the rubber stamp of the company",
+          "To be signed by the Proprietor, Partner, Director or Attorney"
+        ]
+      }
+    ]
+  },
+  declaration: {
+    title: "Declaration & Undertaking",
+    intro: "The completed form is addressed to the Executive Secretary at Head Office and carries the following undertaking:",
+    points: [
+      "A request to enrol the applicant as an Annual, Patron, Corporate or Affiliated Association member of Builders' Association of India.",
+      "Confirmation that the applicant is connected with the building profession, trade and construction industry in the categories ticked on the form.",
+      "Confirmation that the applicant has read the Rules and Regulations of the Association and agrees to abide by them — the Rules are supplied by Head Office on request.",
+      "Details of the amount remitted towards the new membership subscription, with the Demand Draft or NEFT/RTGS reference number and date."
+    ]
+  },
+  payment: {
+    title: "Payment & Submission",
+    beneficiary: "BUILDERS' ASSOCIATION OF INDIA",
+    modes: "Demand Draft / NEFT / RTGS drawn in favour of the beneficiary name above.",
+    addressee: "The Executive Secretary, Builders' Association of India",
+    address: "G-1/G-20, 7th Floor, Commerce Centre, J. Dadajee Road, Tardeo, Mumbai 400034",
+    gstin: "27AAATB0212F1ZI",
+    notes: [
+      "Enclose the Demand Draft or the NEFT/RTGS reference number and date on the form itself.",
+      "The Rules and Regulations of the Association are provided by Head Office on request."
+    ]
+  },
+  importantNotes: [
+    "The membership application should be recommended by a Centre — Pune applicants may route it through BAI Pune Centre.",
+    "Admission is subject to the approval of the Managing Committee of Builders' Association of India.",
+    "Applicants are further certified in their respective category. Such certification is available on payment of certain charges, details of which can be had on request."
   ],
   howToJoin: [
-    { title: "Fill Membership Form", desc: "Complete the registration form with your firm and contact details.", link: "/non-members-area" },
-    { title: "Upload Documents", desc: "Submit firm registration proof and other supporting documents." },
-    { title: "Application Review", desc: "The Membership Committee reviews your application." },
-    { title: "Membership Approval", desc: "Approved applications are confirmed by the managing committee." },
-    { title: "Welcome to BAI", desc: "Receive your membership number and start accessing member benefits." }
+    { title: "Download the Form", desc: "Download the official two-page application form issued by Head Office." },
+    { title: "Complete All Parts", desc: "Fill every part in BLOCK LETTERS and strike out whatever does not apply." },
+    { title: "Proposer & Seconder", desc: "Have the application proposed and seconded by existing BAI members." },
+    { title: "Pay Subscription", desc: "Remit the subscription for your category and note the reference on the form." },
+    { title: "Submit Through a Centre", desc: "Route the form via BAI Pune Centre, which recommends it to Head Office." },
+    { title: "Approval & Membership No.", desc: "Head Office records the receipt, the Managing Committee accepts the application at its meeting, and your membership number is allotted." }
   ],
-  downloads: [
-    { label: "Membership Form", status: "coming_soon" },
-    { label: "Membership Rules", status: "coming_soon" },
-    { label: "Fee Structure", status: "coming_soon" }
-  ]
 };
 
 export const socialActivitiesContent = {

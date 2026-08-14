@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wbscAwardsData, wbscArchiveData, nirmanRatnaData } from "../services/api";
-import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaEnvelopeOpenText, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie } from "react-icons/fa";
+import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaFileWord, FaDownload, FaEnvelopeOpenText, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie, FaCalendarAlt, FaRegCalendarCheck, FaListUl, FaCrown, FaBookmark, FaLock } from "react-icons/fa";
 import StepFlow from "../components/StepFlow";
+import MembershipPaymentModal from "../components/MembershipPaymentModal";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./WBSCAwards.css";
 
@@ -12,7 +13,13 @@ const WBSCAwards = () => {
   const nirman = nirmanRatnaData;
   const [activeGroup, setActiveGroup] = useState(0);
   const [activeArchiveYear, setActiveArchiveYear] = useState(null);
+  const [wbscPayModalOpen, setWbscPayModalOpen] = useState(false);
   useDocumentTitle("WBSC Awards");
+
+  /* The two circulars are the primary call to action on this page —
+     everything an applicant needs is inside them. */
+  const entryForm = data.downloads.find((d) => d.key === "entry-form");
+  const invitation = data.downloads.find((d) => d.key === "invitation");
 
   return (
     <div className="wbsc-page-wrapper">
@@ -20,44 +27,19 @@ const WBSCAwards = () => {
           scrim, with the competition roundel and the trophy carrying the
           identity rather than stock imagery. */}
       <section className="wbsc-hero-section">
-        <div className="container wbsc-hero-container">
-          <motion.img
-            src={data.logo}
-            alt="Well Built Structure Competition — Since 1997"
-            className="wbsc-hero-logo"
-            width={640}
-            height={640}
-            initial={{ opacity: 0, scale: 0.85 }}
+        <div className="wbsc-hero-banner-container">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="wbsc-hero-content"
+            className="wbsc-banner-card"
           >
-            <span className="wbsc-tag">{data.edition} · {data.since}</span>
-            <h1 className="wbsc-title">{data.title}</h1>
-            <p className="wbsc-subtitle">{data.tagline}</p>
-            <div className="wbsc-hero-actions">
-              <a href={`mailto:${data.contactEmail}`} className="btn btn-primary">Enter WBSC 2026</a>
-              <a href="#wbsc-entry-terms" className="btn btn-outline wbsc-hero-btn-ghost">Entry details</a>
-            </div>
-            {data.openEntriesNote && (
-              <p className="wbsc-hero-open">{data.openEntriesNote}</p>
-            )}
+            <img
+              src={data.banner || "/images/wbsc/wbsc-2026-banner.jpg"}
+              alt="Well Built Structure Competition 2026 Official Banner"
+              className="wbsc-hero-banner-img"
+            />
           </motion.div>
-          <motion.img
-            src={data.trophy}
-            alt="The WBSC trophy"
-            className="wbsc-hero-trophy"
-            width={334}
-            height={720}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          />
         </div>
       </section>
 
@@ -131,6 +113,12 @@ const WBSCAwards = () => {
               </div>
             ))}
           </motion.div>
+          {data.mastersCategoryNote && (
+            <div className="wbsc-masters-note">
+              <FaCrown className="wbsc-masters-icon" />
+              <p>{data.mastersCategoryNote}</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -168,7 +156,40 @@ const WBSCAwards = () => {
         </div>
       </section>
 
-      <section className="wbsc-downloads-section">
+      {/* Tentative programme from the invitation circular. Only the entry
+          form date is fixed; the rest are conveyed to applicants directly. */}
+      <section className="wbsc-schedule-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">Programme</span>
+            <h2 className="section-title">Schedule for WBSC 2026</h2>
+            <div className="section-title-line"></div>
+          </div>
+          <div className="wbsc-schedule-list">
+            {data.schedule.milestones.map((m, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                className={`wbsc-schedule-item ${m.confirmed ? "confirmed" : ""}`}
+              >
+                <span className="wbsc-schedule-marker">
+                  {m.confirmed ? <FaRegCalendarCheck /> : <FaCalendarAlt />}
+                </span>
+                <div className="wbsc-schedule-body">
+                  <span className="wbsc-schedule-date">{m.date}</span>
+                  <p className="wbsc-schedule-desc">{m.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <p className="wbsc-schedule-note">{data.schedule.note}</p>
+        </div>
+      </section>
+
+      <section className="wbsc-downloads-section" id="wbsc-downloads">
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">Resources</span>
@@ -176,12 +197,64 @@ const WBSCAwards = () => {
             <div className="section-title-line"></div>
           </div>
           <div className="wbsc-downloads-grid">
-            {data.downloads.map((dl, idx) => (
-              <div key={idx} className="wbsc-download-card glass-card">
-                <FaFilePdf className="wbsc-download-icon" />
-                <h4>{dl.label}</h4>
-                <span className="wbsc-download-status">Download coming soon</span>
-              </div>
+            {data.downloads.map((dl, idx) => {
+              const available = dl.status === "available" && dl.file;
+              const Icon = dl.format === "DOCX" ? FaFileWord : FaFilePdf;
+              return (
+                <motion.div
+                  key={dl.key || idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className={`wbsc-download-card glass-card ${available ? "" : "is-pending"}`}
+                >
+                  <Icon className="wbsc-download-icon" />
+                  <h4>{dl.label}</h4>
+                  {dl.desc && <p className="wbsc-download-desc">{dl.desc}</p>}
+                  {dl.note && <p className="wbsc-download-note">{dl.note}</p>}
+                  {available ? (
+                    <>
+                      <span className="wbsc-download-meta">{dl.format} · {dl.size}</span>
+                      <a href={dl.file} download className="wbsc-download-btn">
+                        <FaDownload /> Download {dl.format}
+                      </a>
+                    </>
+                  ) : (
+                    <span className="wbsc-download-status">Download coming soon</span>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What to assemble before opening the entry form. */}
+      <section className="wbsc-checklist-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">Before you apply</span>
+            <h2 className="section-title">What the Entry Form Asks For</h2>
+            <div className="section-title-line"></div>
+          </div>
+          <div className="wbsc-checklist-grid">
+            {data.entryChecklist.map((block, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="wbsc-checklist-card"
+              >
+                <h3 className="wbsc-checklist-heading"><FaListUl /> {block.heading}</h3>
+                <ul className="wbsc-checklist-items">
+                  {block.items.map((item, i) => (
+                    <li key={i}><FaCheckCircle className="wbsc-checklist-icon" /> {item}</li>
+                  ))}
+                </ul>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -210,6 +283,20 @@ const WBSCAwards = () => {
             ))}
           </div>
 
+          <div style={{ textAlign: "center", margin: "2rem 0 1rem" }}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              style={{ borderRadius: "30px", padding: "0.9rem 2rem", fontSize: "1rem", fontWeight: "700", boxShadow: "0 4px 15px rgba(26,115,232,0.3)" }}
+              onClick={() => setWbscPayModalOpen(true)}
+            >
+              <FaLock style={{ marginRight: "0.5rem" }} /> Pay WBSC 2026 Entry Fee Online (₹29,500 via Razorpay)
+            </button>
+            <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: "0.5rem" }}>
+              Includes ₹25,000 Entry Fee + 18% GST. Instant Razorpay verification &amp; GST Tax Invoice receipt.
+            </p>
+          </div>
+
           <h3 className="wbsc-block-title wbsc-presentation-title">
             <FaClipboardCheck /> Presentation Guidelines
           </h3>
@@ -218,6 +305,28 @@ const WBSCAwards = () => {
               <li key={idx}>{item}</li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Advance reservation for the next two editions — new with the
+          2026 circular, and the reason entries stay open year-round. */}
+      <section className="wbsc-advance-section">
+        <div className="container">
+          <div className="wbsc-advance-card">
+            <span className="wbsc-advance-badge"><FaBookmark /> Now open</span>
+            <h2 className="wbsc-advance-title">{data.advanceRegistration.title}</h2>
+            <p className="wbsc-advance-body">{data.advanceRegistration.body}</p>
+            <ul className="wbsc-advance-list">
+              {data.advanceRegistration.points.map((p, idx) => (
+                <li key={idx}><FaCheckCircle className="wbsc-advance-icon" /> {p}</li>
+              ))}
+            </ul>
+            {entryForm?.file && (
+              <a href={entryForm.file} download className="btn btn-primary wbsc-advance-btn">
+                <FaDownload /> Download Reservation Form
+              </a>
+            )}
+          </div>
         </div>
       </section>
 
@@ -329,14 +438,17 @@ const WBSCAwards = () => {
         </div>
       </section>
 
-      <section className="wbsc-cta-section">
-        <div className="container wbsc-cta-inner">
-          <FaEnvelopeOpenText className="wbsc-cta-icon" />
-          <h2>Ready to showcase your best project?</h2>
-          <p>Reach out to the BAI Pune Centre WBSC Committee for entry guidance and category clarifications.</p>
-          <a href={`mailto:${data.contactEmail}`} className="btn btn-primary">Register for WBSC 2026 Today</a>
-        </div>
-      </section>
+      {wbscPayModalOpen && (
+        <MembershipPaymentModal
+          plan={{
+            id: "annual",
+            name: "WBSC 2026 Competition Entry Fee",
+            total: "29,500",
+            cycle: "per entry (incl. 18% GST)"
+          }}
+          onClose={() => setWbscPayModalOpen(false)}
+        />
+      )}
     </div>
   );
 };

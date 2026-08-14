@@ -282,7 +282,7 @@ const SocialActivities = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="disaster-relief-card glass-card"
+              className="disaster-relief-card"
             >
               <div className="disaster-badge">Disaster Response</div>
               <h3>{data.disasterRelief.title}</h3>

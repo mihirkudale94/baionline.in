@@ -1,0 +1,229 @@
+.pay-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(11, 15, 25, 0.55);
+  backdrop-filter: blur(3px);
+  overflow-y: auto;
+}
+
+.pay-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--elev-3);
+  padding: 2.25rem;
+  margin: auto;
+}
+.pay-modal:focus { outline: none; }
+
+.pay-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--gray-50);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.pay-modal-close:hover:not(:disabled) { background: var(--gray-200); color: var(--navy); }
+.pay-modal-close:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.pay-modal-head { margin-bottom: 1.5rem; }
+.pay-modal-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+}
+.pay-modal-head h2 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0.35rem 0 0.75rem;
+}
+.pay-modal-amount { display: flex; align-items: baseline; gap: 0.25rem; color: var(--navy); }
+.pay-modal-amount svg { font-size: 1rem; color: var(--primary); align-self: center; }
+.pay-modal-amount strong { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; line-height: 1; }
+.pay-modal-amount span { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-left: 0.35rem; }
+
+.pay-modal-form { display: grid; gap: 1rem; }
+.pay-modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.pay-modal-field { display: grid; gap: 0.35rem; }
+.pay-modal-field label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.pay-modal-field input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--navy);
+  background: var(--white);
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.pay-modal-field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-tint);
+}
+.pay-modal-field input:disabled { background: var(--gray-50); color: var(--text-muted); }
+
+.pay-modal-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  background: #fdecea;
+  border: 1px solid #f5c6c2;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #a4231b;
+  line-height: 1.5;
+}
+.pay-modal-error svg { flex-shrink: 0; margin-top: 0.15rem; }
+
+.pay-modal-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  border: none;
+  border-radius: var(--r-pill);
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--elev-primary);
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.pay-modal-submit:hover:not(:disabled) { background: var(--primary-dark); }
+.pay-modal-submit:disabled { opacity: 0.75; cursor: not-allowed; }
+
+.pay-modal-spin { animation: pay-modal-spin 1s linear infinite; }
+@keyframes pay-modal-spin { to { transform: rotate(360deg); } }
+
+.pay-modal-secure {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.pay-modal-secure svg { color: var(--accent-green); flex-shrink: 0; margin-top: 0.15rem; }
+
+.pay-modal-result { text-align: center; }
+.pay-modal-result-icon { font-size: 2.75rem; margin-bottom: 1rem; }
+.pay-modal-result-icon.is-success { color: var(--accent-green); }
+.pay-modal-result h2 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+.pay-modal-result > p { font-size: 0.87rem; color: var(--gray-800); line-height: 1.6; }
+.pay-modal-receipt {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.25rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  text-align: left;
+}
+.pay-modal-receipt > div { display: flex; justify-content: space-between; gap: 1rem; }
+.pay-modal-receipt dt { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
+.pay-modal-receipt dd {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+  word-break: break-all;
+  text-align: right;
+}
+.pay-modal-note { font-size: 0.78rem !important; color: var(--text-muted) !important; margin-bottom: 1.5rem; }
+
+.pay-modal-methods {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+.pay-modal-methods-label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.pay-modal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.pay-modal-chips span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--primary-tint, #eff6ff);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(26, 115, 232, 0.15);
+}
+
+.pay-modal-actions-grid {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1.25rem;
+}
+.pay-modal-btn-invoice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--r-pill);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  transition: background var(--dur-fast) ease;
+}
+.pay-modal-btn-invoice:hover {
+  background: #059669;
+}
+
+@media (max-width: 560px) {
+  .pay-modal { padding: 1.75rem 1.25rem; }
+  .pay-modal-row { grid-template-columns: 1fr; }
+}

@@ -112,18 +112,6 @@ const Team = () => {
             </div>
           </div>
 
-          {/* WBSC 2026 Chairman — listed with the office bearers in the
-              competition booklet, but held as a separate appointment. */}
-          {team.wbsc_chairman && (
-            <div className="roster-section-block">
-              <h2 className="roster-section-title text-center">Well Built Structure Competition 2026</h2>
-              <div className="title-line center"></div>
-              <div className="roster-grid grid-single">
-                {renderCard(team.wbsc_chairman, "Chairman - WBSC 2026")}
-              </div>
-            </div>
-          )}
-
         </div>
       </section>
 

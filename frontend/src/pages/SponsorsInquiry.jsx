@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaHandshake } from "react-icons/fa";
 import { submitForm } from "../services/api";
+import SponsorshipCheckout from "../components/SponsorshipCheckout";
 import "./SponsorsInquiry.css";
 
 const SponsorsInquiry = () => {
@@ -56,6 +57,9 @@ const SponsorsInquiry = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Renders nothing unless the server has Razorpay keys configured. */}
+      <SponsorshipCheckout />
 
       <section className="sponsors-form-section">
         <div className="container">

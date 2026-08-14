@@ -21,6 +21,7 @@ const About = () => {
 
   // Heritage photo load state — falls back to a placeholder if the archival photo is missing
   const [jacksonHutImgError, setJacksonHutImgError] = useState(false);
+  const [brigJacksonImgError, setBrigJacksonImgError] = useState(false);
 
   useEffect(() => {
     getAboutData().then((res) => {
@@ -119,10 +120,28 @@ const About = () => {
             className="history-meta-col"
           >
             <div className="jackson-monument-card glass-card">
-              <div className="monument-icon"><FaMapMarkerAlt /></div>
-              <h3>The Jackson Hut</h3>
-              <p>
-                Brig. C.V.S. Jackson of Military Engineering Services suggested building contractors form an association. He provided land within Southern Command Headquarters in Pune, on which an office was constructed and aptly named <strong>'Jackson Hut'</strong>, which stands even today as a monument in BAI's name.
+              <div className="brig-jackson-portrait-wrapper">
+                {!brigJacksonImgError ? (
+                  <img
+                    src="/images/heritage/brig-jackson.jpg"
+                    alt="Brig Jackson"
+                    className="brig-jackson-portrait-img"
+                    onError={() => setBrigJacksonImgError(true)}
+                  />
+                ) : (
+                  <div className="heritage-photo-placeholder">
+                    <FaImage />
+                    <span>Brig Jackson</span>
+                  </div>
+                )}
+                <div className="brig-jackson-portrait-caption">
+                  <span className="brig-title-tag">FOUNDER & GUIDE</span>
+                  <h3 className="brig-name">Brig Jackson</h3>
+                  <p className="brig-sub">Brig. C.V.S. Jackson, MES (Pune)</p>
+                </div>
+              </div>
+              <p className="jackson-monument-desc">
+                In 1941, Brig. C.V.S. Jackson of Military Engineering Services suggested building contractors form an association. He provided land within Southern Command Headquarters in Pune, on which an office was constructed and aptly named <strong>'Jackson Hut'</strong>, which stands even today as a monument in BAI's name.
               </p>
             </div>
           </motion.div>
@@ -146,10 +165,17 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="heritage-photo-tile"
             >
+              <div className="heritage-archival-banner">
+                <h2 className="founding-members-main-title">Founding members BAI</h2>
+                <h3 className="archival-banner-title">JACKSON HUT</h3>
+                <h4 className="archival-banner-subtitle">BUILDER'S ASSOCIATION OF INDIA</h4>
+                <div className="archival-banner-location">POONA - 1942</div>
+              </div>
+
               {!jacksonHutImgError ? (
                 <img
                   src="/images/heritage/jackson-hut-archival.jpg"
-                  alt="Jackson Hut — BAI's founding monument in Pune"
+                  alt="Founding members BAI — JACKSON HUT BUILDER'S ASSOCIATION OF INDIA POONA - 1942"
                   onError={() => setJacksonHutImgError(true)}
                 />
               ) : (
@@ -159,8 +185,45 @@ const About = () => {
                 </div>
               )}
               <div className="heritage-photo-caption">
-                <h4>Jackson Hut</h4>
-                <p>The original office built within Southern Command Headquarters, Pune — still standing as BAI's founding monument.</p>
+                <div className="founding-members-container">
+                  <div className="founding-row-block">
+                    <div className="founding-row-header">
+                      <h5 className="founding-row-title">1st ROW</h5>
+                    </div>
+                    <ul className="founding-members-list">
+                      <li><span className="member-num-badge">1</span><span className="member-name-text">MR. R. R. SOJPAL, M/S. RAWJI SOJPAL & SONS.</span></li>
+                      <li><span className="member-num-badge">2</span><span className="member-name-text">MR. GOPAL RAO, THE SHAHABAD STONE CO.</span></li>
+                      <li><span className="member-num-badge">3</span><span className="member-name-text">MR. N. K. RANADE, M/S BEDI & SONS.</span></li>
+                      <li><span className="member-num-badge">5</span><span className="member-name-text">COL. E. V.</span></li>
+                      <li><span className="member-num-badge">5</span><span className="member-name-text">MR. MANGALDAS N. VERMA.</span></li>
+                      <li><span className="member-num-badge">6</span><span className="member-name-text">SITDAR JAGADISH SINGH.</span></li>
+                      <li><span className="member-num-badge">7</span><span className="member-name-text">SITDAR JADISH SINGH, M/S LADHA SINGH & CO.</span></li>
+                      <li><span className="member-num-badge">8</span><span className="member-name-text">MR. D.V. DATAR.</span></li>
+                      <li><span className="member-num-badge">9</span><span className="member-name-text">MR. D. W.</span></li>
+                      <li><span className="member-num-badge">10</span><span className="member-name-text">MR. HARDYAL THACKAR,</span></li>
+                      <li><span className="member-num-badge">21</span><span className="member-name-text">HARDYAL THACKAR, M/S. TEOOO KAYA</span></li>
+                      <li><span className="member-num-badge">11</span><span className="member-name-text">MR. P. SHIVRAM, (STENOTYPIST)</span></li>
+                    </ul>
+                  </div>
+                  
+                  <div className="founding-row-block">
+                    <div className="founding-row-header">
+                      <h5 className="founding-row-title">2nd ROW</h5>
+                    </div>
+                    <ul className="founding-members-list">
+                      <li><span className="member-num-badge">1</span><span className="member-name-text">MR. T. C. VERMA, M/S T. C. VERMA & CO.</span></li>
+                      <li><span className="member-num-badge">2</span><span className="member-name-text">MAJ. W. J. HEWITT, S.O.R.E. II (W) (N).</span></li>
+                      <li><span className="member-num-badge">3</span><span className="member-name-text">MR. P. V. RANADE, M/S V. R. RANADE & SONS.</span></li>
+                      <li><span className="member-num-badge">5</span><span className="member-name-text">MR. E. M. BILIMORIA, THE HINDUSTAN CONSTN. CO. LTD.</span></li>
+                      <li><span className="member-num-badge">6</span><span className="member-name-text">BRIGADIER C. V. S.</span></li>
+                      <li><span className="member-num-badge">7</span><span className="member-name-text">MR. M. P. SHAH (PRESIDENT), M/S. SHAH & RANADE.</span></li>
+                      <li><span className="member-num-badge">8</span><span className="member-name-text">S. SHAPURJI PALLANJI & CO.</span></li>
+                      <li><span className="member-num-badge">9</span><span className="member-name-text">MR. A. M. VERMA, M/S DEWJI DHARSI</span></li>
+                      <li><span className="member-num-badge">10</span><span className="member-name-text">MAJ. A. LIVSEY, S.S.W.</span></li>
+                      <li><span className="member-num-badge">11</span><span className="member-name-text">MR. P. SHIVRAM, (STENOTYPIST)</span></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

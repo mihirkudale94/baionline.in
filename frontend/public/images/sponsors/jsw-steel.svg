@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="JSW Steel">
+  <rect x="4" y="4" width="152" height="112" rx="16" fill="#00539B" fill-opacity="0.08" stroke="#00539B" stroke-opacity="0.28" stroke-width="2"/>
+  <text x="80" y="62" text-anchor="middle" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#00539B">JSW</text>
+  <rect x="46" y="78" width="68" height="5" rx="2.5" fill="#00539B" fill-opacity="0.55"/>
+</svg>

@@ -86,12 +86,12 @@
 
 /* Jackson monument box */
 .jackson-monument-card {
-  padding: 2.5rem;
-  border-radius: 20px;
-  background: var(--navy-light);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--white);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  padding: 1.75rem;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  color: var(--text-body);
+  box-shadow: var(--elev-1);
   position: relative;
 }
 
@@ -102,39 +102,80 @@
   left: 0;
   width: 4px;
   height: 100%;
-  background: var(--gold);
+  background: var(--primary);
   border-radius: 4px 0 0 4px;
 }
 
-.monument-icon {
-  background: rgba(26, 115, 232, 0.12);
-  color: var(--gold);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+.brig-jackson-portrait-wrapper {
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background: var(--ink);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
-.jackson-monument-card h3 {
+.brig-jackson-portrait-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.brig-jackson-portrait-wrapper:hover .brig-jackson-portrait-img {
+  transform: scale(1.03);
+}
+
+.brig-jackson-portrait-caption {
+  padding: 1rem 1.25rem;
+  background: linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+  text-align: left;
+  border-top: 2px solid var(--primary);
+}
+
+.brig-title-tag {
+  display: inline-block;
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  color: var(--gold);
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--primary-soft);
+  background: rgba(138, 180, 248, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
 }
 
-.jackson-monument-card p {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.jackson-monument-card strong {
+.brig-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--white);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 0.01em;
+}
+
+.brig-sub {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--gray-300);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.jackson-monument-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.jackson-monument-desc strong {
+  color: var(--primary-dark);
+  font-weight: 700;
 }
 
 /* Historical Heritage — Founder & Jackson Hut */
@@ -147,7 +188,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 620px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -156,7 +197,63 @@
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--gray-200);
-  box-shadow: var(--elev-1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+}
+
+.heritage-archival-banner {
+  background: var(--surface-dim);
+  border-bottom: 1px solid var(--surface-border);
+  padding: 1.75rem 1.25rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.founding-members-main-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+}
+
+.heritage-archival-banner::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  margin: 0.75rem auto 0;
+  border-radius: 3px;
+}
+
+.archival-banner-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+  margin: 0 0 0.3rem 0;
+  text-transform: uppercase;
+}
+
+.archival-banner-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 0.06em;
+  margin: 0 0 0.4rem 0;
+  text-transform: uppercase;
+}
+
+.archival-banner-location {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.12em;
 }
 
 .heritage-photo-tile img {
@@ -190,21 +287,112 @@
 }
 
 .heritage-photo-caption {
-  padding: 1.5rem;
+  padding: 2rem 1.75rem;
+  background: var(--surface);
+}
+
+.heritage-caption-header {
+  margin-bottom: 1.25rem;
+  text-align: left;
 }
 
 .heritage-photo-caption h4 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  color: var(--navy);
+  font-size: 1.35rem;
+  color: var(--ink);
   font-weight: 800;
-  margin-bottom: 0.4rem;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
-.heritage-photo-caption p {
+.founding-members-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  text-align: left;
+}
+
+.founding-row-block {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--r-sm);
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(11, 15, 25, 0.04);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+
+.founding-row-block:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elev-primary);
+  border-color: var(--primary-soft);
+}
+
+.founding-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--primary-tint);
+}
+
+.founding-row-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.founding-members-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.founding-members-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
   font-size: 0.85rem;
-  color: var(--gray-800);
-  line-height: 1.5;
+  color: var(--text-body);
+  line-height: 1.45;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.founding-members-list li:hover {
+  background-color: var(--primary-tint);
+}
+
+.member-num-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8rem;
+  height: 1.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  background: var(--primary-tint);
+  border-radius: 4px;
+  padding: 0 0.35rem;
+}
+
+.member-name-text {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
 }
 
 /* Values list styling */
