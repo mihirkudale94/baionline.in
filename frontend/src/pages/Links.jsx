@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FaLink, FaBuilding, FaTools } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./Links.css";
 
 const Links = () => {
@@ -58,21 +58,14 @@ const Links = () => {
 
   return (
     <div className="links-page-wrapper">
-      <section className="links-hero-section">
-        <div className="links-hero-overlay"></div>
-        <div className="container links-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="links-hero-content"
-          >
-            <span className="links-tag">Directory</span>
-            <h1 className="links-title">Useful Reference Links</h1>
-            <p className="links-subtitle">Directory of civil engineering companies, machinery suppliers, and government works departments</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_industrial-facility-visit-2.jpg"
+        alt="Members touring the shop floor on an industrial facility visit"
+        focal="center 25%"
+        tag="Directory"
+        title="Useful Reference Links"
+        subtitle="Directory of civil engineering companies, machinery suppliers, and government works departments"
+      />
 
       <section className="links-directory-section">
         <div className="container">

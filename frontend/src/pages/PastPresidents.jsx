@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import {
   getPastPresidentsData,
   getPuneOfficeBearersData,
@@ -7,6 +6,7 @@ import {
   platinumJubileeData
 } from "../services/api";
 import { FaAward, FaInfoCircle } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./PastPresidents.css";
 
 const PastPresidents = () => {
@@ -40,21 +40,14 @@ const PastPresidents = () => {
 
   return (
     <div className="presidents-page-wrapper">
-      <section className="presidents-hero-section">
-        <div className="presidents-hero-overlay"></div>
-        <div className="container presidents-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="presidents-hero-content"
-          >
-            <span className="presidents-tag">Pune Centre Archives</span>
-            <h1 className="presidents-title">Past Office Bearers</h1>
-            <p className="presidents-subtitle">Honor roll of BAI Pune Centre's own leaders through the years</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/event_kochi_meeting.jpg"
+        alt="BAI leadership gathered at the MC-GC meeting in Kochi"
+        focal="center 25%"
+        tag="Pune Centre Archives"
+        title="Past Office Bearers"
+        subtitle="Honor roll of BAI Pune Centre's own leaders through the years"
+      />
 
       <section className="pune-bearers-section">
         <div className="container">

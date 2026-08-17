@@ -1,63 +1,3 @@
-/* Publications Hero Section */
-.pub-hero-section {
-  position: relative;
-  height: 350px;
-  background-image: url("/images/84thAnnualReportBAI.webp");
-  background-size: cover;
-  background-position: center 25%;
-  display: flex;
-  align-items: center;
-  color: var(--white);
-  overflow: hidden;
-}
-
-.pub-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 22, 40, 0.55);
-}
-
-.pub-hero-container {
-  position: relative;
-  z-index: 10;
-}
-
-.pub-hero-content {
-  max-width: 700px;
-}
-
-.pub-tag {
-  background: rgba(26, 115, 232, 0.16);
-  color: var(--gold);
-  padding: 0.35rem 1rem;
-  border-radius: 20px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.pub-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-
-.pub-subtitle {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
-}
-
 /* Journal List styling */
 .pub-list-section {
   padding: 5rem 0;
@@ -241,15 +181,6 @@
 @media (max-width: 768px) {
   .journals-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .pub-title {
-    font-size: 2.2rem;
-  }
-  .pub-subtitle {
-    font-size: 0.95rem;
-  }
-  .pub-hero-section {
-    height: 250px;
   }
   .sub-input-row {
     flex-direction: column;

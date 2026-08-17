@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { getTeamData } from "../services/api";
 import ImageLightbox from "../components/ImageLightbox";
 import { FaChevronRight, FaTimes } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./Team.css";
 
 const Team = () => {
@@ -79,21 +79,14 @@ const Team = () => {
   return (
     <div className="team-page-wrapper">
       {/* 1. Header Banner */}
-      <section className="team-hero-section">
-        <div className="team-hero-overlay"></div>
-        <div className="container team-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="team-hero-content"
-          >
-            <span className="team-tag">Governing Council</span>
-            <h1 className="team-title">BAI Pune Centre Team 2026-27</h1>
-            <p className="team-subtitle">Office Bearers of BAI Pune Centre</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_office-meeting-1.jpg"
+        alt="BAI Pune Centre office bearers in a meeting"
+        focal="center 30%"
+        tag="Governing Council"
+        title="BAI Pune Centre Team 2026-27"
+        subtitle="Office Bearers of BAI Pune Centre"
+      />
 
       {/* 2. Office Bearers Sections */}
       <section className="team-roster-section">

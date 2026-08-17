@@ -1,0 +1,76 @@
+/* Photograph band — shown clean, with nothing laid over it. */
+.page-hero-photo {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.page-hero-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Page header — the text that used to sit on the photo now reads here. */
+.page-hero-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-border);
+  padding: 2.75rem 0 2.25rem;
+}
+
+.page-hero-header-inner {
+  max-width: 760px;
+}
+
+.page-hero-tag {
+  background: var(--primary-tint);
+  color: var(--primary-dark);
+  padding: 0.35rem 1rem;
+  border-radius: var(--r-pill);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.page-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.page-hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .page-hero-photo {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-photo {
+    height: 190px;
+  }
+  .page-hero-header {
+    padding: 2rem 0 1.75rem;
+  }
+  .page-hero-title {
+    font-size: 2.1rem;
+  }
+  .page-hero-subtitle {
+    font-size: 1rem;
+  }
+}

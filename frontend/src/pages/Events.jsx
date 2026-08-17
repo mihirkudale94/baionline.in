@@ -5,6 +5,7 @@ import { eventsPageData } from "../services/api";
 import { FaCalendarAlt, FaMapMarkerAlt, FaAward } from "react-icons/fa";
 import ImageLightbox from "../components/ImageLightbox";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import PageHero from "../components/PageHero";
 import "./Events.css";
 
 const Events = () => {
@@ -22,21 +23,14 @@ const Events = () => {
 
   return (
     <div className="events-page-wrapper">
-      <section className="events-hero-section">
-        <div className="events-hero-overlay"></div>
-        <div className="container events-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="events-hero-content"
-          >
-            <span className="events-tag">BAI Pune Centre</span>
-            <h1 className="events-title">{data.title}</h1>
-            <p className="events-subtitle">{data.subtitle}</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_builders-day-2025.jpg"
+        alt="Builders' Day Celebration 2025 at BAI Pune Centre"
+        focal="center 30%"
+        tag="BAI Pune Centre"
+        title={data.title}
+        subtitle={data.subtitle}
+      />
 
       <section className="events-gallery-section">
         <div className="container">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getContactData } from "../services/api";
+import PageHero from "../components/PageHero";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./Contact.css";
@@ -48,21 +49,14 @@ const Contact = () => {
   return (
     <div className="contact-page-wrapper">
       {/* 1. Header Banner */}
-      <section className="contact-hero-section">
-        <div className="contact-hero-overlay"></div>
-        <div className="container contact-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="contact-hero-content"
-          >
-            <span className="contact-tag">Get in Touch</span>
-            <h1 className="contact-title">{data.title}</h1>
-            <p className="contact-subtitle">Builders Association of India Headquarters</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_pmc-courtesy-visit-1.jpg"
+        alt="BAI Pune Centre members on a courtesy visit to the Pune Municipal Corporation"
+        focal="center 25%"
+        tag="Get in Touch"
+        title={data.title}
+        subtitle="Builders Association of India Headquarters"
+      />
 
       {/* 2. Main Contact Row */}
       <section className="contact-main-section">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FaHandshake } from "react-icons/fa";
 import { submitForm } from "../services/api";
 import SponsorshipCheckout from "../components/SponsorshipCheckout";
+import PageHero from "../components/PageHero";
 import "./SponsorsInquiry.css";
 
 const SponsorsInquiry = () => {
@@ -42,21 +42,14 @@ const SponsorsInquiry = () => {
 
   return (
     <div className="sponsors-page-wrapper">
-      <section className="sponsors-hero-section">
-        <div className="sponsors-hero-overlay"></div>
-        <div className="container sponsors-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="sponsors-hero-content"
-          >
-            <span className="sponsors-tag">Partnerships</span>
-            <h1 className="sponsors-title">Sponsors Inquiry</h1>
-            <p className="sponsors-subtitle">Collaborate with India's premier apex construction body</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/event_sponsorship.webp"
+        alt="BAI sponsorship opportunities"
+        focal="center 25%"
+        tag="Partnerships"
+        title="Sponsors Inquiry"
+        subtitle="Collaborate with India's premier apex construction body"
+      />
 
       {/* Renders nothing unless the server has Razorpay keys configured. */}
       <SponsorshipCheckout />

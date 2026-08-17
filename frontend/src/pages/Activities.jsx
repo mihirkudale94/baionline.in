@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { activities } from "../services/api";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import useHashScroll from "../hooks/useHashScroll";
+import PageHero from "../components/PageHero";
 import "./Activities.css";
 
 const Activities = () => {
@@ -12,18 +13,14 @@ const Activities = () => {
 
   return (
     <div className="activities-page-wrapper">
-      <section className="activities-hero-section">
-        <div className="activities-hero-overlay"></div>
-        <div className="container activities-hero-container">
-          <div className="activities-hero-content">
-            <span className="activities-tag">Pune Centre</span>
-            <h1 className="activities-title">BAI Activities</h1>
-            <p className="activities-subtitle">
-              What the Pune Centre runs for its members through the year
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_worker-children-felicitation-2025-2.jpg"
+        alt="A BAI Pune Centre felicitation programme in progress"
+        focal="center 25%"
+        tag="Pune Centre"
+        title="BAI Activities"
+        subtitle="What the Pune Centre runs for its members through the year"
+      />
 
       <section className="activities-list-section">
         <div className="container">

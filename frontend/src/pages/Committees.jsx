@@ -7,6 +7,7 @@ import {
 } from "../services/api";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import useHashScroll from "../hooks/useHashScroll";
+import PageHero from "../components/PageHero";
 import "./Committees.css";
 
 /* This page renders the Centre's "Constitution of Committees for the Year
@@ -48,20 +49,13 @@ const Committees = () => {
 
   return (
     <div className="committees-page-wrapper">
-      <section className="committees-hero-section">
-        <div className="committees-hero-overlay"></div>
-        <div className="container committees-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="committees-hero-content"
-          >
-            <h1 className="committees-title">Committees 2026–27</h1>
-            {doc && <p className="committees-subtitle">{doc.subject}</p>}
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_office-meeting-2.jpg"
+        alt="BAI Pune Centre members in a committee meeting"
+        focal="center 35%"
+        title="Committees 2026–27"
+        subtitle={doc ? doc.subject : undefined}
+      />
 
       {/* Preamble */}
       {doc && (

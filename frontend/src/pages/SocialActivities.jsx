@@ -13,6 +13,7 @@ import {
   FaExclamationTriangle
 } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import PageHero from "../components/PageHero";
 import "./SocialActivities.css";
 
 const SocialActivities = () => {
@@ -121,21 +122,14 @@ const SocialActivities = () => {
   return (
     <div className="social-page-wrapper">
       {/* 1. Hero Section */}
-      <section className="social-hero-section">
-        <div className="social-hero-overlay"></div>
-        <div className="container social-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="social-hero-content"
-          >
-            <span className="social-tag">Building Society</span>
-            <h1 className="social-title">{data.title}</h1>
-            <p className="social-subtitle">{data.subtitle}</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_worker-children-felicitation-2025-1.jpg"
+        alt="Felicitation of meritorious children of construction workers"
+        focal="center 25%"
+        tag="Building Society"
+        title={data.title}
+        subtitle={data.subtitle}
+      />
 
       {/* 2. Overview & Impact Stats */}
       <section className="social-overview-section">

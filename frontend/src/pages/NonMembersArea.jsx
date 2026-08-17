@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FaUserPlus } from "react-icons/fa";
 import { submitForm } from "../services/api";
+import PageHero from "../components/PageHero";
 import "./NonMembersArea.css";
 
 const NonMembersArea = () => {
@@ -45,21 +45,14 @@ const NonMembersArea = () => {
 
   return (
     <div className="non-member-page-wrapper">
-      <section className="non-member-hero-section">
-        <div className="non-member-hero-overlay"></div>
-        <div className="container non-member-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="non-member-hero-content"
-          >
-            <span className="non-member-tag">Activities</span>
-            <h1 className="non-member-title">Non-Members Area</h1>
-            <p className="non-member-subtitle">Stay connected with the Indian civil engineering construction sector</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_bridge-site-visit-2.jpg"
+        alt="Members being briefed on site at a cable-stayed bridge project"
+        focal="center 25%"
+        tag="Activities"
+        title="Non-Members Area"
+        subtitle="Stay connected with the Indian civil engineering construction sector"
+      />
 
       <section className="non-member-form-section">
         <div className="container">

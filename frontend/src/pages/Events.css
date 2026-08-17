@@ -1,21 +1,3 @@
-.events-hero-section {
-  position: relative;
-  height: 350px;
-  background-image: url("/images/events/event_builders-day-2025.jpg");
-  background-size: cover;
-  background-position: center 30%;
-  display: flex;
-  align-items: center;
-  color: var(--white);
-  overflow: hidden;
-}
-.events-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 22, 40, 0.55); }
-.events-hero-container { position: relative; z-index: 10; }
-.events-hero-content { max-width: 750px; }
-.events-tag { background: rgba(26,115,232,0.16); color: var(--gold); padding: 0.35rem 1rem; border-radius: 20px; font-family: var(--font-heading); font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem; }
-.events-title { font-size: 2.6rem; font-weight: 800; color: var(--white); line-height: 1.25; margin-bottom: 0.5rem; }
-.events-subtitle { font-family: var(--font-heading); font-size: 1.05rem; color: rgba(255,255,255,0.85); font-weight: 600; }
-
 .events-upcoming-section { padding: 5rem 0; background: var(--white); }
 .events-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 .event-card { overflow: hidden; padding: 0; border: 1px solid var(--gray-200); border-radius: 18px; background: var(--white); transition: all 0.3s; }
@@ -117,8 +99,6 @@
 }
 
 @media (max-width: 768px) {
-  .events-hero-section { height: 260px; }
-  .events-title { font-size: 1.9rem; }
   .events-card-grid, .events-calendar-list, .sitevisits-grid { grid-template-columns: 1fr; }
   .events-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
   .events-gallery-caption { font-size: 0.7rem; padding: 1.75rem 0.6rem 0.55rem; }

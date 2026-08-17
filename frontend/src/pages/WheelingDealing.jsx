@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTruckLoading, FaSearch, FaUserAlt, FaUserCheck, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./WheelingDealing.css";
 
 const WheelingDealing = ({ defaultTab = "listings" }) => {
@@ -62,21 +63,14 @@ const WheelingDealing = ({ defaultTab = "listings" }) => {
 
   return (
     <div className="wd-page-wrapper">
-      <section className="wd-hero-section">
-        <div className="wd-hero-overlay"></div>
-        <div className="container wd-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="wd-hero-content"
-          >
-            <span className="wd-tag">Wheeling & Dealing</span>
-            <h1 className="wd-title">Machinery Exchange</h1>
-            <p className="wd-subtitle">Rent heavy machinery, request specialized subcontracts or hire equipments</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_bridge-site-visit-1.jpg"
+        alt="Technical site visit to a cable-stayed bridge construction project"
+        focal="center 25%"
+        tag="Wheeling & Dealing"
+        title="Machinery Exchange"
+        subtitle="Rent heavy machinery, request specialized subcontracts or hire equipments"
+      />
 
       <section className="wd-tabs-section">
         <div className="container">

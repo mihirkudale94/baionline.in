@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getAboutData, submitForm } from "../services/api";
 import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy, FaImage } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import PageHero from "../components/PageHero";
 import "./About.css";
 
 const About = () => {
@@ -79,21 +80,14 @@ const About = () => {
   return (
     <div className="about-page-wrapper">
       {/* 1. Header Banner */}
-      <section className="about-hero-section">
-        <div className="about-hero-overlay"></div>
-        <div className="container about-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="about-hero-content"
-          >
-            <span className="about-tag">Since {content.founded}</span>
-            <h1 className="about-title">{content.title}</h1>
-            <p className="about-subtitle">{content.subtitle}</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_committee-meeting-office.jpg"
+        alt="A committee meeting at the BAI Pune Centre office"
+        focal="center 25%"
+        tag={`Since ${content.founded}`}
+        title={content.title}
+        subtitle={content.subtitle}
+      />
 
       {/* 2. Main History Content */}
       <section className="about-history-section">

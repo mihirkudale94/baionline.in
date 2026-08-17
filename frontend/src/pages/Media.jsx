@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPlay, FaCalendarAlt } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./Media.css";
 
 const Media = () => {
@@ -31,21 +32,14 @@ const Media = () => {
   return (
     <div className="media-page-wrapper">
       {/* Banner */}
-      <section className="media-hero-section">
-        <div className="media-hero-overlay"></div>
-        <div className="container media-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="media-hero-content"
-          >
-            <span className="media-tag">News & Press</span>
-            <h1 className="media-title">BAI in Media</h1>
-            <p className="media-subtitle">Latest updates, press releases and news coverage of Builders Association of India</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/event_redev_summit.webp"
+        alt="BAI at the Mumbai Redevelopment Summit"
+        focal="center 25%"
+        tag="News & Press"
+        title="BAI in Media"
+        subtitle="Latest updates, press releases and news coverage of Builders Association of India"
+      />
 
       {/* Main List */}
       <section className="media-list-section">

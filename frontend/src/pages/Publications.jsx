@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ImageLightbox from "../components/ImageLightbox";
 import { FaDownload, FaEnvelopeOpenText } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./Publications.css";
 
 const Publications = () => {
@@ -26,21 +27,14 @@ const Publications = () => {
   return (
     <div className="publications-page-wrapper">
       {/* Banner */}
-      <section className="pub-hero-section">
-        <div className="pub-hero-overlay"></div>
-        <div className="container pub-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="pub-hero-content"
-          >
-            <span className="pub-tag">BAI Publications</span>
-            <h1 className="pub-title">Indian Construction Journal</h1>
-            <p className="pub-subtitle">Official monthly publication of Builders Association of India</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/84thAnnualReportBAI.webp"
+        alt="Cover of BAI's 84th Annual Report"
+        focal="center 25%"
+        tag="BAI Publications"
+        title="Indian Construction Journal"
+        subtitle="Official monthly publication of Builders Association of India"
+      />
 
       {/* Main Grid */}
       <section className="pub-list-section">

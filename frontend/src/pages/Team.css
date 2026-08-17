@@ -1,64 +1,3 @@
-/* Team Hero Header Section */
-.team-hero-section {
-  position: relative;
-  height: 350px;
-  /* Photo gallery image — Pune Centre office bearers meeting. */
-  background-image: url("/images/events/event_office-meeting-1.jpg");
-  background-size: cover;
-  background-position: center 30%;
-  display: flex;
-  align-items: center;
-  color: var(--white);
-  overflow: hidden;
-}
-
-.team-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 22, 40, 0.55);
-}
-
-.team-hero-container {
-  position: relative;
-  z-index: 10;
-}
-
-.team-hero-content {
-  max-width: 700px;
-}
-
-.team-tag {
-  background: rgba(26, 115, 232, 0.16);
-  color: var(--gold);
-  padding: 0.35rem 1rem;
-  border-radius: 20px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.team-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-
-.team-subtitle {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
-}
-
 /* Roster / Members Grid List */
 .team-roster-section {
   padding: 5rem 0;
@@ -269,15 +208,6 @@
   .grid-single {
     grid-template-columns: minmax(0, calc((100% - 1.25rem) / 2));
     gap: 1.25rem;
-  }
-  .team-title {
-    font-size: 2.2rem;
-  }
-  .team-subtitle {
-    font-size: 0.95rem;
-  }
-  .team-hero-section {
-    height: 250px;
   }
   .team-roster-section {
     padding: 4rem 0;

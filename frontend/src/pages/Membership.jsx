@@ -21,6 +21,7 @@ import {
 import StepFlow from "../components/StepFlow";
 import MembershipPaymentModal from "../components/MembershipPaymentModal";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import PageHero from "../components/PageHero";
 import "./Membership.css";
 
 const CENTRES_PREVIEW = 48;
@@ -49,25 +50,19 @@ const Membership = () => {
 
   return (
     <div className="membership-page-wrapper">
-      <section className="membership-hero-section">
-        <div className="membership-hero-overlay"></div>
-        <div className="container membership-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="membership-hero-content"
-          >
-            <span className="membership-tag">{data.headOffice.established}</span>
-            <h1 className="membership-title">{data.title}</h1>
-            <p className="membership-subtitle">{data.subtitle}</p>
-            <a href={data.applicationForm.file} download className="membership-hero-cta">
-              <FaDownload /> Download Application Form
-              <span>{data.applicationForm.size}</span>
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_pmc-courtesy-visit-2.jpg"
+        alt="BAI Pune Centre office bearers on a courtesy visit"
+        focal="center 25%"
+        tag={data.headOffice.established}
+        title={data.title}
+        subtitle={data.subtitle}
+      >
+        <a href={data.applicationForm.file} download className="membership-hero-cta">
+          <FaDownload /> Download Application Form
+          <span>{data.applicationForm.size}</span>
+        </a>
+      </PageHero>
 
       <section className="membership-letterhead-section">
         <div className="container">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FaUnlockAlt, FaCheckCircle, FaFileDownload, FaTable } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./MembersArea.css";
 
 const MembersArea = () => {
@@ -46,21 +46,14 @@ const MembersArea = () => {
 
   return (
     <div className="members-page-wrapper">
-      <section className="members-hero-section">
-        <div className="members-hero-overlay"></div>
-        <div className="container members-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="members-hero-content"
-          >
-            <span className="members-tag">Private Portal</span>
-            <h1 className="members-title">Members Area</h1>
-            <p className="members-subtitle">Access exclusive indices, notifications and circulars for registered developers</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_industrial-facility-visit-1.jpg"
+        alt="Pune Centre members on a technical facility visit"
+        focal="center 25%"
+        tag="Private Portal"
+        title="Members Area"
+        subtitle="Access exclusive indices, notifications and circulars for registered developers"
+      />
 
       <section className="members-main-section">
         <div className="container">

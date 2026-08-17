@@ -1,57 +1,8 @@
-/* Committees Hero banner */
-.committees-hero-section {
-  position: relative;
-  height: 350px;
-  /* Photo gallery image — committee members at the Pune Centre office.
-     Biased upward so the wide banner crop keeps both rows of faces in
-     frame rather than centring on the table. */
-  background-image: url("/images/events/event_office-meeting-2.jpg");
-  background-size: cover;
-  background-position: center 35%;
-  display: flex;
-  align-items: center;
-  color: var(--white);
-  overflow: hidden;
-}
-
 /* Clear the sticky header when arriving via #guidelines / #standing / #executive */
 .committees-guidelines-section,
 .committees-list-section,
 .exec-committee-section {
   scroll-margin-top: 110px;
-}
-
-.committees-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 22, 40, 0.55);
-}
-
-.committees-hero-container {
-  position: relative;
-  z-index: 10;
-}
-
-.committees-hero-content {
-  max-width: 700px;
-}
-
-.committees-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-
-.committees-subtitle {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
 }
 
 /* Shared section headings */
@@ -292,15 +243,6 @@
 }
 
 @media (max-width: 768px) {
-  .committees-hero-section {
-    height: 250px;
-  }
-  .committees-title {
-    font-size: 2.2rem;
-  }
-  .committees-subtitle {
-    font-size: 0.95rem;
-  }
   .committees-section-title {
     font-size: 1.55rem;
   }

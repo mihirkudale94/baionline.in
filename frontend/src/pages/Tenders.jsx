@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FaFilePdf, FaSearch } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import "./Tenders.css";
 
 const Tenders = () => {
@@ -21,21 +21,14 @@ const Tenders = () => {
   return (
     <div className="tenders-page-wrapper">
       {/* Banner */}
-      <section className="tenders-hero-section">
-        <div className="tenders-hero-overlay"></div>
-        <div className="container tenders-hero-container">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="tenders-hero-content"
-          >
-            <span className="tenders-tag">Procurement Portal</span>
-            <h1 className="tenders-title">Active Civil Tenders</h1>
-            <p className="tenders-subtitle">Find construction projects and bidding opportunities across India</p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image="/images/events/event_cwprs-site-visit.jpg"
+        alt="BAI Pune Centre members at a technical site visit"
+        focal="center 25%"
+        tag="Procurement Portal"
+        title="Active Civil Tenders"
+        subtitle="Find construction projects and bidding opportunities across India"
+      />
 
       {/* Main List */}
       <section className="tenders-list-section">
