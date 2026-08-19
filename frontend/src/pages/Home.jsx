@@ -233,7 +233,8 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Events Gallery Section */}
+            {/* Events Gallery Section - temporarily hidden */}
+            {false && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -266,6 +267,7 @@ const Home = () => {
                 ))}
               </div>
             </motion.div>
+            )}
 
           </div>
 
