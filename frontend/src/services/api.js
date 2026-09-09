@@ -130,15 +130,16 @@ export const youtubeVideos = [
        python backend/add_sponsor.py --help
    ------------------------------------------------------------------ */
 
-/* The five regular activities of BAI Pune Centre. Drives both the
-   "BAI Activities" dropdown and the /activities page sections. */
+/* The regular activities of BAI Pune Centre, as rendered in order down the
+   /activities page. The navbar links straight to that page and carries no
+   submenu, so this list drives the page alone. */
 export const activities = [
   {
     slug: "technical-seminars",
     title: "Technical Seminars",
     summary:
       "Regular seminars on construction technology, sustainable practices, statutory compliance and industry standards, led by domain experts and senior practitioners.",
-    image: "/images/events/event_committee-meeting-office.jpg"
+    image: "/images/events/event_maharera-seminar-2025.jpg"
   },
   {
     slug: "site-visits",
@@ -152,7 +153,7 @@ export const activities = [
     title: "Networking Meets",
     summary:
       "Member meets that connect builders, contractors, consultants and developers across the Pune Centre and BAI's nationwide network of centres.",
-    image: "/images/events/event_office-meeting-1.jpg"
+    image: "/images/events/event_maharashtra-state-meeting-2025.jpg"
   },
   {
     slug: "government-interaction",
@@ -166,7 +167,7 @@ export const activities = [
     title: "Training Workshops",
     summary:
       "Skill-building workshops for member firms and their teams, covering site safety, project management, statutory documentation and emerging construction practice.",
-    image: "/images/events/event_central-bank-outreach-campaign.jpg"
+    image: "/images/events/event_chenab-bridge-technical-talk.jpg"
   },
   {
     slug: "industry-academia",
@@ -194,11 +195,7 @@ export const navLinks = [
       { label: "Executive Committee", path: "/committees#executive" }
     ]
   },
-  {
-    label: "BAI Activities Pune",
-    path: "/activities",
-    children: activities.map((a) => ({ label: a.title, path: `/activities#${a.slug}` })),
-  },
+  { label: "BAI Activities Pune", path: "/activities" },
   { label: "Social Activities", path: "/social-activities" },
   { label: "Events", path: "/events" },
   { label: "WBSC 2026", path: "/wbsc-awards", highlight: true },
@@ -1544,14 +1541,16 @@ export const nirmanRatnaData = {
    `year` matches the `year` field in wbscArchiveData.years. Captions are
    deliberately neutral about who is on stage — fill in names only where
    the Centre can confirm them. `heroSrc` is the frame used behind the
-   banner band until the 2026 artwork is ready. */
+   banner band until the 2026 artwork is ready — currently the WBSC 2025
+   ceremony, credited in `heroCredit` so the dated photograph is never
+   passed off as this year's. */
 export const wbscGalleryData = {
   heading: "Moments from the Awards Ceremony",
   subtitle: "WBSC 2019 — 23rd in Series",
   note: "Photographs from the BAI–Shirke Well Built Structure Competition award ceremony held on December 20, 2019. Pictures from the WBSC 2026 ceremony will be added after the event.",
-  heroSrc: "/images/wbsc/2019/wbsc-2019-10.webp",
-  heroAlt: "Winners of the Well Built Structure Competition 2019 with BAI Pune Centre office bearers",
-  heroCredit: "Pictured: the WBSC 2019 award ceremony",
+  heroSrc: "/images/events/event_nirman-ratna-award-2025.jpg",
+  heroAlt: "The BAI – Padmashri B. G. Shirke Life Time Achievement citation presented at the Well Built Structure Competition 2025 ceremony",
+  heroCredit: "Pictured: the WBSC 2025 award ceremony",
   photos: [
     { src: "/images/wbsc/2019/wbsc-2019-10.webp", year: "2019-20", caption: "All WBSC 2019 winners with the BAI Pune Centre office bearers and dignitaries" },
     { src: "/images/wbsc/2019/wbsc-2019-01.webp", year: "2019-20", caption: "Trophy and certificate presented to a category winner at the BAI–Shirke Awards 2019" },
@@ -2588,8 +2587,8 @@ export const baiServicesData = {
   title: "BAI Services",
   subtitle: "Professional support desks run by BAI Pune Centre for its member contractors and builders",
   hero: {
-    image: "/images/events/event_committee-meeting-office.jpg",
-    alt: "BAI Pune Centre members in session at the Centre office",
+    image: "/images/events/event_maharera-seminar-2025.jpg",
+    alt: "The Pune Centre's half-day seminar on real estate development and self-redevelopment under MahaRERA",
     focal: "center 30%"
   },
   rera: {

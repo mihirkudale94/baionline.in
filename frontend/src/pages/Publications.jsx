@@ -28,8 +28,8 @@ const Publications = () => {
     <div className="publications-page-wrapper">
       {/* Banner */}
       <PageHero
-        image="/images/publications/84thAnnualReportBAI.webp"
-        alt="Cover of BAI's 84th Annual Report"
+        image="/images/events/event_mitwpu-publication-handover.jpg"
+        alt="BAI publications being presented at MIT World Peace University"
         focal="center 25%"
         tag="BAI Publications"
         title="Indian Construction Journal"

@@ -5,9 +5,10 @@ from `wbscGalleryData` in `frontend/src/services/api.js`:
 
     wbsc-2019-01.webp  ...  wbsc-2019-10.webp
 
-`wbsc-2019-10.webp` is the full group photo of all winners. It is used twice:
-as the lead tile of the gallery and as the background of the banner band at
-the top of the page, so give that one the most care when cropping.
+`wbsc-2019-10.webp` is the full group photo of all winners and is the lead
+tile of the gallery, so give that one the most care when cropping. (The banner
+band at the top of the page runs off `heroSrc`, which currently points at a
+WBSC 2025 frame in `frontend/public/images/events/`.)
 
 Before uploading, resize to roughly 1600px on the long edge and convert to
 WebP at ~80% quality. The originals are ~2000px JPEGs and ten of them at full

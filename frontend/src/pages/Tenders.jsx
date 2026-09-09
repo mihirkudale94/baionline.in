@@ -22,8 +22,8 @@ const Tenders = () => {
     <div className="tenders-page-wrapper">
       {/* Banner */}
       <PageHero
-        image="/images/events/event_cwprs-site-visit.jpg"
-        alt="BAI Pune Centre members at a technical site visit"
+        image="/images/events/event_bridge-site-visit-2.jpg"
+        alt="Pune Centre members being briefed on site at a live bridge project"
         focal="center 25%"
         tag="Procurement Portal"
         title="Active Civil Tenders"

@@ -47,8 +47,8 @@ const MembersArea = () => {
   return (
     <div className="members-page-wrapper">
       <PageHero
-        image="/images/events/event_industrial-facility-visit-1.jpg"
-        alt="Pune Centre members on a technical facility visit"
+        image="/images/events/event_industrial-facility-visit-2.jpg"
+        alt="Pune Centre members being briefed on the shop floor during a facility visit"
         focal="center 25%"
         tag="Private Portal"
         title="Members Area"

@@ -51,7 +51,9 @@ const Membership = () => {
   return (
     <div className="membership-page-wrapper">
       <PageHero
-        placeholder="Banner image coming soon"
+        image="/images/events/event_cwprs-site-visit.jpg"
+        alt="Members at a general meeting in the BAI Pune Centre office"
+        focal="center 35%"
         tag={data.headOffice.established}
         title={data.title}
         subtitle={data.subtitle}

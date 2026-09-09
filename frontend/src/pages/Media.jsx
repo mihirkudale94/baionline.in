@@ -33,8 +33,8 @@ const Media = () => {
     <div className="media-page-wrapper">
       {/* Banner */}
       <PageHero
-        image="/images/events/event_redev_summit.webp"
-        alt="BAI at the Mumbai Redevelopment Summit"
+        image="/images/events/event_mitwpu-mou-signing-group.jpg"
+        alt="BAI Pune Centre signing a Memorandum of Understanding with MIT World Peace University"
         focal="center 25%"
         tag="News & Press"
         title="BAI in Media"

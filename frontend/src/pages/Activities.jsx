@@ -14,8 +14,8 @@ const Activities = () => {
   return (
     <div className="activities-page-wrapper">
       <PageHero
-        image="/images/events/event_worker-children-felicitation-2025-2.jpg"
-        alt="A BAI Pune Centre felicitation programme in progress"
+        image="/images/events/event_chenab-bridge-technical-talk.jpg"
+        alt="Inaugural lamp lighting at the Pune Centre's technical talk on the making of the Chenab bridge"
         focal="center 25%"
         tag="Pune Centre"
         title="BAI Activities"

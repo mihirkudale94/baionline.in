@@ -50,8 +50,8 @@ const Committees = () => {
   return (
     <div className="committees-page-wrapper">
       <PageHero
-        image="/images/events/event_office-meeting-2.jpg"
-        alt="BAI Pune Centre members in a committee meeting"
+        image="/images/events/event_office-meeting-1.jpg"
+        alt="A BAI Pune Centre committee meeting in session at the Centre office"
         focal="center 35%"
         title="Committees 2026–27"
         subtitle={doc ? doc.subject : undefined}

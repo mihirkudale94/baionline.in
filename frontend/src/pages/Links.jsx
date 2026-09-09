@@ -59,8 +59,8 @@ const Links = () => {
   return (
     <div className="links-page-wrapper">
       <PageHero
-        image="/images/events/event_industrial-facility-visit-2.jpg"
-        alt="Members touring the shop floor on an industrial facility visit"
+        image="/images/events/event_industrial-facility-visit-1.jpg"
+        alt="Pune Centre members at the Central Water and Power Research Station, Pune"
         focal="center 25%"
         tag="Directory"
         title="Useful Reference Links"

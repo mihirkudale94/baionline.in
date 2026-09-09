@@ -46,8 +46,8 @@ const NonMembersArea = () => {
   return (
     <div className="non-member-page-wrapper">
       <PageHero
-        image="/images/events/event_bridge-site-visit-2.jpg"
-        alt="Members being briefed on site at a cable-stayed bridge project"
+        image="/images/events/event_central-bank-outreach-campaign.jpg"
+        alt="BAI Pune Centre at the Central Bank of India mega retail credit outreach campaign"
         focal="center 25%"
         tag="Activities"
         title="Non-Members Area"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAboutData, submitForm } from "../services/api";
-import { FaHistory, FaBullseye, FaUsers, FaMapMarkerAlt, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy, FaImage } from "react-icons/fa";
+import { FaHistory, FaBullseye, FaUsers, FaAward, FaChevronDown, FaFilePdf, FaEnvelopeOpenText, FaCheckCircle, FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy, FaImage } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import PageHero from "../components/PageHero";
 import "./About.css";
@@ -61,7 +61,7 @@ const About = () => {
     }
   ];
 
-  const whatWeDoIcons = [<FaTools />, <FaLandmark />, <FaHandsHelping />, <FaGraduationCap />, <FaTrophy />];
+  const whatWeDoIcons = [FaTools, FaLandmark, FaHandsHelping, FaGraduationCap, FaTrophy];
 
   const handleToggleAccordion = (idx) => {
     setActiveAccordion(activeAccordion === idx ? null : idx);
@@ -324,24 +324,27 @@ const About = () => {
               <div className="section-title-line"></div>
             </div>
             <div className="whatwedo-grid">
-              {content.what_we_do.map((block, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="whatwedo-card glass-card"
-                >
-                  <div className="whatwedo-icon">{whatWeDoIcons[idx % whatWeDoIcons.length]}</div>
-                  <h3>{block.title}</h3>
-                  <ul>
-                    {block.items.map((item, iIdx) => (
-                      <li key={iIdx}>{item}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+              {content.what_we_do.map((block, idx) => {
+                const Icon = whatWeDoIcons[idx % whatWeDoIcons.length];
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: idx * 0.1 }}
+                    className="whatwedo-card glass-card"
+                  >
+                    <div className="whatwedo-icon"><Icon /></div>
+                    <h3>{block.title}</h3>
+                    <ul>
+                      {block.items.map((item, iIdx) => (
+                        <li key={iIdx}>{item}</li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>

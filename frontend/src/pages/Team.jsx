@@ -64,8 +64,8 @@ const Team = () => {
     <div className="team-page-wrapper">
       {/* 1. Header Banner */}
       <PageHero
-        image="/images/events/event_office-meeting-1.jpg"
-        alt="BAI Pune Centre office bearers in a meeting"
+        image="/images/events/event_office-meeting-2.jpg"
+        alt="BAI Pune Centre office bearers at the Centre office, below the honour boards of past chairmen and secretaries"
         focal="center 30%"
         tag="Governing Council"
         title="BAI Pune Centre Team 2026-27"

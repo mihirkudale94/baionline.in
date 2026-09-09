@@ -77,16 +77,6 @@ LEADERSHIP = {
     }
 }
 
-# The five regular activities of BAI Pune Centre. Mirrors `activities` in
-# frontend/src/services/api.js and drives the "BAI Activities" dropdown.
-ACTIVITIES = [
-    {"slug": "technical-seminars", "title": "Technical Seminars"},
-    {"slug": "site-visits", "title": "Industrial & Site Visits"},
-    {"slug": "networking-meets", "title": "Networking Meets"},
-    {"slug": "government-interaction", "title": "Government Interaction Programmes"},
-    {"slug": "training-workshops", "title": "Training Workshops"}
-]
-
 # Must stay in step with `navLinks` in frontend/src/services/api.js — the
 # navbar renders from that static list, and this is the API's copy of it.
 NAV_LINKS = [
@@ -106,14 +96,7 @@ NAV_LINKS = [
             {"label": "Executive Committee", "path": "/committees#executive"}
         ]
     },
-    {
-        "label": "BAI Activities Pune",
-        "path": "/activities",
-        "children": [
-            {"label": a["title"], "path": "/activities#" + a["slug"]}
-            for a in ACTIVITIES
-        ]
-    },
+    {"label": "BAI Activities Pune", "path": "/activities"},
     {"label": "Social Activities", "path": "/social-activities"},
     {"label": "Events", "path": "/events"},
     {"label": "WBSC 2026", "path": "/wbsc-awards", "highlight": True},

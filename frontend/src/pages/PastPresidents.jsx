@@ -41,9 +41,9 @@ const PastPresidents = () => {
   return (
     <div className="presidents-page-wrapper">
       <PageHero
-        image="/images/events/event_kochi_meeting.jpg"
-        alt="BAI leadership gathered at the MC-GC meeting in Kochi"
-        focal="center 25%"
+        image="/images/heritage/founding-members-bai.jpg"
+        alt="Founding members of the Builders' Association of India, photographed in 1941"
+        focal="center 40%"
         tag="Pune Centre Archives"
         title="Past Office Bearers"
         subtitle="Honor roll of BAI Pune Centre's own leaders through the years"

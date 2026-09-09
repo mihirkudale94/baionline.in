@@ -43,8 +43,8 @@ const SponsorsInquiry = () => {
   return (
     <div className="sponsors-page-wrapper">
       <PageHero
-        image="/images/events/event_sponsorship.webp"
-        alt="BAI sponsorship opportunities"
+        image="/images/events/event_maharashtra-state-meeting-2025.jpg"
+        alt="Sponsor boards flanking the dais at the 1st BAI Maharashtra State Meeting 2025-26, hosted by the Pune Centre"
         focal="center 25%"
         tag="Partnerships"
         title="Sponsors Inquiry"

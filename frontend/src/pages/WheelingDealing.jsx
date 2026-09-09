@@ -64,8 +64,8 @@ const WheelingDealing = ({ defaultTab = "listings" }) => {
   return (
     <div className="wd-page-wrapper">
       <PageHero
-        image="/images/events/event_bridge-site-visit-1.jpg"
-        alt="Technical site visit to a cable-stayed bridge construction project"
+        image="/images/events/event_jcb-plant-site-visit.jpg"
+        alt="Pune Centre members with excavators, loaders and rollers at the JCB plant"
         focal="center 25%"
         tag="Wheeling & Dealing"
         title="Machinery Exchange"

@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wbscAwardsData, wbscArchiveData, nirmanRatnaData, wbscGalleryData } from "../services/api";
-import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaFileWord, FaDownload, FaEnvelopeOpenText, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie, FaCalendarAlt, FaRegCalendarCheck, FaListUl, FaCrown, FaBookmark, FaLock, FaRegImage } from "react-icons/fa";
+import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaFileWord, FaDownload, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie, FaCalendarAlt, FaRegCalendarCheck, FaListUl, FaCrown, FaBookmark, FaLock, FaRegImage } from "react-icons/fa";
 import StepFlow from "../components/StepFlow";
 import MembershipPaymentModal from "../components/MembershipPaymentModal";
 import ImageLightbox from "../components/ImageLightbox";
@@ -62,10 +62,10 @@ const WBSCAwards = () => {
 
   useDocumentTitle("WBSC Awards");
 
-  /* The two circulars are the primary call to action on this page —
-     everything an applicant needs is inside them. */
+  /* The entry form is the primary call to action on this page, so it is
+     pulled out for its own button; the rest of the circulars — the
+     invitation included — are listed by the downloads grid below. */
   const entryForm = data.downloads.find((d) => d.key === "entry-form");
-  const invitation = data.downloads.find((d) => d.key === "invitation");
 
   return (
     <div className="wbsc-page-wrapper">
