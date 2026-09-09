@@ -57,6 +57,7 @@ const Events = () => {
                   alt={img.caption}
                   className="events-gallery-img"
                   loading="lazy"
+                  style={img.focal ? { objectPosition: img.focal } : undefined}
                 />
                 <span className="events-gallery-caption">{img.caption}</span>
               </motion.button>

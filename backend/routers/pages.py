@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from routers.gallery import list_photos
 from data.content import (
     HERO_SLIDES, STATS, LEADERSHIP, NAV_LINKS, FOOTER_DATA,
     ABOUT_CONTENT, CONTACT_DATA, COMMITTEES, COMMITTEE_GUIDELINES,
@@ -65,5 +66,11 @@ def get_pune_office_bearers():
 
 @router.get("/api/social-activities")
 def get_social_activities():
-    return SOCIAL_ACTIVITIES_DATA
+    # The photo gallery comes from backend/data/social_gallery/ (see
+    # routers/gallery.py), so photos can be added without a code change. The
+    # list in content.py is the seed used only while that folder is empty.
+    photos = list_photos()
+    if not photos:
+        return SOCIAL_ACTIVITIES_DATA
+    return {**SOCIAL_ACTIVITIES_DATA, "gallery": photos}
 

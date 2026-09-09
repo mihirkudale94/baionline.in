@@ -1,19 +1,65 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { wbscAwardsData, wbscArchiveData, nirmanRatnaData } from "../services/api";
+import { wbscAwardsData, wbscArchiveData, nirmanRatnaData, wbscGalleryData } from "../services/api";
 import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaFileWord, FaDownload, FaEnvelopeOpenText, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie, FaCalendarAlt, FaRegCalendarCheck, FaListUl, FaCrown, FaBookmark, FaLock, FaRegImage } from "react-icons/fa";
 import StepFlow from "../components/StepFlow";
 import MembershipPaymentModal from "../components/MembershipPaymentModal";
+import ImageLightbox from "../components/ImageLightbox";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./WBSCAwards.css";
+
+/* React's synthetic onError is unreliable for these frames: an image carrying
+   loading="lazy" can resolve outside the window in which React has its
+   delegated listener attached, and one that already failed before mount fires
+   nothing at all. Wiring the native listener on the node and also testing
+   `complete`/`naturalWidth` at attach time covers both cases, so a missing
+   file is always reported to the page. */
+const CeremonyPhoto = ({ src, alt, className, onFail, loading = "lazy" }) => {
+  const attach = useCallback(
+    (node) => {
+      if (!node) return;
+      if (node.complete && node.naturalWidth === 0) {
+        onFail(src);
+        return;
+      }
+      node.addEventListener("error", () => onFail(src), { once: true });
+    },
+    [src, onFail]
+  );
+
+  return <img ref={attach} src={src} alt={alt} className={className} loading={loading} />;
+};
 
 const WBSCAwards = () => {
   const data = wbscAwardsData;
   const archive = wbscArchiveData;
   const nirman = nirmanRatnaData;
+  const gallery = wbscGalleryData;
   const [activeGroup, setActiveGroup] = useState(0);
   const [activeArchiveYear, setActiveArchiveYear] = useState(null);
   const [wbscPayModalOpen, setWbscPayModalOpen] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
+
+  /* The ceremony photographs are dropped in by the Centre after each edition.
+     Any frame that fails to load is remembered here and dropped from the page
+     rather than left as an empty tile, so a year that has not been uploaded
+     yet — or a single missing file — never shows a hole. `heroFailed` sends
+     the banner band back to its "coming soon" placeholder the same way.
+     Note this relies on the host returning a genuine 404 for the missing
+     path; a server that answers with an SPA index.html instead leaves the
+     request unresolved and the tile simply stays blank. */
+  const [failedPhotos, setFailedPhotos] = useState(() => new Set());
+  const [heroFailed, setHeroFailed] = useState(false);
+  const markFailed = useCallback(
+    (src) => setFailedPhotos((prev) => (prev.has(src) ? prev : new Set(prev).add(src))),
+    []
+  );
+  const handleHeroFail = useCallback(() => setHeroFailed(true), []);
+
+  const photos = gallery.photos.filter((p) => !failedPhotos.has(p.src));
+  const showHeroPhoto = Boolean(gallery.heroSrc) && !heroFailed;
+  const photosForYear = (year) => photos.filter((p) => p.year === year).slice(0, 4);
+
   useDocumentTitle("WBSC Awards");
 
   /* The two circulars are the primary call to action on this page —
@@ -23,9 +69,12 @@ const WBSCAwards = () => {
 
   return (
     <div className="wbsc-page-wrapper">
-      {/* WBSC 2026 banner band. The artwork is still being prepared, so the
-          band holds its shape with a "coming soon" placeholder rather than
-          collapsing the top of the page. */}
+      {/* WBSC 2026 banner band. The 2026 artwork is still being prepared, so
+          the band carries a frame from the last ceremony behind a scrim with
+          the edition set in type over it — credited in the corner so the
+          dated photograph is never passed off as this year's. If the file is
+          missing the band falls back to its "coming soon" placeholder rather
+          than collapsing the top of the page. */}
       <section className="wbsc-hero-section">
         <div className="wbsc-hero-banner-container">
           <motion.div
@@ -34,10 +83,29 @@ const WBSCAwards = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="wbsc-banner-card"
           >
-            <div className="wbsc-hero-banner-placeholder">
-              <FaRegImage aria-hidden="true" />
-              <span>Banner image coming soon</span>
-            </div>
+            {showHeroPhoto ? (
+              <div className="wbsc-hero-photo-band">
+                <CeremonyPhoto
+                  src={gallery.heroSrc}
+                  alt={gallery.heroAlt}
+                  className="wbsc-hero-photo"
+                  loading="eager"
+                  onFail={handleHeroFail}
+                />
+                <div className="wbsc-hero-scrim" aria-hidden="true"></div>
+                <div className="wbsc-hero-overlay">
+                  <span className="wbsc-hero-eyebrow">{data.since} · {data.edition}</span>
+                  <h1 className="wbsc-hero-title">{data.title}</h1>
+                  <span className="wbsc-hero-tagline">{data.tagline}</span>
+                </div>
+                <span className="wbsc-hero-credit">{gallery.heroCredit}</span>
+              </div>
+            ) : (
+              <div className="wbsc-hero-banner-placeholder">
+                <FaRegImage aria-hidden="true" />
+                <span>Banner image coming soon</span>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>
@@ -80,6 +148,46 @@ const WBSCAwards = () => {
           </div>
         </div>
       </section>
+
+      {/* Ceremony gallery. Placed straight after the benefits and ahead of the
+          entry detail: a builder weighing the entry fee sees what recognition
+          actually looks like before being asked to read categories and terms.
+          The section removes itself if none of the frames load. */}
+      {photos.length > 0 && (
+        <section className="wbsc-gallery-section">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="subtitle">{gallery.subtitle}</span>
+              <h2 className="section-title">{gallery.heading}</h2>
+              <div className="section-title-line"></div>
+            </div>
+            <div className="wbsc-gallery-grid">
+              {photos.map((photo, idx) => (
+                <motion.button
+                  key={photo.src}
+                  type="button"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: Math.min(idx, 6) * 0.06 }}
+                  className={`wbsc-gallery-tile ${idx === 0 ? "is-lead" : ""}`}
+                  onClick={() => setLightbox({ src: photo.src, alt: photo.caption })}
+                  aria-label={`View photograph: ${photo.caption}`}
+                >
+                  <CeremonyPhoto
+                    src={photo.src}
+                    alt={photo.caption}
+                    className="wbsc-gallery-img"
+                    onFail={markFailed}
+                  />
+                  <span className="wbsc-gallery-caption">{photo.caption}</span>
+                </motion.button>
+              ))}
+            </div>
+            <p className="wbsc-gallery-note">{gallery.note}</p>
+          </div>
+        </section>
+      )}
 
       <section className="wbsc-categories-section">
         <div className="container">
@@ -426,6 +534,27 @@ const WBSCAwards = () => {
                           ))}
                         </ul>
                       )}
+                      {/* Editions the Centre has photographs for carry a short
+                          strip here; the rest are unaffected. */}
+                      {photosForYear(yr.year).length > 0 && (
+                        <div className="wbsc-archive-photo-strip">
+                          {photosForYear(yr.year).map((photo) => (
+                            <button
+                              key={photo.src}
+                              type="button"
+                              className="wbsc-archive-photo"
+                              onClick={() => setLightbox({ src: photo.src, alt: photo.caption })}
+                              aria-label={`View photograph: ${photo.caption}`}
+                            >
+                              <CeremonyPhoto
+                                src={photo.src}
+                                alt={photo.caption}
+                                onFail={markFailed}
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -436,6 +565,13 @@ const WBSCAwards = () => {
           <p className="wbsc-archive-note">{archive.note}</p>
         </div>
       </section>
+
+      <ImageLightbox
+        src={lightbox?.src}
+        alt={lightbox?.alt}
+        isOpen={Boolean(lightbox)}
+        onClose={() => setLightbox(null)}
+      />
 
       {wbscPayModalOpen && (
         <MembershipPaymentModal

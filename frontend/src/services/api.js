@@ -4,6 +4,15 @@ const API_BASE = (import.meta.env && import.meta.env.VITE_API_BASE_URL) || (
     : "/api"
 );
 
+// Media the backend serves itself (gallery photos, for instance) comes back as
+// an /api/... path. That is already correct in production, where the API and
+// the site share an origin, but in dev the API lives on another port and the
+// path has to be resolved against it.
+const API_ORIGIN = API_BASE.replace(/\/api\/?$/, "");
+function resolveMediaUrl(src) {
+  return typeof src === "string" && src.startsWith("/api/") ? `${API_ORIGIN}${src}` : src;
+}
+
 // Fetch with a hard timeout so an unreachable backend fails fast and the
 // UI falls back to bundled data instead of hanging on a spinner.
 const FETCH_TIMEOUT_MS = 5000;
@@ -136,7 +145,7 @@ export const activities = [
     title: "Industrial & Site Visits",
     summary:
       "Organised visits to major infrastructure projects and research institutions across Pune, giving members first-hand exposure to construction methods and site practice.",
-    image: "/images/events/event_bridge-site-visit-1.jpg"
+    image: "/images/events/event_jcb-plant-site-visit.jpg"
   },
   {
     slug: "networking-meets",
@@ -158,6 +167,13 @@ export const activities = [
     summary:
       "Skill-building workshops for member firms and their teams, covering site safety, project management, statutory documentation and emerging construction practice.",
     image: "/images/events/event_central-bank-outreach-campaign.jpg"
+  },
+  {
+    slug: "industry-academia",
+    title: "Industry–Academia Collaboration",
+    summary:
+      "Formal engagement with universities and technical institutions — including a Memorandum of Understanding with MIT World Peace University's Department of Civil Engineering and its School of Construction Engineering and Management — to align academic curricula with site practice, open internship and placement routes for students, and build the next generation of construction leaders.",
+    image: "/images/events/event_mitwpu-roundtable-discussion.jpg"
   }
 ];
 
@@ -475,7 +491,13 @@ export async function getSocialActivitiesData() {
   try {
     const res = await fetchWithTimeout(`${API_BASE}/social-activities`);
     if (!res.ok) throw new Error("Status " + res.status);
-    return await res.json();
+    const data = await res.json();
+    // The gallery is whatever sits in the backend's photo folder, so its
+    // photos are served by the API rather than from the frontend's own images.
+    return {
+      ...data,
+      gallery: (data.gallery || []).map((img) => ({ ...img, src: resolveMediaUrl(img.src) }))
+    };
   } catch (err) {
     console.warn("Using local fallback for Social Activities data:", err);
     return socialActivitiesContent;
@@ -1517,6 +1539,33 @@ export const nirmanRatnaData = {
   ]
 };
 
+/* Ceremony photographs, keyed to the edition they were shot at so the
+   archive accordion can pull its own year's strip without a second list.
+   `year` matches the `year` field in wbscArchiveData.years. Captions are
+   deliberately neutral about who is on stage — fill in names only where
+   the Centre can confirm them. `heroSrc` is the frame used behind the
+   banner band until the 2026 artwork is ready. */
+export const wbscGalleryData = {
+  heading: "Moments from the Awards Ceremony",
+  subtitle: "WBSC 2019 — 23rd in Series",
+  note: "Photographs from the BAI–Shirke Well Built Structure Competition award ceremony held on December 20, 2019. Pictures from the WBSC 2026 ceremony will be added after the event.",
+  heroSrc: "/images/wbsc/2019/wbsc-2019-10.webp",
+  heroAlt: "Winners of the Well Built Structure Competition 2019 with BAI Pune Centre office bearers",
+  heroCredit: "Pictured: the WBSC 2019 award ceremony",
+  photos: [
+    { src: "/images/wbsc/2019/wbsc-2019-10.webp", year: "2019-20", caption: "All WBSC 2019 winners with the BAI Pune Centre office bearers and dignitaries" },
+    { src: "/images/wbsc/2019/wbsc-2019-01.webp", year: "2019-20", caption: "Trophy and certificate presented to a category winner at the BAI–Shirke Awards 2019" },
+    { src: "/images/wbsc/2019/wbsc-2019-03.webp", year: "2019-20", caption: "A winning firm's representative receives the WBSC 2019 trophy" },
+    { src: "/images/wbsc/2019/wbsc-2019-04.webp", year: "2019-20", caption: "The team of a winning firm receives the trophy and certificate" },
+    { src: "/images/wbsc/2019/wbsc-2019-02.webp", year: "2019-20", caption: "Award presentation on stage, WBSC 2019 — 23rd in Series" },
+    { src: "/images/wbsc/2019/wbsc-2019-05.webp", year: "2019-20", caption: "Certificate and trophy handed over before the BAI Pune Centre office bearers" },
+    { src: "/images/wbsc/2019/wbsc-2019-06.webp", year: "2019-20", caption: "Category winners felicitated at the WBSC 2019 ceremony" },
+    { src: "/images/wbsc/2019/wbsc-2019-07.webp", year: "2019-20", caption: "Presentation of the WBSC certificate to a winning firm" },
+    { src: "/images/wbsc/2019/wbsc-2019-08.webp", year: "2019-20", caption: "A winning entry felicitated at the awards ceremony" },
+    { src: "/images/wbsc/2019/wbsc-2019-09.webp", year: "2019-20", caption: "Trophy and certificate presented to a WBSC 2019 category winner" }
+  ]
+};
+
 /* Year-wise WBSC record, 1997-98 to 2025-26 (booklet pp13-15 and pp16-28).
    `winners` carries the firm and the category exactly as printed; the
    booklet does not record project names, so there is no project field.
@@ -2151,6 +2200,7 @@ export const eventsPageData = {
     { title: "Site Visit — Central Water and Power Research Station (CWPRS)", date: "May 2026", venue: "CWPRS, Khadakwasla, Pune", image: "/images/events/event_cwprs-site-visit.jpg", links: ["Gallery"] },
     { title: "BAI Pune Centre at Central Bank of India's Mega Retail Credit Outreach Campaign", date: "July 2026", venue: "Regional Office, Pune", image: "/images/events/event_central-bank-outreach-campaign.jpg", links: ["Gallery"] },
     { title: "Industrial Facility Visit", date: "July 2026", venue: "Pune", image: "/images/events/event_industrial-facility-visit-1.jpg", links: ["Gallery"] },
+    { title: "MoU Signing & Round Table with MIT World Peace University — Building Future Construction Leaders", date: "14th July 2026", venue: "MIT World Peace University, Kothrud, Pune", image: "/images/events/event_mitwpu-mou-signing-group.jpg", links: ["Gallery"] },
     { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/events/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
     { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/events/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
     { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/events/event_sports_league.webp", links: ["Gallery — placeholder"] }
@@ -2209,7 +2259,19 @@ export const eventsPageData = {
     { src: "/images/events/event_cwprs-site-visit.jpg", caption: "Site Visit — Central Water and Power Research Station" },
     { src: "/images/events/event_central-bank-outreach-campaign.jpg", caption: "Central Bank of India's Mega Retail Credit Outreach Campaign" },
     { src: "/images/events/event_industrial-facility-visit-1.jpg", caption: "Industrial Facility Visit" },
-    { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members Touring the Facility" }
+    { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members Touring the Facility" },
+    { src: "/images/events/event_independence-day-2026-flag-hoisting.jpg", caption: "Independence Day 2026 — Flag Hoisting at BAI Pune Centre", focal: "center 25%" },
+    { src: "/images/events/event_independence-day-2026-1.jpg", caption: "Members Gathered at the Pune Centre Office on Independence Day 2026" },
+    { src: "/images/events/event_independence-day-2026-2.jpg", caption: "Address to Members, Independence Day 2026" },
+    { src: "/images/events/event_independence-day-2026-3.jpg", caption: "Independence Day Get-Together at the Pune Centre Office" },
+    { src: "/images/events/event_mitwpu-mou-signing-group.jpg", caption: "MoU Signed between BAI Pune Centre and MIT World Peace University" },
+    { src: "/images/events/event_mitwpu-mou-signing.jpg", caption: "Signing of the Memorandum of Understanding" },
+    { src: "/images/events/event_mitwpu-roundtable-discussion.jpg", caption: "Round Table Discussion — Building Future Construction Leaders" },
+    { src: "/images/events/event_mitwpu-roundtable-1.jpg", caption: "Members and Faculty at the MIT-WPU Round Table" },
+    { src: "/images/events/event_mitwpu-roundtable-2.jpg", caption: "Round Table in Session at MIT World Peace University" },
+    { src: "/images/events/event_mitwpu-roundtable-3.jpg", caption: "Industry and Academia Representatives in Discussion" },
+    { src: "/images/events/event_mitwpu-publication-handover.jpg", caption: "Presentation of BAI Publications to MIT World Peace University" },
+    { src: "/images/events/event_mitwpu-felicitation.jpg", caption: "Felicitation of Guests at the MIT-WPU Round Table" }
   ],
   calendar: [
     { month: "September 2026", items: ["Pune Centre Annual General Meeting — sample placeholder"] },
@@ -2504,7 +2566,12 @@ export const socialActivitiesContent = {
     title: "Disaster Response & Civic Aid",
     description: "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune.",
     image: "/images/events/event_worker-children-felicitation-2025-1.jpg"
-  }
+  },
+  /* The photo gallery is not bundled: it is whatever sits in the backend's
+     social_gallery folder, so photos can be added without a code change or a
+     rebuild. With no backend to ask, the page simply leaves the gallery out
+     rather than showing photos that may since have been removed. */
+  gallery: []
 };
 
 

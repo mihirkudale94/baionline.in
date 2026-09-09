@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getSocialActivitiesData, submitForm } from "../services/api";
 import {
@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import PageHero from "../components/PageHero";
+import ImageLightbox from "../components/ImageLightbox";
 import "./SocialActivities.css";
 
 const SocialActivities = () => {
@@ -33,6 +34,19 @@ const SocialActivities = () => {
   });
   const [formLoading, setFormLoading] = useState(false);
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
+
+  // Photo gallery — lightbox
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState("");
+  const [lightboxAlt, setLightboxAlt] = useState("");
+
+  const gallery = useMemo(() => data?.gallery || [], [data]);
+
+  const openLightbox = (src, alt) => {
+    setLightboxSrc(src);
+    setLightboxAlt(alt);
+    setLightboxOpen(true);
+  };
 
   useEffect(() => {
     getSocialActivitiesData()
@@ -289,7 +303,44 @@ const SocialActivities = () => {
         </div>
       </section>
 
-      {/* 6. Form - Get Involved */}
+      {/* 6. Photo Gallery — same tile UI as the Events page gallery */}
+      {gallery.length > 0 && (
+        <section className="social-gallery-section">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="section-subtitle">Snapshots</span>
+              <h2 className="section-title">Photo Gallery</h2>
+              <div className="section-title-line"></div>
+            </div>
+            <div className={`social-gallery-grid ${gallery.length <= 3 ? "is-short" : ""}`}>
+              {gallery.map((img, idx) => (
+                <motion.button
+                  type="button"
+                  key={img.src}
+                  className="social-gallery-tile"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.05 }}
+                  onClick={() => openLightbox(img.src, img.caption)}
+                  aria-label={`View photo: ${img.caption}`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.caption}
+                    className="social-gallery-img"
+                    loading="lazy"
+                    style={img.focal ? { objectPosition: img.focal } : undefined}
+                  />
+                  <span className="social-gallery-caption">{img.caption}</span>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 7. Form - Get Involved */}
       <section className="social-inquiry-section">
         <div className="container">
           <div className="inquiry-grid glass-card">
@@ -439,6 +490,13 @@ const SocialActivities = () => {
           </div>
         </div>
       </section>
+
+      <ImageLightbox
+        src={lightboxSrc}
+        alt={lightboxAlt}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </div>
   );
 };

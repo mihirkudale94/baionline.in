@@ -124,12 +124,13 @@
   background: linear-gradient(180deg, var(--white) 0%, var(--primary-tint) 100%);
 }
 
+/* The Jackson Hut and founding-members photographs run the full width of the
+   section, matching every other block on the page rather than sitting in a
+   narrower column of their own. */
 .heritage-photos-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .heritage-photo-tile {

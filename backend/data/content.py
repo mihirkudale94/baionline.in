@@ -731,7 +731,11 @@ SOCIAL_ACTIVITIES_DATA = {
         "title": "Disaster Response & Civic Aid",
         "description": "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune.",
         "image": "/images/events/event_worker-children-felicitation-2025-1.jpg"
-    }
+    },
+    # The photo gallery lives in backend/data/social_gallery/ and is read from
+    # there per request (see routers/gallery.py), so it is deliberately empty
+    # here — this list is only a seed for the case of an empty photo folder.
+    "gallery": []
 }
 
 

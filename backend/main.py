@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from routers import pages, chat, submissions, payments, sponsors
+from routers import pages, chat, submissions, payments, sponsors, gallery
 from dotenv import load_dotenv
 import os
 
@@ -32,6 +32,7 @@ app.include_router(chat.router)
 app.include_router(submissions.router)
 app.include_router(payments.router)
 app.include_router(sponsors.router)
+app.include_router(gallery.router)
 
 # Mount frontend assets if built
 frontend_dist = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "dist"))

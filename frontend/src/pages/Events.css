@@ -31,7 +31,7 @@
 
 .events-gallery-section { padding: 5rem 0; background: var(--gray-50); }
 /* Photo gallery — image-first tiles, caption reveals over the image on hover */
-.events-gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.events-gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; }
 
 .events-gallery-tile {
   position: relative;

@@ -496,6 +496,90 @@
 }
 
 /* 6. Form - Get Involved Section */
+/* 6. Photo Gallery — mirrors the Events page gallery tiles */
+.social-gallery-section {
+  padding: 5rem 0;
+  background: var(--gray-50);
+}
+
+.social-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+/* Two or three photos would be slivers in a 6-column row, so a short set
+   gets a centred 2-up grid — same tiles, same hover behaviour */
+.social-gallery-grid.is-short {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.social-gallery-tile {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: none;
+  background: var(--gray-100);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 4 / 3;
+  transition: box-shadow var(--dur-fast) ease;
+}
+
+.social-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+
+.social-gallery-tile:hover .social-gallery-img,
+.social-gallery-tile:focus-visible .social-gallery-img { transform: scale(1.06); }
+
+.social-gallery-tile:hover { box-shadow: 0 10px 28px rgba(10, 22, 40, 0.18); }
+
+.social-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.25rem 0.85rem 0.75rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #fff;
+  text-align: left;
+  background: linear-gradient(to top, rgba(7, 11, 22, 0.88) 30%, transparent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+.social-gallery-tile:hover .social-gallery-caption,
+.social-gallery-tile:focus-visible .social-gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Touch devices get no hover, so keep captions permanently visible */
+@media (hover: none) {
+  .social-gallery-caption { opacity: 1; transform: none; }
+}
+
+@media (max-width: 991px) {
+  .social-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .social-gallery-section { padding: 4rem 0; }
+  .social-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .social-gallery-caption { font-size: 0.7rem; padding: 1.75rem 0.6rem 0.55rem; }
+}
+
 .social-inquiry-section {
   padding: 6rem 0;
   background-color: var(--white);
