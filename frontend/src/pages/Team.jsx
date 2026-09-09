@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getTeamData } from "../services/api";
 import ImageLightbox from "../components/ImageLightbox";
-import { FaChevronRight, FaTimes } from "react-icons/fa";
 import PageHero from "../components/PageHero";
 import "./Team.css";
 
 const Team = () => {
   const [team, setTeam] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
 
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -38,11 +35,6 @@ const Team = () => {
     );
   }
 
-  const handleOpenModal = (person) => {
-    setModalContent(person);
-    setModalOpen(true);
-  };
-
   // Members whose photograph hasn't been supplied yet get an initials tile
   // instead of a broken image, and the tile isn't click-to-zoom.
   const initialsOf = (name) =>
@@ -64,14 +56,6 @@ const Team = () => {
       <div className="team-member-info">
         <span className="team-member-role">{subtitle}</span>
         <h4 className="team-member-name">{person.name}</h4>
-        {person.bio && (
-          <button 
-            className="team-member-btn"
-            onClick={() => handleOpenModal(person)}
-          >
-            Read Bio <FaChevronRight className="btn-arrow" />
-          </button>
-        )}
       </div>
     </div>
   );
@@ -107,33 +91,6 @@ const Team = () => {
 
         </div>
       </section>
-
-      {/* Modal Bio Popup */}
-      {modalOpen && modalContent && (
-        <div className="bio-modal-overlay" onClick={() => setModalOpen(false)}>
-          <div className="bio-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={() => setModalOpen(false)}>
-              <FaTimes />
-            </button>
-            <div className="modal-body-grid">
-              <div className="modal-img-col">
-                <img src={modalContent.image} alt={modalContent.name} className="modal-img" />
-                <span className="modal-title-badge">{modalContent.title || "Leader"}</span>
-                <h3 className="modal-name">{modalContent.name}</h3>
-              </div>
-              <div className="modal-text-col">
-                <h4 className="modal-section-title">Biography</h4>
-                <div className="modal-text-scroll">
-                  <p className="modal-bio-para">{modalContent.bio}</p>
-                  {modalContent.bio_extended && (
-                    <p className="modal-bio-para">{modalContent.bio_extended}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Portrait Lightbox Modal */}
       <ImageLightbox 

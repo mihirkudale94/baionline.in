@@ -189,7 +189,7 @@ const NonMembersArea = () => {
             {/* Info Card Column */}
             <div className="non-member-info-card glass-card">
               <div className="info-logo-box">
-                <img src="/images/logo-bg.png" alt="BAI Logo" className="info-brand-logo" />
+                <img src="/images/brand/logo-bg.png" alt="BAI Logo" className="info-brand-logo" />
               </div>
               <h3>Subscribe & Track Activities</h3>
               <p>While full access to cost directories is reserved for registered corporate partners, non-members can subscribe to receive general announcements, public tenders notices, and national builders conventions invitations.</p>

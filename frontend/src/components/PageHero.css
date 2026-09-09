@@ -1,16 +1,59 @@
 /* Photograph band — shown clean, with nothing laid over it. */
 .page-hero-photo {
+  position: relative;
   width: 100%;
-  height: 300px;
+  /* Tall enough that a whole photo still reads as a banner. */
+  height: clamp(340px, 48vh, 520px);
   overflow: hidden;
   background: var(--ink);
 }
 
+/* A blurred, darkened copy of the same photo fills whatever the picture
+   itself does not cover, so the band never shows empty bars. */
+.page-hero-photo-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  transform: scale(1.15);
+  filter: blur(28px) saturate(1.15) brightness(0.55);
+}
+
+/* `contain` keeps every photo whole — no face cropped, and any text
+   printed in the picture stays readable. */
 .page-hero-photo-img {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   display: block;
+}
+
+/* Stand-in for a banner whose photograph is not ready yet. Keeps the band's
+   height so the page still opens on a full-width frame. */
+.page-hero-photo--placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  background: var(--primary-tint);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.page-hero-placeholder-icon {
+  font-size: 2.6rem;
+  color: var(--primary);
+  opacity: 0.55;
+}
+
+.page-hero-placeholder-text {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 /* Page header — the text that used to sit on the photo now reads here. */
@@ -56,13 +99,20 @@
 
 @media (max-width: 1024px) {
   .page-hero-photo {
-    height: 240px;
+    height: clamp(300px, 42vh, 440px);
   }
 }
 
 @media (max-width: 768px) {
+  /* On narrow screens the band follows the photos' own landscape shape,
+     so banners stay large instead of collapsing into a letterbox. */
   .page-hero-photo {
-    height: 190px;
+    height: 72vw;
+    min-height: 250px;
+    max-height: 420px;
+  }
+  .page-hero-photo-backdrop {
+    filter: blur(20px) saturate(1.15) brightness(0.55);
   }
   .page-hero-header {
     padding: 2rem 0 1.75rem;
@@ -73,4 +123,106 @@
   .page-hero-subtitle {
     font-size: 1rem;
   }
+}
+
+/* ---------------------------------------------------------------------
+   Full-height banner (opt-in via <PageHero fullHeight />)
+
+   The photo fills what is left of the viewport under the sticky navbar,
+   and the header content sits over the bottom of it. --page-hero-nav-h
+   tracks .navbar-inner's min-height at each breakpoint so the banner ends
+   exactly at the fold.
+   --------------------------------------------------------------------- */
+.page-hero-photo--full {
+  --page-hero-nav-h: 104px;
+  position: relative;
+  height: calc(100svh - var(--page-hero-nav-h));
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.page-hero-photo--full .page-hero-photo-img,
+.page-hero-photo--full .page-hero-photo-backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-photo-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 40, 0.15) 0%,
+    rgba(10, 22, 40, 0.35) 45%,
+    rgba(10, 22, 40, 0.85) 100%
+  );
+}
+
+.page-hero-header--overlay {
+  position: relative;
+  background: transparent;
+  border-bottom: 0;
+  padding: 0 0 4rem;
+}
+
+.page-hero-header--overlay .page-hero-tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.page-hero-header--overlay .page-hero-title {
+  color: var(--white);
+  font-size: 3.6rem;
+  text-shadow: 0 2px 20px rgba(10, 22, 40, 0.45);
+}
+
+.page-hero-header--overlay .page-hero-subtitle {
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 12px rgba(10, 22, 40, 0.45);
+}
+
+@media (max-width: 1500px) {
+  .page-hero-photo--full { --page-hero-nav-h: 98px; }
+}
+
+@media (max-width: 1420px) {
+  .page-hero-photo--full { --page-hero-nav-h: 92px; }
+}
+
+@media (max-width: 1260px) {
+  .page-hero-photo--full { --page-hero-nav-h: 84px; }
+}
+
+@media (max-width: 1024px) {
+  /* the shared rule above shrinks the plain banner — the full-height
+     one keeps filling the viewport. */
+  .page-hero-photo--full {
+    height: calc(100svh - var(--page-hero-nav-h));
+  }
+  .page-hero-header--overlay .page-hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-photo--full {
+    height: calc(100svh - var(--page-hero-nav-h));
+    min-height: 440px;
+    max-height: none;
+  }
+  .page-hero-header--overlay {
+    padding: 0 0 2.75rem;
+  }
+  .page-hero-header--overlay .page-hero-title {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-hero-photo--full { --page-hero-nav-h: 76px; }
 }

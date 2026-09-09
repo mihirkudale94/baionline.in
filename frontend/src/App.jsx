@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Publications from "./pages/Publications";
 import Tenders from "./pages/Tenders";
 import Media from "./pages/Media";
+import Services from "./pages/Services";
 import Committees from "./pages/Committees";
 import PastPresidents from "./pages/PastPresidents";
 import MembersArea from "./pages/MembersArea";
@@ -58,7 +59,7 @@ const App = () => {
             <Route path="/media" element={<Media />} />
             
             {/* secondary routes */}
-            <Route path="/services" element={<PlaceholderPage title="BAI Services" />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/sponsors-inquiry" element={<SponsorsInquiry />} />
             <Route path="/members-area" element={<MembersArea />} />
             <Route path="/non-members-area" element={<NonMembersArea />} />

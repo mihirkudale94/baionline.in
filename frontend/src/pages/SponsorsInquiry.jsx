@@ -43,7 +43,7 @@ const SponsorsInquiry = () => {
   return (
     <div className="sponsors-page-wrapper">
       <PageHero
-        image="/images/event_sponsorship.webp"
+        image="/images/events/event_sponsorship.webp"
         alt="BAI sponsorship opportunities"
         focal="center 25%"
         tag="Partnerships"
@@ -165,7 +165,7 @@ const SponsorsInquiry = () => {
             {/* Banner Column */}
             <div className="sponsors-info-card glass-card">
               <div className="info-logo-box">
-                <img src="/images/logo-bg.png" alt="BAI Logo" className="info-brand-logo" />
+                <img src="/images/brand/logo-bg.png" alt="BAI Logo" className="info-brand-logo" />
               </div>
               <h3>Why partner with BAI?</h3>
               <p>With an active footprint of **264+ local centres** and a community of over **2 Lakh associated developers and construction contractors**, Builders Association of India is the single most powerful marketing and networking platform in the infrastructure and real estate sector.</p>

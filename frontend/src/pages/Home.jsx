@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getHomeData, youtubeVideos, youtubeChannel } from "../services/api";
 import HeroCarousel from "../components/HeroCarousel";
-import StatsBar from "../components/StatsBar";
 import SponsorsBanner from "../components/SponsorsBanner";
 import ImageLightbox from "../components/ImageLightbox";
 import TiltCard from "../components/TiltCard";
@@ -65,17 +64,14 @@ const Home = () => {
         </div>
         <div className="ticker-track">
           <div className="ticker-content">
-            {data.newsTicker.map((item, idx) => (
-              <a key={idx} href={item.link} target="_blank" rel="noreferrer" className="ticker-item">
-                • {item.text} <span className="ticker-readmore">(Read PDF)</span>
-              </a>
-            ))}
+            <span className="ticker-item">• Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+            <span className="ticker-item">• Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+            <span className="ticker-item">• Ut enim ad minim veniam, quis nostrud exercitation ullamco</span>
+            <span className="ticker-item">• Duis aute irure dolor in reprehenderit in voluptate velit esse</span>
+            <span className="ticker-item">• Excepteur sint occaecat cupidatat non proident, sunt in culpa</span>
           </div>
         </div>
       </div>
-
-      {/* 3. Stats Bar */}
-      <StatsBar stats={data.stats} />
 
 
       {/* 4. Split Layout: Main Content (Left) & Widgets (Right) */}
@@ -210,22 +206,22 @@ const Home = () => {
               <div className="presence-maps-grid">
                 <div className="map-card">
                   <img 
-                    src="/images/map-171.png" 
+                    src="/images/maps/map-171.png" 
                     alt="Permanent Regional Offices Map" 
                     className="india-map-img"
                     loading="lazy"
-                    onClick={() => handleOpenLightbox("/images/map-171.png", "Permanent Regional Offices Map")}
+                    onClick={() => handleOpenLightbox("/images/maps/map-171.png", "Permanent Regional Offices Map")}
                     style={{ cursor: "zoom-in" }}
                   />
                   <span>Permanent Regional Offices</span>
                 </div>
                 <div className="map-card">
                   <img 
-                    src="/images/map-new-bg-full.png" 
+                    src="/images/maps/map-new-bg-full.png" 
                     alt="National Coverage Boundaries Map" 
                     className="india-map-img"
                     loading="lazy"
-                    onClick={() => handleOpenLightbox("/images/map-new-bg-full.png", "National Coverage Boundaries Map")}
+                    onClick={() => handleOpenLightbox("/images/maps/map-new-bg-full.png", "National Coverage Boundaries Map")}
                     style={{ cursor: "zoom-in" }}
                   />
                   <span>National Coverage Boundaries</span>
@@ -278,8 +274,8 @@ const Home = () => {
             <TiltCard className="widget-card minister-widget" maxTilt={6}>
               <div 
                 className="minister-avatar" 
-                style={{ backgroundImage: "url(/images/Shri_Ajay_Gujar.jpg)", cursor: "zoom-in" }}
-                onClick={() => handleOpenLightbox("/images/Shri_Ajay_Gujar.jpg", "Shri Ajay R. Gujar (Chairman BAI Pune)")}
+                style={{ backgroundImage: "url(/images/people/Shri_Ajay_Gujar.jpg)", cursor: "zoom-in" }}
+                onClick={() => handleOpenLightbox("/images/people/Shri_Ajay_Gujar.jpg", "Shri Ajay R. Gujar (Chairman BAI Pune)")}
               ></div>
               <div className="minister-details">
                 <h4>Chairman's Message</h4>
@@ -332,7 +328,7 @@ const Home = () => {
                 </>
               ) : (
                 <a href={youtubeChannel} target="_blank" rel="noreferrer">
-                  <img src="/images/bai-on-youtube.gif" alt="BAI YouTube Channel" className="yt-gif-banner" loading="lazy" />
+                  <img src="/images/brand/bai-on-youtube.gif" alt="BAI YouTube Channel" className="yt-gif-banner" loading="lazy" />
                 </a>
               )}
             </div>

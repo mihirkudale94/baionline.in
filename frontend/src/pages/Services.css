@@ -1,0 +1,218 @@
+/* ===== BAI Services page ===== */
+.services-section {
+  padding: 4rem 0 5rem;
+  background: var(--gray-50);
+}
+
+/* Intro block */
+.services-intro-card {
+  padding: 2.25rem;
+  margin-top: -40px;
+  position: relative;
+  z-index: 50;
+  margin-bottom: 3rem;
+}
+
+.services-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.services-heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 0.75rem 0;
+}
+
+.services-lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy-light);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.services-intro-text {
+  font-size: 0.95rem;
+  color: var(--gray-800);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* Service cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  padding: 1.75rem;
+  transition: transform var(--dur-med, 0.3s) var(--ease-out), box-shadow var(--dur-med, 0.3s) var(--ease-out);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--elev-2);
+}
+
+.service-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--r-sm);
+  background: var(--gold-light);
+  color: var(--gold);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.service-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 0.5rem 0;
+}
+
+.service-card-desc {
+  font-size: 0.9rem;
+  color: var(--gray-800);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Downloadable forms */
+.services-docs-card {
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.services-docs-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 1.25rem 0;
+}
+
+.services-docs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.75rem;
+}
+
+.services-doc-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-sm);
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.services-doc-link:hover {
+  border-color: var(--gold);
+  background: var(--gold-light);
+}
+
+.services-doc-link svg {
+  color: var(--accent-red);
+  flex-shrink: 0;
+}
+
+.services-doc-size {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Contact strip */
+.services-contact-card {
+  margin-top: 3rem;
+  padding: 2.25rem;
+  border-radius: var(--r-lg);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.services-contact-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0 0 0.65rem 0;
+  color: var(--white);
+}
+
+.services-contact-note {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 780px;
+}
+
+.services-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.services-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.services-contact-list svg {
+  color: var(--primary-soft);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.services-contact-list a {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.services-contact-list a:hover {
+  border-bottom-color: var(--primary-soft);
+}
+
+@media (max-width: 768px) {
+  .services-intro-card,
+  .services-contact-card,
+  .services-docs-card {
+    padding: 1.5rem;
+  }
+
+  .services-heading {
+    font-size: 1.6rem;
+  }
+}

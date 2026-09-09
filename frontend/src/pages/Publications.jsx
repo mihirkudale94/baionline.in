@@ -7,8 +7,8 @@ import "./Publications.css";
 
 const Publications = () => {
   const issues = [
-    { month: "June 2026", cover: "/images/ICJ_APRIL_2026.webp", title: "Special Issue on Infrastructure Developments" },
-    { month: "May 2026", cover: "/images/84thAnnualReportBAI.webp", title: "Modern Concrete Foundations & Technologies" },
+    { month: "June 2026", cover: "/images/publications/ICJ_APRIL_2026.webp", title: "Special Issue on Infrastructure Developments" },
+    { month: "May 2026", cover: "/images/publications/84thAnnualReportBAI.webp", title: "Modern Concrete Foundations & Technologies" },
     { month: "April 2026", cover: "/images/events/event_industrial-facility-visit-1.jpg", title: "Real Estate Growth & Regulatory Environment" },
     { month: "March 2026", cover: "/images/events/event_cwprs-site-visit.jpg", title: "Smart City Civil Engineering Advancements" }
   ];
@@ -28,7 +28,7 @@ const Publications = () => {
     <div className="publications-page-wrapper">
       {/* Banner */}
       <PageHero
-        image="/images/84thAnnualReportBAI.webp"
+        image="/images/publications/84thAnnualReportBAI.webp"
         alt="Cover of BAI's 84th Annual Report"
         focal="center 25%"
         tag="BAI Publications"

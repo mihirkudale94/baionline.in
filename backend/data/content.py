@@ -46,33 +46,33 @@ LEADERSHIP = {
     "president": {
         "name": "Ajay R. Gujar",
         "title": "Chairman BAI Pune",
-        "image": "/images/Shri_Ajay_Gujar.jpg",
+        "image": "/images/people/Shri_Ajay_Gujar.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
         "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
     },
     "imm_past_president": {
         "name": "Rajaram Hajare",
         "title": "Vice Chairman BAI Pune",
-        "image": "/images/Shri_Rajaram_Hajare.jpg",
+        "image": "/images/people/Shri_Rajaram_Hajare.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
         "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
     },
     "hon_secretary": {
         "name": "Dr. Mahesh Rathi",
         "title": "Secretary BAI Pune",
-        "image": "/images/Shri_Mahesh_Rathi.jpg",
+        "image": "/images/people/Shri_Mahesh_Rathi.jpg",
         "bio": "Secretary of Builders' Association of India Pune."
     },
     "hon_joint_secretary": {
         "name": "Sanjay Apte",
         "title": "Jt Secretary BAI Pune",
-        "image": "/images/Shri_Sanjay_Apte.jpg",
+        "image": "/images/people/Shri_Sanjay_Apte.jpg",
         "bio": "Jt. Secretary of Builders' Association of India Pune."
     },
     "hon_treasurer": {
         "name": "Sushil N. Agarwal",
         "title": "Treasurer BAI Pune",
-        "image": "/images/Shri_Sushil_Agarwal.jpg",
+        "image": "/images/people/Shri_Sushil_Agarwal.jpg",
         "bio": "Treasurer of Builders' Association of India Pune."
     }
 }
@@ -122,9 +122,7 @@ NAV_LINKS = [
         "label": "Resources",
         "path": "#",
         "children": [
-            {"label": "Publications", "path": "/publications"},
             {"label": "BAI Services", "path": "/services"},
-            {"label": "Tenders", "path": "/tenders"},
             {"label": "BAI in Media", "path": "/media"},
             {"label": "Sponsors Inquiry", "path": "/sponsors-inquiry"}
         ]
@@ -133,7 +131,7 @@ NAV_LINKS = [
 ]
 
 FOOTER_DATA = {
-    "logo": "/images/logo-white-02.png",
+    "logo": "/images/brand/logo-white-02.png",
     "office": {
         "title": "Pune Centre Office:",
         "address": "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
@@ -590,7 +588,7 @@ ANNOUNCEMENTS = [
         "title": 'BAI’s 84th Annual Report (2024–2025)',
         "pdf": 'https://www.baionline.in/storage/announcement/250726WithoutAuditReport84thAnnualReportBAI2024202525Jul2025.pdf',
         "desc": 'Those members who want a copy of Audited Accounts, please write to BAI HQ on our email: baihq.mumbai@gmail.com, raju_john_in@yahoo.co.uk and the same will be sent by email.',
-        "image": '/images/84thAnnualReportBAI.webp'
+        "image": '/images/publications/84thAnnualReportBAI.webp'
     }
 ]
 
@@ -611,37 +609,37 @@ EVENTS = [
         "title": "BAI NATIONAL Managing Committee & General Council Meeting 2025-26",
         "date": "27th & 28th February 2026",
         "venue": "Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad",
-        "image": "/images/event_mcgc_meet.webp"
+        "image": "/images/events/event_mcgc_meet.webp"
     },
     {
         "title": "SPONSORSHIP APPEAL for BAI 4th MC/GC Meeting 2025-26",
         "date": "27th & 28th February 2026",
         "venue": "Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad",
-        "image": "/images/event_sponsorship.webp"
+        "image": "/images/events/event_sponsorship.webp"
     },
     {
         "title": "BAI SPORTS LEAGUE 2026",
         "date": "Saturday 21st February 2026",
         "venue": "United Sports Center, Kakkanad, Kochi",
-        "image": "/images/event_sports_league.webp"
+        "image": "/images/events/event_sports_league.webp"
     },
     {
         "title": "BAI's 32nd All India Builders Convention",
         "date": "7th, 8th & 9th January 2026",
         "venue": "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India",
-        "image": "/images/event_goa_convention.webp"
+        "image": "/images/events/event_goa_convention.webp"
     },
     {
         "title": "2nd Mumbai Redevelopment Summit 2025",
         "date": "17th December 2025",
         "venue": "Courtyard by Marriott, Mumbai, India",
-        "image": "/images/event_redev_summit.webp"
+        "image": "/images/events/event_redev_summit.webp"
     },
     {
         "title": "3rd MC-GC Meeting",
         "date": "20th - 21st November 2025",
         "venue": "CIAL Convention Centre, Kochi",
-        "image": "/images/event_kochi_meeting.jpg"
+        "image": "/images/events/event_kochi_meeting.jpg"
     }
 ]
 
@@ -658,7 +656,7 @@ INDIAN_CONSTRUCTION = {
     "title": "Indian Construction",
     "subtitle": "Monthly Bulletin of Builders Association of India",
     "desc": "‘INDIAN CONSTRUCTION’ is the monthly bulletin of BUILDERS’ ASSOCIATION OF INDIA (BAI) established in 1941. It is circulated to all BAI members, senior officials of Central and State Government departments, World Bank, ADB, and global IFAWPCA chapters.",
-    "cover_image": "/images/ICJ_APRIL_2026.webp",
+    "cover_image": "/images/publications/ICJ_APRIL_2026.webp",
     "pdf_view_link": "https://online.fliphtml5.com/huzbb/IC-April-2026/",
     "links": {
         "advertise": "https://www.baionline.in/indianconstruction",

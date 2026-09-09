@@ -6,7 +6,7 @@
 
 .history-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: 1.25fr 1fr;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -148,16 +148,25 @@
   position: relative;
 }
 
+/* Band that labels the archival group photograph below it. */
+.founding-members-banner {
+  background: var(--surface-dim);
+  border-top: 1px solid var(--surface-border);
+  border-bottom: 1px solid var(--surface-border);
+  padding: 1.25rem;
+  text-align: center;
+}
+
 .founding-members-main-title {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--ink);
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.4rem 0;
   letter-spacing: -0.01em;
 }
 
-.heritage-archival-banner::after {
+.founding-members-banner::after {
   content: '';
   display: block;
   width: 50px;
@@ -173,7 +182,7 @@
   font-weight: 800;
   color: var(--ink);
   letter-spacing: 0.08em;
-  margin: 0 0 0.3rem 0;
+  margin: 0;
   text-transform: uppercase;
 }
 
@@ -485,12 +494,17 @@
 }
 
 .whatwedo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
 .whatwedo-card {
+  flex: 1 1 300px;
+  /* Three to a row at most, so the final short row centres instead of
+     leaving an empty cell on the right. */
+  max-width: calc((100% - 4rem) / 3);
   background: var(--white);
   border: 1px solid var(--gray-200);
   padding: 2rem;
@@ -545,14 +559,19 @@
 }
 
 .whyjoin-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem 2rem;
   max-width: 850px;
   margin: 0 auto;
 }
 
 .whyjoin-item {
+  flex: 1 1 320px;
+  /* Two to a row at most, so an odd final point centres rather than
+     sitting alone against an empty column. */
+  max-width: calc((100% - 2rem) / 2);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -571,10 +590,10 @@
 }
 
 @media (max-width: 768px) {
-  .whatwedo-grid {
-    grid-template-columns: 1fr;
+  .whatwedo-card, .whyjoin-item {
+    max-width: 100%;
   }
-  .mission-points-list, .whyjoin-list {
+  .mission-points-list {
     grid-template-columns: 1fr;
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wbscAwardsData, wbscArchiveData, nirmanRatnaData } from "../services/api";
-import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaFileWord, FaDownload, FaEnvelopeOpenText, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie, FaCalendarAlt, FaRegCalendarCheck, FaListUl, FaCrown, FaBookmark, FaLock } from "react-icons/fa";
+import { FaTrophy, FaCheckCircle, FaClipboardCheck, FaFilePdf, FaFileWord, FaDownload, FaEnvelopeOpenText, FaLayerGroup, FaAward, FaHistory, FaChevronDown, FaUserTie, FaCalendarAlt, FaRegCalendarCheck, FaListUl, FaCrown, FaBookmark, FaLock, FaRegImage } from "react-icons/fa";
 import StepFlow from "../components/StepFlow";
 import MembershipPaymentModal from "../components/MembershipPaymentModal";
 import useDocumentTitle from "../hooks/useDocumentTitle";
@@ -23,9 +23,9 @@ const WBSCAwards = () => {
 
   return (
     <div className="wbsc-page-wrapper">
-      {/* Purpose-built WBSC 2026 banner: clean brand surface, no photographic
-          scrim, with the competition roundel and the trophy carrying the
-          identity rather than stock imagery. */}
+      {/* WBSC 2026 banner band. The artwork is still being prepared, so the
+          band holds its shape with a "coming soon" placeholder rather than
+          collapsing the top of the page. */}
       <section className="wbsc-hero-section">
         <div className="wbsc-hero-banner-container">
           <motion.div
@@ -34,11 +34,10 @@ const WBSCAwards = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="wbsc-banner-card"
           >
-            <img
-              src={data.banner || "/images/wbsc/wbsc-2026-banner.jpg"}
-              alt="Well Built Structure Competition 2026 Official Banner"
-              className="wbsc-hero-banner-img"
-            />
+            <div className="wbsc-hero-banner-placeholder">
+              <FaRegImage aria-hidden="true" />
+              <span>Banner image coming soon</span>
+            </div>
           </motion.div>
         </div>
       </section>

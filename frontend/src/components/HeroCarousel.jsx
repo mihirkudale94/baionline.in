@@ -33,12 +33,21 @@ const HeroCarousel = ({ slides }) => {
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={slide.id}>
-            <img
-              src={slide.image}
-              alt={slide.alt || ""}
-              className="hero-slide-img"
-              loading={idx === 0 ? "eager" : "lazy"}
-            />
+            {/* Blurred copy of the same photo fills the frame so the
+                photo itself can be shown whole, never cropped. */}
+            <div className="hero-slide">
+              <div
+                className="hero-slide-backdrop"
+                style={{ backgroundImage: `url(${slide.image})` }}
+                aria-hidden="true"
+              ></div>
+              <img
+                src={slide.image}
+                alt={slide.alt || ""}
+                className="hero-slide-img"
+                loading={idx === 0 ? "eager" : "lazy"}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -41,7 +41,7 @@ const PastPresidents = () => {
   return (
     <div className="presidents-page-wrapper">
       <PageHero
-        image="/images/event_kochi_meeting.jpg"
+        image="/images/events/event_kochi_meeting.jpg"
         alt="BAI leadership gathered at the MC-GC meeting in Kochi"
         focal="center 25%"
         tag="Pune Centre Archives"

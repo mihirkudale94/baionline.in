@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="container navbar-inner">
         <Link to="/" className="navbar-logo-container">
           <img
-            src="/images/logo-bg.png"
+            src="/images/brand/logo-bg.png"
             alt="BAI Logo"
             className="navbar-logo"
           />

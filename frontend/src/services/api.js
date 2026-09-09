@@ -61,33 +61,33 @@ export const leadership = {
   president: {
     name: "Ajay R. Gujar",
     title: "Chairman BAI Pune",
-    image: "/images/Shri_Ajay_Gujar.jpg",
+    image: "/images/people/Shri_Ajay_Gujar.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
     bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
   },
   imm_past_president: {
     name: "Rajaram Hajare",
     title: "Vice Chairman BAI Pune",
-    image: "/images/Shri_Rajaram_Hajare.jpg",
+    image: "/images/people/Shri_Rajaram_Hajare.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
     bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
   },
   hon_secretary: {
     name: "Dr. Mahesh Rathi",
     title: "Secretary BAI Pune",
-    image: "/images/Shri_Mahesh_Rathi.jpg",
+    image: "/images/people/Shri_Mahesh_Rathi.jpg",
     bio: "Secretary of Builders' Association of India Pune."
   },
   hon_joint_secretary: {
     name: "Sanjay Apte",
     title: "Jt Secretary BAI Pune",
-    image: "/images/Shri_Sanjay_Apte.jpg",
+    image: "/images/people/Shri_Sanjay_Apte.jpg",
     bio: "Jt. Secretary of Builders' Association of India Pune."
   },
   hon_treasurer: {
     name: "Sushil N. Agarwal",
     title: "Treasurer BAI Pune",
-    image: "/images/Shri_Sushil_Agarwal.jpg",
+    image: "/images/people/Shri_Sushil_Agarwal.jpg",
     bio: "Treasurer of Builders' Association of India Pune."
   }
 };
@@ -191,9 +191,7 @@ export const navLinks = [
     label: "Resources",
     path: "#",
     children: [
-      { label: "Publications", path: "/publications" },
       { label: "BAI Services", path: "/services" },
-      { label: "Tenders", path: "/tenders" },
       { label: "BAI in Media", path: "/media" },
       { label: "Sponsors Inquiry", path: "/sponsors-inquiry" }
     ]
@@ -202,7 +200,7 @@ export const navLinks = [
 ];
 
 export const footerData = {
-  logo: "/images/logo-white-02.png",
+  logo: "/images/brand/logo-white-02.png",
   office: {
     title: "Pune Centre Office:",
     address: "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
@@ -321,7 +319,7 @@ export const announcements = [
     title: 'BAI’s 84th Annual Report (2024–2025)',
     pdf: 'https://www.baionline.in/storage/announcement/250726WithoutAuditReport84thAnnualReportBAI2024202525Jul2025.pdf',
     desc: 'Those members who want a copy of Audited Accounts, please write to BAI HQ on our email: baihq.mumbai@gmail.com, raju_john_in@yahoo.co.uk and the same will be sent by email.',
-    image: '/images/84thAnnualReportBAI.webp'
+    image: '/images/publications/84thAnnualReportBAI.webp'
   }
 ];
 
@@ -342,37 +340,37 @@ export const events = [
     title: "BAI NATIONAL Managing Committee & General Council Meeting 2025-26",
     date: "27th & 28th February 2026",
     venue: "Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad",
-    image: "/images/event_mcgc_meet.webp"
+    image: "/images/events/event_mcgc_meet.webp"
   },
   {
     title: "SPONSORSHIP APPEAL for BAI 4th MC/GC Meeting 2025-26",
     date: "27th & 28th February 2026",
     venue: "Padmaja Palam Groves Resorts, Near Hyderabad Airport, Hyderabad",
-    image: "/images/event_sponsorship.webp"
+    image: "/images/events/event_sponsorship.webp"
   },
   {
     title: "BAI SPORTS LEAGUE 2026",
     date: "Saturday 21st February 2026",
     venue: "United Sports Center, Kakkanad, Kochi",
-    image: "/images/event_sports_league.webp"
+    image: "/images/events/event_sports_league.webp"
   },
   {
     title: "BAI's 32nd All India Builders Convention",
     date: "7th, 8th & 9th January 2026",
     venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India",
-    image: "/images/event_goa_convention.webp"
+    image: "/images/events/event_goa_convention.webp"
   },
   {
     title: "2nd Mumbai Redevelopment Summit 2025",
     date: "17th December 2025",
     venue: "Courtyard by Marriott, Mumbai, India",
-    image: "/images/event_redev_summit.webp"
+    image: "/images/events/event_redev_summit.webp"
   },
   {
     title: "3rd MC-GC Meeting",
     date: "20th - 21st November 2025",
     venue: "CIAL Convention Centre, Kochi",
-    image: "/images/event_kochi_meeting.jpg"
+    image: "/images/events/event_kochi_meeting.jpg"
   }
 ];
 
@@ -389,7 +387,7 @@ export const indianConstruction = {
   title: "Indian Construction",
   subtitle: "Monthly Bulletin of Builders Association of India",
   desc: "‘INDIAN CONSTRUCTION’ is the monthly bulletin of BUILDERS’ ASSOCIATION OF INDIA (BAI) established in 1941. It is circulated to all BAI members, senior officials of Central and State Government departments, World Bank, ADB, and global IFAWPCA chapters.",
-  cover_image: "/images/ICJ_APRIL_2026.webp",
+  cover_image: "/images/publications/ICJ_APRIL_2026.webp",
   pdf_view_link: "https://online.fliphtml5.com/huzbb/IC-April-2026/",
   links: {
     advertise: "https://www.baionline.in/indianconstruction",
@@ -1285,7 +1283,6 @@ export const wbscAwardsData = {
   tagline: "Quality • Speed • Economy • Safety & Welfare",
   logo: "/images/wbsc/wbsc-logo.png",
   trophy: "/images/wbsc/wbsc-trophy.png",
-  banner: "/images/wbsc/wbsc-2026-banner.jpg",
   openEntriesNote: "Advance registration is also open for WBSC 2027–28 and WBSC 2028–29",
   about: [
     "A few decades ago it was felt that the Association should give due recognition to good quality works being done by fellow contractors, constructors and builders. This would help not only to enhance the image of the construction industry but also be a source of inspiration to all fellow contractors for improvement and betterment of their work. With this primary intention BAI Pune Centre instituted these awards and declared this competition in the year 1997.",
@@ -2143,8 +2140,8 @@ export const eventsPageData = {
   title: "Events",
   subtitle: "Knowledge • Networking • Growth",
   upcoming: [
-    { title: "BAI Pune Centre Annual General Meeting 2026 — sample placeholder event", date: "15th September 2026", venue: "B.G. Shirke Activity Centre, Pune", image: "/images/event_mcgc_meet.webp" },
-    { title: "BAI Pune Centre Technical Seminar on Sustainable Construction — sample placeholder event", date: "10th October 2026", venue: "Pune Centre Office, Sangam Bridge, Pune", image: "/images/event_sponsorship.webp" }
+    { title: "BAI Pune Centre Annual General Meeting 2026 — sample placeholder event", date: "15th September 2026", venue: "B.G. Shirke Activity Centre, Pune", image: "/images/events/event_committee-meeting-office.jpg" },
+    { title: "BAI Pune Centre Technical Seminar on Sustainable Construction — sample placeholder event", date: "10th October 2026", venue: "Pune Centre Office, Sangam Bridge, Pune", image: "/images/events/event_sponsorship.webp" }
   ],
   past: [
     { title: "Builders' Day Celebration 2025", date: "December 2025", venue: "Pune", image: "/images/events/event_builders-day-2025.jpg", links: ["Gallery"] },
@@ -2154,9 +2151,9 @@ export const eventsPageData = {
     { title: "Site Visit — Central Water and Power Research Station (CWPRS)", date: "May 2026", venue: "CWPRS, Khadakwasla, Pune", image: "/images/events/event_cwprs-site-visit.jpg", links: ["Gallery"] },
     { title: "BAI Pune Centre at Central Bank of India's Mega Retail Credit Outreach Campaign", date: "July 2026", venue: "Regional Office, Pune", image: "/images/events/event_central-bank-outreach-campaign.jpg", links: ["Gallery"] },
     { title: "Industrial Facility Visit", date: "July 2026", venue: "Pune", image: "/images/events/event_industrial-facility-visit-1.jpg", links: ["Gallery"] },
-    { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
-    { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
-    { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/event_sports_league.webp", links: ["Gallery — placeholder"] }
+    { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/events/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
+    { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/events/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
+    { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/events/event_sports_league.webp", links: ["Gallery — placeholder"] }
   ],
   siteVisits: [
     {
@@ -2212,13 +2209,7 @@ export const eventsPageData = {
     { src: "/images/events/event_cwprs-site-visit.jpg", caption: "Site Visit — Central Water and Power Research Station" },
     { src: "/images/events/event_central-bank-outreach-campaign.jpg", caption: "Central Bank of India's Mega Retail Credit Outreach Campaign" },
     { src: "/images/events/event_industrial-facility-visit-1.jpg", caption: "Industrial Facility Visit" },
-    { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members Touring the Facility" },
-    { src: "/images/event_goa_convention.webp", caption: "32nd All India Builders Convention, Goa" },
-    { src: "/images/event_kochi_meeting.jpg", caption: "3rd MC-GC Meeting, Kochi" },
-    { src: "/images/event_mcgc_meet.webp", caption: "Managing Committee & General Council Meeting" },
-    { src: "/images/event_sponsorship.webp", caption: "Sponsorship Appeal, MC/GC Meeting" },
-    { src: "/images/event_sports_league.webp", caption: "BAI Sports League 2026" },
-    { src: "/images/event_redev_summit.webp", caption: "Redevelopment Summit" }
+    { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members Touring the Facility" }
   ],
   calendar: [
     { month: "September 2026", items: ["Pune Centre Annual General Meeting — sample placeholder"] },
@@ -2516,3 +2507,88 @@ export const socialActivitiesContent = {
   }
 };
 
+
+/*
+  BAI Services page.
+
+  RERA Services is the first service desk published here. The write-ups below
+  describe the desk in general terms — the final list of services, charges and
+  downloadable forms are to be supplied by BAI Pune Centre and simply replace
+  the entries in `services` / `documents`.
+*/
+export const baiServicesData = {
+  tag: "Member Services",
+  title: "BAI Services",
+  subtitle: "Professional support desks run by BAI Pune Centre for its member contractors and builders",
+  hero: {
+    image: "/images/events/event_committee-meeting-office.jpg",
+    alt: "BAI Pune Centre members in session at the Centre office",
+    focal: "center 30%"
+  },
+  rera: {
+    id: "rera",
+    title: "RERA Services",
+    lead: "Registration, compliance and advisory support under the Real Estate (Regulation and Development) Act, 2016 and the MahaRERA rules.",
+    intro:
+      "BAI Pune Centre assists member builders and promoters through every stage of their obligations under RERA — from registering a new project with MahaRERA to keeping quarterly disclosures current through the project lifecycle. The desk is run with practising legal and technical consultants, and members are given priority scheduling and concessional professional charges.",
+    services: [
+      {
+        icon: "register",
+        title: "Project Registration",
+        description:
+          "Preparation and filing of a new real estate project registration with MahaRERA, including scrutiny of title, sanctioned plans, encumbrance details and the declaration in Form B."
+      },
+      {
+        icon: "agent",
+        title: "Agent Registration & Renewal",
+        description:
+          "Registration of real estate agents, renewal of expiring registrations and updating of agent particulars on the MahaRERA portal."
+      },
+      {
+        icon: "compliance",
+        title: "Quarterly Progress Compliance",
+        description:
+          "Periodic updating of project progress, building and unit status, approvals received and photographs, so that the registered project stays compliant through its declared completion period."
+      },
+      {
+        icon: "certificate",
+        title: "Form 1, 2 & 3 Certification",
+        description:
+          "Coordination of the architect's, engineer's and chartered accountant's certificates required for withdrawal from the designated project account."
+      },
+      {
+        icon: "extension",
+        title: "Extension & Correction Applications",
+        description:
+          "Applications for extension of a project's registration validity and for correction or amendment of details already recorded with the Authority."
+      },
+      {
+        icon: "legal",
+        title: "Complaints & Conciliation",
+        description:
+          "Guidance on complaints filed before the Authority and representation support at the conciliation forum, including drafting of replies and supporting documentation."
+      },
+      {
+        icon: "advisory",
+        title: "Advisory & Documentation",
+        description:
+          "Vetting of agreements for sale, allotment letters and advertising material for RERA conformity, along with opinions on specific compliance questions raised by members."
+      },
+      {
+        icon: "training",
+        title: "Awareness Sessions",
+        description:
+          "Workshops and briefing sessions at the Centre on amendments, circulars and orders issued by MahaRERA that affect members' ongoing projects."
+      }
+    ],
+    // Downloadable forms / circulars — populated once BAI supplies the files.
+    documents: [],
+    contact: {
+      note: "For charges, appointment slots or any specific query on the RERA desk, write to the Centre office with your membership number and project details.",
+      email: "baipune1@gmail.com",
+      tel: "(020) 2605 9255",
+      address:
+        "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001"
+    }
+  }
+};

@@ -17,7 +17,7 @@ const Media = () => {
       title: "Builders Association calls for unified regulatory compliance system",
       desc: "BAI members discuss structural development permissions, environmental certifications and tax index compliance across states during the 2026 conference.",
       date: "June 20, 2026",
-      image: "/images/event_mcgc_meet.webp",
+      image: "/images/events/event_mcgc_meet.webp",
       tag: "Conference"
     },
     {
@@ -33,7 +33,7 @@ const Media = () => {
     <div className="media-page-wrapper">
       {/* Banner */}
       <PageHero
-        image="/images/event_redev_summit.webp"
+        image="/images/events/event_redev_summit.webp"
         alt="BAI at the Mumbai Redevelopment Summit"
         focal="center 25%"
         tag="News & Press"

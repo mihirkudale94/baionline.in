@@ -11,8 +11,10 @@ const About = () => {
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
   
-  // Accordion active index
-  const [activeAccordion, setActiveAccordion] = useState(null);
+  // Accordion active index. The vision panel opens on load so the column
+  // reads as full beside the tall membership form rather than leaving the
+  // bottom half of the row blank.
+  const [activeAccordion, setActiveAccordion] = useState(0);
   
   // Membership form state
   const [formData, setFormData] = useState({ name: "", city: "", email: "", mobile: "" });
@@ -22,6 +24,7 @@ const About = () => {
 
   // Heritage photo load state — falls back to a placeholder if the archival photo is missing
   const [jacksonHutImgError, setJacksonHutImgError] = useState(false);
+  const [jacksonHutTodayImgError, setJacksonHutTodayImgError] = useState(false);
   const [brigJacksonImgError, setBrigJacksonImgError] = useState(false);
 
   useEffect(() => {
@@ -84,6 +87,7 @@ const About = () => {
         image="/images/events/event_committee-meeting-office.jpg"
         alt="A committee meeting at the BAI Pune Centre office"
         focal="center 25%"
+        fullHeight
         tag={`Since ${content.founded}`}
         title={content.title}
         subtitle={content.subtitle}
@@ -160,16 +164,33 @@ const About = () => {
               className="heritage-photo-tile"
             >
               <div className="heritage-archival-banner">
-                <h2 className="founding-members-main-title">Founding members BAI</h2>
-                <h3 className="archival-banner-title">JACKSON HUT</h3>
+                <h2 className="archival-banner-title">JACKSON HUT</h2>
+              </div>
+
+              {/* Jackson Hut as it stands today, under the name it carries */}
+              {!jacksonHutTodayImgError ? (
+                <img
+                  src="/images/heritage/jackson-hut-today.jpg"
+                  alt="Jackson Hut today — the BAI Pune Centre office within Southern Command Headquarters"
+                  onError={() => setJacksonHutTodayImgError(true)}
+                />
+              ) : (
+                <div className="heritage-photo-placeholder">
+                  <FaImage />
+                  <span>Photograph coming soon</span>
+                </div>
+              )}
+
+              <div className="founding-members-banner">
+                <h3 className="founding-members-main-title">Founding members BAI</h3>
                 <h4 className="archival-banner-subtitle">BUILDER'S ASSOCIATION OF INDIA</h4>
                 <div className="archival-banner-location">POONA - 1942</div>
               </div>
 
               {!jacksonHutImgError ? (
                 <img
-                  src="/images/heritage/jackson-hut-archival.jpg"
-                  alt="Founding members BAI — JACKSON HUT BUILDER'S ASSOCIATION OF INDIA POONA - 1942"
+                  src="/images/heritage/founding-members-bai.jpg"
+                  alt="Founding members of BAI outside Jackson Hut, Poona, 1942"
                   onError={() => setJacksonHutImgError(true)}
                 />
               ) : (

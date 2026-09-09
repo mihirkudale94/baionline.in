@@ -93,6 +93,23 @@ const Committees = () => {
         </section>
       )}
 
+      {/* Executive Committee 2026–27 */}
+      <section className="exec-committee-section" id="executive">
+        <div className="container">
+          <h2 className="committees-section-title">Executive Committee 2026–27</h2>
+          <div className="section-title-line"></div>
+
+          <ol className="exec-members-roster">
+            {execMembers.map((m, idx) => (
+              <li key={idx} className="roster-item">
+                <span className="roster-index">{idx + 1}.</span>
+                <span className="roster-name">{m}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* Committees and Members */}
       <section className="committees-list-section" id="standing">
         <div className="container">
@@ -118,23 +135,6 @@ const Committees = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Executive Committee 2026–27 */}
-      <section className="exec-committee-section" id="executive">
-        <div className="container">
-          <h2 className="committees-section-title">Executive Committee 2026–27</h2>
-          <div className="section-title-line"></div>
-
-          <ol className="exec-members-roster">
-            {execMembers.map((m, idx) => (
-              <li key={idx} className="roster-item">
-                <span className="roster-index">{idx + 1}.</span>
-                <span className="roster-name">{m}</span>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
