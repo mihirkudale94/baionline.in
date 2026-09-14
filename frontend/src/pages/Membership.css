@@ -34,7 +34,6 @@
   padding: 2rem 2.25rem;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
-  border-left: 4px solid var(--primary);
   border-radius: 16px;
 }
 .membership-letterhead-identity h2 { font-family: var(--font-heading); font-size: 1.25rem; color: var(--navy); font-weight: 800; margin-bottom: 0.35rem; }
