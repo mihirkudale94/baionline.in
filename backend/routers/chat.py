@@ -198,7 +198,14 @@ def get_local_context(query: str) -> str:
     if "publication" in q or "journal" in q or "magazine" in q or "icj" in q or "construction book" in q:
         context_parts.append(
             "BAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, "
-            "and legal circular updates. Users can subscribe to print or digital versions on the Publications subpage."
+            "and legal circular updates. Copies and subscriptions are available through the BAI Pune Centre office."
+        )
+
+    # 5a. Check RERA services
+    if "rera" in q:
+        context_parts.append(
+            "BAI Pune Centre runs a RERA Services desk for members (MahaRERA project and agent registration, quarterly compliance, "
+            "Form 1/2/3 certification, extensions, complaints guidance), listed on the BAI Services page under Resources."
         )
 
     # 6. Check machinery / renting / wheeling / dealing
@@ -248,7 +255,7 @@ def generate_local_response(query: str, context: str) -> str:
     elif "centre" in q or "office" in q or "location" in q or "where is" in q:
         return (
             "📍 Regional Offices & Centres Directory\n\n"
-            "BAI operates through more than 264+ city centres across India. These are divided into:\n"
+            "BAI operates through 232 city centres across India. These are divided into:\n"
             "*   Northern Region: Delhi, Ghaziabad, Jaipur, Haryana.\n"
             "*   Western Region: Mumbai, Pune, Ahmedabad, Baroda.\n"
             "*   Southern Region I & II: Bangalore, Chennai, Hyderabad, Calicut.\n"
@@ -261,11 +268,17 @@ def generate_local_response(query: str, context: str) -> str:
             "Through our Wheeling & Dealing portal, BAI members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators. "
             "Simply navigate to the Wheeling & Dealing tab in the header menu to browse the active rental catalog or post your own equipment listing."
         )
+    elif "rera" in q:
+        return (
+            "🏢 RERA Services\n\n"
+            "BAI Pune Centre runs a RERA desk for members: MahaRERA project registration, agent registration and renewal, quarterly progress compliance, "
+            "Form 1/2/3 certification, extension and correction applications, and complaints guidance. See the BAI Services page under Resources."
+        )
     elif "publication" in q or "journal" in q or "icj" in q or "magazine" in q:
         return (
             "📖 Indian Construction Journal (ICJ)\n\n"
             "BAI publishes the official monthly journal 'Indian Construction', which covers builders' cost indices, current cement/steel pricing trends, "
-            "government contract updates, and technical civil engineering papers. You can download recent month issues (PDF) or fill out the print subscription card on our Publications page."
+            "government contract updates, and technical civil engineering papers. For copies or a subscription, contact the BAI Pune Centre office."
         )
     
     return (
@@ -275,7 +288,7 @@ def generate_local_response(query: str, context: str) -> str:
         "*   Leadership: Ask who is the current Chairman (Shri Ajay Gujar).\n"
         "*   Centres: Inquire about local centers and regional office addresses.\n"
         "*   Machinery exchange: Inquire about renting loaders and cranes on our Wheeling & Dealing board.\n"
-        "*   Publications: Get monthly Indian Construction cost indices and subscription guidelines.\n\n"
+        "*   RERA Services: MahaRERA registration and compliance support for members.\n\n"
         "How can I help you build today?"
     )
 
@@ -341,7 +354,7 @@ def handle_chat_query(payload: ChatMessage):
                 reply = clean_chat_reply(res_data['choices'][0]['message']['content'])
                 return {"reply": reply, "source": f"OpenRouter LLM + {source_label}"}
                 
-        except Exception as e:
+        except Exception:
             # Fallback to local matcher on connection/API timeouts
             local_reply = clean_chat_reply(generate_local_response(user_query, context))
             return {"reply": f"{local_reply}\n\n*(Note: OpenRouter API timeout, showing localized RAG answer)*", "source": f"Local RAG (Failover from {source_label})"}

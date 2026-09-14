@@ -150,28 +150,10 @@
   margin-bottom: 1rem;
 }
 
-.team-member-btn {
-  margin-top: auto;
-  border: none;
-  background: transparent;
-  color: var(--gold);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.8rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  width: fit-content;
-  padding: 0;
-}
-
-.team-member-btn:hover {
-  color: var(--navy);
-}
-
-.team-member-btn:hover .btn-arrow {
-  transform: translateX(3px);
+/* The Executive Committee roster follows the office bearers on the same white
+   ground, so it doesn't need its own top padding. */
+.team-page-wrapper .exec-committee-section {
+  padding-top: 0;
 }
 
 /* Responsive configurations */

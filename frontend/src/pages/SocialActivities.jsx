@@ -148,7 +148,7 @@ const SocialActivities = () => {
       {/* 2. Overview & Impact Stats */}
       <section className="social-overview-section">
         <div className="container">
-          <div className="overview-grid">
+          <div className={`overview-grid${data.stats?.length ? "" : " overview-grid--solo"}`}>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -161,22 +161,24 @@ const SocialActivities = () => {
               <p className="overview-desc">{data.overview}</p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="overview-stats-col"
-            >
-              <div className="stats-glass-grid">
-                {data.stats.map((stat, idx) => (
-                  <div key={idx} className="stat-item-card">
-                    <span className="stat-value">{stat.value}</span>
-                    <span className="stat-label">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            {data.stats?.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="overview-stats-col"
+              >
+                <div className="stats-glass-grid">
+                  {data.stats.map((stat, idx) => (
+                    <div key={idx} className="stat-item-card">
+                      <span className="stat-value">{stat.value}</span>
+                      <span className="stat-label">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
@@ -237,7 +239,11 @@ const SocialActivities = () => {
                 className="outreach-card"
               >
                 <div className="outreach-card-image">
-                  <img src={prog.image} alt={prog.title} />
+                  <img
+                    src={prog.image}
+                    alt={prog.title}
+                    style={prog.focal ? { objectPosition: prog.focal } : undefined}
+                  />
                   <div className="outreach-card-overlay">
                     <span className="outreach-meta-tag">{prog.duration}</span>
                   </div>

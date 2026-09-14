@@ -36,6 +36,10 @@ def key_secret():
     return os.getenv("RAZORPAY_KEY_SECRET", "").strip()
 
 
+def webhook_secret():
+    return os.getenv("RAZORPAY_WEBHOOK_SECRET", "").strip()
+
+
 def payments_enabled():
     return bool(key_id() and key_secret())
 
@@ -65,22 +69,6 @@ def create_order(amount_paise, receipt, notes):
     kid = key_id()
     sec = key_secret()
 
-    # Development/testing fallback if using local test placeholders
-    if kid in ("rzp_test_baionline", "rzp_test_demo"):
-        import time
-        order_id = f"order_test_{int(time.time()*1000)}"
-        return {
-            "id": order_id,
-            "entity": "order",
-            "amount": amount_paise,
-            "amount_paid": 0,
-            "amount_due": amount_paise,
-            "currency": "INR",
-            "receipt": receipt,
-            "status": "created",
-            "notes": notes,
-        }
-
     body = json.dumps(
         {
             "amount": amount_paise,
@@ -106,21 +94,35 @@ def create_order(amount_paise, receipt, notes):
         # Surface a generic message; the upstream body can carry key details.
         raise HTTPException(
             status_code=502, detail=f"Razorpay rejected the order request ({exc.code})."
-        )
+        ) from None
     except urllib.error.URLError:
-        raise HTTPException(status_code=502, detail="Could not reach Razorpay. Please try again.")
+        raise HTTPException(
+            status_code=502, detail="Could not reach Razorpay. Please try again."
+        ) from None
 
 
 def signature_is_valid(order_id, payment_id, signature):
-    """Constant-time check of Razorpay's checkout signature."""
-    kid = key_id()
-    if kid in ("rzp_test_baionline", "rzp_test_demo") or signature == "test_signature":
-        return True
+    """Constant-time check of Razorpay's checkout signature.
 
-    expected = hmac.new(
-        key_secret().encode("utf-8"),
-        f"{order_id}|{payment_id}".encode("utf-8"),
-        hashlib.sha256,
-    ).hexdigest()
-    return hmac.compare_digest(expected, signature)
+    There is deliberately no test or demo shortcut here. Both /verify routes
+    trust this function alone, so any bypass lets anyone mark an order paid.
+    For local testing use a real rzp_test_* key pair.
+    """
+    return _hmac_matches(key_secret(), f"{order_id}|{payment_id}".encode("utf-8"), signature)
+
+
+def webhook_signature_is_valid(raw_body, signature):
+    """Check the X-Razorpay-Signature header of a webhook delivery. Webhooks are
+    signed with their own secret, set per webhook in the Razorpay dashboard."""
+    secret = webhook_secret()
+    if not secret:
+        return False
+    return _hmac_matches(secret, raw_body, signature)
+
+
+def _hmac_matches(secret, message, signature):
+    expected = hmac.new(secret.encode("utf-8"), message, hashlib.sha256).hexdigest()
+    # Compare as bytes: compare_digest raises TypeError on non-ASCII str input,
+    # which would turn a garbage signature into a 500 instead of a rejection.
+    return hmac.compare_digest(expected.encode("ascii"), (signature or "").encode("utf-8"))
 

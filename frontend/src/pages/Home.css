@@ -358,23 +358,16 @@
 .ticker-item {
   display: inline-flex;
   align-items: center;
-  color: #fff;
+  color: var(--accent-amber);
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.2px;
-  padding: 0.3rem 0.95rem;
-  border-radius: var(--r-pill);
-  background: rgba(249, 171, 0, 0.18);
-  border: 1px solid rgba(249, 171, 0, 0.55);
-  box-shadow: 0 0 14px rgba(249, 171, 0, 0.2);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: color 0.2s;
 }
 
 .ticker-item:hover {
-  background: var(--accent-amber);
-  border-color: var(--accent-amber);
-  color: var(--ink);
+  color: #fff;
 }
 
 .ticker-readmore {

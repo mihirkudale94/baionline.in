@@ -87,7 +87,6 @@ const About = () => {
         image="/images/events/event_committee-meeting-office.jpg"
         alt="A committee meeting at the BAI Pune Centre office"
         focal="center 25%"
-        fullHeight
         tag={`Since ${content.founded}`}
         title={content.title}
         subtitle={content.subtitle}

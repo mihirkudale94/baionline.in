@@ -11,8 +11,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
-import Publications from "./pages/Publications";
-import Tenders from "./pages/Tenders";
 import Media from "./pages/Media";
 import Services from "./pages/Services";
 import Committees from "./pages/Committees";
@@ -54,8 +52,6 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/publications" element={<Publications />} />
-            <Route path="/tenders" element={<Tenders />} />
             <Route path="/media" element={<Media />} />
             
             {/* secondary routes */}

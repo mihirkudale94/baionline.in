@@ -44,13 +44,16 @@ const getFallbackReply = (query) => {
   if (q.includes("machinery") || q.includes("rent") || q.includes("jcb") || q.includes("equipment") || q.includes("wheeling")) {
     return "🚜 Machinery Exchange (Wheeling & Dealing)\n\nThrough our Wheeling & Dealing portal, BAI Pune Centre members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators.";
   }
+  if (q.includes("rera") || q.includes("maharera")) {
+    return "🏢 RERA Services\n\nBAI Pune Centre runs a RERA desk for members: MahaRERA project registration, agent registration, quarterly compliance, Form 1/2/3 certification, extensions and complaint guidance. See the BAI Services page under Resources for details.";
+  }
   if (q.includes("publication") || q.includes("journal") || q.includes("icj") || q.includes("magazine")) {
-    return "📖 Indian Construction Journal (ICJ)\n\nBAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, and legal circular updates. You can download PDF issues on our Publications page.";
+    return "📖 Indian Construction Journal (ICJ)\n\nBAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, and legal circular updates. For copies or a subscription, contact the Centre office.";
   }
   if (q.includes("contact") || q.includes("address") || q.includes("office") || q.includes("location")) {
     return "📍 BAI Pune Centre Office\n\n**Address**: BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001\n\n**Phone**: (020) 2605 9255 / (020) 2605 7441\n\n**Email**: baipune1@gmail.com";
   }
-  return "👋 Welcome to the BAI Pune Centre Assistant!\n\nI can assist you with:\n- **History**: BAI Pune Centre's 1941 founding by Brig. C.V.S. Jackson\n- **Leadership**: Chairman Shri Ajay Gujar & the Governing Council\n- **Machinery exchange**: Rent machinery on Wheeling & Dealing\n- **Publications**: Monthly Indian Construction cost indices\n\nHow can I help you build today?";
+  return "👋 Welcome to the BAI Pune Centre Assistant!\n\nI can assist you with:\n- **History**: BAI Pune Centre's 1941 founding by Brig. C.V.S. Jackson\n- **Leadership**: Chairman Shri Ajay Gujar & the Governing Council\n- **Machinery exchange**: Rent machinery on Wheeling & Dealing\n- **RERA Services**: MahaRERA registration & compliance support\n\nHow can I help you build today?";
 };
 
 // Parses one SSE "data: {...}" chunk buffer, returning parsed events and any leftover partial buffer.

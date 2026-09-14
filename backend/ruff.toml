@@ -1,0 +1,11 @@
+# Kept out of pyproject.toml so Vercel's Python build keeps using requirements.txt.
+target-version = "py312"
+extend-exclude = [".venv"]
+
+[lint]
+# Ruff defaults (pyflakes + pycodestyle errors) plus likely-bug checks.
+extend-select = ["B"]
+
+[lint.flake8-bugbear]
+# FastAPI's parameter markers are meant to be called in argument defaults.
+extend-immutable-calls = ["fastapi.File", "fastapi.Form", "fastapi.Depends", "fastapi.Query", "fastapi.Body"]

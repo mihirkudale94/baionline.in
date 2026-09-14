@@ -144,7 +144,7 @@ def social_gallery_photo(filename: str):
         with open(path, "rb") as handle:
             blob = handle.read()
     except OSError:
-        raise HTTPException(status_code=404, detail="No such photo.")
+        raise HTTPException(status_code=404, detail="No such photo.") from None
 
     return Response(
         content=blob,

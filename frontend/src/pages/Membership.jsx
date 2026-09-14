@@ -51,9 +51,9 @@ const Membership = () => {
   return (
     <div className="membership-page-wrapper">
       <PageHero
-        image="/images/events/event_cwprs-site-visit.jpg"
-        alt="Members at a general meeting in the BAI Pune Centre office"
-        focal="center 35%"
+        image="/images/events/event_new-life-members-felicitation.jpg"
+        alt="A new BAI Patron (Life) Member receiving a membership certificate on stage at the Builders' Day Celebration 2025"
+        focal="center 40%"
         tag={data.headOffice.established}
         title={data.title}
         subtitle={data.subtitle}

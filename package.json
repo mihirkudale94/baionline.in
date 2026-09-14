@@ -8,7 +8,10 @@
     "dev:frontend": "cd frontend && npm run dev",
     "dev": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
     "build": "cd frontend && npm run build",
-    "start": "npm run build && cd backend && .venv\\Scripts\\python.exe main.py"
+    "start": "npm run build && cd backend && .venv\\Scripts\\python.exe main.py",
+    "test:backend": "cd backend && .venv\\Scripts\\python.exe -m pytest",
+    "lint:backend": "cd backend && .venv\\Scripts\\python.exe -m ruff check .",
+    "check": "npm run lint:backend && npm run test:backend && cd frontend && npm run check"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

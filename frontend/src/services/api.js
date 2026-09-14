@@ -31,12 +31,6 @@ function fetchWithTimeout(url, options = {}) {
    engines only. To change the carousel, swap the entries below. */
 export const heroSlides = [
   {
-    id: 1,
-    image: "/images/events/event_bridge-site-visit-1.jpg",
-    alt: "A cable-stayed bridge under construction, visited by BAI Pune Centre members",
-    caption: "Cable-stayed bridge project — members' technical site visit"
-  },
-  {
     id: 2,
     image: "/images/events/event_builders-day-2025.jpg",
     alt: "Builders' Day Celebration 2025 at BAI Pune Centre",
@@ -76,7 +70,7 @@ export const heroIntro = {
   tag: "Estd. 1941 · Pune — The Mother Centre",
   title: "Builders' Association of India",
   subtitle:
-    "India's apex association of engineering construction contractors and builders — 264+ centres, 25,000+ members, since 1941."
+    "India's apex association of engineering construction contractors and builders — 232 centres, 25,000+ members, since 1941."
 };
 
 export const stats = [
@@ -92,14 +86,14 @@ export const leadership = {
     title: "Chairman BAI Pune",
     image: "/images/people/Shri_Ajay_Gujar.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
-    bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
+    bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over 232 Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
   },
   imm_past_president: {
     name: "Rajaram Hajare",
     title: "Vice Chairman BAI Pune",
     image: "/images/people/Shri_Rajaram_Hajare.jpg",
     bio: "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
-    bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
+    bio_extended: "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over 232 Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
   },
   hon_secretary: {
     name: "Dr. Mahesh Rathi",
@@ -163,7 +157,7 @@ export const activities = [
   },
   {
     slug: "site-visits",
-    title: "Industrial & Site Visits",
+    title: "Technical Site Visits",
     summary:
       "Organised visits to major infrastructure projects and research institutions across Pune, giving members first-hand exposure to construction methods and site practice.",
     image: "/images/events/event_jcb-plant-site-visit.jpg"
@@ -2207,51 +2201,69 @@ export const wbscArchiveData = {
 export const eventsPageData = {
   title: "Events",
   subtitle: "Knowledge • Networking • Growth",
-  upcoming: [
-    { title: "BAI Pune Centre Annual General Meeting 2026 — sample placeholder event", date: "15th September 2026", venue: "B.G. Shirke Activity Centre, Pune", image: "/images/events/event_committee-meeting-office.jpg" },
-    { title: "BAI Pune Centre Technical Seminar on Sustainable Construction — sample placeholder event", date: "10th October 2026", venue: "Pune Centre Office, Sangam Bridge, Pune", image: "/images/events/event_sponsorship.webp" }
-  ],
+  /* Add confirmed events here ({ title, date, venue, image }); the Upcoming
+     section on the Events page stays hidden while this is empty. */
+  upcoming: [],
+  /* Archive list. `album` is the id of the matching entry in `albums` below;
+     the Past Events card then links straight to that event's photos. */
   past: [
-    { title: "Builders' Day Celebration 2025", date: "December 2025", venue: "Pune", image: "/images/events/event_builders-day-2025.jpg", links: ["Gallery"] },
-    { title: "Satkar Samarambh — Felicitation of Meritorious Children of Construction Workers", date: "14th November 2025", venue: "Pune", image: "/images/events/event_worker-children-felicitation-2025-1.jpg", links: ["Gallery"] },
-    { title: "Technical Site Visit — Cable-Stayed Bridge Construction", date: "January 2026", venue: "Maharashtra", image: "/images/events/event_bridge-site-visit-1.jpg", links: ["Gallery"] },
-    { title: "Courtesy Visit to Pune Municipal Corporation", date: "February 2026", venue: "Pune Municipal Corporation, Pune", image: "/images/events/event_pmc-courtesy-visit-1.jpg", links: ["Gallery"] },
-    { title: "Site Visit — Central Water and Power Research Station (CWPRS)", date: "May 2026", venue: "CWPRS, Khadakwasla, Pune", image: "/images/events/event_cwprs-site-visit.jpg", links: ["Gallery"] },
-    { title: "BAI Pune Centre at Central Bank of India's Mega Retail Credit Outreach Campaign", date: "July 2026", venue: "Regional Office, Pune", image: "/images/events/event_central-bank-outreach-campaign.jpg", links: ["Gallery"] },
-    { title: "Industrial Facility Visit", date: "July 2026", venue: "Pune", image: "/images/events/event_industrial-facility-visit-1.jpg", links: ["Gallery"] },
-    { title: "MoU Signing & Round Table with MIT World Peace University — Building Future Construction Leaders", date: "14th July 2026", venue: "MIT World Peace University, Kothrud, Pune", image: "/images/events/event_mitwpu-mou-signing-group.jpg", links: ["Gallery"] },
-    { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India", image: "/images/events/event_goa_convention.webp", links: ["Gallery — placeholder", "Speaker Presentations — placeholder", "Videos — placeholder"] },
-    { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi", image: "/images/events/event_kochi_meeting.jpg", links: ["Gallery — placeholder", "Downloads — placeholder"] },
-    { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi", image: "/images/events/event_sports_league.webp", links: ["Gallery — placeholder"] }
+    { title: "BAI Pune Centre at Central Bank of India's Mega Retail Credit Outreach Campaign", date: "July 2026", venue: "Regional Office, Pune", album: "central-bank-2026" },
+    { title: "MoU Signing & Round Table with MIT World Peace University — Building Future Construction Leaders", date: "14th July 2026", venue: "MIT World Peace University, Kothrud, Pune", album: "mitwpu-2026" },
+    { title: "Launch Ceremony — Well Built Structure Competition 2026 (30th in Series)", date: "24th June 2026", venue: "Pune", album: "wbsc-2026-launch" },
+    { title: "Technical Site Visit — Central Water and Power Research Station (CWPRS)", date: "June 2026", venue: "CWPRS, Khadakwasla, Pune", album: "cwprs-2026" },
+    { title: "Tree Plantation Program 2026", date: "June 2026", venue: "Pune", album: "tree-plantation-2026" },
+    { title: "Installation Ceremony of Office Bearers, BAI Pune Centre (2026–27)", date: "2026", venue: "Pune", album: "installation-2026-27" },
+    { title: "Meeting with the Executive Engineer, MSRDC", date: "April 2026", venue: "Pune", album: "msrdc-2026" },
+    { title: "Students' Internship Programme 2026 — Valedictory Function", date: "17th March 2026", venue: "Pune", album: "sip-valedictory-2026" },
+    { title: "BAI Sports League 2026", date: "21st February 2026", venue: "United Sports Center, Kakkanad, Kochi" },
+    { title: "Courtesy Visit to Pune Municipal Corporation", date: "February 2026", venue: "Pune Municipal Corporation, Pune", album: "pmc-2026" },
+    { title: "BAI's 32nd All India Builders Convention", date: "7th–9th January 2026", venue: "Dr. Shyama Prasad Mukherjee Indoor Stadium, Goa, India" },
+    { title: "Technical Site Visit — Cable-Stayed Bridge Project at Tapola", date: "January 2026", venue: "Tapola, Maharashtra", album: "tapola-bridge-2026" },
+    { title: "Students' Internship Programme — Induction Program", date: "23rd December 2025", venue: "AISSMS College of Engineering, Pune", album: "sip-induction-2025" },
+    { title: "Builders' Day Celebration 2025", date: "15th December 2025", venue: "Pune", album: "builders-day-2025" },
+    { title: "3rd MC-GC Meeting", date: "20th–21st November 2025", venue: "CIAL Convention Centre, Kochi" },
+    { title: "Satkar Samarambh — Felicitation of Meritorious Children of Construction Workers", date: "14th November 2025", venue: "Pune", album: "labour-children-2025" },
+    { title: "Well Built Structure Competition 2025 — Awards (29th in Series)", date: "2025", venue: "Pune", album: "wbsc-2025" },
+    { title: "Engineers' Day Celebration 2025", date: "September 2025", venue: "Pune", album: "engineers-day-2025" },
+    { title: "All Maharashtra Dharna Andolan by Government Contractors", date: "19th August 2025", venue: "Collector Office, Pune", album: "dharna-andolan-2025" },
+    { title: "Tree Plantation Program with Pune Municipal Corporation", date: "9th August 2025", venue: "Pune", album: "tree-plantation-2025" },
+    { title: "Seminar on Self-Redevelopment and MahaRERA 2025 Updates", date: "13th June 2025", venue: "Pune", album: "maharera-seminar-2025" },
+    { title: "BAI Maharashtra 1st State Meeting 2025–26", date: "25th April 2025", venue: "Pune", album: "state-meeting-2025" },
+    { title: "Installation Ceremony of Office Bearers, BAI Pune Centre (2025–26)", date: "25th April 2025", venue: "Pune", album: "installation-2025-26" },
+    { title: "Well Built Structure Competition 2024 — Awards (28th in Series)", date: "21st December 2024", venue: "Pune", album: "wbsc-2024" }
   ],
   siteVisits: [
     {
-      title: "Cable-Stayed Bridge Construction Site",
-      date: "January 2026",
-      venue: "Maharashtra",
-      image: "/images/events/event_bridge-site-visit-1.jpg",
-      desc: "Members toured an active cable-stayed bridge construction site to study advanced formwork, cable-stay tensioning and staged-construction sequencing techniques."
-    },
-    {
       title: "Central Water and Power Research Station (CWPRS)",
-      date: "May 2026",
+      date: "June 2026",
       venue: "Khadakwasla, Pune",
-      image: "/images/events/event_cwprs-site-visit.jpg",
+      image: "/images/events/event_industrial-facility-visit-1.jpg",
+      album: "cwprs-2026",
       desc: "A technical visit to CWPRS to understand hydraulic model studies and their application to dam, canal and river-training structures."
     },
     {
-      title: "Industrial Facility Visit",
-      date: "July 2026",
-      venue: "Pune",
-      image: "/images/events/event_industrial-facility-visit-1.jpg",
-      desc: "Members toured a large-scale industrial facility to observe precast production, material handling and site safety systems in a live industrial setting."
+      title: "Cable-Stayed Bridge Project at Tapola",
+      date: "January 2026",
+      venue: "Tapola, Maharashtra",
+      image: "/images/events/event_bridge-site-visit-1.jpg",
+      album: "tapola-bridge-2026",
+      desc: "Members toured the cable-stayed bridge project at Tapola, executed by M/s. T & T Infra Limited, to study formwork, cable-stay tensioning and staged-construction sequencing."
     },
     {
-      title: "Courtesy Visit to Pune Municipal Corporation",
-      date: "February 2026",
-      venue: "Pune Municipal Corporation, Pune",
-      image: "/images/events/event_pmc-courtesy-visit-1.jpg",
-      desc: "A courtesy and coordination visit with PMC officials to discuss civic infrastructure projects and builder-body liaison matters."
+      title: "JCB Plant at Tathawade",
+      date: "",
+      venue: "Tathawade, Pune",
+      image: "/images/events/event_jcb-plant-site-visit.jpg",
+      album: "jcb-plant",
+      desc: "A study visit to the JCB Design Centre and plant, with a briefing on the company's earth-moving equipment range."
+    },
+    {
+      title: "Coca-Cola Project at Lote, Chiplun",
+      date: "",
+      venue: "Lote, Chiplun",
+      image: "/images/events/event_coca-cola-lote-site-visit.jpg",
+      album: "coca-cola-lote",
+      desc: "Members visited the Coca-Cola project at Lote, Chiplun, to see a large industrial plant and its site safety practice."
     }
   ],
   regularActivities: [
@@ -2264,38 +2276,382 @@ export const eventsPageData = {
     "Annual Convention",
     "Leadership Meetings"
   ],
-  gallery: [
-    { src: "/images/events/event_builders-day-2025.jpg", caption: "Builders' Day Celebration 2025" },
-    { src: "/images/events/event_worker-children-felicitation-2025-1.jpg", caption: "Felicitation of Meritorious Children of Construction Workers" },
-    { src: "/images/events/event_worker-children-felicitation-2025-2.jpg", caption: "Felicitation Ceremony — Address by Chief Guest" },
-    { src: "/images/events/event_bridge-site-visit-1.jpg", caption: "Technical Site Visit — Cable-Stayed Bridge Construction" },
-    { src: "/images/events/event_bridge-site-visit-2.jpg", caption: "Members at the Bridge Construction Site" },
-    { src: "/images/events/event_pmc-courtesy-visit-1.jpg", caption: "Courtesy Visit to Pune Municipal Corporation" },
-    { src: "/images/events/event_pmc-courtesy-visit-2.jpg", caption: "Meeting with PMC Officials" },
-    { src: "/images/events/event_office-meeting-1.jpg", caption: "Committee Meeting at BAI Pune Centre Office" },
-    { src: "/images/events/event_office-meeting-2.jpg", caption: "Members' Discussion at Pune Centre Office" },
-    { src: "/images/events/event_committee-meeting-office.jpg", caption: "Committee Meeting, Pune Centre Office" },
-    { src: "/images/events/event_cwprs-site-visit.jpg", caption: "Site Visit — Central Water and Power Research Station" },
-    { src: "/images/events/event_central-bank-outreach-campaign.jpg", caption: "Central Bank of India's Mega Retail Credit Outreach Campaign" },
-    { src: "/images/events/event_industrial-facility-visit-1.jpg", caption: "Industrial Facility Visit" },
-    { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members Touring the Facility" },
-    { src: "/images/events/event_independence-day-2026-flag-hoisting.jpg", caption: "Independence Day 2026 — Flag Hoisting at BAI Pune Centre", focal: "center 25%" },
-    { src: "/images/events/event_independence-day-2026-1.jpg", caption: "Members Gathered at the Pune Centre Office on Independence Day 2026" },
-    { src: "/images/events/event_independence-day-2026-2.jpg", caption: "Address to Members, Independence Day 2026" },
-    { src: "/images/events/event_independence-day-2026-3.jpg", caption: "Independence Day Get-Together at the Pune Centre Office" },
-    { src: "/images/events/event_mitwpu-mou-signing-group.jpg", caption: "MoU Signed between BAI Pune Centre and MIT World Peace University" },
-    { src: "/images/events/event_mitwpu-mou-signing.jpg", caption: "Signing of the Memorandum of Understanding" },
-    { src: "/images/events/event_mitwpu-roundtable-discussion.jpg", caption: "Round Table Discussion — Building Future Construction Leaders" },
-    { src: "/images/events/event_mitwpu-roundtable-1.jpg", caption: "Members and Faculty at the MIT-WPU Round Table" },
-    { src: "/images/events/event_mitwpu-roundtable-2.jpg", caption: "Round Table in Session at MIT World Peace University" },
-    { src: "/images/events/event_mitwpu-roundtable-3.jpg", caption: "Industry and Academia Representatives in Discussion" },
-    { src: "/images/events/event_mitwpu-publication-handover.jpg", caption: "Presentation of BAI Publications to MIT World Peace University" },
-    { src: "/images/events/event_mitwpu-felicitation.jpg", caption: "Felicitation of Guests at the MIT-WPU Round Table" }
+  /* Event-wise photo albums, newest first; albums without a known date sit at
+     the end. Titles follow the captions in the Centre's "BAI Photo Prints"
+     booklet (09-08-2026); dates come from the banners and backdrops visible in
+     the photos. `focal` sets object-position for a tile when the subject is
+     off-centre. */
+  albums: [
+    {
+      id: "independence-day",
+      title: "Independence Day Celebrations",
+      date: "15th August 2026",
+      venue: "BAI Pune Centre",
+      photos: [
+        { src: "/images/events/event_independence-day-2026-flag-hoisting.jpg", caption: "Independence Day 2026 — Flag Hoisting at BAI Pune Centre", focal: "center 25%" },
+        { src: "/images/events/event_independence-day-2026-1.jpg", caption: "Members Gathered at the Pune Centre Office on Independence Day 2026" },
+        { src: "/images/events/event_independence-day-2026-2.jpg", caption: "Address to Members, Independence Day 2026" },
+        { src: "/images/events/event_independence-day-2026-3.jpg", caption: "Independence Day Get-Together at the Pune Centre Office" },
+        { src: "/images/events/event_independence-day-flag-hoisting.jpg", caption: "Flag Hoisting Program — Independence Day Celebration" }
+      ]
+    },
+    {
+      id: "central-bank-2026",
+      title: "Central Bank of India's Mega Retail Credit Outreach Campaign",
+      date: "July 2026",
+      venue: "Regional Office, Pune",
+      photos: [
+        { src: "/images/events/event_central-bank-outreach-campaign.jpg", caption: "BAI Pune Centre at Central Bank of India's Mega Retail Credit Outreach Campaign" }
+      ]
+    },
+    {
+      id: "mitwpu-2026",
+      title: "MoU Signing & Round Table with MIT World Peace University",
+      date: "14th July 2026",
+      venue: "MIT World Peace University, Kothrud, Pune",
+      photos: [
+        { src: "/images/events/event_mitwpu-mou-signing-group.jpg", caption: "MoU Signed between BAI Pune Centre and MIT World Peace University" },
+        { src: "/images/events/event_mitwpu-mou-signing.jpg", caption: "Signing of the Memorandum of Understanding" },
+        { src: "/images/events/event_mitwpu-roundtable-discussion.jpg", caption: "Round Table Discussion — Building Future Construction Leaders" },
+        { src: "/images/events/event_mitwpu-roundtable-1.jpg", caption: "Members and Faculty at the MIT-WPU Round Table" },
+        { src: "/images/events/event_mitwpu-roundtable-2.jpg", caption: "Round Table in Session at MIT World Peace University" },
+        { src: "/images/events/event_mitwpu-roundtable-3.jpg", caption: "Industry and Academia Representatives in Discussion" },
+        { src: "/images/events/event_mitwpu-publication-handover.jpg", caption: "Presentation of BAI Publications to MIT World Peace University" },
+        { src: "/images/events/event_mitwpu-felicitation.jpg", caption: "Felicitation of Guests at the MIT-WPU Round Table" }
+      ]
+    },
+    {
+      id: "wbsc-2026-launch",
+      title: "Launch Ceremony — WBSC 2026 (30th in Series)",
+      date: "24th June 2026",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_wbsc-2026-launch-1.jpg", caption: "Release of the WBSC 2026 Booklet at the Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-2.jpg", caption: "Launch Ceremony — WBSC 2026. Chief Guest: Er. Atul Kapole, Executive Director, MKVDC, Pune" },
+        { src: "/images/events/event_wbsc-2026-launch-3.jpg", caption: "Address by the Chief Guest, Er. Atul Kapole", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-4.jpg", caption: "Felicitation at the WBSC 2026 Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-5.jpg", caption: "Members and Guests at the Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-6.jpg", caption: "Guests in Conversation at the WBSC 2026 Launch", focal: "center 35%" },
+        { src: "/images/events/event_wbsc-2026-launch-16.jpg", caption: "Chief Guest Er. Atul Kapole Addressing the Gathering", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-7.jpg", caption: "Launching Ceremony Sponsor — Skywin Formwork" },
+        { src: "/images/events/event_wbsc-2026-launch-11.jpg", caption: "Audience at the WBSC 2026 Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-8.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-9.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-10.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-12.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-13.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-14.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-15.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-21.jpg", caption: "Address at the WBSC 2026 Launch Ceremony", focal: "center 30%" },
+        { src: "/images/events/event_wbsc-2026-launch-17.jpg", caption: "Felicitation at the WBSC 2026 Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-18.jpg", caption: "Felicitation at the WBSC 2026 Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-19.jpg", caption: "Felicitation at the WBSC 2026 Launch Ceremony" },
+        { src: "/images/events/event_wbsc-2026-launch-20.jpg", caption: "Felicitation at the WBSC 2026 Launch Ceremony" }
+      ]
+    },
+    {
+      id: "cwprs-2026",
+      title: "Technical Site Visit — CWPRS, Pune",
+      date: "June 2026",
+      venue: "Central Water and Power Research Station, Khadakwasla, Pune",
+      photos: [
+        { src: "/images/events/event_industrial-facility-visit-1.jpg", caption: "Technical Site Visit — CWPRS, Pune, 2026" },
+        { src: "/images/events/event_cwprs-site-visit-2026-group.jpg", caption: "Members Outside the Central Water and Power Research Station" },
+        { src: "/images/events/event_cwprs-site-visit.jpg", caption: "Members in Discussion at CWPRS" },
+        { src: "/images/events/event_industrial-facility-visit-2.jpg", caption: "Members During the CWPRS Visit" }
+      ]
+    },
+    {
+      id: "tree-plantation-2026",
+      title: "Tree Plantation Program 2026",
+      date: "June 2026",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_tree-plantation-2026-1.jpg", caption: "Tree Plantation Program 2026" },
+        { src: "/images/events/event_tree-plantation-2026-2.jpg", caption: "Members Planting a Sapling — Tree Plantation Program 2026" }
+      ]
+    },
+    {
+      id: "installation-2026-27",
+      title: "Installation Ceremony — BAI Pune Centre (2026–27)",
+      date: "2026",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_installation-2026-27-1.jpg", caption: "Installation Ceremony, BAI Pune Centre (2026–27)", focal: "center 30%" },
+        { src: "/images/events/event_installation-2026-27-2.jpg", caption: "Badge Presentation at the Installation Ceremony (2026–27)", focal: "center 30%" },
+        { src: "/images/events/event_installation-2026-27-3.jpg", caption: "Felicitation at the Installation Ceremony (2026–27)" },
+        { src: "/images/events/event_installation-2026-27-4.jpg", caption: "Felicitation of Office Bearers (2026–27)" },
+        { src: "/images/events/event_installation-2026-27-5.jpg", caption: "Felicitation at the Installation Ceremony, BAI Pune Centre" }
+      ]
+    },
+    {
+      id: "msrdc-2026",
+      title: "Meeting with the Executive Engineer, MSRDC",
+      date: "April 2026",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_msrdc-meeting-2026-1.jpg", caption: "BAI Pune Centre Delegation with the Executive Engineer, MSRDC" },
+        { src: "/images/events/event_msrdc-meeting-2026-2.jpg", caption: "Meeting with MSRDC Officials" },
+        { src: "/images/events/event_msrdc-meeting-2026-3.jpg", caption: "Discussion with MSRDC Officials" }
+      ]
+    },
+    {
+      id: "sip-valedictory-2026",
+      title: "Students' Internship Programme 2026 — Valedictory Function",
+      date: "17th March 2026",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_sip-valedictory-2026-1.jpg", caption: "Interns with Their Certificates" },
+        { src: "/images/events/event_sip-valedictory-2026-2.jpg", caption: "Office Bearers and Students at the Valedictory Function" },
+        { src: "/images/events/event_sip-valedictory-2026-3.jpg", caption: "Presentation of Internship Certificates" },
+        { src: "/images/events/event_sip-valedictory-2026-4.jpg", caption: "Students and Members at the Valedictory Function" },
+        { src: "/images/events/event_sip-valedictory-2026-5.jpg", caption: "Certificate Presentation to an Intern" },
+        { src: "/images/events/event_sip-valedictory-2026-6.jpg", caption: "Release of a Publication at the Valedictory Function" },
+        { src: "/images/events/event_sip-valedictory-2026-7.jpg", caption: "Group Photograph — Students' Internship Programme 2026" },
+        { src: "/images/events/event_sip-valedictory-2026-8.jpg", caption: "Students Registering for the Valedictory Function" },
+        { src: "/images/events/event_sip-valedictory-2026-9.jpg", caption: "Welcoming Guests to the Valedictory Function" },
+        { src: "/images/events/event_sip-valedictory-2026-10.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-11.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-12.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-13.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-14.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-15.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-16.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-17.jpg", caption: "Address by an Intern at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-18.jpg", caption: "Address by an Intern at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-19.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-22.jpg", caption: "Address at the Valedictory Function", focal: "center 25%" },
+        { src: "/images/events/event_sip-valedictory-2026-20.jpg", caption: "Certificate Presentation to an Intern" },
+        { src: "/images/events/event_sip-valedictory-2026-21.jpg", caption: "Certificate Presentation to an Intern" },
+        { src: "/images/events/event_sip-valedictory-2026-23.jpg", caption: "Interns at Lunch After the Valedictory Function" },
+        { src: "/images/events/event_sip-valedictory-2026-24.jpg", caption: "Interns at Lunch After the Valedictory Function" }
+      ]
+    },
+    {
+      id: "pmc-2026",
+      title: "Courtesy Visit to Pune Municipal Corporation",
+      date: "February 2026",
+      venue: "Pune Municipal Corporation, Pune",
+      photos: [
+        { src: "/images/events/event_pmc-courtesy-visit-1.jpg", caption: "Courtesy Visit to Pune Municipal Corporation" },
+        { src: "/images/events/event_pmc-courtesy-visit-2.jpg", caption: "Meeting with PMC Officials" },
+        { src: "/images/events/event_pmc-courtesy-visit-4.jpg", caption: "Greeting PMC Officials During the Courtesy Visit" },
+        { src: "/images/events/event_pmc-courtesy-visit-5.jpg", caption: "Presentation to PMC Officials During the Courtesy Visit" },
+        { src: "/images/events/event_pmc-courtesy-visit-3.jpg", caption: "BAI Pune Centre Delegation at Pune Municipal Corporation" }
+      ]
+    },
+    {
+      id: "tapola-bridge-2026",
+      title: "Technical Site Visit — Cable-Stayed Bridge Project at Tapola",
+      date: "January 2026",
+      venue: "Tapola, Maharashtra (by M/s. T & T Infra Limited)",
+      photos: [
+        { src: "/images/events/event_bridge-site-visit-1.jpg", caption: "Cable-Stayed Bridge Project at Tapola, Maharashtra" },
+        { src: "/images/events/event_bridge-site-visit-2.jpg", caption: "Members Being Briefed at the Bridge Site" },
+        { src: "/images/events/event_bridge-site-visit-3.jpg", caption: "Members on the Boat to the Tapola Bridge Site" },
+        { src: "/images/events/event_bridge-site-visit-4.jpg", caption: "Members During the Tapola Site Visit" }
+      ]
+    },
+    {
+      id: "sip-induction-2025",
+      title: "Students' Internship Programme — Induction Program",
+      date: "23rd December 2025",
+      venue: "AISSMS College of Engineering, Pune",
+      photos: [
+        { src: "/images/events/event_sip-induction-2025-1.jpg", caption: "Presentation to a Student at the Internship Induction Program" },
+        { src: "/images/events/event_sip-induction-2025-2.jpg", caption: "Students and Members at the Induction Program" },
+        { src: "/images/events/event_sip-induction-2025-3.jpg", caption: "Internship Induction Program, Organised with the Department of Civil Engineering, AISSMS COE" },
+        { src: "/images/events/event_sip-induction-2025-4.jpg", caption: "Felicitation at the Internship Induction Program" }
+      ]
+    },
+    {
+      id: "builders-day-2025",
+      title: "Builders' Day Celebration 2025",
+      date: "15th December 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_builders-day-2025.jpg", caption: "Builders' Day Celebration 2025" },
+        { src: "/images/events/event_builders-day-2025-group.jpg", caption: "Office Bearers and Guests — Builders' Day Celebration 2025" },
+        { src: "/images/events/event_builders-day-2025-chief-guest.jpg", caption: "Chief Guest: Dr. Sunil Bhirud, Vice Chancellor, COEP Technological University", focal: "center 25%" },
+        { src: "/images/events/event_builders-day-2025-guest-of-honour.jpg", caption: "Guest of Honour: Mr. Anubhav Kapoor, General Counsel & Senior Vice President, COSA", focal: "center 25%" },
+        { src: "/images/events/event_builders-day-2025-felicitation-1.jpg", caption: "Felicitation at the Builders' Day Celebration" },
+        { src: "/images/events/event_builders-day-2025-felicitation-2.jpg", caption: "Felicitation at the Builders' Day Celebration" },
+        { src: "/images/events/event_builders-day-2025-felicitation-3.jpg", caption: "Felicitation at the Builders' Day Celebration" },
+        { src: "/images/events/event_builders-day-2025-felicitation-4.jpg", caption: "Felicitation at the Builders' Day Celebration" },
+        { src: "/images/events/event_builders-day-2025-felicitation-5.jpg", caption: "Felicitation at the Builders' Day Celebration" },
+        { src: "/images/events/event_new-life-members-felicitation.jpg", caption: "Felicitation of New BAI Pune (Life) Members" },
+        { src: "/images/events/event_new-life-members-felicitation-2.jpg", caption: "Felicitation of New BAI Pune (Life) Members" }
+      ]
+    },
+    {
+      id: "labour-children-2025",
+      title: "Satkar Samarambh — Labour Children Felicitation Program 2025",
+      date: "14th November 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_worker-children-felicitation-2025-1.jpg", caption: "Felicitation of Meritorious Children of Construction Workers" },
+        { src: "/images/events/event_worker-children-felicitation-2025-2.jpg", caption: "Felicitation Ceremony — Address by Chief Guest" },
+        { src: "/images/events/event_worker-children-felicitation-2025-4.jpg", caption: "A Meritorious Student Receives a Certificate" }
+      ]
+    },
+    {
+      id: "wbsc-2025",
+      title: "Well Built Structure Competition 2025 — Awards (29th in Series)",
+      date: "2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_wbsc-2025-awards-1.jpg", caption: "Award Winners — Well Built Structure Competition 2025" },
+        { src: "/images/events/event_wbsc-2025-awards-2.jpg", caption: "Award Winners with Office Bearers — WBSC 2025" },
+        { src: "/images/events/event_nirman-ratna-award-2025.jpg", caption: "BAI – Padma Shri B.G. Shirke Life Time Achievement Award, Nirman Ratna 2025" },
+        { src: "/images/events/event_wbsc-2025-jury.jpg", caption: "Panel of Juries — WBSC 2025" },
+        { src: "/images/events/event_wbsc-2025-awards-3.jpg", caption: "Guests at the WBSC 2025 Awards Function" }
+      ]
+    },
+    {
+      id: "engineers-day-2025",
+      title: "Engineers' Day Celebration 2025",
+      date: "September 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_engineers-day-2025-1.jpg", caption: "Engineers' Day Celebration 2025" },
+        { src: "/images/events/event_engineers-day-2025-2.jpg", caption: "Felicitation of Engineers — Engineers' Day 2025" }
+      ]
+    },
+    {
+      id: "dharna-andolan-2025",
+      title: "All Maharashtra Dharna Andolan by Government Contractors",
+      date: "19th August 2025",
+      venue: "Collector Office, Pune",
+      photos: [
+        { src: "/images/events/event_dharna-andolan-2025-1.jpg", caption: "All Maharashtra Dharna Andolan by Government Contractors" },
+        { src: "/images/events/event_dharna-andolan-2025-2.jpg", caption: "Contractors' Demonstration over Pending Government Bills" }
+      ]
+    },
+    {
+      id: "tree-plantation-2025",
+      title: "Tree Plantation Program with Pune Municipal Corporation",
+      date: "9th August 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_tree-plantation-2025-1.jpg", caption: "Tree Plantation Program — BAI Pune Centre with Pune Municipal Corporation" },
+        { src: "/images/events/event_tree-plantation-2025-2.jpg", caption: "Planting Saplings at the Tree Plantation Program" }
+      ]
+    },
+    {
+      id: "maharera-seminar-2025",
+      title: "Seminar on Self-Redevelopment and MahaRERA 2025 Updates",
+      date: "13th June 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_maharera-seminar-2025.jpg", caption: "Half Day Seminar on Real Estate Development and Self-Redevelopment Projects" },
+        { src: "/images/events/event_maharera-seminar-2025-2.jpg", caption: "Panel Discussion — MahaRERA 2025 Updates for All Stakeholders" }
+      ]
+    },
+    {
+      id: "state-meeting-2025",
+      title: "BAI Maharashtra 1st State Meeting 2025–26",
+      date: "25th April 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_maharashtra-state-meeting-2025.jpg", caption: "BAI Maharashtra 1st State Meeting for the Year 2025–26 at Pune" },
+        { src: "/images/events/event_maharashtra-state-meeting-2025-2.jpg", caption: "Delegates at the 1st State Meeting 2025–26" },
+        { src: "/images/events/event_state-chairman-installation-2025.jpg", caption: "Installation of State Chairman, BAI Maharashtra State 2025–26" }
+      ]
+    },
+    {
+      id: "installation-2025-26",
+      title: "Installation Ceremony of Office Bearers, BAI Pune Centre (2025–26)",
+      date: "25th April 2025",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_pune-centre-installation-2025-1.jpg", caption: "Installation Ceremony of Office Bearers of BAI Pune Centre (2025–26)" },
+        { src: "/images/events/event_pune-centre-installation-2025-2.jpg", caption: "Felicitation of the Chief Guest (President, BAI) at the Installation Ceremony" },
+        { src: "/images/events/event_pune-centre-installation-2025-3.jpg", caption: "Online Address by Shri Girish Mahajan, Cabinet Minister, Govt. of Maharashtra" }
+      ]
+    },
+    {
+      id: "wbsc-2024",
+      title: "Well Built Structure Competition 2024 — Awards (28th in Series)",
+      date: "21st December 2024",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_wbsc-2024-awards-1.jpg", caption: "BAI – Shirke Well Built Structure Competition 2024" },
+        { src: "/images/events/event_wbsc-2024-awards-2.jpg", caption: "Award Winners — WBSC 2024" },
+        { src: "/images/events/event_nirman-ratna-award-2024.jpg", caption: "BAI – Padma Shri B.G. Shirke Life Time Achievement Award, Nirman Ratna" },
+        { src: "/images/events/event_engineering-diary-2025-release.jpg", caption: "Release of BAI Pune Centre's Engineering Diary 2025" }
+      ]
+    },
+    {
+      id: "wbsc-2019",
+      title: "Well Built Structure Competition 2019 — BAI-Shirke Awards (23rd in Series)",
+      date: "December 2019",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_wbsc-2019-awards-1.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-2.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-3.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-4.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-5.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-7.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-8.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-9.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-10.jpg", caption: "BAI-Shirke Award Presentation — WBSC 2019" },
+        { src: "/images/events/event_wbsc-2019-awards-6.jpg", caption: "Award Winners with the Jury and Office Bearers — WBSC 2019" }
+      ]
+    },
+    {
+      id: "pisarve-toilet-blocks",
+      title: "Inauguration & Handover of Toilet Blocks for Girl Students at Pisarve",
+      date: "",
+      venue: "Pisarve",
+      photos: [
+        { src: "/images/events/event_pisarve-toilet-blocks-1.jpg", caption: "Inauguration of the Newly Constructed Toilet Blocks for Girl Students" },
+        { src: "/images/events/event_pisarve-toilet-blocks-2.jpg", caption: "Handover Ceremony of the Toilet Blocks at Pisarve" }
+      ]
+    },
+    {
+      id: "chenab-bridge-talk",
+      title: "Technical Talk on Chenab Bridge Project",
+      date: "",
+      venue: "Pune",
+      photos: [
+        { src: "/images/events/event_chenab-bridge-technical-talk.jpg", caption: "Lamp Lighting at the Technical Talk on Chenab Bridge Project" },
+        { src: "/images/events/event_chenab-bridge-technical-talk-2.jpg", caption: "Speakers and Members — Technical Talk on Chenab Bridge Project" }
+      ]
+    },
+    {
+      id: "jcb-plant",
+      title: "Technical Site Visit — JCB Plant at Tathawade, Pune",
+      date: "",
+      venue: "Tathawade, Pune",
+      photos: [
+        { src: "/images/events/event_jcb-plant-site-visit.jpg", caption: "Members at the JCB Design Centre, Tathawade" },
+        { src: "/images/events/event_jcb-plant-training-session.jpg", caption: "Briefing Session at the JCB Plant" }
+      ]
+    },
+    {
+      id: "coca-cola-lote",
+      title: "Technical Site Visit — Coca-Cola Project at Lote, Chiplun",
+      date: "",
+      venue: "Lote, Chiplun",
+      photos: [
+        { src: "/images/events/event_coca-cola-lote-site-visit.jpg", caption: "Technical Site Visit — Coca-Cola Project at Lote, Chiplun" }
+      ]
+    },
+    {
+      id: "office-meetings",
+      title: "Committee Meetings at the Pune Centre Office",
+      date: "",
+      venue: "BAI Pune Centre Office",
+      photos: [
+        { src: "/images/events/event_office-meeting-1.jpg", caption: "Committee Meeting at BAI Pune Centre Office" },
+        { src: "/images/events/event_office-meeting-2.jpg", caption: "Members' Discussion at Pune Centre Office" },
+        { src: "/images/events/event_committee-meeting-office.jpg", caption: "Committee Meeting, Pune Centre Office" }
+      ]
+    }
   ],
-  calendar: [
-    { month: "September 2026", items: ["Pune Centre Annual General Meeting — sample placeholder"] },
-    { month: "October 2026", items: ["Technical Seminar on Sustainable Construction — sample placeholder"] }
-  ]
+  /* { month, items: [...] }; the calendar section stays hidden while empty. */
+  calendar: []
 };
 
 export const membershipPageData = {
@@ -2523,12 +2879,9 @@ export const socialActivitiesContent = {
   title: "Social & CSR Initiatives",
   subtitle: "Empowering Communities & Building a Sustainable Construction Ecosystem",
   overview: "At Builders' Association of India (BAI) Pune Centre, we believe that true development goes hand-in-hand with social responsibility. Beyond concrete and steel, our mission is to uplift the lives of construction workers, support the local community, foster sustainable environmental practices, and train the next generation of builders.",
-  stats: [
-    { value: "50+", label: "Medical & Safety Camps" },
-    { value: "5,000+", label: "Workers Vaccinated" },
-    { value: "10,000+", label: "Tree Saplings Planted" },
-    { value: "1,200+", label: "Students Mentored (SIP)" }
-  ],
+  /* Impact figures render beside the overview; add only numbers BAI can
+     source ({ value, label }). Empty hides the block. */
+  stats: [],
   csrInitiatives: [
     {
       title: "Worker Health & Safety Camps",
@@ -2552,21 +2905,22 @@ export const socialActivitiesContent = {
       description: "Our landmark program bridges the gap between academic theory and practical construction. We place engineering, architectural, and project management students on active sites under the guidance of experienced BAI mentors.",
       duration: "Ongoing (Annual)",
       target: "Civil & Arch Students",
-      image: "/images/events/event_committee-meeting-office.jpg"
+      image: "/images/events/event_mitwpu-mou-signing-group.jpg"
     },
     {
       title: "Kaushalya Vardhan Skill Development",
       description: "Free vocational training workshops for young and unskilled workers. We provide training in masonry, bar-bending, plumbing, safety operations, and digital basic skills to enhance employability.",
       duration: "Quarterly Drives",
       target: "Youth & Unskilled Laborers",
-      image: "/images/events/event_industrial-facility-visit-1.jpg"
+      image: "/images/events/event_jcb-plant-training-session.jpg"
     },
     {
-      title: "Annual Blood Donation Drives",
-      description: "BAI Pune collaborates with leading blood banks and hospitals to organize community blood donation camps. Members, staff, and construction professionals actively participate to support local emergency reserves.",
-      duration: "Every Independence Day",
-      target: "General Public & Members",
-      image: "/images/events/event_central-bank-outreach-campaign.jpg"
+      title: "Independence Day Celebrations",
+      description: "Every year on 15 August, BAI Pune members, past presidents and staff gather for the national flag hoisting ceremony, marking Independence Day together and honouring the nation-builders who came before us.",
+      duration: "Every 15 August",
+      target: "Members & Staff",
+      image: "/images/events/event_independence-day-2026-flag-hoisting.jpg",
+      focal: "center 45%"
     }
   ],
   sustainabilityCampaigns: [

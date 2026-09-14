@@ -15,6 +15,9 @@
 .event-timeline-content h4 { font-family: var(--font-heading); font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 0.5rem; }
 .event-timeline-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
 .event-timeline-link-chip { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.72rem; color: var(--gray-800); font-style: italic; }
+.event-timeline-gallery-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; background: var(--primary-tint); border: 1px solid var(--primary-soft); border-radius: 20px; padding: 0.35rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--navy); cursor: pointer; transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease; }
+.event-timeline-links .event-timeline-gallery-btn { margin-top: 0; }
+.event-timeline-gallery-btn:hover, .event-timeline-gallery-btn:focus-visible { background: var(--white); border-color: var(--gold); }
 
 .events-sitevisits-section { padding: 5rem 0; background: linear-gradient(180deg, var(--primary-tint) 0%, var(--white) 100%); }
 .sitevisits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
@@ -29,7 +32,22 @@
 .events-activities-list { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 900px; margin: 0 auto; }
 .events-activity-chip { background: var(--navy); color: var(--gold); padding: 0.75rem 1.5rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; }
 
-.events-gallery-section { padding: 5rem 0; background: var(--gray-50); }
+.events-gallery-section { padding: 5rem 0; background: var(--gray-50); scroll-margin-top: 80px; }
+
+/* Event picker above the albums */
+.events-album-filter { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 auto 2.5rem; max-width: 900px; }
+.events-album-filter label { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+.events-album-filter select { flex: 1 1 280px; width: 100%; min-width: 0; max-width: 560px; min-height: 44px; padding: 0.55rem 0.9rem; font-size: 0.9rem; color: var(--navy); background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; }
+.events-album-reset { min-height: 44px; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 600; color: var(--navy); background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; cursor: pointer; }
+.events-album-reset:hover, .events-album-reset:focus-visible { border-color: var(--gold); }
+
+/* One block per event */
+.events-album { margin-bottom: 3rem; scroll-margin-top: 90px; }
+.events-album:last-child { margin-bottom: 0; }
+.events-album-header { margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--gray-200); }
+.events-album-header h3 { font-family: var(--font-heading); font-size: 1.15rem; color: var(--navy); font-weight: 700; margin-bottom: 0.4rem; }
+.events-album-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; font-size: 0.8rem; color: var(--gray-800); }
+.events-album-meta span { display: inline-flex; align-items: center; gap: 0.4rem; }
 /* Photo gallery — image-first tiles, caption reveals over the image on hover */
 .events-gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; }
 
@@ -102,4 +120,6 @@
   .events-card-grid, .events-calendar-list, .sitevisits-grid { grid-template-columns: 1fr; }
   .events-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
   .events-gallery-caption { font-size: 0.7rem; padding: 1.75rem 0.6rem 0.55rem; }
+  /* "View photos" pills were 27px tall; keep them tappable on phones */
+  .event-timeline-gallery-btn { min-height: 44px; padding: 0.5rem 1rem; font-size: 0.8rem; }
 }

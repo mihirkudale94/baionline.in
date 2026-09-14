@@ -11,7 +11,7 @@ When the credentials are absent the router still loads and reports payments as
 disabled, so the site keeps working with the offline Demand Draft / NEFT route.
 """
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Header, HTTPException, Request
 from pydantic import BaseModel, Field
 import datetime
 import json
@@ -25,7 +25,10 @@ from razorpay_gateway import (
     key_id as _key_id,
     payments_enabled as _payments_enabled,
     signature_is_valid,
+    webhook_secret,
+    webhook_signature_is_valid,
 )
+from routers import sponsors
 
 router = APIRouter(prefix="/api/payments", tags=["payments"])
 
@@ -38,6 +41,8 @@ SUBSCRIPTION_CATALOGUE = {
     "patron": {"label": "Patron Membership", "amount_paise": 2970000},
     "affiliated": {"label": "Affiliated Association Patron Membership", "amount_paise": 3540000},
     "corporate": {"label": "Corporate Membership", "amount_paise": 36580000},
+    # WBSC entry fee from the invitation circular: Rs 25,000 + 18% GST per entry.
+    "wbsc_entry": {"label": "WBSC 2026 Competition Entry Fee", "amount_paise": 2950000},
 }
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
@@ -90,10 +95,10 @@ class VerifyIn(BaseModel):
 def payment_config():
     """Tells the frontend whether to offer online payment, and with which
     publishable key. The secret never leaves the server."""
-    kid = _key_id() or "rzp_test_baionline"
+    enabled = _payments_enabled()
     return {
-        "enabled": True,
-        "key_id": kid,
+        "enabled": enabled,
+        "key_id": _key_id() if enabled else "",
         "currency": "INR",
         "categories": [
             {
@@ -183,36 +188,95 @@ def verify_payment(payload: VerifyIn):
         payload.razorpay_order_id, payload.razorpay_payment_id, payload.razorpay_signature
     ):
         conn = sqlite3.connect(DB_PATH)
+        # Never downgrade an order that has already been paid.
         conn.execute(
-            "UPDATE membership_payments SET status = ?, updated_at = ? WHERE order_id = ?",
+            """UPDATE membership_payments SET status = ?, updated_at = ?
+               WHERE order_id = ? AND status != 'paid'""",
             ("signature_failed", _now(), payload.razorpay_order_id),
         )
         conn.commit()
         conn.close()
         raise HTTPException(status_code=400, detail="Payment signature verification failed.")
 
+    row = _mark_paid(payload.razorpay_order_id, payload.razorpay_payment_id)
+    if not row:
+        raise HTTPException(status_code=404, detail="Unknown order.")
+
+    return {
+        "status": "paid",
+        "payment_id": row["payment_id"],
+        "order_id": payload.razorpay_order_id,
+        "category": SUBSCRIPTION_CATALOGUE.get(row["category"], {}).get("label", row["category"]),
+        "amount_display": _inr(row["amount_paise"]),
+    }
+
+
+def _mark_paid(order_id, payment_id):
+    """Flip a membership order to 'paid' once a signature has verified. Returns
+    the row as a dict, or None for an unknown order. Idempotent, because the
+    checkout handler and the webhook both report the same payment."""
     conn = sqlite3.connect(DB_PATH)
-    cursor = conn.execute(
-        "SELECT category, amount_paise FROM membership_payments WHERE order_id = ?",
-        (payload.razorpay_order_id,),
-    )
-    row = cursor.fetchone()
+    row = conn.execute(
+        "SELECT category, amount_paise, payment_id, status FROM membership_payments WHERE order_id = ?",
+        (order_id,),
+    ).fetchone()
     if not row:
         conn.close()
-        raise HTTPException(status_code=404, detail="Unknown order.")
+        return None
+
+    category, amount_paise, existing_payment, status = row
+    if status == "paid" and existing_payment:
+        payment_id = existing_payment
 
     conn.execute(
         "UPDATE membership_payments SET payment_id = ?, status = ?, updated_at = ? WHERE order_id = ?",
-        (payload.razorpay_payment_id, "paid", _now(), payload.razorpay_order_id),
+        (payment_id, "paid", _now(), order_id),
     )
     conn.commit()
     conn.close()
+    return {"category": category, "amount_paise": amount_paise, "payment_id": payment_id}
 
-    category, amount_paise = row
-    return {
-        "status": "paid",
-        "payment_id": payload.razorpay_payment_id,
-        "order_id": payload.razorpay_order_id,
-        "category": SUBSCRIPTION_CATALOGUE.get(category, {}).get("label", category),
-        "amount_display": _inr(amount_paise),
-    }
+
+# Events that mean the money has been taken. With payment_capture=1 on the order
+# Razorpay captures automatically, so both arrive for a successful payment.
+PAID_EVENTS = {"payment.captured", "order.paid"}
+
+
+@router.post("/webhook")
+async def razorpay_webhook(request: Request, x_razorpay_signature: str = Header(default="")):
+    """Server-to-server confirmation from Razorpay.
+
+    The browser's /verify call is the fast path, but it never happens if the
+    payer closes the tab or loses connection after paying. This webhook closes
+    that gap for both membership and sponsorship orders.
+
+    Configure it in Razorpay Dashboard > Settings > Webhooks with the URL
+    https://<site>/api/payments/webhook, the events payment.captured and
+    order.paid, and the same secret as RAZORPAY_WEBHOOK_SECRET.
+    """
+    if not webhook_secret():
+        raise HTTPException(status_code=503, detail="Webhook is not configured.")
+
+    raw_body = await request.body()
+    if not webhook_signature_is_valid(raw_body, x_razorpay_signature):
+        raise HTTPException(status_code=400, detail="Invalid webhook signature.")
+
+    try:
+        event = json.loads(raw_body)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Malformed webhook body.") from None
+
+    if event.get("event") not in PAID_EVENTS:
+        # Acknowledge anything else so Razorpay does not keep retrying it.
+        return {"status": "ignored"}
+
+    payment = (event.get("payload") or {}).get("payment", {}).get("entity") or {}
+    order_id = payment.get("order_id")
+    payment_id = payment.get("id")
+    if not order_id or not payment_id:
+        return {"status": "ignored"}
+
+    if _mark_paid(order_id, payment_id) or sponsors.mark_paid(order_id, payment_id):
+        return {"status": "paid"}
+    # Not one of ours (e.g. a payment made directly from the dashboard).
+    return {"status": "ignored"}

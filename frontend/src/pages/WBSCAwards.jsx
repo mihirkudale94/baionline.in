@@ -70,11 +70,11 @@ const WBSCAwards = () => {
   return (
     <div className="wbsc-page-wrapper">
       {/* WBSC 2026 banner band. The 2026 artwork is still being prepared, so
-          the band carries a frame from the last ceremony behind a scrim with
-          the edition set in type over it — credited in the corner so the
-          dated photograph is never passed off as this year's. If the file is
-          missing the band falls back to its "coming soon" placeholder rather
-          than collapsing the top of the page. */}
+          the band carries a frame from the last ceremony, shown clean with no
+          text over it. The edition, title and photo credit read in the strip
+          below, so the dated photograph is never passed off as this year's.
+          If the file is missing the band falls back to its "coming soon"
+          placeholder rather than collapsing the top of the page. */}
       <section className="wbsc-hero-section">
         <div className="wbsc-hero-banner-container">
           <motion.div
@@ -92,13 +92,6 @@ const WBSCAwards = () => {
                   loading="eager"
                   onFail={handleHeroFail}
                 />
-                <div className="wbsc-hero-scrim" aria-hidden="true"></div>
-                <div className="wbsc-hero-overlay">
-                  <span className="wbsc-hero-eyebrow">{data.since} · {data.edition}</span>
-                  <h1 className="wbsc-hero-title">{data.title}</h1>
-                  <span className="wbsc-hero-tagline">{data.tagline}</span>
-                </div>
-                <span className="wbsc-hero-credit">{gallery.heroCredit}</span>
               </div>
             ) : (
               <div className="wbsc-hero-banner-placeholder">
@@ -107,6 +100,14 @@ const WBSCAwards = () => {
               </div>
             )}
           </motion.div>
+          <div className="wbsc-hero-intro">
+            <div className="wbsc-hero-intro-text">
+              <span className="wbsc-hero-eyebrow">{data.since} · {data.edition}</span>
+              <h1 className="wbsc-hero-title">{data.title}</h1>
+              <span className="wbsc-hero-tagline">{data.tagline}</span>
+            </div>
+            {showHeroPhoto && <span className="wbsc-hero-credit">{gallery.heroCredit}</span>}
+          </div>
         </div>
       </section>
 
@@ -576,7 +577,7 @@ const WBSCAwards = () => {
       {wbscPayModalOpen && (
         <MembershipPaymentModal
           plan={{
-            id: "annual",
+            id: "wbsc_entry",
             name: "WBSC 2026 Competition Entry Fee",
             total: "29,500",
             cycle: "per entry (incl. 18% GST)"

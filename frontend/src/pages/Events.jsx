@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { eventsPageData } from "../services/api";
-import { FaCalendarAlt, FaMapMarkerAlt, FaAward } from "react-icons/fa";
+import { FaCalendarAlt, FaMapMarkerAlt, FaAward, FaImages } from "react-icons/fa";
 import ImageLightbox from "../components/ImageLightbox";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import PageHero from "../components/PageHero";
@@ -14,12 +14,36 @@ const Events = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState("");
   const [lightboxAlt, setLightboxAlt] = useState("");
+  const [activeAlbum, setActiveAlbum] = useState("all");
+  const galleryRef = useRef(null);
+
+  const albumsById = Object.fromEntries(data.albums.map((a) => [a.id, a]));
+  const visibleAlbums = activeAlbum === "all" ? data.albums : data.albums.filter((a) => a.id === activeAlbum);
+  const totalPhotos = data.albums.reduce((sum, a) => sum + a.photos.length, 0);
 
   const openLightbox = (src, alt) => {
     setLightboxSrc(src);
     setLightboxAlt(alt);
     setLightboxOpen(true);
   };
+
+  // Filter the gallery to one event and bring it into view. The scroll waits
+  // for the re-render, since filtering changes the page height above the link.
+  const scrollPending = useRef(false);
+  const showAlbum = (id) => {
+    if (id === activeAlbum) {
+      galleryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    scrollPending.current = true;
+    setActiveAlbum(id);
+  };
+
+  useEffect(() => {
+    if (!scrollPending.current) return;
+    scrollPending.current = false;
+    galleryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [activeAlbum]);
 
   return (
     <div className="events-page-wrapper">
@@ -32,44 +56,79 @@ const Events = () => {
         subtitle={data.subtitle}
       />
 
-      <section className="events-gallery-section">
+      <section className="events-gallery-section" ref={galleryRef}>
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">Snapshots</span>
             <h2 className="section-title">Photo Gallery</h2>
             <div className="section-title-line"></div>
           </div>
-          <div className="events-gallery-grid">
-            {data.gallery.map((img, idx) => (
-              <motion.button
-                type="button"
-                key={idx}
-                className="events-gallery-tile"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.05 }}
-                onClick={() => openLightbox(img.src, img.caption)}
-                aria-label={`View photo: ${img.caption}`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  className="events-gallery-img"
-                  loading="lazy"
-                  style={img.focal ? { objectPosition: img.focal } : undefined}
-                />
-                <span className="events-gallery-caption">{img.caption}</span>
-              </motion.button>
-            ))}
+
+          <div className="events-album-filter">
+            <label htmlFor="events-album-select">Browse by event</label>
+            <select
+              id="events-album-select"
+              value={activeAlbum}
+              onChange={(e) => setActiveAlbum(e.target.value)}
+            >
+              <option value="all">All events ({totalPhotos} photos)</option>
+              {data.albums.map((album) => (
+                <option key={album.id} value={album.id}>
+                  {album.title}{album.date ? ` — ${album.date}` : ""}
+                </option>
+              ))}
+            </select>
+            {activeAlbum !== "all" && (
+              <button type="button" className="events-album-reset" onClick={() => setActiveAlbum("all")}>
+                Show all events
+              </button>
+            )}
           </div>
+
+          {visibleAlbums.map((album) => (
+            <div key={album.id} className="events-album" id={`album-${album.id}`}>
+              <div className="events-album-header">
+                <h3>{album.title}</h3>
+                <div className="events-album-meta">
+                  {album.date && <span><FaCalendarAlt /> {album.date}</span>}
+                  {album.venue && <span><FaMapMarkerAlt /> {album.venue}</span>}
+                  <span><FaImages /> {album.photos.length} {album.photos.length === 1 ? "photo" : "photos"}</span>
+                </div>
+              </div>
+              <div className="events-gallery-grid">
+                {album.photos.map((img, idx) => (
+                  <motion.button
+                    type="button"
+                    key={img.src}
+                    className="events-gallery-tile"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: Math.min(idx, 6) * 0.05 }}
+                    onClick={() => openLightbox(img.src, img.caption)}
+                    aria-label={`View photo: ${img.caption}`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      className="events-gallery-img"
+                      loading="lazy"
+                      style={img.focal ? { objectPosition: img.focal } : undefined}
+                    />
+                    <span className="events-gallery-caption">{img.caption}</span>
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
+      {data.upcoming.length > 0 && (
       <section className="events-upcoming-section">
         <div className="container">
           <div className="section-header text-center">
-            <span className="subtitle">Sample placeholder entries</span>
+            <span className="subtitle">Coming up</span>
             <h2 className="section-title">Upcoming Events</h2>
             <div className="section-title-line"></div>
           </div>
@@ -95,6 +154,7 @@ const Events = () => {
           </div>
         </div>
       </section>
+      )}
 
       <section className="events-past-section">
         <div className="container">
@@ -118,7 +178,12 @@ const Events = () => {
                   <h4>{ev.title}</h4>
                   <div className="event-card-meta"><FaCalendarAlt /> {ev.date} &middot; <FaMapMarkerAlt /> {ev.venue}</div>
                   <div className="event-timeline-links">
-                    {ev.links.map((l, lIdx) => (
+                    {ev.album && albumsById[ev.album] && (
+                      <button type="button" className="event-timeline-gallery-btn" onClick={() => showAlbum(ev.album)}>
+                        <FaImages /> View photos ({albumsById[ev.album].photos.length})
+                      </button>
+                    )}
+                    {(ev.links || []).map((l, lIdx) => (
                       <span key={lIdx} className="event-timeline-link-chip">{l}</span>
                     ))}
                   </div>
@@ -153,8 +218,20 @@ const Events = () => {
                 <div className="sitevisit-card-img" style={{ backgroundImage: `url(${visit.image})` }}></div>
                 <div className="sitevisit-card-body">
                   <h3>{visit.title}</h3>
-                  <div className="event-card-meta"><FaCalendarAlt /> {visit.date} &middot; <FaMapMarkerAlt /> {visit.venue}</div>
+                  <div className="event-card-meta">
+                    {visit.date && <><FaCalendarAlt /> {visit.date} &middot; </>}
+                    <FaMapMarkerAlt /> {visit.venue}
+                  </div>
                   <p className="sitevisit-desc">{visit.desc}</p>
+                  {visit.album && albumsById[visit.album] && (
+                    <button
+                      type="button"
+                      className="event-timeline-gallery-btn"
+                      onClick={(e) => { e.stopPropagation(); showAlbum(visit.album); }}
+                    >
+                      <FaImages /> View photos ({albumsById[visit.album].photos.length})
+                    </button>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -178,6 +255,7 @@ const Events = () => {
       </section>
 
 
+      {data.calendar.length > 0 && (
       <section className="events-calendar-section">
         <div className="container">
           <div className="section-header text-center">
@@ -197,6 +275,7 @@ const Events = () => {
           </div>
         </div>
       </section>
+      )}
 
       <ImageLightbox
         src={lightboxSrc}

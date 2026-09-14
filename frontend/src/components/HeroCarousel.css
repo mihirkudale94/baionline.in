@@ -1,10 +1,13 @@
 .hero-carousel-container {
   width: 100%;
-  /* Fills the screen below the sticky header so the banner reads full-height */
-  height: clamp(420px, calc(100vh - 104px), 860px);
+  /* Leaves room under the fold for the headline band below the photos. */
+  height: clamp(380px, 68vh, 720px);
   position: relative;
   overflow: hidden;
   background: var(--ink);
+  /* Keeps the carousel's z-indexes below local to the banner, so they never
+     compete with the sticky header or other page-level layers. */
+  isolation: isolate;
 }
 
 .hero-swiper {
@@ -30,9 +33,7 @@
   filter: blur(28px) saturate(1.15) brightness(0.55);
 }
 
-/* Photographs are shown whole — `contain` guarantees no face is cut. The
-   headline sits over the bottom of the frame, where the scrim below keeps
-   it legible whatever the photo is doing. */
+/* Photographs are shown whole — `contain` guarantees no face is cut. */
 .hero-slide-img {
   position: relative;
   width: 100%;
@@ -43,43 +44,21 @@
 }
 
 /* ---------------------------------------------------------------------
-   Headline overlay
+   Headline band
 
-   The photographs are `contain`, so on a wide screen the bottom of the
-   frame is blurred backdrop rather than photo. The scrim darkens that band
-   into a consistent bed for the type; the copy clears the pagination row
-   with its own bottom padding so the bullets stay visible.
+   Nothing is laid over the photographs; the headline reads in its own band
+   directly under the carousel, styled to match the inner-page headers.
    --------------------------------------------------------------------- */
-.hero-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 22, 40, 0.08) 0%,
-    rgba(10, 22, 40, 0.3) 42%,
-    rgba(10, 22, 40, 0.88) 100%
-  );
-}
-
-.hero-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  pointer-events: none;
-  padding-bottom: 3.25rem;
+.hero-intro {
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-border);
+  padding: 2.75rem 0 2.25rem;
 }
 
 .hero-tag {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.16);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: var(--primary-tint);
+  color: var(--primary-dark);
   padding: 0.35rem 1rem;
   border-radius: var(--r-pill);
   font-family: var(--font-heading);
@@ -91,12 +70,11 @@
 }
 
 .hero-title {
-  font-size: clamp(1.9rem, 4.2vw, 3.6rem);
+  font-size: clamp(1.9rem, 4.2vw, 3.2rem);
   font-weight: 800;
   line-height: 1.12;
-  color: var(--white);
+  color: var(--ink);
   margin: 0 0 0.6rem;
-  text-shadow: 0 2px 20px rgba(10, 22, 40, 0.45);
 }
 
 .hero-sub {
@@ -106,8 +84,7 @@
   font-weight: 600;
   font-size: clamp(0.95rem, 1.15vw, 1.15rem);
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 12px rgba(10, 22, 40, 0.45);
+  color: var(--text-muted);
 }
 
 /* Re-keyed on every slide change, so the animation replays and the caption
@@ -117,8 +94,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.3px;
-  color: rgba(255, 255, 255, 0.78);
-  text-shadow: 0 1px 10px rgba(10, 22, 40, 0.5);
+  color: var(--text-muted);
   animation: hero-caption-in var(--dur-med, 0.45s) ease both;
 }
 
@@ -152,6 +128,12 @@
   backdrop-filter: blur(8px);
   border-radius: 50%;
   transition: all var(--dur-fast) ease;
+}
+
+/* The fixed social rail hugs the right edge (44px wide) at the same height
+   as these arrows; inset the next arrow so it isn't hidden underneath. */
+.hero-swiper .swiper-button-next {
+  right: 60px;
 }
 
 .hero-swiper .swiper-button-next:after,
@@ -206,30 +188,13 @@
   .hero-swiper .swiper-button-prev {
     display: none;
   }
-  /* The frame is only 75vw tall here, so the pill and the caption are
-     dropped and the type tightened rather than crowding the photo. */
-  .hero-overlay {
-    padding-bottom: 2.4rem;
-  }
-  /* .floating-socials is fixed to the right edge and crosses the banner at
-     this size, so the copy is inset to clear the icon rail. */
-  .hero-overlay .container {
-    padding-right: 3.5rem;
-  }
-  .hero-tag,
-  .hero-caption {
-    display: none;
+  .hero-intro {
+    padding: 2rem 0 1.75rem;
   }
   .hero-title {
-    font-size: 1.45rem;
-    margin-bottom: 0.35rem;
+    font-size: 2.1rem;
   }
   .hero-sub {
-    font-size: 0.85rem;
-    line-height: 1.45;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 1rem;
   }
 }

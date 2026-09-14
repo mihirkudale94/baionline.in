@@ -5,7 +5,7 @@
    and the signature has verified. There is deliberately no bundled fallback
    list here: an unreachable backend means an empty banner, not a stale one. */
 
-import { loadRazorpayScript } from "./payments";
+import { openCheckout, readableError } from "./payments";
 
 const API_BASE = (import.meta.env && import.meta.env.VITE_API_BASE_URL) || (
   typeof window !== "undefined" && /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
@@ -55,17 +55,6 @@ export async function getSponsorshipTiers() {
   }
 }
 
-/* FastAPI's own 422 responses carry `detail` as an array of error objects, not
-   a string — rendering that raw gives the user "[object Object]". */
-function readableError(detail) {
-  if (typeof detail === "string" && detail.trim()) return detail;
-  if (Array.isArray(detail)) {
-    const first = detail.find((item) => item && item.msg);
-    if (first) return first.msg;
-  }
-  return "Something went wrong. Please try again.";
-}
-
 async function postJson(path, body) {
   const res = await fetch(`${API_BASE}/sponsors/${path}`, {
     method: "POST",
@@ -82,53 +71,15 @@ async function postJson(path, body) {
    sponsor needs to attach a logo. */
 export async function paySponsorship(details) {
   const order = await postJson("order", details);
-
-  // If using local test key placeholder, simulate successful test payment verification directly
-  if (order.key_id === "rzp_test_baionline" || order.key_id === "rzp_test_demo") {
-    const fakePaymentId = `pay_test_${Date.now()}`;
-    const verified = await postJson("verify", {
-      razorpay_order_id: order.order_id,
-      razorpay_payment_id: fakePaymentId,
-      razorpay_signature: "test_signature"
-    });
-    return { ...verified, order_id: order.order_id };
-  }
-
-  const scriptReady = await loadRazorpayScript();
-  if (!scriptReady) {
-    throw new Error("Could not load the payment gateway. Check your connection and try again.");
-  }
-
-  return new Promise((resolve, reject) => {
-    const checkout = new window.Razorpay({
-      key: order.key_id,
-      amount: order.amount_paise,
-      currency: order.currency,
-      name: "Builders' Association of India — Pune Centre",
-      description: `${order.tier_label} — Sponsorship`,
-      order_id: order.order_id,
-      prefill: order.prefill,
-      notes: { receipt: order.receipt },
-      theme: { color: "#1a73e8" },
-      modal: {
-        ondismiss: () => reject(new Error("Payment was cancelled before it completed."))
-      },
-      handler: (response) => {
-        postJson("verify", {
-          razorpay_order_id: response.razorpay_order_id,
-          razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_signature: response.razorpay_signature
-        })
-          .then((verified) => resolve({ ...verified, order_id: response.razorpay_order_id }))
-          .catch(reject);
-      }
-    });
-
-    checkout.on("payment.failed", (event) => {
-      reject(new Error(event?.error?.description || "The payment could not be completed."));
-    });
-
-    checkout.open();
+  return openCheckout(order, {
+    name: "Builders' Association of India — Pune Centre",
+    description: `${order.tier_label} — Sponsorship`,
+    verify: (response) =>
+      postJson("verify", {
+        razorpay_order_id: response.razorpay_order_id,
+        razorpay_payment_id: response.razorpay_payment_id,
+        razorpay_signature: response.razorpay_signature
+      })
   });
 }
 

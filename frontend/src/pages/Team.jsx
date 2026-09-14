@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { getTeamData } from "../services/api";
+import {
+  getTeamData,
+  getExecutiveCommitteeData,
+  getCommitteesData
+} from "../services/api";
 import ImageLightbox from "../components/ImageLightbox";
 import PageHero from "../components/PageHero";
+import useHashScroll from "../hooks/useHashScroll";
 import "./Team.css";
+import "./Committees.css";
 
 const Team = () => {
   const [team, setTeam] = useState(null);
+  const [exec, setExec] = useState(null);
+  const [committees, setCommittees] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Wait for the rosters before jumping to #executive / #standing.
+  useHashScroll(!loading);
 
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -14,8 +25,14 @@ const Team = () => {
   const [lightboxAlt, setLightboxAlt] = useState("");
 
   useEffect(() => {
-    getTeamData().then((res) => {
-      setTeam(res);
+    Promise.all([
+      getTeamData(),
+      getExecutiveCommitteeData(),
+      getCommitteesData()
+    ]).then(([teamData, execData, committeesData]) => {
+      setTeam(teamData);
+      setExec(execData);
+      setCommittees(committeesData);
       setLoading(false);
     });
   }, []);
@@ -89,6 +106,44 @@ const Team = () => {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* 3. Executive Committee 2026–27 */}
+      <section className="exec-committee-section" id="executive">
+        <div className="container">
+          <h2 className="committees-section-title">Executive Committee 2026–27</h2>
+          <div className="section-title-line"></div>
+
+          <ol className="exec-members-roster">
+            {((exec && exec.members) || []).map((m, idx) => (
+              <li key={idx} className="roster-item">
+                <span className="roster-index">{idx + 1}.</span>
+                <span className="roster-name">{m}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 4. Committees and Members */}
+      <section className="committees-list-section" id="standing">
+        <div className="container">
+          <h2 className="committees-section-title">Committees and Members</h2>
+          <div className="section-title-line"></div>
+
+          <div className="committee-blocks">
+            {committees.map((committee, idx) => (
+              <div key={idx} className="committee-block">
+                <h3 className="committee-block-title">{committee.name}</h3>
+                <ul className="committee-member-list">
+                  {committee.members.map((m, mIdx) => (
+                    <li key={mIdx} className="committee-member">{m}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

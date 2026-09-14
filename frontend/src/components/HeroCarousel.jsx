@@ -21,51 +21,51 @@ const HeroCarousel = ({ slides, intro }) => {
   const caption = slides[active]?.caption;
 
   return (
-    <div className="hero-carousel-container">
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
-        effect="fade"
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false
-        }}
-        speed={900}
-        loop={true}
-        onSlideChange={(swiper) => setActive(swiper.realIndex)}
-        className="hero-swiper"
-      >
-        {slides.map((slide, idx) => (
-          <SwiperSlide key={slide.id}>
-            {/* Blurred copy of the same photo fills the frame so the
-                photo itself can be shown whole, never cropped. */}
-            <div className="hero-slide">
-              <div
-                className="hero-slide-backdrop"
-                style={{ backgroundImage: `url(${slide.image})` }}
-                aria-hidden="true"
-              ></div>
-              <img
-                src={slide.image}
-                alt={slide.alt || ""}
-                className="hero-slide-img"
-                loading={idx === 0 ? "eager" : "lazy"}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <>
+      <div className="hero-carousel-container">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          effect="fade"
+          spaceBetween={0}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false
+          }}
+          speed={900}
+          loop={true}
+          onSlideChange={(swiper) => setActive(swiper.realIndex)}
+          className="hero-swiper"
+        >
+          {slides.map((slide, idx) => (
+            <SwiperSlide key={slide.id}>
+              {/* Blurred copy of the same photo fills the frame so the
+                  photo itself can be shown whole, never cropped. */}
+              <div className="hero-slide">
+                <div
+                  className="hero-slide-backdrop"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                  aria-hidden="true"
+                ></div>
+                <img
+                  src={slide.image}
+                  alt={slide.alt || ""}
+                  className="hero-slide-img"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
-      {/* The headline sits outside the Swiper so it stays put while the
-          photographs cross-fade behind it. Both layers ignore pointer
-          events so dragging, the arrows and the bullets still work. */}
-      <div className="hero-scrim" aria-hidden="true"></div>
+      {/* The photographs are shown clean, with no text over them. The headline
+          and the caption for the photo on screen read in the band below. */}
       {intro && (
-        <div className="hero-overlay">
+        <section className="hero-intro">
           <div className="container">
             {intro.tag && <span className="hero-tag">{intro.tag}</span>}
             <h1 className="hero-title">{intro.title}</h1>
@@ -76,9 +76,9 @@ const HeroCarousel = ({ slides, intro }) => {
               </p>
             )}
           </div>
-        </div>
+        </section>
       )}
-    </div>
+    </>
   );
 };
 

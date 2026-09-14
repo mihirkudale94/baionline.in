@@ -6,13 +6,6 @@
 # engines only. To change the carousel, swap the entries below.
 HERO_SLIDES = [
     {
-        "id": 1,
-        "image": "/images/events/event_bridge-site-visit-1.jpg",
-        "alt": "A cable-stayed bridge under construction, visited by BAI Pune Centre members",
-        "caption": "Cable-stayed bridge project — members' technical site visit",
-        "active": True
-    },
-    {
         "id": 2,
         "image": "/images/events/event_builders-day-2025.jpg",
         "alt": "Builders' Day Celebration 2025 at BAI Pune Centre",
@@ -57,14 +50,14 @@ LEADERSHIP = {
         "title": "Chairman BAI Pune",
         "image": "/images/people/Shri_Ajay_Gujar.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
-        "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
+        "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over 232 Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
     },
     "imm_past_president": {
         "name": "Rajaram Hajare",
         "title": "Vice Chairman BAI Pune",
         "image": "/images/people/Shri_Rajaram_Hajare.jpg",
         "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
-        "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over about 264 plus Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
+        "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over 232 Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
     },
     "hon_secretary": {
         "name": "Dr. Mahesh Rathi",
@@ -661,12 +654,9 @@ SOCIAL_ACTIVITIES_DATA = {
     "title": "Social & CSR Initiatives",
     "subtitle": "Empowering Communities & Building a Sustainable Construction Ecosystem",
     "overview": "At Builders' Association of India (BAI) Pune Centre, we believe that true development goes hand-in-hand with social responsibility. Beyond concrete and steel, our mission is to uplift the lives of construction workers, support the local community, foster sustainable environmental practices, and train the next generation of builders.",
-    "stats": [
-        {"value": "50+", "label": "Medical & Safety Camps"},
-        {"value": "5,000+", "label": "Workers Vaccinated"},
-        {"value": "10,000+", "label": "Tree Saplings Planted"},
-        {"value": "1,200+", "label": "Students Mentored (SIP)"}
-    ],
+    # Impact figures render beside the overview; add only numbers BAI can
+    # source ({"value", "label"}). Empty hides the block.
+    "stats": [],
     "csrInitiatives": [
         {
             "title": "Worker Health & Safety Camps",
@@ -690,21 +680,22 @@ SOCIAL_ACTIVITIES_DATA = {
             "description": "Our landmark program bridges the gap between academic theory and practical construction. We place engineering, architectural, and project management students on active sites under the guidance of experienced BAI mentors.",
             "duration": "Ongoing (Annual)",
             "target": "Civil & Arch Students",
-            "image": "/images/events/event_committee-meeting-office.jpg"
+            "image": "/images/events/event_mitwpu-mou-signing-group.jpg"
         },
         {
             "title": "Kaushalya Vardhan Skill Development",
             "description": "Free vocational training workshops for young and unskilled workers. We provide training in masonry, bar-bending, plumbing, safety operations, and digital basic skills to enhance employability.",
             "duration": "Quarterly Drives",
             "target": "Youth & Unskilled Laborers",
-            "image": "/images/events/event_industrial-facility-visit-1.jpg"
+            "image": "/images/events/event_jcb-plant-training-session.jpg"
         },
         {
-            "title": "Annual Blood Donation Drives",
-            "description": "BAI Pune collaborates with leading blood banks and hospitals to organize community blood donation camps. Members, staff, and construction professionals actively participate to support local emergency reserves.",
-            "duration": "Every Independence Day",
-            "target": "General Public & Members",
-            "image": "/images/events/event_central-bank-outreach-campaign.jpg"
+            "title": "Independence Day Celebrations",
+            "description": "Every year on 15 August, BAI Pune members, past presidents and staff gather for the national flag hoisting ceremony, marking Independence Day together and honouring the nation-builders who came before us.",
+            "duration": "Every 15 August",
+            "target": "Members & Staff",
+            "image": "/images/events/event_independence-day-2026-flag-hoisting.jpg",
+            "focal": "center 45%"
         }
     ],
     "sustainabilityCampaigns": [

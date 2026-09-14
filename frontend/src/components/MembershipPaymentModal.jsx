@@ -120,7 +120,7 @@ const MembershipPaymentModal = ({ plan, onClose }) => {
             <FaCheckCircle className="pay-modal-result-icon is-success" />
             <h2 id="pay-modal-title">Payment Verified</h2>
             <p>
-              Your {receipt.category} subscription of &#8377; {receipt.amount_display} has been
+              Your {receipt.category} payment of &#8377; {receipt.amount_display} has been
               received and verified via Razorpay.
             </p>
             <dl className="pay-modal-receipt">
@@ -139,7 +139,7 @@ const MembershipPaymentModal = ({ plan, onClose }) => {
               </button>
             </div>
             <p className="pay-modal-note">
-              Please quote your Payment Ref ID on your membership application form.
+              Please quote your Payment Ref ID on your application or entry form.
             </p>
             <button type="button" className="pay-modal-submit" onClick={onClose}>
               Done
@@ -148,7 +148,7 @@ const MembershipPaymentModal = ({ plan, onClose }) => {
         ) : (
           <>
             <div className="pay-modal-head">
-              <span className="pay-modal-eyebrow">Subscription Payment</span>
+              <span className="pay-modal-eyebrow">Online Payment</span>
               <h2 id="pay-modal-title">{plan.name}</h2>
               <div className="pay-modal-amount">
                 <FaRupeeSign />

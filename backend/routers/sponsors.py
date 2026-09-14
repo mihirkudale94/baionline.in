@@ -329,46 +329,73 @@ def verify_sponsor_payment(payload: SponsorVerifyIn):
         payload.razorpay_order_id, payload.razorpay_payment_id, payload.razorpay_signature
     ):
         conn = _connect()
+        # A paid listing is never downgraded: otherwise one bad request against
+        # a known order id would pull a paying sponsor off the banner.
         conn.execute(
-            "UPDATE sponsors SET status = ?, updated_at = ? WHERE order_id = ?",
+            "UPDATE sponsors SET status = ?, updated_at = ? WHERE order_id = ? AND status != 'paid'",
             ("signature_failed", _now(), payload.razorpay_order_id),
         )
         conn.commit()
         conn.close()
         raise HTTPException(status_code=400, detail="Payment signature verification failed.")
 
+    row = mark_paid(payload.razorpay_order_id, payload.razorpay_payment_id)
+    if not row:
+        raise HTTPException(status_code=404, detail="Unknown order.")
+
+    return {
+        "status": "paid",
+        "sponsor_id": row["id"],
+        "payment_id": row["payment_id"],
+        "order_id": payload.razorpay_order_id,
+        "company_name": row["company_name"],
+        "tier": SPONSORSHIP_TIERS.get(row["tier"], {}).get("label", row["tier"]),
+        "amount_display": inr(row["amount_paise"]),
+        "upload_token": row["upload_token"],
+    }
+
+
+def mark_paid(order_id, payment_id):
+    """Flip a sponsorship order to 'paid'. Called only after a signature (checkout
+    or webhook) has verified. Returns the row as a dict, or None for an order
+    this table does not know.
+
+    Idempotent: the checkout handler and the webhook both land here for the same
+    payment, so the first payment id and upload token recorded are kept.
+    """
     conn = _connect()
     row = conn.execute(
-        "SELECT id, tier, amount_paise, company_name, upload_token FROM sponsors WHERE order_id = ?",
-        (payload.razorpay_order_id,),
+        """SELECT id, tier, amount_paise, company_name, upload_token, payment_id, status
+           FROM sponsors WHERE order_id = ?""",
+        (order_id,),
     ).fetchone()
     if not row:
         conn.close()
-        raise HTTPException(status_code=404, detail="Unknown order.")
+        return None
 
-    sponsor_id, tier_id, amount_paise, company_name, existing_token = row
+    sponsor_id, tier_id, amount_paise, company_name, existing_token, existing_payment, status = row
     # Reissuing on every verify would invalidate a token the sponsor is already
     # holding, so an existing one is kept.
     token = existing_token or secrets.token_urlsafe(32)
+    if status == "paid" and existing_payment:
+        payment_id = existing_payment
 
     conn.execute(
         """UPDATE sponsors
            SET payment_id = ?, status = ?, upload_token = ?, updated_at = ?
            WHERE order_id = ?""",
-        (payload.razorpay_payment_id, "paid", token, _now(), payload.razorpay_order_id),
+        (payment_id, "paid", token, _now(), order_id),
     )
     conn.commit()
     conn.close()
 
     return {
-        "status": "paid",
-        "sponsor_id": sponsor_id,
-        "payment_id": payload.razorpay_payment_id,
-        "order_id": payload.razorpay_order_id,
+        "id": sponsor_id,
+        "tier": tier_id,
+        "amount_paise": amount_paise,
         "company_name": company_name,
-        "tier": SPONSORSHIP_TIERS.get(tier_id, {}).get("label", tier_id),
-        "amount_display": inr(amount_paise),
         "upload_token": token,
+        "payment_id": payment_id,
     }
 
 
