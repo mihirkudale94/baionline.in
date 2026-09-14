@@ -96,24 +96,10 @@
   .floating-social-btn { transition: background var(--dur-fast) ease; }
 }
 
-/* Narrow screens: smaller bar, no slide-out (no hover to trigger it) */
+/* Narrow screens: the fixed rail sat on top of body copy and cut off line
+   ends. The same four links live in the footer, so drop the rail here. */
 @media (max-width: 768px) {
-  .floating-social-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 0.9rem;
-    border-radius: 6px 0 0 6px;
-  }
-  .floating-social-btn > svg {
-    flex-basis: 38px;
-    width: 38px;
-    height: 0.9rem;
-  }
-  .floating-social-btn:hover,
-  .floating-social-btn:focus-visible {
-    width: 38px;
-  }
-  .floating-social-label {
+  .floating-socials {
     display: none;
   }
 }
