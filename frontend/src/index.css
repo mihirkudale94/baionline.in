@@ -120,6 +120,12 @@ ul {
   min-width: 0;
 }
 
+/* Used by every centred section header (~40 call sites) but was never
+   defined, so headings sat left while their divider line sat centred. */
+.text-center {
+  text-align: center;
+}
+
 .glass-card {
   background: var(--surface);
   border: 1px solid var(--surface-border);
