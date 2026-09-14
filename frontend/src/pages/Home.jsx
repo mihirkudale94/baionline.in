@@ -64,11 +64,11 @@ const Home = () => {
         </div>
         <div className="ticker-track">
           <div className="ticker-content">
-            <span className="ticker-item">• Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-            <span className="ticker-item">• Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-            <span className="ticker-item">• Ut enim ad minim veniam, quis nostrud exercitation ullamco</span>
-            <span className="ticker-item">• Duis aute irure dolor in reprehenderit in voluptate velit esse</span>
-            <span className="ticker-item">• Excepteur sint occaecat cupidatat non proident, sunt in culpa</span>
+            {data.announcements.map((ann, idx) => (
+              <a key={idx} href={ann.pdf} target="_blank" rel="noreferrer" className="ticker-item">
+                • {ann.title}
+              </a>
+            ))}
           </div>
         </div>
       </div>
