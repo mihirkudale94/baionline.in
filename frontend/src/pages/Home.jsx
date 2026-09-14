@@ -5,7 +5,7 @@ import HeroCarousel from "../components/HeroCarousel";
 import SponsorsBanner from "../components/SponsorsBanner";
 import ImageLightbox from "../components/ImageLightbox";
 import TiltCard from "../components/TiltCard";
-import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAlt, FaNewspaper, FaFilePdf, FaLandmark, FaYoutube, FaPlay } from "react-icons/fa";
+import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAlt, FaNewspaper, FaFilePdf, FaYoutube, FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -44,17 +44,6 @@ const Home = () => {
     <div className="home-page-wrapper">
       {/* 1. Hero Carousel */}
       <HeroCarousel slides={data.heroSlides} intro={heroIntro} />
-
-      {/* 1b. Mother Centre Highlight Banner */}
-      <section className="mother-centre-banner">
-        <div className="container mother-centre-inner">
-          <div className="mother-centre-icon"><FaLandmark /></div>
-          <div className="mother-centre-text">
-            <h2>BAI Pune Centre — The Mother Centre</h2>
-            <p>Founded right here in Pune in 1941, this Centre is the birthplace of the Builders' Association of India — the origin of a movement that has since grown into a nationwide network of 264+ centres.</p>
-          </div>
-        </div>
-      </section>
 
       {/* 2. News Alert Marquee Bar */}
       <div className="news-ticker-bar">
