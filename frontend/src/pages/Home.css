@@ -881,6 +881,11 @@
 }
 
 @media (max-width: 768px) {
+  /* 40px of card padding inside the page gutter left body copy only ~250px
+     wide on a phone, around five words per line. */
+  .glass-card {
+    padding: 1.5rem;
+  }
   .action-grid, .events-grid-cards, .bulletin-body-grid {
     grid-template-columns: 1fr;
   }
