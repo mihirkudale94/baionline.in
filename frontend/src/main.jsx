@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { MotionConfig } from 'framer-motion'
 import App from './App.jsx'
 import './index.css'
 
@@ -11,6 +12,10 @@ if ('scrollRestoration' in window.history) {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    {/* Every section fades up on scroll. "user" turns the movement off for
+        visitors who set reduce-motion in their OS; CSS already honours it. */}
+    <MotionConfig reducedMotion="user">
+      <App />
+    </MotionConfig>
   </React.StrictMode>,
 )
