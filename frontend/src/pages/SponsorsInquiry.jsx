@@ -168,7 +168,7 @@ const SponsorsInquiry = () => {
                 <img src="/images/brand/logo-bg.png" alt="BAI Logo" className="info-brand-logo" />
               </div>
               <h3>Why partner with BAI?</h3>
-              <p>With an active footprint of **264+ local centres** and a community of over **2 Lakh associated developers and construction contractors**, Builders Association of India is the single most powerful marketing and networking platform in the infrastructure and real estate sector.</p>
+              <p>With an active footprint of **232 local centres** and a community of over **2 Lakh associated developers and construction contractors**, Builders Association of India is the single most powerful marketing and networking platform in the infrastructure and real estate sector.</p>
               
               <ul className="benefits-list">
                 <li>• Direct exposure to executive developers decision makers.</li>

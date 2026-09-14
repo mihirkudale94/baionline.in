@@ -82,7 +82,7 @@ const Home = () => {
               <h2 className="welcome-title">Building Better Infrastructure. Empowering the Construction Industry.</h2>
               <div className="title-line"></div>
               <p className="welcome-desc">
-                Founded in 1941 right here in Pune under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, the Builders' Association of India (BAI) began as a body to find solutions to builders' problems — and Pune Centre carries that founding legacy forward today, representing builders, contractors, consultants, engineers and developers in and around the city. As a constituent centre of BAI's nationwide network, Pune Centre also connects its members to India's largest construction industry body — 264+ regional centres strong across the country.
+                Founded in 1941 right here in Pune under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, the Builders' Association of India (BAI) began as a body to find solutions to builders' problems — and Pune Centre carries that founding legacy forward today, representing builders, contractors, consultants, engineers and developers in and around the city. As a constituent centre of BAI's nationwide network, Pune Centre also connects its members to India's largest construction industry body — 232 regional centres strong across the country.
               </p>
               <div className="welcome-features-list">
                 <div className="feature-item">
@@ -96,7 +96,7 @@ const Home = () => {
                   <div className="feature-icon-wrapper"><FaGlobe /></div>
                   <div>
                     <h4>Part of BAI's National Network</h4>
-                    <p>264+ regional centres across India, organized in 5 zones.</p>
+                    <p>232 regional centres across India, organized in 5 zones.</p>
                   </div>
                 </div>
               </div>
@@ -190,7 +190,7 @@ const Home = () => {
                 <FaGlobe className="header-icon" />
                 <h3>BAI's National Network</h3>
               </div>
-              <p className="map-desc">BAI Pune Centre is part of a nationwide network present in more than 264+ city centres across the country. Click on any map image below to view it in full resolution.</p>
+              <p className="map-desc">BAI Pune Centre is part of a nationwide network of 232 city centres across the country. Click on any map image below to view it in full resolution.</p>
               
               <div className="presence-maps-grid">
                 <div className="map-card">
