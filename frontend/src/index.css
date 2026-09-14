@@ -267,12 +267,10 @@ ul {
 .animate-fadeInLeft { animation: fadeInLeft 0.8s var(--ease-out) forwards; }
 .animate-fadeInRight { animation: fadeInRight 0.8s var(--ease-out) forwards; }
 
+/* Accent word in a heading. Solid brand blue: the old blue-to-pale gradient
+   faded the last letters to near-invisible on white. */
 .gradient-text {
-  background: linear-gradient(90deg, #1557b0, #1a73e8 55%, #8ab4f8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
+  color: var(--primary);
 }
 
 /* Respect users who prefer less motion */
