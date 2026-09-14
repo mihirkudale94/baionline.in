@@ -199,4 +199,13 @@
     align-items: center;
     gap: 1rem;
   }
+  /* Links were 16px-tall tap targets. Move the list gap into the link's own
+     padding so each row is ~40px tall at the same visual rhythm. */
+  .footer-links-list {
+    gap: 0;
+  }
+  .footer-links-list li a {
+    display: inline-block;
+    padding: 0.7rem 0;
+  }
 }
