@@ -30,8 +30,9 @@
   filter: blur(28px) saturate(1.15) brightness(0.55);
 }
 
-/* Photographs are shown whole and clean — no scrim, no overlay, no text.
-   `contain` guarantees no face is cut and banner text stays readable. */
+/* Photographs are shown whole — `contain` guarantees no face is cut. The
+   headline sits over the bottom of the frame, where the scrim below keeps
+   it legible whatever the photo is doing. */
 .hero-slide-img {
   position: relative;
   width: 100%;
@@ -39,6 +40,105 @@
   object-fit: contain;
   object-position: center;
   display: block;
+}
+
+/* ---------------------------------------------------------------------
+   Headline overlay
+
+   The photographs are `contain`, so on a wide screen the bottom of the
+   frame is blurred backdrop rather than photo. The scrim darkens that band
+   into a consistent bed for the type; the copy clears the pagination row
+   with its own bottom padding so the bullets stay visible.
+   --------------------------------------------------------------------- */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 40, 0.08) 0%,
+    rgba(10, 22, 40, 0.3) 42%,
+    rgba(10, 22, 40, 0.88) 100%
+  );
+}
+
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none;
+  padding-bottom: 3.25rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.35rem 1rem;
+  border-radius: var(--r-pill);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--white);
+  margin: 0 0 0.6rem;
+  text-shadow: 0 2px 20px rgba(10, 22, 40, 0.45);
+}
+
+.hero-sub {
+  max-width: 60ch;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 12px rgba(10, 22, 40, 0.45);
+}
+
+/* Re-keyed on every slide change, so the animation replays and the caption
+   visibly follows the photograph behind it. */
+.hero-caption {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 1px 10px rgba(10, 22, 40, 0.5);
+  animation: hero-caption-in var(--dur-med, 0.45s) ease both;
+}
+
+.hero-caption::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  background: var(--primary-soft);
+}
+
+@keyframes hero-caption-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-caption { animation: none; }
 }
 
 /* Swiper navigation styling */
@@ -105,5 +205,31 @@
   .hero-swiper .swiper-button-next,
   .hero-swiper .swiper-button-prev {
     display: none;
+  }
+  /* The frame is only 75vw tall here, so the pill and the caption are
+     dropped and the type tightened rather than crowding the photo. */
+  .hero-overlay {
+    padding-bottom: 2.4rem;
+  }
+  /* .floating-socials is fixed to the right edge and crosses the banner at
+     this size, so the copy is inset to clear the icon rail. */
+  .hero-overlay .container {
+    padding-right: 3.5rem;
+  }
+  .hero-tag,
+  .hero-caption {
+    display: none;
+  }
+  .hero-title {
+    font-size: 1.45rem;
+    margin-bottom: 0.35rem;
+  }
+  .hero-sub {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

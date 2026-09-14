@@ -23,41 +23,61 @@ function fetchWithTimeout(url, options = {}) {
     .finally(() => clearTimeout(timer));
 }
 
-/* Hero carousel — Pune Centre's own photographs, shown clean with no text
-   overlay. `alt` is never displayed; it is read by screen readers and search
-   engines only. To change the carousel, swap the image paths below. */
+/* Hero carousel — the Pune Centre's own photographs, chosen to show the
+   breadth of the Association at a glance: infrastructure under construction,
+   plant and machinery, the flagship annual gathering, the state meeting and
+   the awards night. `caption` is shown under the headline as the slide
+   changes; `alt` is never displayed, it is read by screen readers and search
+   engines only. To change the carousel, swap the entries below. */
 export const heroSlides = [
   {
     id: 1,
-    image: "/images/events/event_builders-day-2025.jpg",
-    alt: "Builders' Day Celebration 2025 at BAI Pune Centre"
+    image: "/images/events/event_bridge-site-visit-1.jpg",
+    alt: "A cable-stayed bridge under construction, visited by BAI Pune Centre members",
+    caption: "Cable-stayed bridge project — members' technical site visit"
   },
   {
     id: 2,
-    image: "/images/events/event_worker-children-felicitation-2025-1.jpg",
-    alt: "Felicitation of meritorious children of construction workers"
+    image: "/images/events/event_builders-day-2025.jpg",
+    alt: "Builders' Day Celebration 2025 at BAI Pune Centre",
+    caption: "Builders' Day 2025 — the Centre's flagship annual gathering"
   },
   {
     id: 3,
-    image: "/images/events/event_bridge-site-visit-1.jpg",
-    alt: "Technical site visit to a cable-stayed bridge construction project"
+    image: "/images/events/event_jcb-plant-site-visit.jpg",
+    alt: "BAI Pune Centre members with earth-moving machinery at the JCB plant",
+    caption: "Plant and machinery study visit — JCB Design Centre, Pune"
   },
   {
     id: 4,
-    image: "/images/events/event_pmc-courtesy-visit-1.jpg",
-    alt: "Courtesy visit to the Pune Municipal Corporation"
+    image: "/images/events/event_maharashtra-state-meeting-2025.jpg",
+    alt: "The 1st BAI Maharashtra State Meeting 2025-26, hosted by the Pune Centre",
+    caption: "1st BAI Maharashtra State Meeting 2025–26, hosted by Pune"
   },
   {
     id: 5,
-    image: "/images/events/event_industrial-facility-visit-1.jpg",
-    alt: "Members on an industrial facility visit"
+    image: "/images/events/event_nirman-ratna-award-2025.jpg",
+    alt: "The Life Time Achievement citation presented at the Well Built Structure Competition 2025",
+    caption: "Well Built Structure Competition — 30 years of rewarding quality"
   },
   {
     id: 6,
-    image: "/images/events/event_central-bank-outreach-campaign.jpg",
-    alt: "Central Bank of India mega retail credit outreach campaign"
+    image: "/images/events/event_bridge-site-visit-2.jpg",
+    alt: "BAI Pune Centre members being briefed on site at a live bridge project",
+    caption: "On site with the project engineers, briefing members"
   }
 ];
+
+/* Headline shown over the carousel. This is the first thing a visitor
+   reads, so it carries the page's only <h1> and says plainly what the
+   Association is. Figures match the About page and the Mother Centre
+   banner below the fold — update all three together. */
+export const heroIntro = {
+  tag: "Estd. 1941 · Pune — The Mother Centre",
+  title: "Builders' Association of India",
+  subtitle:
+    "India's apex association of engineering construction contractors and builders — 264+ centres, 25,000+ members, since 1941."
+};
 
 export const stats = [
   { label: "Founded", count: "1941" },

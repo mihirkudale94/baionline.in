@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getHomeData, youtubeVideos, youtubeChannel } from "../services/api";
+import { getHomeData, heroIntro, youtubeVideos, youtubeChannel } from "../services/api";
 import HeroCarousel from "../components/HeroCarousel";
 import SponsorsBanner from "../components/SponsorsBanner";
 import ImageLightbox from "../components/ImageLightbox";
@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div className="home-page-wrapper">
       {/* 1. Hero Carousel */}
-      <HeroCarousel slides={data.heroSlides} />
+      <HeroCarousel slides={data.heroSlides} intro={heroIntro} />
 
       {/* 1b. Mother Centre Highlight Banner */}
       <section className="mother-centre-banner">

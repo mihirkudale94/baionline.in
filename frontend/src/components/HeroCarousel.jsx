@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 
@@ -10,8 +10,15 @@ import "swiper/css/effect-fade";
 
 import "./HeroCarousel.css";
 
-const HeroCarousel = ({ slides }) => {
+const HeroCarousel = ({ slides, intro }) => {
+  /* Tracks which photograph is showing so the caption under the headline can
+     follow it. `realIndex` is used rather than `activeIndex` because the
+     carousel loops and Swiper pads the loop with cloned slides. */
+  const [active, setActive] = useState(0);
+
   if (!slides || slides.length === 0) return null;
+
+  const caption = slides[active]?.caption;
 
   return (
     <div className="hero-carousel-container">
@@ -29,6 +36,7 @@ const HeroCarousel = ({ slides }) => {
         }}
         speed={900}
         loop={true}
+        onSlideChange={(swiper) => setActive(swiper.realIndex)}
         className="hero-swiper"
       >
         {slides.map((slide, idx) => (
@@ -51,6 +59,25 @@ const HeroCarousel = ({ slides }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* The headline sits outside the Swiper so it stays put while the
+          photographs cross-fade behind it. Both layers ignore pointer
+          events so dragging, the arrows and the bullets still work. */}
+      <div className="hero-scrim" aria-hidden="true"></div>
+      {intro && (
+        <div className="hero-overlay">
+          <div className="container">
+            {intro.tag && <span className="hero-tag">{intro.tag}</span>}
+            <h1 className="hero-title">{intro.title}</h1>
+            {intro.subtitle && <p className="hero-sub">{intro.subtitle}</p>}
+            {caption && (
+              <p className="hero-caption" key={active}>
+                {caption}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
