@@ -259,6 +259,13 @@
   color: var(--navy);
   font-size: 1.6rem;
   cursor: pointer;
+  /* 44px tap target; the bare icon was 26x32. Negative margin keeps the
+     glyph where it was against the header's right edge. */
+  width: 44px;
+  height: 44px;
+  margin-right: -9px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Responsive styles */
@@ -334,7 +341,7 @@
   }
 
   .mobile-toggle-btn {
-    display: block;
+    display: flex;
     order: 3;
   }
 
