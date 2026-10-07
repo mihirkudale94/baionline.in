@@ -64,10 +64,13 @@
 }
 
 .welcome-desc {
+  max-width: none; /* fill the card, past the global 80ch cap on <p> */
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--gray-800);
   margin-bottom: 2rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .welcome-features-list {
@@ -205,7 +208,10 @@
   gap: 2.5rem;
 }
 
-.action-card {
+/* Paired with .action-card.glass-card so .glass-card's own padding can't
+   make the two CTA cards differ. */
+.action-card,
+.action-card.glass-card {
   padding: 3rem;
   border-radius: 20px;
   display: flex;
@@ -235,6 +241,7 @@
 .action-card .btn {
   width: fit-content;
   border-radius: 30px;
+  margin-top: auto; /* buttons sit on the same line in both cards */
 }
 
 .action-card.orange-card {
@@ -396,7 +403,19 @@
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 2.5rem;
-  align-items: flex-start;
+  align-items: stretch;
+}
+
+/* Spans both columns, below the main content and the widgets */
+.split-full-row {
+  grid-column: 1 / -1;
+}
+
+/* Columns stretch to the same height; the last card in each grows to
+   absorb any difference so neither column leaves an empty band. */
+.left-content-column > :last-child,
+.right-widgets-column > :last-child {
+  flex-grow: 1;
 }
 
 .left-content-column {
@@ -556,6 +575,20 @@
   color: var(--gray-800);
   line-height: 1.5;
   margin-bottom: 1rem;
+}
+
+/* Overrides the site-wide justify rule in index.css */
+.ann-text-details p.ann-desc-email {
+  text-align: left !important;
+}
+
+.ann-email {
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.ann-email:hover {
+  text-decoration: underline;
 }
 
 .btn-xs {
@@ -818,9 +851,18 @@
   color: var(--navy);
 }
 
+.news-feed-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+/* When the card is stretched to match the left column, spread the items
+   down its height instead of leaving a blank area at the bottom. */
 .communique-links-list {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
   gap: 1.25rem;
 }
 
@@ -894,7 +936,8 @@
   .welcome-section {
     padding: 4rem 0;
   }
-  .action-card {
+  .action-card,
+  .action-card.glass-card {
     padding: 2rem;
   }
 }
@@ -996,4 +1039,101 @@
   .wbsc-home-logo { width: 120px; }
   .wbsc-home-actions { justify-content: center; }
   .wbsc-home-text h2 { font-size: 1.45rem; }
+}
+
+/* Membership call-to-action band (above Our Sponsors) */
+.membership-cta-band {
+  padding: 4rem 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(26, 115, 232, 0.35), transparent 55%),
+    var(--ink);
+  color: var(--surface);
+}
+
+.membership-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.membership-cta-copy {
+  max-width: 680px;
+}
+
+.membership-cta-tag {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--r-pill);
+  background: var(--accent-amber);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.membership-cta-copy h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  color: var(--surface);
+  margin: 0 0 0.75rem;
+}
+
+.membership-cta-copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.membership-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 52px;
+  padding: 0.9rem 2rem;
+  border-radius: var(--r-pill);
+  background: var(--accent-amber);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(249, 171, 0, 0.35);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.membership-cta-btn:hover,
+.membership-cta-btn:focus-visible {
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(249, 171, 0, 0.45);
+}
+
+.membership-cta-btn:focus-visible {
+  outline: 3px solid var(--surface);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .membership-cta-band {
+    padding: 3rem 0;
+  }
+
+  .membership-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .membership-cta-actions {
+    width: 100%;
+  }
+
+  .membership-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

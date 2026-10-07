@@ -16,7 +16,6 @@ const Activities = () => {
       <PageHero
         image="/images/events/event_chenab-bridge-technical-talk.jpg"
         alt="Inaugural lamp lighting at the Pune Centre's technical talk on the making of the Chenab bridge"
-        focal="center 25%"
         tag="Pune Centre"
         title="BAI Activities"
         subtitle="What the Pune Centre runs for its members through the year"

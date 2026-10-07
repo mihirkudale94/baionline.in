@@ -139,7 +139,6 @@ const SocialActivities = () => {
       <PageHero
         image="/images/events/event_worker-children-felicitation-2025-1.jpg"
         alt="Felicitation of meritorious children of construction workers"
-        focal="center 25%"
         tag="Building Society"
         title={data.title}
         subtitle={data.subtitle}
@@ -148,7 +147,7 @@ const SocialActivities = () => {
       {/* 2. Overview & Impact Stats */}
       <section className="social-overview-section">
         <div className="container">
-          <div className={`overview-grid${data.stats?.length ? "" : " overview-grid--solo"}`}>
+          <div className="overview-grid">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}

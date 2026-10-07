@@ -49,7 +49,6 @@ const MembersArea = () => {
       <PageHero
         image="/images/events/event_industrial-facility-visit-2.jpg"
         alt="Pune Centre members being briefed on the shop floor during a facility visit"
-        focal="center 25%"
         tag="Private Portal"
         title="Members Area"
         subtitle="Access exclusive indices, notifications and circulars for registered developers"

@@ -11,10 +11,8 @@ import "./PageHero.css";
   band directly below. Anything extra a page needs in its header (a download
   button, say) goes in as children and lands under the subtitle.
 
-  The photo is shown whole (`object-fit: contain`) so no face is cropped. A
-  blurred, darkened copy of the same photo fills whatever the picture does not
-  cover, so the band still reads as a solid frame — `focal` frames that
-  backdrop.
+  The photo spans the full width at its own height, so it is shown whole —
+  never cropped, letterboxed or padded out with a blurred fill.
 
   A page whose banner photograph is not ready yet passes `placeholder` and no
   `image`, and the band keeps its shape with a "coming soon" card in it rather
@@ -23,7 +21,6 @@ import "./PageHero.css";
 const PageHero = ({
   image,
   alt = "",
-  focal = "center 25%",
   placeholder,
   tag,
   title,
@@ -33,11 +30,6 @@ const PageHero = ({
   <>
     {image && (
       <div className="page-hero-photo">
-        <div
-          className="page-hero-photo-backdrop"
-          style={{ backgroundImage: `url(${image})`, backgroundPosition: focal }}
-          aria-hidden="true"
-        ></div>
         <img src={image} alt={alt} className="page-hero-photo-img" />
       </div>
     )}

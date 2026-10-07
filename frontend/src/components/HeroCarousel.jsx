@@ -12,8 +12,8 @@ import "./HeroCarousel.css";
 
 const HeroCarousel = ({ slides, intro }) => {
   /* Tracks which photograph is showing so the caption under the headline can
-     follow it. `realIndex` is used rather than `activeIndex` because the
-     carousel loops and Swiper pads the loop with cloned slides. */
+     follow it. `rewind` rather than `loop` wraps back to the first photo
+     without cloned slides, so it works however few photos there are. */
   const [active, setActive] = useState(0);
 
   if (!slides || slides.length === 0) return null;
@@ -36,25 +36,23 @@ const HeroCarousel = ({ slides, intro }) => {
             pauseOnMouseEnter: false
           }}
           speed={900}
-          loop={true}
+          autoHeight
+          rewind
           onSlideChange={(swiper) => setActive(swiper.realIndex)}
           className="hero-swiper"
         >
-          {slides.map((slide, idx) => (
+          {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              {/* Blurred copy of the same photo fills the frame so the
-                  photo itself can be shown whole, never cropped. */}
               <div className="hero-slide">
-                <div
-                  className="hero-slide-backdrop"
-                  style={{ backgroundImage: `url(${slide.image})` }}
-                  aria-hidden="true"
-                ></div>
                 <img
                   src={slide.image}
                   alt={slide.alt || ""}
                   className="hero-slide-img"
-                  loading={idx === 0 ? "eager" : "lazy"}
+                  /* The banner takes each photo's height, so re-measure once
+                     the photo has loaded and its height is known. */
+                  onLoad={(e) =>
+                    e.currentTarget.closest(".swiper")?.swiper?.updateAutoHeight(0)
+                  }
                 />
               </div>
             </SwiperSlide>

@@ -8,6 +8,7 @@ import {
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import useHashScroll from "../hooks/useHashScroll";
 import PageHero from "../components/PageHero";
+import CommitteePicker from "../components/CommitteePicker";
 import "./Committees.css";
 
 /* This page renders the Centre's "Constitution of Committees for the Year
@@ -52,7 +53,6 @@ const Committees = () => {
       <PageHero
         image="/images/events/event_office-meeting-1.jpg"
         alt="A BAI Pune Centre committee meeting in session at the Centre office"
-        focal="center 35%"
         title="Committees 2026–27"
         subtitle={doc ? doc.subject : undefined}
       />
@@ -116,25 +116,7 @@ const Committees = () => {
           <h2 className="committees-section-title">Committees and Members</h2>
           <div className="section-title-line"></div>
 
-          <div className="committee-blocks">
-            {list.map((committee, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (idx % 3) * 0.05 }}
-                className="committee-block"
-              >
-                <h3 className="committee-block-title">{committee.name}</h3>
-                <ul className="committee-member-list">
-                  {committee.members.map((m, mIdx) => (
-                    <li key={mIdx} className="committee-member">{m}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+          <CommitteePicker committees={list} />
         </div>
       </section>
 

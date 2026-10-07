@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getContactData } from "../services/api";
+import { getContactData, submitForm } from "../services/api";
 import PageHero from "../components/PageHero";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
@@ -17,24 +17,38 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     getContactData().then((res) => {
       setData(res);
       setLoading(false);
+    }).catch(err => {
+      console.error(err);
+      setLoading(false);
     });
   }, []);
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Simulate API form post
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setSubmitError("");
+    
+    try {
+      await submitForm("contact", { name, email, phone, subject, message });
       setFormSubmitted(true);
       setName("");
       setEmail("");
+      setPhone("");
       setSubject("");
       setMessage("");
-    }, 800);
+    } catch (err) {
+      setSubmitError("Failed to send message. Please try again later or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (loading) {
@@ -52,7 +66,6 @@ const Contact = () => {
       <PageHero
         image="/images/events/event_pmc-courtesy-visit-1.jpg"
         alt="BAI Pune Centre members on a courtesy visit to the Pune Municipal Corporation"
-        focal="center 25%"
         tag="Get in Touch"
         title={data.title}
         subtitle="Builders Association of India Headquarters"
@@ -86,8 +99,12 @@ const Contact = () => {
                 <div className="detail-icon"><FaPhoneAlt /></div>
                 <div>
                   <h3>Telephone & Fax</h3>
-                  <p>Tel: {data.office.tel.join(", ")}</p>
-                  <p>Fax: {data.office.phone}</p>
+                  <p>Tel: {data.office.tel.map((num, i) => (
+                    <React.Fragment key={i}>
+                      <a href={`tel:${num.replace(/[^\d+]/g, '')}`}>{num}</a>{i < data.office.tel.length - 1 && ", "}
+                    </React.Fragment>
+                  ))}</p>
+                  <p>Fax: <a href={`tel:${data.office.phone.replace(/[^\d+]/g, '')}`}>{data.office.phone}</a></p>
                 </div>
               </div>
 
@@ -143,6 +160,16 @@ const Contact = () => {
                   </div>
 
                   <div className="form-group">
+                    <label>Phone Number (Optional)</label>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="Enter 10-digit mobile number"
+                    />
+                  </div>
+
+                  <div className="form-group">
                     <label>Subject</label>
                     <input
                       type="text"
@@ -163,9 +190,11 @@ const Contact = () => {
                       placeholder="Describe your query..."
                     ></textarea>
                   </div>
+                  
+                  {submitError && <div className="form-error-banner">{submitError}</div>}
 
-                  <button type="submit" className="btn btn-primary form-submit-btn">
-                    Send Message <FaPaperPlane className="submit-icon" />
+                  <button type="submit" className="btn btn-primary form-submit-btn" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Message"} {!isSubmitting && <FaPaperPlane className="submit-icon" />}
                   </button>
                 </form>
               )}

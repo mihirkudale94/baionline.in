@@ -35,7 +35,6 @@ const Media = () => {
       <PageHero
         image="/images/events/event_mitwpu-mou-signing-group.jpg"
         alt="BAI Pune Centre signing a Memorandum of Understanding with MIT World Peace University"
-        focal="center 25%"
         tag="News & Press"
         title="BAI in Media"
         subtitle="Latest updates, press releases and news coverage of Builders Association of India"

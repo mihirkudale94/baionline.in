@@ -37,6 +37,7 @@
   color: var(--navy-light);
   line-height: 1.6;
   margin: 0 0 1rem 0;
+  max-width: none;
 }
 
 .services-intro-text {
@@ -44,7 +45,7 @@
   color: var(--gray-800);
   line-height: 1.75;
   margin: 0;
-  max-width: 900px;
+  max-width: none;
 }
 
 /* Service cards */
@@ -54,7 +55,15 @@
   gap: 1.5rem;
 }
 
+/* Each card spans three rows of the parent grid (icon, title, description)
+   via subgrid, so a title that wraps to two lines pushes every description in
+   that row down together and all descriptions start on the same line. */
 .service-card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  align-content: start;
   padding: 1.75rem;
   transition: transform var(--dur-med, 0.3s) var(--ease-out), box-shadow var(--dur-med, 0.3s) var(--ease-out);
 }
@@ -75,6 +84,7 @@
   color: var(--gold);
   font-size: 1.15rem;
   margin-bottom: 1rem;
+  justify-self: start;
 }
 
 .service-card-title {
@@ -168,25 +178,32 @@
   line-height: 1.7;
   margin: 0 0 1.5rem 0;
   color: rgba(255, 255, 255, 0.78);
-  max-width: 780px;
+  max-width: none;
 }
 
 .services-contact-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  /* Email and phone take only their own width; the address fills the rest
+     (and drops to its own line when it can't fit). */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
 }
 
 .services-contact-list li {
+  flex: 0 1 auto;
   display: flex;
   align-items: flex-start;
   gap: 0.7rem;
   font-size: 0.9rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.services-contact-list li:last-child {
+  flex: 1 1 320px;
 }
 
 .services-contact-list svg {

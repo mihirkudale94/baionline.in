@@ -1,0 +1,73 @@
+[
+  {
+    "label": "About",
+    "path": "/about",
+    "children": [
+      {
+        "label": "About BAI",
+        "path": "/about"
+      },
+      {
+        "label": "Team",
+        "path": "/team",
+        "children": [
+          {
+            "label": "Office Bearers",
+            "path": "/team"
+          },
+          {
+            "label": "Executive Committee",
+            "path": "/committees#executive"
+          }
+        ]
+      },
+      {
+        "label": "Past Office Bearers",
+        "path": "/past-presidents"
+      }
+    ]
+  },
+  {
+    "label": "BAI Activities Pune",
+    "path": "/activities"
+  },
+  {
+    "label": "Events",
+    "path": "/events"
+  },
+  {
+    "label": "WBSC 2026",
+    "path": "/wbsc-awards",
+    "highlight": true
+  },
+  {
+    "label": "Membership",
+    "path": "/membership"
+  },
+  {
+    "label": "Resources",
+    "path": "#",
+    "children": [
+      {
+        "label": "BAI Services",
+        "path": "/services"
+      },
+      {
+        "label": "BAI in Media",
+        "path": "/media"
+      },
+      {
+        "label": "Sponsors Inquiry",
+        "path": "/sponsors-inquiry"
+      }
+    ]
+  },
+  {
+    "label": "Social Activities",
+    "path": "/social-activities"
+  },
+  {
+    "label": "Contact Us",
+    "path": "/contact"
+  }
+]

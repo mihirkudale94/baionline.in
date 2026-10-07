@@ -45,7 +45,6 @@ const SponsorsInquiry = () => {
       <PageHero
         image="/images/events/event_maharashtra-state-meeting-2025.jpg"
         alt="Sponsor boards flanking the dais at the 1st BAI Maharashtra State Meeting 2025-26, hosted by the Pune Centre"
-        focal="center 25%"
         tag="Partnerships"
         title="Sponsors Inquiry"
         subtitle="Collaborate with India's premier apex construction body"
@@ -168,7 +167,7 @@ const SponsorsInquiry = () => {
                 <img src="/images/brand/logo-bg.png" alt="BAI Logo" className="info-brand-logo" />
               </div>
               <h3>Why partner with BAI?</h3>
-              <p>With an active footprint of **232 local centres** and a community of over **2 Lakh associated developers and construction contractors**, Builders Association of India is the single most powerful marketing and networking platform in the infrastructure and real estate sector.</p>
+              <p>With an active footprint of <strong>232 local centres</strong> and a community of over <strong>2 Lakh associated developers and construction contractors</strong>, Builders Association of India is the single most powerful marketing and networking platform in the infrastructure and real estate sector.</p>
               
               <ul className="benefits-list">
                 <li>• Direct exposure to executive developers decision makers.</li>

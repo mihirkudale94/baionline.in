@@ -100,7 +100,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  max-width: 720px;
+  flex: 1 1 100%;
 }
 
 .wbsc-hero-eyebrow {
@@ -149,7 +149,7 @@
 }
 
 .wbsc-about-section { padding: 5rem 0; background: var(--white); }
-.wbsc-about-text { max-width: 850px; margin: 0 auto 1.25rem auto; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--gray-800); }
+.wbsc-about-text { max-width: none; margin: 0 0 1.25rem; text-align: center; font-size: 0.95rem; line-height: 1.8; color: var(--gray-800); }
 .wbsc-about-text:last-child { margin-bottom: 0; }
 
 .wbsc-why-section { padding: 5rem 0; background: var(--gray-50); }

@@ -6,6 +6,7 @@ import {
 } from "../services/api";
 import ImageLightbox from "../components/ImageLightbox";
 import PageHero from "../components/PageHero";
+import CommitteePicker from "../components/CommitteePicker";
 import useHashScroll from "../hooks/useHashScroll";
 import "./Team.css";
 import "./Committees.css";
@@ -83,7 +84,6 @@ const Team = () => {
       <PageHero
         image="/images/events/event_office-meeting-2.jpg"
         alt="BAI Pune Centre office bearers at the Centre office, below the honour boards of past chairmen and secretaries"
-        focal="center 30%"
         tag="Governing Council"
         title="BAI Pune Centre Team 2026-27"
         subtitle="Office Bearers of BAI Pune Centre"
@@ -132,18 +132,7 @@ const Team = () => {
           <h2 className="committees-section-title">Committees and Members</h2>
           <div className="section-title-line"></div>
 
-          <div className="committee-blocks">
-            {committees.map((committee, idx) => (
-              <div key={idx} className="committee-block">
-                <h3 className="committee-block-title">{committee.name}</h3>
-                <ul className="committee-member-list">
-                  {committee.members.map((m, mIdx) => (
-                    <li key={mIdx} className="committee-member">{m}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <CommitteePicker committees={committees} />
         </div>
       </section>
 

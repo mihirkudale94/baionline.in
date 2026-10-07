@@ -400,7 +400,7 @@ const WBSCAwards = () => {
             >
               <FaLock style={{ marginRight: "0.5rem" }} /> Pay WBSC 2026 Entry Fee Online (₹29,500 via Razorpay)
             </button>
-            <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: "0.5rem" }}>
+            <p className="wbsc-pay-note" style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: "0.5rem" }}>
               Includes ₹25,000 Entry Fee + 18% GST. Instant Razorpay verification &amp; GST Tax Invoice receipt.
             </p>
           </div>

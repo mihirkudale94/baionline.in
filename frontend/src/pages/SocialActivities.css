@@ -13,9 +13,8 @@
 
 .overview-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
 }
 
 .social-section-title {
@@ -37,12 +36,8 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-body);
-}
-
-/* No stats to show: one readable column instead of an empty right half */
-.overview-grid--solo {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 760px;
+  /* Spans the full container instead of the site-wide 80ch line cap */
+  max-width: none;
 }
 
 .overview-stats-col {
@@ -52,7 +47,7 @@
 
 .stats-glass-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   width: 100%;
 }
@@ -91,13 +86,8 @@
 }
 
 @media (max-width: 991px) {
-  /* minmax(0, …) lets the column shrink below the stat numbers' min-content
-     width; plain 1fr grew to ~416px on a 375px phone and clipped the intro
-     copy and the right-hand stat cards. */
-  .overview-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 3rem;
-  }
+  /* minmax(0, …) lets the columns shrink below the stat numbers' min-content
+     width; plain 1fr grew past a 375px phone and clipped the stat cards. */
   .stats-glass-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -156,6 +146,20 @@
   font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+/* CSR and outreach intros span the full container and are justified like
+   body copy (phones keep normal alignment, as elsewhere on the site). */
+:is(.social-csr-section, .social-outreach-section) :is(.section-header, .section-intro) {
+  max-width: none;
+}
+
+@media (min-width: 769px) {
+  :is(.social-csr-section, .social-outreach-section) .section-intro {
+    text-align: justify;
+    text-align-last: center;
+    hyphens: auto;
+  }
 }
 
 .csr-cards-grid {
@@ -411,6 +415,11 @@
   margin-bottom: 0.75rem;
 }
 
+.green-subtitle,
+.green-campaign-item p {
+  max-width: none;
+}
+
 .green-subtitle {
   font-size: 1.1rem;
   opacity: 0.9;
@@ -487,6 +496,7 @@
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.88) !important;
   margin-bottom: 1.75rem;
+  max-width: none;
 }
 
 .disaster-image-wrapper {

@@ -1,0 +1,34 @@
+{
+  "president": {
+    "name": "Ajay R. Gujar",
+    "title": "Chairman BAI Pune",
+    "image": "/images/people/Shri_Ajay_Gujar.jpg",
+    "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services, 'Poona', now known as 'Pune', who suggested that builders working under his command, form a body for finding solutions to various problems. He went further and made available a piece of land inside the premises of Southern Command Headquarters in Pune, on which an office was constructed and aptly named 'Jackson Hut', which stands even today as a monument in BAI's name.",
+    "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 25,000 plus direct members spread over 232 Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members. Throughout its more than seven decades of existence, BAI has had its ups and downs, trials and tribulations, moments of strengths and weakness, moments of glory and disappointment. But, its umbrella has protected and furthered the cause of the Indian construction industry and its constituents in many ways."
+  },
+  "imm_past_president": {
+    "name": "Rajaram Hajare",
+    "title": "Vice Chairman BAI Pune",
+    "image": "/images/people/Shri_Rajaram_Hajare.jpg",
+    "bio": "Most executors of infrastructure development programmers and builders of real estate, i.e. the construction companies in India, are under the umbrella of the over-seven-decades-old Builders' Association of India (BAI). BAI is the only all India apex representative body of civil engineering construction companies. BAI was founded in 1941 under the guidance and blessings of Brig. C.V.S. Jackson of Military Engineering Services.",
+    "bio_extended": "During this journey of over 85 years, BAI's membership has grown from 250 members spread over 3 Centres, to more than 20,000 plus direct members spread over 232 Centres across the length and breadth of the country. Various regional associations affiliated to BAI, add another 2,00,000 indirect members."
+  },
+  "hon_secretary": {
+    "name": "Dr. Mahesh Rathi",
+    "title": "Secretary BAI Pune",
+    "image": "/images/people/Shri_Mahesh_Rathi.jpg",
+    "bio": "Secretary of Builders' Association of India Pune."
+  },
+  "hon_joint_secretary": {
+    "name": "Sanjay Apte",
+    "title": "Jt Secretary BAI Pune",
+    "image": "/images/people/Shri_Sanjay_Apte.jpg",
+    "bio": "Jt. Secretary of Builders' Association of India Pune."
+  },
+  "hon_treasurer": {
+    "name": "Sushil N. Agarwal",
+    "title": "Treasurer BAI Pune",
+    "image": "/images/people/Shri_Sushil_Agarwal.jpg",
+    "bio": "Treasurer of Builders' Association of India Pune."
+  }
+}

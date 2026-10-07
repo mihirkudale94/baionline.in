@@ -66,7 +66,6 @@ const WheelingDealing = ({ defaultTab = "listings" }) => {
       <PageHero
         image="/images/events/event_jcb-plant-site-visit.jpg"
         alt="Pune Centre members with excavators, loaders and rollers at the JCB plant"
-        focal="center 25%"
         tag="Wheeling & Dealing"
         title="Machinery Exchange"
         subtitle="Rent heavy machinery, request specialized subcontracts or hire equipments"

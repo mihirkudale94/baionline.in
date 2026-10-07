@@ -54,10 +54,7 @@ const Navbar = () => {
           />
           <div className="logo-text">
             <span className="logo-title">BUILDERS' ASSOCIATION OF INDIA</span>
-            <span className="logo-subtitle">
-              Pune Centre
-              <span className="logo-subtitle-extra"></span>
-            </span>
+            <span className="logo-subtitle">Pune Centre</span>
           </div>
         </Link>
 

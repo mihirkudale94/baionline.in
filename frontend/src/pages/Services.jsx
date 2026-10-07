@@ -37,7 +37,6 @@ const Services = () => {
       <PageHero
         image={hero.image}
         alt={hero.alt}
-        focal={hero.focal}
         tag={tag}
         title={title}
         subtitle={subtitle}

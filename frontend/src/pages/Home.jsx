@@ -9,6 +9,22 @@ import { FaBuilding, FaGlobe, FaArrowRight, FaBullhorn, FaBookOpen, FaCalendarAl
 import { Link } from "react-router-dom";
 import "./Home.css";
 
+// Render email addresses as mailto links. Long addresses can't wrap, so
+// justified text would stretch the line before them into wide gaps; text
+// containing an email is left-aligned instead (see .ann-desc-email).
+const EMAIL_RE = /([\w.+-]+@[\w-]+(?:\.[\w-]+)+)/g;
+const hasEmail = (text) => /[\w.+-]+@[\w-]+\.[\w-]+/.test(text);
+const linkifyEmails = (text) =>
+  text.split(EMAIL_RE).map((part, i) =>
+    i % 2 === 1 ? (
+      <a key={i} href={`mailto:${part}`} className="ann-email">
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+
 const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -168,53 +184,15 @@ const Home = () => {
                     )}
                     <div className="ann-text-details">
                       <h4>{ann.title}</h4>
-                      <p>{ann.desc}</p>
+                      <p className={hasEmail(ann.desc) ? "ann-desc-email" : undefined}>
+                        {linkifyEmails(ann.desc)}
+                      </p>
                       <a href={ann.pdf} target="_blank" rel="noreferrer" className="btn btn-primary btn-xs">
                         <FaFilePdf style={{ marginRight: "6px" }} /> View PDF
                       </a>
                     </div>
                   </div>
                 ))}
-              </div>
-            </motion.div>
-
-            {/* Map Presence Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="presence-map-layout glass-card"
-            >
-              <div className="section-header-box">
-                <FaGlobe className="header-icon" />
-                <h3>BAI's National Network</h3>
-              </div>
-              <p className="map-desc">BAI Pune Centre is part of a nationwide network of 232 city centres across the country. Click on any map image below to view it in full resolution.</p>
-              
-              <div className="presence-maps-grid">
-                <div className="map-card">
-                  <img 
-                    src="/images/maps/map-171.png" 
-                    alt="Permanent Regional Offices Map" 
-                    className="india-map-img"
-                    loading="lazy"
-                    onClick={() => handleOpenLightbox("/images/maps/map-171.png", "Permanent Regional Offices Map")}
-                    style={{ cursor: "zoom-in" }}
-                  />
-                  <span>Permanent Regional Offices</span>
-                </div>
-                <div className="map-card">
-                  <img 
-                    src="/images/maps/map-new-bg-full.png" 
-                    alt="National Coverage Boundaries Map" 
-                    className="india-map-img"
-                    loading="lazy"
-                    onClick={() => handleOpenLightbox("/images/maps/map-new-bg-full.png", "National Coverage Boundaries Map")}
-                    style={{ cursor: "zoom-in" }}
-                  />
-                  <span>National Coverage Boundaries</span>
-                </div>
               </div>
             </motion.div>
 
@@ -344,6 +322,62 @@ const Home = () => {
 
           </div>
 
+            {/* Map Presence Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="presence-map-layout glass-card split-full-row"
+            >
+              <div className="section-header-box">
+                <FaGlobe className="header-icon" />
+                <h3>BAI's National Network</h3>
+              </div>
+              <p className="map-desc">BAI Pune Centre is part of a nationwide network of 232 city centres across the country. Click on any map image below to view it in full resolution.</p>
+              
+              <div className="presence-maps-grid">
+                <div className="map-card">
+                  <img 
+                    src="/images/maps/map-171.png" 
+                    alt="Permanent Regional Offices Map" 
+                    className="india-map-img"
+                    loading="lazy"
+                    onClick={() => handleOpenLightbox("/images/maps/map-171.png", "Permanent Regional Offices Map")}
+                    style={{ cursor: "zoom-in" }}
+                  />
+                  <span>Permanent Regional Offices</span>
+                </div>
+                <div className="map-card">
+                  <img 
+                    src="/images/maps/map-new-bg-full.png" 
+                    alt="National Coverage Boundaries Map" 
+                    className="india-map-img"
+                    loading="lazy"
+                    onClick={() => handleOpenLightbox("/images/maps/map-new-bg-full.png", "National Coverage Boundaries Map")}
+                    style={{ cursor: "zoom-in" }}
+                  />
+                  <span>National Coverage Boundaries</span>
+                </div>
+              </div>
+            </motion.div>
+
+        </div>
+      </section>
+
+      {/* Membership call-to-action */}
+      <section className="membership-cta-band" aria-labelledby="membership-cta-title">
+        <div className="container membership-cta-inner">
+          <div className="membership-cta-copy">
+            <span className="membership-cta-tag">Membership</span>
+            <h2 id="membership-cta-title">Grow with Pune's builders. Become a BAI member.</h2>
+            <p>Join contractors, builders and developers in BAI Pune Centre and gain a voice in a nationwide network of 232 centres.</p>
+          </div>
+          <div className="membership-cta-actions">
+            <Link to="/membership" className="btn membership-cta-btn">
+              Become a Member <FaArrowRight />
+            </Link>
+          </div>
         </div>
       </section>
 

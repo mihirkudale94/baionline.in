@@ -50,7 +50,6 @@ const Events = () => {
       <PageHero
         image="/images/events/event_builders-day-2025.jpg"
         alt="Builders' Day Celebration 2025 at BAI Pune Centre"
-        focal="center 30%"
         tag="BAI Pune Centre"
         title={data.title}
         subtitle={data.subtitle}

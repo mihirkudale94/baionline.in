@@ -65,6 +65,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Slide-in animations start offset sideways; clip so they can't widen
+     the page on phones before they play. */
+  overflow-x: clip;
 }
 
 body {
@@ -80,6 +83,45 @@ body {
 
 img, video {
   max-width: 100%;
+}
+
+/* Site-wide justified body copy on tablet and desktop. !important overrides
+   per-component left/center alignment. Headings, nav, buttons and form
+   controls are left alone so short single-line labels keep their layout.
+   Phones keep normal alignment: columns there are too narrow to justify
+   without wide gaps between words. */
+@media (min-width: 769px) {
+  /* List items and table cells are short, and the excluded card texts sit
+     in narrow columns: justifying those only opens gaps between words, so
+     they keep their own alignment. */
+  :is(p, blockquote, dd, figcaption):not(:is(
+    .action-card p, .csr-card p, .inquiry-info-col p,
+    .value-card p, .wbsc-why-card p, .minister-details p,
+    .communique-links-list p, .news-desc, .outreach-text, .service-card-desc,
+    .sitevisit-desc, .step-flow-desc, .wbsc-entry-term-value,
+    .section-intro, .vision-statement-text, .wbsc-advance-body,
+    .wbsc-download-desc, .wbsc-pay-note, .membership-form-card > p,
+    .sponsors-info-card > p, .non-member-info-card > p
+  )) {
+    text-align: justify !important;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* Cards and sections fill the screen, but a line of body text stops at a
+     readable length (~80 characters) on wide monitors. */
+  p {
+    max-width: 80ch;
+  }
+}
+
+/* Paragraphs inside centred sections: stay centred (not justified), and the
+   width-capped box is centred too instead of hugging the left edge. */
+:is(.section-intro, .vision-statement-text, .wbsc-advance-body,
+    .wbsc-download-desc, .wbsc-pay-note, .membership-form-card > p,
+    .sponsors-info-card > p, .non-member-info-card > p) {
+  margin-inline: auto;
 }
 
 ::selection {
@@ -113,11 +155,20 @@ ul {
 }
 
 /* Utilities */
+/* One shared full-width container for every page, navbar and footer, so
+   content edges line up across the site. Readability on large monitors is
+   handled by capping paragraph width (below), not the layout. */
 .container {
-  max-width: 1280px;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 2.5rem;
   min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
 /* Used by every centred section header (~40 call sites) but was never
@@ -216,18 +267,18 @@ ul {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 22px;
 }
 ::-webkit-scrollbar-track {
   background: var(--surface-dim);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c6cace;
-  border-radius: 8px;
-  border: 2px solid var(--surface-dim);
+  background: #6b7280;
+  border-radius: 12px;
+  border: 4px solid var(--surface-dim);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9aa0a6;
+  background: #4b5563;
 }
 
 /* Animations */

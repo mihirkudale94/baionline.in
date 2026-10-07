@@ -49,8 +49,15 @@ const Footer = () => {
               <li>
                 <FaPhoneAlt className="contact-icon" />
                 <span className="contact-text">
-                  Tel: {footerData.office.tel} <br />
-                  Fax: {footerData.office.phone}
+                  Tel: {Array.isArray(footerData.office.tel) 
+                        ? footerData.office.tel.map((num, i) => (
+                            <React.Fragment key={i}>
+                              <a href={`tel:${num.replace(/[^\d+]/g, '')}`}>{num}</a>
+                              {i < footerData.office.tel.length - 1 && ", "}
+                            </React.Fragment>
+                          ))
+                        : <a href={`tel:${footerData.office.tel.replace(/[^\d+]/g, '')}`}>{footerData.office.tel}</a>} <br />
+                  Fax: <a href={`tel:${footerData.office.phone.replace(/[^\d+]/g, '')}`}>{footerData.office.phone}</a>
                 </span>
               </li>
               <li>

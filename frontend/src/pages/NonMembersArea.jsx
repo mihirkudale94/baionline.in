@@ -48,7 +48,6 @@ const NonMembersArea = () => {
       <PageHero
         image="/images/events/event_central-bank-outreach-campaign.jpg"
         alt="BAI Pune Centre at the Central Bank of India mega retail credit outreach campaign"
-        focal="center 25%"
         tag="Activities"
         title="Non-Members Area"
         subtitle="Stay connected with the Indian civil engineering construction sector"

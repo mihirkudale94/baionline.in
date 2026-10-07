@@ -1,0 +1,91 @@
+{
+  "logo": "/images/brand/logo-white-02.png",
+  "office": {
+    "title": "Pune Centre Office:",
+    "address": "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001",
+    "tel": "(020) 2605 9255",
+    "phone": "(020) 2605 7441",
+    "email": "baipune1@gmail.com"
+  },
+  "quick_links": [
+    {
+      "label": "About BAI",
+      "path": "/about"
+    },
+    {
+      "label": "Committees",
+      "path": "/committees"
+    },
+    {
+      "label": "Events",
+      "path": "/events"
+    },
+    {
+      "label": "WBSC Awards 2026",
+      "path": "/wbsc-awards"
+    },
+    {
+      "label": "Membership",
+      "path": "/membership"
+    },
+    {
+      "label": "Social Activities",
+      "path": "/social-activities"
+    },
+    {
+      "label": "Gallery",
+      "path": "/media"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact"
+    }
+  ],
+  "notifications": [
+    {
+      "label": "Judgements",
+      "path": "/judgements"
+    },
+    {
+      "label": "Notifications",
+      "path": "/notifications"
+    },
+    {
+      "label": "Circular",
+      "path": "/circular"
+    }
+  ],
+  "useful_links": [
+    {
+      "label": "Privacy Policy",
+      "path": "/privacy-policy"
+    },
+    {
+      "label": "Terms & Conditions",
+      "path": "/terms"
+    },
+    {
+      "label": "Disclaimer",
+      "path": "/disclaimer"
+    }
+  ],
+  "social": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/people/Builders-Association-of-India-Pune/61550732771835/"
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/baipunecentre/"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@buildersassociationofindia73"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/in/builders-association-of-india-pune-21b37152/"
+    }
+  ],
+  "copyright": "Copyright © 2026 BAI - Builders' Association of India, Pune Centre. All Rights Reserved."
+}

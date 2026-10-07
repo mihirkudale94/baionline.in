@@ -22,6 +22,7 @@
   color: var(--gray-800);
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  max-width: none;
 }
 
 /* Jackson monument box */
@@ -33,6 +34,7 @@
   color: var(--text-body);
   box-shadow: var(--elev-1);
   position: relative;
+  overflow: hidden; /* round the corners of the edge-to-edge portrait */
 }
 
 .jackson-monument-card::before {
@@ -44,28 +46,21 @@
   height: 100%;
   background: var(--primary);
   border-radius: 4px 0 0 4px;
+  z-index: 1; /* keep the accent stripe above the portrait */
 }
 
+/* The portrait bleeds past the card's padding to its top and side edges. */
 .brig-jackson-portrait-wrapper {
   overflow: hidden;
-  border-radius: var(--r-sm);
   background: var(--ink);
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--surface-border);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  margin: -1.75rem -1.75rem 1.5rem;
 }
 
+/* Full, uncropped portrait (918 x 1024), shown at its natural aspect ratio. */
 .brig-jackson-portrait-img {
   width: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
-  transition: transform 0.4s var(--ease-out);
-}
-
-.brig-jackson-portrait-wrapper:hover .brig-jackson-portrait-img {
-  transform: scale(1.03);
 }
 
 .brig-jackson-portrait-caption {
@@ -401,9 +396,14 @@
 
 /* Responsive configurations */
 @media (max-width: 1024px) {
-  .history-grid, .accordion-grid-layout {
+  .accordion-grid-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  /* Text and the Brig Jackson card stay side by side down to tablet width. */
+  .history-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
   }
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -411,6 +411,10 @@
 }
 
 @media (max-width: 768px) {
+  .history-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
   .values-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -429,18 +433,22 @@
   background-color: var(--white);
 }
 
+/* Full container width: opt out of the global 80ch paragraph cap. */
+.about-whoweare-section p {
+  max-width: none;
+}
+
 .whoweare-text {
-  max-width: 850px;
-  margin: 0 auto 2rem auto;
+  margin: 0 0 2rem;
   font-size: 0.95rem;
   line-height: 1.8;
   color: var(--gray-800);
-  text-align: center;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .vision-statement-card {
-  max-width: 750px;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 0 2.5rem;
   text-align: center;
   background: var(--primary-tint);
   border: 1px solid var(--surface-border);
@@ -459,6 +467,8 @@
 }
 
 .vision-statement-text {
+  text-align: justify;
+  hyphens: auto;
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--navy);
@@ -469,11 +479,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem 2rem;
-  max-width: 850px;
-  margin: 0 auto;
 }
 
 .mission-points-list li {
+  text-align: justify;
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
@@ -564,8 +573,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem 2rem;
-  max-width: 850px;
-  margin: 0 auto;
 }
 
 .whyjoin-item {
@@ -661,6 +668,15 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 4rem;
   align-items: flex-start;
+}
+
+/* Must follow the rule above — the earlier 1024px block is overridden by it,
+   which kept this two columns on phones and widened the page. */
+@media (max-width: 1024px) {
+  .accordion-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 .grid-col-title {

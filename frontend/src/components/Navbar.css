@@ -17,12 +17,6 @@
   box-shadow: 0 10px 30px rgba(10, 22, 40, 0.08);
 }
 
-/* Header gets a wider container than the page so the logo can grow
-   while the full menu still sits beside it on one row. */
-.navbar-header .container {
-  max-width: 1500px;
-}
-
 .navbar-inner {
   display: flex;
   align-items: stretch;
@@ -66,9 +60,9 @@
 }
 
 .logo-subtitle {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--gray-800);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.3;
   margin-top: 3px;
 }
@@ -175,8 +169,6 @@
 .nav-menu > .nav-item:nth-last-child(-n + 3) .sub-dropdown-menu {
   left: auto;
   right: 100%;
-  border-left: none;
-  border-right: 3px solid var(--primary);
   border-radius: 8px 0 8px 8px;
 }
 
@@ -220,7 +212,6 @@
   top: 0;
   left: 100%;
   background: var(--white);
-  border-left: 3px solid var(--primary);
   min-width: 240px;
   box-shadow: 0 12px 28px rgba(10, 22, 40, 0.14);
   border-radius: 0 8px 8px 8px;
@@ -271,9 +262,6 @@
 /* Responsive styles */
 @media (max-width: 1500px) {
   /* Trim the strapline first so the menu keeps its full row */
-  .logo-subtitle-extra {
-    display: none;
-  }
   .navbar-inner {
     min-height: 98px;
     gap: 1.5rem;
@@ -312,7 +300,7 @@
     max-width: 185px;
   }
   .logo-subtitle {
-    font-size: 0.7rem;
+    font-size: 0.88rem;
   }
   .nav-link {
     font-size: 0.95rem;
@@ -337,7 +325,7 @@
     font-size: 1.05rem;
   }
   .logo-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.94rem;
   }
 
   .mobile-toggle-btn {
@@ -430,7 +418,7 @@
     font-size: 0.92rem;
   }
   .logo-subtitle {
-    font-size: 0.68rem;
+    font-size: 0.85rem;
   }
   .navbar-main-nav {
     width: 280px;

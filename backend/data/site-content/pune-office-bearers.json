@@ -1,0 +1,501 @@
+{
+  "note": "Transcribed from the office bearer display boards at BAI Pune Centre. Chairman and Hon. Secretary records begin in 1959 — earlier years are not listed on the boards.",
+  "roles": [
+    {
+      "id": "hq_president",
+      "label": "HQ President",
+      "members": [
+        {
+          "year": "1991-1992",
+          "name": "Lalit Sangtani"
+        },
+        {
+          "year": "1978-1980",
+          "name": "Harbans Lal Aurora"
+        }
+      ]
+    },
+    {
+      "id": "hq_vice_president",
+      "label": "HQ Vice President (West Zone)",
+      "members": [
+        {
+          "year": "2016-2017",
+          "name": "Dr. Rajeev B. Krishnani"
+        },
+        {
+          "year": "2012-2013",
+          "name": "Ranjeet More"
+        },
+        {
+          "year": "2007-2008",
+          "name": "Kishan P. Baney"
+        },
+        {
+          "year": "1999-2000",
+          "name": "Amar Mulchandani"
+        },
+        {
+          "year": "1996-1997",
+          "name": "Madhavrao Jog"
+        },
+        {
+          "year": "1990-1991",
+          "name": "D. S. Vajram"
+        }
+      ]
+    },
+    {
+      "id": "state_chairman",
+      "label": "State Chairman (Maharashtra)",
+      "members": [
+        {
+          "year": "2025-2026",
+          "name": "Jagannath S. Jadhav"
+        },
+        {
+          "year": "2014-2015",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "2005-2006",
+          "name": "Jassu Panjwani"
+        }
+      ]
+    },
+    {
+      "id": "chairman",
+      "label": "Centre Chairman",
+      "members": [
+        {
+          "year": "Apr 2026 – Mar 2027",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2025 – Mar 2026",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2024 – Mar 2025",
+          "name": "Sunil Mate"
+        },
+        {
+          "year": "Apr 2023 – Mar 2024",
+          "name": "D. S. Chaudhari"
+        },
+        {
+          "year": "Apr 2022 – Mar 2023",
+          "name": "H. S. Anand"
+        },
+        {
+          "year": "Apr 2021 – Mar 2022",
+          "name": "Ashok Atkekar"
+        },
+        {
+          "year": "Apr 2020 – Mar 2021",
+          "name": "Jai Pinjani"
+        },
+        {
+          "year": "Apr 2019 – Mar 2020",
+          "name": "Manoj Deshmukh"
+        },
+        {
+          "year": "Apr 2018 – Mar 2019",
+          "name": "Pradeep Garge"
+        },
+        {
+          "year": "Apr 2017 – Mar 2018",
+          "name": "Jagannath S. Jadhav"
+        },
+        {
+          "year": "Apr 2016 – Mar 2017",
+          "name": "Siddharth Shah"
+        },
+        {
+          "year": "Apr 2015 – Mar 2016",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2014 – Mar 2015",
+          "name": "R. B. Suryavanshi"
+        },
+        {
+          "year": "Apr 2013 – Mar 2014",
+          "name": "C. S. Parhar"
+        },
+        {
+          "year": "Apr 2012 – Mar 2013",
+          "name": "Jaideep Raje"
+        },
+        {
+          "year": "Apr 2011 – Mar 2012",
+          "name": "Subhash Deshpande"
+        },
+        {
+          "year": "Apr 2009 – Mar 2011",
+          "name": "Ranjeet More"
+        },
+        {
+          "year": "Apr 2008 – Mar 2009",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 2007 – Mar 2008",
+          "name": "Dr. Rajeev B. Krishnani"
+        },
+        {
+          "year": "Apr 2006 – Mar 2007",
+          "name": "Sanjay Vaichal"
+        },
+        {
+          "year": "Apr 2005 – Mar 2006",
+          "name": "S. G. Moorjani"
+        },
+        {
+          "year": "Apr 2003 – Mar 2005",
+          "name": "Vishwas Lokare"
+        },
+        {
+          "year": "Jul 2002 – Mar 2003",
+          "name": "Naren Kothari"
+        },
+        {
+          "year": "Apr 2001 – Jul 2002",
+          "name": "Manikram Halbe"
+        },
+        {
+          "year": "Apr 1999 – Mar 2001",
+          "name": "D. S. Shirole"
+        },
+        {
+          "year": "Apr 1998 – Mar 1999",
+          "name": "S. I. Chunkhare"
+        },
+        {
+          "year": "Apr 1997 – Mar 1998",
+          "name": "S. M. Mehta"
+        },
+        {
+          "year": "Apr 1996 – Mar 1997",
+          "name": "Jassu Panjwani"
+        },
+        {
+          "year": "Jun 1995 – Mar 1996",
+          "name": "K. M. Jain"
+        },
+        {
+          "year": "Apr 1994 – Jun 1995",
+          "name": "J. P. Shroff"
+        },
+        {
+          "year": "Oct 1992 – Mar 1994",
+          "name": "Kumar Vaswani"
+        },
+        {
+          "year": "Apr 1990 – Sep 1992",
+          "name": "Amar Mulchandani"
+        },
+        {
+          "year": "Apr 1989 – Mar 1990",
+          "name": "H. B. Punjabi"
+        },
+        {
+          "year": "Apr 1988 – Mar 1989",
+          "name": "N. V. Kanetkar"
+        },
+        {
+          "year": "Apr 1987 – Mar 1988",
+          "name": "R. R. Dhoot"
+        },
+        {
+          "year": "Apr 1985 – Mar 1987",
+          "name": "D. S. Vajram"
+        },
+        {
+          "year": "Apr 1983 – Mar 1985",
+          "name": "Kishan P. Baney"
+        },
+        {
+          "year": "Apr 1981 – Mar 1983",
+          "name": "J. S. Khalsa"
+        },
+        {
+          "year": "Apr 1980 – Mar 1981",
+          "name": "Lalit Sangtani"
+        },
+        {
+          "year": "Mar 1978 – Mar 1980",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "1977",
+          "name": "B. N. Shah"
+        },
+        {
+          "year": "1976",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "Jun 1975 – Dec 1975",
+          "name": "S. K. Arunachalam"
+        },
+        {
+          "year": "1974–1975",
+          "name": "Harbans Lal Aurora"
+        },
+        {
+          "year": "1972–1974",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "1970–1971",
+          "name": "G. K. Sharotri"
+        },
+        {
+          "year": "1969",
+          "name": "Wadhumal Shahaney"
+        },
+        {
+          "year": "1968",
+          "name": "Atur Sangtani"
+        },
+        {
+          "year": "1967",
+          "name": "A. U. Mansukhani"
+        },
+        {
+          "year": "1966",
+          "name": "Col. V. P. Kapur"
+        },
+        {
+          "year": "1965",
+          "name": "Raisahib P. Gera"
+        },
+        {
+          "year": "1963–1964",
+          "name": "Harbans Lal Aurora"
+        },
+        {
+          "year": "1959–1962",
+          "name": "K. J. Sapra"
+        }
+      ]
+    },
+    {
+      "id": "secretary",
+      "label": "Centre Hon. Secretary",
+      "members": [
+        {
+          "year": "Apr 2026 – Mar 2027",
+          "name": "Dr. Mahesh Rathi"
+        },
+        {
+          "year": "Apr 2025 – Mar 2026",
+          "name": "C. H. Ratlani"
+        },
+        {
+          "year": "Apr 2024 – Mar 2025",
+          "name": "Rajaram Hajare"
+        },
+        {
+          "year": "Apr 2023 – Mar 2024",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2022 – Mar 2023",
+          "name": "Ajay R. Gujar"
+        },
+        {
+          "year": "Apr 2021 – Mar 2022",
+          "name": "H. S. Anand"
+        },
+        {
+          "year": "Apr 2020 – Mar 2021",
+          "name": "H. S. Anand"
+        },
+        {
+          "year": "Apr 2019 – Mar 2020",
+          "name": "Sanjay Apte"
+        },
+        {
+          "year": "Apr 2018 – Mar 2019",
+          "name": "Ashok Atkekar"
+        },
+        {
+          "year": "Apr 2017 – Mar 2018",
+          "name": "Manoj Deshmukh"
+        },
+        {
+          "year": "Apr 2016 – Mar 2017",
+          "name": "Manoj Deshmukh"
+        },
+        {
+          "year": "Apr 2015 – Mar 2016",
+          "name": "Jagannath S. Jadhav"
+        },
+        {
+          "year": "Apr 2014 – Mar 2015",
+          "name": "Nandkumar Jethani"
+        },
+        {
+          "year": "Apr 2013 – Mar 2014",
+          "name": "Jaikishan Pinjani"
+        },
+        {
+          "year": "Apr 2012 – Mar 2013",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2011 – Mar 2012",
+          "name": "Nandkumar Jethani"
+        },
+        {
+          "year": "Apr 2010 – Mar 2011",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2009 – Mar 2010",
+          "name": "Jaikishan Pinjani"
+        },
+        {
+          "year": "Apr 2008 – Mar 2009",
+          "name": "Mahesh Mirani"
+        },
+        {
+          "year": "Apr 2007 – Mar 2008",
+          "name": "D. S. Chaudhari"
+        },
+        {
+          "year": "Apr 2006 – Mar 2007",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 2005 – Mar 2006",
+          "name": "Shivkumar Bhalla"
+        },
+        {
+          "year": "Apr 2003 – Mar 2005",
+          "name": "S. G. Moorjani"
+        },
+        {
+          "year": "Jul 2002 – Mar 2003",
+          "name": "Sanjay Vaichal"
+        },
+        {
+          "year": "Apr 2001 – Jul 2002",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 1999 – Mar 2001",
+          "name": "Manikram Halbe"
+        },
+        {
+          "year": "Apr 1997 – Mar 1999",
+          "name": "Neelkanth S. Joshi"
+        },
+        {
+          "year": "Apr 1996 – Mar 1997",
+          "name": "Manikram Halbe"
+        },
+        {
+          "year": "Apr 1994 – Mar 1996",
+          "name": "S. I. Chunkhare"
+        },
+        {
+          "year": "Apr 1993 – Mar 1994",
+          "name": "Jassu Panjwani"
+        },
+        {
+          "year": "Apr 1990 – Mar 1993",
+          "name": "J. P. Shroff"
+        },
+        {
+          "year": "Apr 1989 – Mar 1990",
+          "name": "Kumar Vaswani"
+        },
+        {
+          "year": "Apr 1988 – Mar 1989",
+          "name": "V. K. Khinvsara"
+        },
+        {
+          "year": "Apr 1987 – Mar 1988",
+          "name": "N. V. Kanetkar"
+        },
+        {
+          "year": "Apr 1985 – Mar 1987",
+          "name": "Amar Mulchandani"
+        },
+        {
+          "year": "Apr 1983 – Mar 1985",
+          "name": "R. R. Dhoot"
+        },
+        {
+          "year": "Apr 1981 – Mar 1983",
+          "name": "Mohan Lal Mathrani"
+        },
+        {
+          "year": "Apr 1980 – Mar 1981",
+          "name": "Kishan P. Baney"
+        },
+        {
+          "year": "Mar 1978 – Mar 1980",
+          "name": "N. S. Rangaswamy"
+        },
+        {
+          "year": "1977",
+          "name": "B. G. Mahajan"
+        },
+        {
+          "year": "1976",
+          "name": "D. G. Gupta"
+        },
+        {
+          "year": "1974–1975",
+          "name": "Kumar Gera"
+        },
+        {
+          "year": "1972–1973",
+          "name": "S. K. Arunachalam"
+        },
+        {
+          "year": "1969–1971",
+          "name": "R. V. Joshi"
+        },
+        {
+          "year": "1968",
+          "name": "G. K. Sharotri"
+        },
+        {
+          "year": "1967",
+          "name": "R. M. Shah"
+        },
+        {
+          "year": "1966",
+          "name": "N. V. Sanghavi"
+        },
+        {
+          "year": "1965",
+          "name": "A. U. Mansukhani"
+        },
+        {
+          "year": "1964",
+          "name": "Col. V. P. Kapur"
+        },
+        {
+          "year": "1959–1963",
+          "name": "Raisahib P. Gera"
+        }
+      ]
+    },
+    {
+      "id": "vice_chairman",
+      "label": "Centre Vice Chairman",
+      "members": []
+    },
+    {
+      "id": "treasurer",
+      "label": "Centre Treasurer",
+      "members": []
+    }
+  ]
+}

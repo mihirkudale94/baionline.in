@@ -1,3 +1,0 @@
-@echo off
-echo Starting BAI Online Frontend & Backend concurrently...
-npm run dev

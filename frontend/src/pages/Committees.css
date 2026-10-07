@@ -102,64 +102,6 @@
   background-color: var(--gray-50);
 }
 
-.committee-blocks {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.committee-block {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 14px;
-  padding: 1.6rem 1.75rem;
-  transition: all 0.3s;
-}
-
-.committee-block:hover {
-  transform: translateY(-4px);
-  border-color: var(--gold-light);
-  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.05);
-}
-
-.committee-block-title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.35;
-  padding-bottom: 0.85rem;
-  margin-bottom: 0.95rem;
-  border-bottom: 2px solid var(--gold);
-}
-
-.committee-member-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.committee-member {
-  position: relative;
-  padding-left: 1.1rem;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: var(--gray-800);
-}
-
-.committee-member::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-}
-
 /* Executive Committee 2026–27 */
 .exec-committee-section {
   padding: 4.5rem 0;
@@ -171,8 +113,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.6rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .roster-item {
@@ -234,9 +174,6 @@
 
 /* Responsive configurations */
 @media (max-width: 1024px) {
-  .committee-blocks {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .exec-members-roster {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -246,7 +183,6 @@
   .committees-section-title {
     font-size: 1.55rem;
   }
-  .committee-blocks,
   .exec-members-roster {
     grid-template-columns: 1fr;
   }

@@ -10,7 +10,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: flex-start;
+  align-items: stretch;
+}
+
+/* Left column fills the row so its last card ends level with the form card */
+.contact-info-col,
+.contact-form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card {
+  flex: 1;
 }
 
 .contact-section-title {
@@ -23,10 +34,13 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex: 1;
 }
 
 .info-detail-card {
+  flex: 1;
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   padding: 2rem;
   background: var(--gray-50);
@@ -213,4 +227,10 @@
   .contact-map-frame iframe {
     height: 320px;
   }
+}
+
+.form-error-banner {
+  color: var(--accent-red);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
 }

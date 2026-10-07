@@ -4,75 +4,172 @@
   background-color: var(--gray-50);
 }
 
-.presidents-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+/* Decade timeline: one node per decade on a vertical rule, newest first.
+   Each decade expands to list its presidents. */
+.decade-timeline {
+  list-style: none;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
 }
 
-.president-archive-card {
+.decade-timeline::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 22px;
+  bottom: 22px;
+  width: 2px;
+  background: var(--gray-200);
+}
+
+.decade-group {
+  position: relative;
+}
+
+.decade-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.decade-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.decade-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-200);
+  background: var(--white);
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.decade-group.is-open .decade-dot,
+.decade-toggle:hover .decade-dot {
+  border-color: var(--primary);
+}
+
+.decade-group.is-open .decade-dot {
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-tint);
+}
+
+.decade-label {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.decade-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  opacity: 0.75;
+}
+
+.decade-chevron {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--primary);
+  transition: transform 0.25s;
+}
+
+.decade-group.is-open .decade-chevron {
+  transform: rotate(180deg);
+}
+
+.decade-list {
+  list-style: none;
+  margin: 0.25rem 0 1.25rem 2.5rem;
+  padding: 0.4rem 1.25rem;
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  border-radius: 14px;
 }
 
-.president-archive-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--gold-light);
-  box-shadow: 0 8px 25px rgba(10, 22, 40, 0.05);
+.decade-entry {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-200);
 }
 
-.card-badge {
-  color: var(--gold);
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+.decade-entry:last-child {
+  border-bottom: 0;
 }
 
-.president-tenure {
+.decade-entry-year {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  font-variant-numeric: tabular-nums;
 }
 
-.president-archive-name {
+.decade-entry-name {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--navy);
-  line-height: 1.35;
+  line-height: 1.4;
+}
+
+.decade-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.decade-expand-all {
+  min-height: 44px;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  background: var(--white);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.decade-expand-all:hover {
+  background: var(--primary);
+  color: var(--white);
 }
 
 /* Responsive configurations */
-@media (max-width: 1200px) {
-  .presidents-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .presidents-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
   .presidents-list-section {
     padding: 4rem 0;
   }
 }
 
 @media (max-width: 480px) {
-  .presidents-grid {
+  .decade-list {
+    margin-left: 2.1rem;
+    padding: 0.3rem 1rem;
+  }
+  .decade-entry {
     grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
 }
 
@@ -138,9 +235,14 @@
 
 @media (max-width: 1024px) {
   .pune-bearers-grid { grid-template-columns: repeat(2, 1fr); }
+  .jubilee-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .jubilee-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
   .pune-bearers-grid { grid-template-columns: 1fr; }
+  .jubilee-grid { grid-template-columns: 1fr; }
   .pune-bearers-photo-note,
   .pune-bearers-empty { flex-direction: column; text-align: center; }
 }

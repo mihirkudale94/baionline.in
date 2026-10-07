@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 2.5rem;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .non-member-form-card {
@@ -70,15 +70,18 @@
 }
 
 /* Info card side layout */
+/* Renders white (the shared .glass-card background wins), so its text uses
+   the dark body colours rather than the original white-on-navy ones. */
 .non-member-info-card {
   background: var(--navy-light);
-  color: var(--white);
+  color: var(--text-body);
   border: none;
   border-radius: 20px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around; /* stretched to the form's height: spread content, no blank band */
   text-align: center;
   box-shadow: 0 10px 40px rgba(10, 22, 40, 0.1);
   position: relative;
@@ -106,7 +109,7 @@
 .non-member-info-card p {
   font-size: 0.85rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--gray-800);
   margin-bottom: 2rem;
 }
 
@@ -115,14 +118,14 @@
   flex-direction: column;
   gap: 1rem;
   text-align: left;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--gray-200);
   padding-top: 2rem;
   width: 100%;
 }
 
 .info-list li {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-body);
   line-height: 1.4;
 }
 

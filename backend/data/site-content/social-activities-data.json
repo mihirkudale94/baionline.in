@@ -1,0 +1,65 @@
+{
+  "title": "Social & CSR Initiatives",
+  "subtitle": "Empowering Communities & Building a Sustainable Construction Ecosystem",
+  "overview": "At Builders' Association of India (BAI) Pune Centre, we believe that true development goes hand-in-hand with social responsibility. Beyond concrete and steel, our mission is to uplift the lives of construction workers, support the local community, foster sustainable environmental practices, and train the next generation of builders.",
+  "stats": [],
+  "csrInitiatives": [
+    {
+      "title": "Worker Health & Safety Camps",
+      "description": "We host regular healthcare programs, eye check-up drives, and multi-speciality medical camps directly at construction sites across Pune. Laborers receive diagnostic testing, free basic medicines, safety guidelines, and health awareness counseling.",
+      "icon": "FaHandsHelping"
+    },
+    {
+      "title": "Safety Helmet & PPE Distribution",
+      "description": "Ensuring zero-accident sites is our top priority. We organize safety drives to distribute free personal protective equipment (PPE), including ISI-marked safety helmets, reflective jackets, safety gloves, and reinforced boots to construction workers.",
+      "icon": "FaTools"
+    },
+    {
+      "title": "Educational Sponsorships",
+      "description": "We believe in breaking the cycle of poverty. BAI Pune provides financial aid, study kits, and educational sponsorships to the children of site laborers, enabling them to attend schools and colleges and build brighter futures.",
+      "icon": "FaGraduationCap"
+    }
+  ],
+  "outreachPrograms": [
+    {
+      "title": "Student Internship Programme (SIP)",
+      "description": "Our landmark program bridges the gap between academic theory and practical construction. We place engineering, architectural, and project management students on active sites under the guidance of experienced BAI mentors.",
+      "duration": "Ongoing (Annual)",
+      "target": "Civil & Arch Students",
+      "image": "/images/events/event_mitwpu-mou-signing-group.jpg"
+    },
+    {
+      "title": "Kaushalya Vardhan Skill Development",
+      "description": "Free vocational training workshops for young and unskilled workers. We provide training in masonry, bar-bending, plumbing, safety operations, and digital basic skills to enhance employability.",
+      "duration": "Quarterly Drives",
+      "target": "Youth & Unskilled Laborers",
+      "image": "/images/events/event_jcb-plant-training-session.jpg"
+    },
+    {
+      "title": "Independence Day Celebrations",
+      "description": "Every year on 15 August, BAI Pune members, past presidents and staff gather for the national flag hoisting ceremony, marking Independence Day together and honouring the nation-builders who came before us.",
+      "duration": "Every 15 August",
+      "target": "Members & Staff",
+      "image": "/images/events/event_independence-day-2026-flag-hoisting.jpg",
+      "focal": "center 45%"
+    }
+  ],
+  "sustainabilityCampaigns": [
+    {
+      "title": "Vriksharopan (Tree Plantation)",
+      "description": "To combat urban heat and reduce the carbon footprint of development, our green committee leads tree plantation drives. We target areas around major construction projects, public parks, and highways, planting indigenous tree species suited to Pune's ecology.",
+      "impact": "10k+ saplings planted & maintained"
+    },
+    {
+      "title": "Rainwater Harvesting & Water Security",
+      "description": "Water scarcity is a major concern. We run awareness campaigns and provide technical consulting to housing societies and developer projects on installing efficient rainwater harvesting and groundwater recharging systems.",
+      "impact": "50+ societies consulted"
+    }
+  ],
+  "disasterRelief": {
+    "title": "Disaster Response & Civic Aid",
+    "description": "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune.",
+    "image": "/images/events/event_worker-children-felicitation-2025-1.jpg"
+  },
+  "gallery": []
+}

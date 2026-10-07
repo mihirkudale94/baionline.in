@@ -61,7 +61,6 @@ const Links = () => {
       <PageHero
         image="/images/events/event_industrial-facility-visit-1.jpg"
         alt="Pune Centre members at the Central Water and Power Research Station, Pune"
-        focal="center 25%"
         tag="Directory"
         title="Useful Reference Links"
         subtitle="Directory of civil engineering companies, machinery suppliers, and government works departments"

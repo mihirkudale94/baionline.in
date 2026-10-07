@@ -1,7 +1,5 @@
 .hero-carousel-container {
   width: 100%;
-  /* Leaves room under the fold for the headline band below the photos. */
-  height: clamp(380px, 68vh, 720px);
   position: relative;
   overflow: hidden;
   background: var(--ink);
@@ -12,34 +10,17 @@
 
 .hero-swiper {
   width: 100%;
-  height: 100%;
 }
 
+/* Swiper's `autoHeight` resizes the banner to each photo, so every
+   photograph is shown whole at full width — never cropped or letterboxed. */
 .hero-slide {
-  position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
-/* A blurred, darkened copy of the same photo fills any leftover space,
-   so the photo above it never has to be cropped. */
-.hero-slide-backdrop {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.15);
-  filter: blur(28px) saturate(1.15) brightness(0.55);
-}
-
-/* Photographs are shown whole — `contain` guarantees no face is cut. */
 .hero-slide-img {
-  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
+  height: auto;
   display: block;
 }
 
@@ -78,7 +59,7 @@
 }
 
 .hero-sub {
-  max-width: 60ch;
+  max-width: none; /* span the full container, past the global 80ch cap on <p> */
   margin: 0;
   font-family: var(--font-heading);
   font-weight: 600;
@@ -167,23 +148,7 @@
 }
 
 /* Responsive tweaks */
-@media (max-width: 1024px) {
-  .hero-carousel-container {
-    height: clamp(380px, calc(100vh - 98px), 680px);
-  }
-}
-
 @media (max-width: 768px) {
-  /* On narrow screens the frame follows the photos' own 4:3 shape,
-     so landscape banners stay large instead of shrinking into letterbox. */
-  .hero-carousel-container {
-    height: 75vw;
-    min-height: 260px;
-    max-height: 460px;
-  }
-  .hero-slide-backdrop {
-    filter: blur(20px) saturate(1.15) brightness(0.55);
-  }
   .hero-swiper .swiper-button-next,
   .hero-swiper .swiper-button-prev {
     display: none;

@@ -84,9 +84,8 @@ const About = () => {
     <div className="about-page-wrapper">
       {/* 1. Header Banner */}
       <PageHero
-        image="/images/events/event_committee-meeting-office.jpg"
-        alt="A committee meeting at the BAI Pune Centre office"
-        focal="center 25%"
+        image="/images/heritage/jackson-hut-today.jpg"
+        alt="Jackson Hut today — the BAI Pune Centre office within Southern Command Headquarters"
         tag={`Since ${content.founded}`}
         title={content.title}
         subtitle={content.subtitle}
@@ -120,7 +119,9 @@ const About = () => {
               <div className="brig-jackson-portrait-wrapper">
                 {!brigJacksonImgError ? (
                   <img
-                    src="/images/heritage/brig-jackson.jpg"
+                    src="/images/heritage/brig-jackson-full.webp"
+                    width="918"
+                    height="1024"
                     alt="Brig Jackson"
                     className="brig-jackson-portrait-img"
                     onError={() => setBrigJacksonImgError(true)}
