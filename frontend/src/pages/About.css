@@ -6,8 +6,8 @@
 
 .history-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.6fr 0.85fr;
+  gap: 3rem;
   align-items: flex-start;
 }
 
@@ -27,7 +27,9 @@
 
 /* Jackson monument box */
 .jackson-monument-card {
-  padding: 1.75rem;
+  padding: 1.35rem;
+  max-width: 360px;
+  margin-left: auto;
   border-radius: var(--r-md);
   background: var(--surface);
   border: 1px solid var(--surface-border);
@@ -53,18 +55,22 @@
 .brig-jackson-portrait-wrapper {
   overflow: hidden;
   background: var(--ink);
-  margin: -1.75rem -1.75rem 1.5rem;
+  margin: -1.35rem -1.35rem 1.1rem;
 }
 
-/* Full, uncropped portrait (918 x 1024), shown at its natural aspect ratio. */
+/* The portrait keeps its full 918 x 1024 frame, letterboxed on the dark
+   backing so the card stays close to the height of the text beside it. */
 .brig-jackson-portrait-img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  aspect-ratio: 5 / 4;
+  object-fit: contain;
+  object-position: center;
 }
 
 .brig-jackson-portrait-caption {
-  padding: 1rem 1.25rem;
+  padding: 0.8rem 1.1rem;
   background: linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
   text-align: left;
   border-top: 2px solid var(--primary);
@@ -86,7 +92,7 @@
 
 .brig-name {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--white);
   margin: 0 0 0.25rem 0;
@@ -102,8 +108,8 @@
 }
 
 .jackson-monument-desc {
-  font-size: 0.92rem;
-  line-height: 1.65;
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--text-body);
   margin: 0;
 }
@@ -402,7 +408,7 @@
   }
   /* Text and the Brig Jackson card stay side by side down to tablet width. */
   .history-grid {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.4fr 0.9fr;
     gap: 2.5rem;
   }
   .values-grid {
@@ -422,7 +428,12 @@
   .about-history-section, .about-values-section, .about-achievements-section, .about-accordions-section {
     padding: 4rem 0;
   }
-  .jackson-monument-card, .membership-form-card {
+  /* Single column on phones: the card is centred rather than pinned right. */
+  .jackson-monument-card {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+  .membership-form-card {
     padding: 1.75rem;
   }
 }
