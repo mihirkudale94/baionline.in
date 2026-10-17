@@ -4,12 +4,19 @@
   background-color: var(--gray-50);
 }
 
+/* The lineage runs the full container width, so its header block and intro
+   line do too, instead of stopping at the shared 700px header cap and the
+   site-wide 80ch reading width. */
+.presidents-list-section .section-header,
+.presidents-list-section .section-intro {
+  max-width: none;
+}
+
 /* Decade timeline: one node per decade on a vertical rule, newest first.
    Each decade expands to list its presidents. */
 .decade-timeline {
   list-style: none;
-  max-width: 820px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   position: relative;
 }
@@ -94,6 +101,8 @@
   transform: rotate(180deg);
 }
 
+/* The timeline runs the full container width, so each decade's presidents
+   flow into as many columns as fit instead of one long sparse line. */
 .decade-list {
   list-style: none;
   margin: 0.25rem 0 1.25rem 2.5rem;
@@ -101,6 +110,9 @@
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(21rem, 100%), 1fr));
+  column-gap: 2.5rem;
 }
 
 .decade-entry {
@@ -112,7 +124,9 @@
   border-bottom: 1px solid var(--gray-200);
 }
 
-.decade-entry:last-child {
+/* Every entry keeps its rule: across columns the bottom row would otherwise
+   be ruled everywhere except under the single last name. */
+.decade-entry:only-child {
   border-bottom: 0;
 }
 
