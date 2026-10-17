@@ -150,7 +150,7 @@ const PastPresidents = () => {
             <h2 className="section-title">BAI National — Past Presidents</h2>
             <div className="section-title-line"></div>
             <p className="section-intro">
-              Pune is the founding city of the Builders' Association of India — the national body BAI Pune Centre belongs to. Shown below for historical reference is the national Presidents' lineage since 1941.
+              Pune is the founding city of the Builders’ Association of India (BAI), the national body to which BAI Pune Centre belongs. Shown below for historical reference is the lineage of the Association’s national presidents since 1941.
             </p>
           </div>
           <ol className="decade-timeline">
