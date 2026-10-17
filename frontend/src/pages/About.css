@@ -4,11 +4,12 @@
   background-color: var(--white);
 }
 
+/* The foundation text takes the left column, the Brig Jackson card the right. */
 .history-grid {
   display: grid;
-  grid-template-columns: 1.6fr 0.85fr;
-  gap: 3rem;
-  align-items: flex-start;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 2.5rem;
+  align-items: start;
 }
 
 .history-section-title {
@@ -28,8 +29,8 @@
 /* Jackson monument box */
 .jackson-monument-card {
   padding: 1.35rem;
-  max-width: 360px;
-  margin-left: auto;
+  max-width: 420px;
+  margin-inline: auto 0;
   border-radius: var(--r-md);
   background: var(--surface);
   border: 1px solid var(--surface-border);
@@ -58,14 +59,14 @@
   margin: -1.35rem -1.35rem 1.1rem;
 }
 
-/* The portrait keeps its full 918 x 1024 frame, letterboxed on the dark
-   backing so the card stays close to the height of the text beside it. */
+/* The portrait runs the card's full width at its own 918 x 1024 ratio, so
+   it is neither letterboxed on the dark backing nor cropped. */
 .brig-jackson-portrait-img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 5 / 4;
-  object-fit: contain;
+  aspect-ratio: 918 / 1024;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -402,14 +403,16 @@
 
 /* Responsive configurations */
 @media (max-width: 1024px) {
+  /* Too narrow for a 420px side column: the card drops below the text. */
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
+  .jackson-monument-card {
+    margin-inline: auto;
+  }
   .accordion-grid-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-  /* Text and the Brig Jackson card stay side by side down to tablet width. */
-  .history-grid {
-    grid-template-columns: 1.4fr 0.9fr;
-    gap: 2.5rem;
   }
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -417,21 +420,12 @@
 }
 
 @media (max-width: 768px) {
-  .history-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
   .values-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .about-history-section, .about-values-section, .about-achievements-section, .about-accordions-section {
     padding: 4rem 0;
-  }
-  /* Single column on phones: the card is centred rather than pinned right. */
-  .jackson-monument-card {
-    max-width: 420px;
-    margin-inline: auto;
   }
   .membership-form-card {
     padding: 1.75rem;
@@ -710,6 +704,13 @@
 /* Must follow the rule above — the earlier 1024px block is overridden by it,
    which kept this two columns on phones and widened the page. */
 @media (max-width: 1024px) {
+  /* Too narrow for a 420px side column: the card drops below the text. */
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
+  .jackson-monument-card {
+    margin-inline: auto;
+  }
   .accordion-grid-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
