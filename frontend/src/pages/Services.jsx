@@ -51,7 +51,10 @@ const Services = () => {
             <p className="services-intro-text">{rera.intro}</p>
           </div>
 
-          <div className="services-grid">
+          <div
+            className="services-grid"
+            style={{ "--services-count": rera.services.length }}
+          >
             {rera.services.map((service, idx) => {
               const Icon = ICONS[service.icon] || FaClipboardCheck;
               return (

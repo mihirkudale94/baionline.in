@@ -51,8 +51,17 @@
 /* Service cards */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
+}
+
+/* Wide screens keep every RERA service on a single row. The column count comes
+   from the data through --services-count, so adding a service keeps one row. */
+@media (min-width: 1600px) {
+  .services-grid {
+    grid-template-columns: repeat(var(--services-count, 4), minmax(0, 1fr));
+    gap: 1.25rem;
+  }
 }
 
 /* Each card spans three rows of the parent grid (icon, title, description)
@@ -71,6 +80,12 @@
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--elev-2);
+}
+
+@media (min-width: 1600px) {
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
 }
 
 .service-card-icon {

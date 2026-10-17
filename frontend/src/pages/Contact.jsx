@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getContactData, submitForm } from "../services/api";
-import PageHero from "../components/PageHero";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import "./Contact.css";
@@ -63,13 +62,58 @@ const Contact = () => {
   return (
     <div className="contact-page-wrapper">
       {/* 1. Header Banner */}
-      <PageHero
-        image="/images/events/event_pmc-courtesy-visit-1.jpg"
-        alt="BAI Pune Centre members on a courtesy visit to the Pune Municipal Corporation"
-        tag="Get in Touch"
-        title={data.title}
-        subtitle="Builders Association of India Headquarters"
-      />
+      <section className="contact-banner">
+        <div className="contact-banner-art" aria-hidden="true">
+          <svg
+            className="contact-banner-skyline"
+            viewBox="0 0 900 300"
+            preserveAspectRatio="xMaxYMax slice"
+            focusable="false"
+          >
+            {/* Skyline blocks — the city the association builds */}
+            <g className="contact-banner-blocks">
+              <rect x="300" y="170" width="86" height="130" />
+              <rect x="398" y="118" width="64" height="182" />
+              <rect x="474" y="196" width="104" height="104" />
+              <rect x="590" y="86" width="78" height="214" />
+              <rect x="680" y="152" width="58" height="148" />
+              <rect x="750" y="112" width="112" height="188" />
+            </g>
+            {/* Floor lines */}
+            <g className="contact-banner-floors">
+              <path d="M300 206h86M300 242h86M300 278h86" />
+              <path d="M398 154h64M398 190h64M398 226h64M398 262h64" />
+              <path d="M474 232h104M474 268h104" />
+              <path d="M590 122h78M590 158h78M590 194h78M590 230h78M590 266h78" />
+              <path d="M680 188h58M680 224h58M680 260h58" />
+              <path d="M750 148h112M750 184h112M750 220h112M750 256h112" />
+            </g>
+            {/* Tower crane */}
+            <g className="contact-banner-crane">
+              <path d="M548 300V44" />
+              <path d="M470 56h210" />
+              <path d="M548 44 470 56M548 44l132 12" />
+              <path d="M548 56v18h-14v-18M548 74h14v-18" />
+              <path d="M640 56v46" />
+              <rect x="630" y="102" width="20" height="16" />
+            </g>
+            <path className="contact-banner-ground" d="M0 300h900" />
+          </svg>
+        </div>
+
+        <div className="container contact-banner-inner">
+          <motion.div
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="contact-banner-copy"
+          >
+            <h1 className="contact-banner-title">{data.title}</h1>
+            <span className="contact-banner-rule" aria-hidden="true"></span>
+            <p className="contact-banner-subtitle">{data.office.name}</p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* 2. Main Contact Row */}
       <section className="contact-main-section">

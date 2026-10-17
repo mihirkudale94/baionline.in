@@ -137,21 +137,21 @@ export const activities = [
     title: "Government Interaction Programmes",
     summary:
       "Structured engagement with civic bodies and government departments — including PMC and state authorities — to represent the industry on policy, tendering and regulatory matters.",
-    image: "/images/events/event_pmc-courtesy-visit-1.jpg"
+    image: "/images/events/event_government-interaction-programme.webp"
   },
   {
     slug: "training-workshops",
     title: "Training Workshops",
     summary:
       "Skill-building workshops for member firms and their teams, covering site safety, project management, statutory documentation and emerging construction practice.",
-    image: "/images/events/event_chenab-bridge-technical-talk.jpg"
+    image: "/images/events/event_maharera-seminar-2025-2.jpg"
   },
   {
     slug: "industry-academia",
     title: "Industry–Academia Collaboration",
     summary:
       "Formal engagement with universities and technical institutions — including a Memorandum of Understanding with MIT World Peace University's Department of Civil Engineering and its School of Construction Engineering and Management — to align academic curricula with site practice, open internship and placement routes for students, and build the next generation of construction leaders.",
-    image: "/images/events/event_mitwpu-roundtable-discussion.jpg"
+    image: "/images/events/event_mitwpu-mou-exchange.webp"
   }
 ];
 

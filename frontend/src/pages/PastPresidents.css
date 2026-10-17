@@ -189,9 +189,12 @@
 
 /* Pune Centre — Past Office Bearers */
 .pune-bearers-section { padding: 5rem 0; background: linear-gradient(180deg, var(--white) 0%, var(--primary-tint) 100%); }
+/* The notice and the two cards around the roster run the full container
+   width, matching the grid between them, instead of stopping short on a
+   container that spans the viewport. */
 .pune-bearers-notice {
   display: flex; align-items: center; gap: 0.6rem;
-  max-width: 750px; margin: 0 auto 2.5rem;
+  margin: 0 0 2.5rem;
   background: var(--primary-tint); border: 1px dashed var(--primary-soft);
   border-radius: 12px; padding: 0.9rem 1.25rem;
   font-size: 0.82rem; color: var(--navy); text-align: left;
@@ -211,15 +214,15 @@
 .pune-bearer-tenure { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
 .pune-bearer-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-top: 0.5rem; }
 .pune-bearers-photo-note {
-  display: flex; align-items: center; gap: 1rem; max-width: 700px; margin: 0 auto;
+  display: flex; align-items: center; gap: 1rem; margin: 0;
   padding: 1.5rem; border-radius: 16px; text-align: left;
 }
 .pune-bearers-photo-icon { color: var(--primary); font-size: 1.6rem; flex-shrink: 0; }
 .pune-bearers-photo-note p { font-size: 0.85rem; color: var(--gray-800); margin: 0; }
 
 .pune-bearers-empty {
-  display: flex; align-items: center; gap: 1rem; max-width: 700px;
-  margin: 0 auto 2.5rem; padding: 1.5rem; border-radius: 16px; text-align: left;
+  display: flex; align-items: center; gap: 1rem;
+  margin: 0 0 2.5rem; padding: 1.5rem; border-radius: 16px; text-align: left;
 }
 .pune-bearers-empty p { font-size: 0.9rem; color: var(--gray-800); margin: 0; }
 

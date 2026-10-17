@@ -238,11 +238,7 @@ const SocialActivities = () => {
                 className="outreach-card"
               >
                 <div className="outreach-card-image">
-                  <img
-                    src={prog.image}
-                    alt={prog.title}
-                    style={prog.focal ? { objectPosition: prog.focal } : undefined}
-                  />
+                  <img src={prog.image} alt={prog.title} />
                   <div className="outreach-card-overlay">
                     <span className="outreach-meta-tag">{prog.duration}</span>
                   </div>
@@ -300,9 +296,19 @@ const SocialActivities = () => {
               <div className="disaster-badge">Disaster Response</div>
               <h3>{data.disasterRelief.title}</h3>
               <p>{data.disasterRelief.description}</p>
-              <div className="disaster-image-wrapper">
-                <img src={data.disasterRelief.image} alt="Disaster Response" />
-              </div>
+              {data.disasterRelief.image && (
+                <div className="disaster-image-wrapper">
+                  <img
+                    src={data.disasterRelief.image}
+                    alt={data.disasterRelief.imageAlt || "Disaster Response"}
+                    style={
+                      data.disasterRelief.focal
+                        ? { objectPosition: data.disasterRelief.focal }
+                        : undefined
+                    }
+                  />
+                </div>
+              )}
             </motion.div>
           </div>
         </div>

@@ -1,4 +1,111 @@
-/* Page header lives in components/PageHero.css */
+/* ===== Page banner =====================================================
+   A designed banner rather than a photograph: BAI's blue gradient, a faint
+   blueprint grid and a construction skyline drawn in line art, with the page
+   heading and the two details people come here for sitting on top of it.
+   ====================================================================== */
+.contact-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: clamp(260px, 26vw, 400px);
+  background:
+    radial-gradient(120% 150% at 88% -10%, rgba(26, 115, 232, 0.5) 0%, rgba(26, 115, 232, 0) 62%),
+    linear-gradient(108deg, var(--ink) 0%, #11203c 52%, var(--primary-dark) 100%);
+}
+
+/* Blueprint grid behind everything */
+.contact-banner-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px, 56px 56px;
+}
+
+/* Skyline line art, anchored bottom-right and fading out towards the copy */
+.contact-banner-skyline {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: min(60%, 880px);
+  color: var(--primary-soft);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+}
+
+.contact-banner-blocks rect {
+  fill: currentColor;
+  fill-opacity: 0.07;
+  stroke: currentColor;
+  stroke-opacity: 0.35;
+  stroke-width: 1.5;
+}
+
+.contact-banner-floors path {
+  fill: none;
+  stroke: currentColor;
+  stroke-opacity: 0.16;
+  stroke-width: 1;
+}
+
+.contact-banner-crane path,
+.contact-banner-crane rect {
+  fill: none;
+  stroke: var(--accent-amber);
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+}
+
+.contact-banner-ground {
+  fill: none;
+  stroke: currentColor;
+  stroke-opacity: 0.4;
+  stroke-width: 2;
+}
+
+/* Banner copy */
+.contact-banner .contact-banner-inner {
+  position: relative;
+  width: 100%;
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.contact-banner-copy {
+  max-width: 680px;
+}
+
+.contact-banner-title {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2.25rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.contact-banner-rule {
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 1.1rem 0 1.2rem;
+  border-radius: 2px;
+  background: var(--accent-amber);
+}
+
+.contact-banner-subtitle {
+  margin: 0;
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
 
 /* Main Grid Roster */
 .contact-main-section {
@@ -212,6 +319,15 @@
 }
 
 @media (max-width: 768px) {
+  /* Drop the skyline to a band under the copy so no line art crosses the
+     heading on a narrow screen. */
+  .contact-banner-skyline {
+    width: 100%;
+    height: 62%;
+    opacity: 0.5;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 26%);
+  }
   .contact-main-section {
     padding: 4rem 0;
   }

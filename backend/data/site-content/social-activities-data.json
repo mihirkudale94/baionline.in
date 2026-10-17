@@ -33,15 +33,14 @@
       "description": "Free vocational training workshops for young and unskilled workers. We provide training in masonry, bar-bending, plumbing, safety operations, and digital basic skills to enhance employability.",
       "duration": "Quarterly Drives",
       "target": "Youth & Unskilled Laborers",
-      "image": "/images/events/event_jcb-plant-training-session.jpg"
+      "image": "/images/events/event_bridge-site-visit-2.jpg"
     },
     {
       "title": "Independence Day Celebrations",
       "description": "Every year on 15 August, BAI Pune members, past presidents and staff gather for the national flag hoisting ceremony, marking Independence Day together and honouring the nation-builders who came before us.",
       "duration": "Every 15 August",
       "target": "Members & Staff",
-      "image": "/images/events/event_independence-day-2026-flag-hoisting.jpg",
-      "focal": "center 45%"
+      "image": "/images/events/event_independence-day-2026-flag-hoisting.jpg"
     }
   ],
   "sustainabilityCampaigns": [
@@ -58,8 +57,7 @@
   ],
   "disasterRelief": {
     "title": "Disaster Response & Civic Aid",
-    "description": "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune.",
-    "image": "/images/events/event_worker-children-felicitation-2025-1.jpg"
+    "description": "In times of crisis, BAI Pune stands at the forefront. During the COVID-19 pandemic, we established temporary relief shelters, supplied thousands of ration kits, face masks, and sanitizers, and facilitated safe transit for migrant laborers. Similarly, we mobilize machinery (like excavators and trucks) and dry rations to assist the civic administration during monsoon flooding in low-lying areas of Pune."
   },
   "gallery": []
 }

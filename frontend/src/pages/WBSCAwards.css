@@ -569,9 +569,10 @@
 }
 
 /* ============ Masters Category rule ============ */
+/* The rule applies to every category above it, so it runs the full
+   container width rather than stopping at the category list's 700px. */
 .wbsc-masters-note {
-  max-width: 700px;
-  margin: 1.5rem auto 0;
+  margin: 1.5rem 0 0;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
@@ -581,7 +582,9 @@
   border: 1px solid var(--gray-200);
 }
 .wbsc-masters-icon { color: var(--accent-amber); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.15rem; }
-.wbsc-masters-note p { font-size: 0.85rem; line-height: 1.65; color: var(--text-body); }
+/* Lift the site-wide 80ch reading width so the note's single line fills
+   the box instead of stopping two thirds of the way across. */
+.wbsc-masters-note p { max-width: none; font-size: 0.85rem; line-height: 1.65; color: var(--text-body); }
 
 /* ============ Tentative schedule ============ */
 .wbsc-schedule-section {

@@ -277,21 +277,21 @@
   border-color: var(--primary-soft);
 }
 
+/* Every outreach photo sits in the same 16:9 frame, so the card text lines up
+   across the row. Landscape shots fill the width; the portrait one is centred
+   and shown whole rather than cropped. */
 .outreach-card-image {
   position: relative;
-  height: 220px;
-  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--white);
 }
 
 .outreach-card-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform var(--dur-med) ease;
-}
-
-.outreach-card:hover .outreach-card-image img {
-  transform: scale(1.05);
+  object-fit: contain;
 }
 
 .outreach-card-overlay {
