@@ -75,7 +75,7 @@ export const heroIntro = {
   tag: "Estd. 1941 · Pune — The Mother Centre",
   title: "Builders' Association of India",
   subtitle:
-    "India's apex association of engineering construction contractors and builders — 232 centres, 25,000+ members, since 1941."
+    "India's apex association of engineering construction contractors and builders — 264+ centres, 25,000+ members, since 1941."
 };
 
 /* ------------------------------------------------------------------
@@ -1690,7 +1690,7 @@ export const membershipPageData = {
     website: "www.baionline.in",
     gstin: "27AAATB0212F1ZI",
     established: "Estd. 1941",
-    network: "232 Centres across India"
+    network: "264+ Centres across India"
   },
   // Every Centre printed on the Head Office application form letterhead.
   centres: [
@@ -1978,7 +1978,7 @@ export const baiServicesData = {
       email: "baipune1@gmail.com",
       tel: "(020) 2605 9255",
       address:
-        "BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001"
+        "BAI’s Padma Shri B. G. Shirke Activity Centre, Office Nos. 23, 24 & 25, “Sangam,” Phase II, Near Sangam Bridge, Pune – 411001."
     }
   }
 };

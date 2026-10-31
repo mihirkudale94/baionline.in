@@ -204,7 +204,7 @@ const Contact = () => {
                   </div>
 
                   <div className="form-group">
-                    <label>Phone Number (Optional)</label>
+                    <label>Phone Number</label>
                     <input
                       type="tel"
                       value={phone}

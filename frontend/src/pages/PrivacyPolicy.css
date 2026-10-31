@@ -1,0 +1,148 @@
+/* Long-form legal copy: one column across the full container width, rather
+   than the card grids the rest of the site uses. */
+.legal-section {
+  padding: 4rem 0 5rem 0;
+  background-color: var(--gray-50);
+}
+
+/* PageHero caps its header text at 760px and index.css caps every <p> at
+   80ch; this page reads full width instead, heading and body alike. */
+.privacy-page .page-hero-header-inner {
+  max-width: none;
+}
+
+.privacy-page p {
+  max-width: none;
+}
+
+.legal-content {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 3rem;
+  color: var(--gray-800);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.legal-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 2.5rem 0 1rem 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid var(--gray-200);
+}
+
+.legal-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 2rem 0 0.75rem 0;
+}
+
+.legal-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.legal-content > p:first-child {
+  margin-top: 0;
+}
+
+.legal-content p {
+  margin: 0 0 1rem 0;
+}
+
+.legal-list {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.legal-list li {
+  margin-bottom: 0.75rem;
+}
+
+.legal-list strong {
+  color: var(--navy);
+}
+
+.legal-contact-list a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.legal-contact-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .legal-section {
+    padding: 3rem 0;
+  }
+  .legal-content {
+    padding: 1.75rem;
+  }
+}
+
+/* Policy text beside the Cloud Partners column, the same 10/2 split the
+   Head Office page uses. */
+.legal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 10fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Cloud Partners, carried over from the Head Office page. */
+.partners-strip {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.partners-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+
+.partners-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partners-list img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+  /* Stacked, the logos read as a row rather than one giant column. */
+  .partners-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .partners-list img {
+    max-width: 180px;
+  }
+}

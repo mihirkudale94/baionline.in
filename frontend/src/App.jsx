@@ -11,7 +11,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
-import Media from "./pages/Media";
 import Services from "./pages/Services";
 import Committees from "./pages/Committees";
 import PastPresidents from "./pages/PastPresidents";
@@ -26,6 +25,7 @@ import SponsorsInquiry from "./pages/SponsorsInquiry";
 import Links from "./pages/Links";
 import NonMembersArea from "./pages/NonMembersArea";
 import WheelingDealing from "./pages/WheelingDealing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 // Simple fallback wrappers for secondary links
 const PlaceholderPage = ({ title }) => (
@@ -52,7 +52,6 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/media" element={<Media />} />
             
             {/* secondary routes */}
             <Route path="/services" element={<Services />} />
@@ -67,7 +66,7 @@ const App = () => {
             <Route path="/judgements" element={<PlaceholderPage title="Judgements" />} />
             <Route path="/notifications" element={<PlaceholderPage title="Notifications" />} />
             <Route path="/circular" element={<PlaceholderPage title="Circulars" />} />
-            <Route path="/privacy-policy" element={<PlaceholderPage title="Privacy Policy" />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<PlaceholderPage title="Terms & Conditions" />} />
             <Route path="/disclaimer" element={<PlaceholderPage title="Disclaimer" />} />
             <Route path="/up-email" element={<PlaceholderPage title="Update Email Records" />} />

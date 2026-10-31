@@ -25,6 +25,8 @@ const linkifyEmails = (text) =>
     )
   );
 
+const EVENTS_IN_WIDGET = 4;
+
 const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -98,7 +100,7 @@ const Home = () => {
               <h2 className="welcome-title">Building Better Infrastructure. Empowering the Construction Industry.</h2>
               <div className="title-line"></div>
               <p className="welcome-desc">
-                Founded in 1941 right here in Pune under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, the Builders' Association of India (BAI) began as a body to find solutions to builders' problems — and Pune Centre carries that founding legacy forward today, representing builders, contractors, consultants, engineers and developers in and around the city. As a constituent centre of BAI's nationwide network, Pune Centre also connects its members to India's largest construction industry body — 232 regional centres strong across the country.
+                Founded in 1941 right here in Pune under the guidance of Brig. C.V.S. Jackson of Military Engineering Services, the Builders' Association of India (BAI) began as a body to find solutions to builders' problems — and Pune Centre carries that founding legacy forward today, representing builders, contractors, consultants, engineers and developers in and around the city. As a constituent centre of BAI's nationwide network, Pune Centre also connects its members to India's largest construction industry body — 264+ regional centres strong across the country.
               </p>
               <div className="welcome-features-list">
                 <div className="feature-item">
@@ -112,7 +114,7 @@ const Home = () => {
                   <div className="feature-icon-wrapper"><FaGlobe /></div>
                   <div>
                     <h4>Part of BAI's National Network</h4>
-                    <p>232 regional centres across India, organized in 5 zones.</p>
+                    <p>264+ regional centres across India, organized in 5 zones.</p>
                   </div>
                 </div>
               </div>
@@ -133,8 +135,7 @@ const Home = () => {
                 <FaBookOpen className="header-icon" />
                 <h3>{data.indianConstruction.title}</h3>
               </div>
-              <p className="bulletin-subtitle">{data.indianConstruction.subtitle}</p>
-              
+
               <div className="bulletin-body-grid">
                 <div className="bulletin-cover-col">
                   <img 
@@ -149,9 +150,9 @@ const Home = () => {
                 <div className="bulletin-info-col">
                   <p className="bulletin-desc">{data.indianConstruction.desc}</p>
                   <div className="bulletin-buttons">
-                    <a href={data.indianConstruction.links.advertise} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">Advertise</a>
+                    <a href={data.indianConstruction.links.advertise} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">Advertise in Indian Construction</a>
                     <a href={data.indianConstruction.links.archives} target="_blank" rel="noreferrer" className="btn btn-outline btn-sm">Archives</a>
-                    <a href={data.indianConstruction.links.subscribe} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm">Subscribe Form</a>
+                    <a href={data.indianConstruction.links.subscribe} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm">Subscribe to Indian Construction</a>
                   </div>
                 </div>
               </div>
@@ -300,19 +301,43 @@ const Home = () => {
               )}
             </div>
 
-            {/* Latest News Feed Widget */}
+            {/* Events & Latest News Widget */}
             <div className="widget-card news-feed-widget glass-card">
-              <div className="widget-header">
+              {data.events.length > 0 && (
+                <>
+                  <div className="widget-header">
+                    <FaCalendarAlt className="widget-icon" />
+                    <h3>Events</h3>
+                  </div>
+
+                  <ul className="widget-events-list">
+                    {data.events.slice(0, EVENTS_IN_WIDGET).map((evt, idx) => (
+                      <li key={idx}>
+                        <Link to="/events">
+                          <span className="widget-event-title">{evt.title}</span>
+                          <span className="widget-event-date">{evt.date}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link to="/events" className="feed-download-link widget-see-all">
+                    See all events <FaArrowRight />
+                  </Link>
+                </>
+              )}
+
+              <div className="widget-header widget-header--second">
                 <FaNewspaper className="widget-icon" />
-                <h3>Communique Feed</h3>
+                <h3>Latest News</h3>
               </div>
-              
+
               <ul className="communique-links-list">
                 {data.newsTicker.map((item, idx) => (
                   <li key={idx}>
                     <p>{item.text}</p>
                     <a href={item.link} target="_blank" rel="noreferrer" className="feed-download-link">
-                      Download document (PDF)
+                      Read more
                     </a>
                   </li>
                 ))}
@@ -322,46 +347,45 @@ const Home = () => {
 
           </div>
 
-            {/* Map Presence Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="presence-map-layout glass-card split-full-row"
-            >
-              <div className="section-header-box">
-                <FaGlobe className="header-icon" />
-                <h3>BAI's National Network</h3>
-              </div>
-              <p className="map-desc">BAI Pune Centre is part of a nationwide network of 232 city centres across the country. Click on any map image below to view it in full resolution.</p>
-              
-              <div className="presence-maps-grid">
-                <div className="map-card">
-                  <img 
-                    src="/images/maps/map-171.png" 
-                    alt="Permanent Regional Offices Map" 
-                    className="india-map-img"
-                    loading="lazy"
-                    onClick={() => handleOpenLightbox("/images/maps/map-171.png", "Permanent Regional Offices Map")}
-                    style={{ cursor: "zoom-in" }}
-                  />
-                  <span>Permanent Regional Offices</span>
-                </div>
-                <div className="map-card">
-                  <img 
-                    src="/images/maps/map-new-bg-full.png" 
-                    alt="National Coverage Boundaries Map" 
-                    className="india-map-img"
-                    loading="lazy"
-                    onClick={() => handleOpenLightbox("/images/maps/map-new-bg-full.png", "National Coverage Boundaries Map")}
-                    style={{ cursor: "zoom-in" }}
-                  />
-                  <span>National Coverage Boundaries</span>
-                </div>
-              </div>
-            </motion.div>
+        </div>
+      </section>
 
+      {/* Our Presence */}
+      <section className="presence-band" aria-labelledby="presence-title">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="presence-eyebrow">Our Presence</span>
+            <h2 id="presence-title" className="presence-title">
+              Now present in more than 264+ city centers across India.
+            </h2>
+
+            <div className="presence-maps-grid">
+              <figure className="map-card">
+                <img
+                  src="/images/maps/map-171.png"
+                  alt="Builders' Association of India map showing Centres by region and state"
+                  className="india-map-img"
+                  loading="lazy"
+                  onClick={() => handleOpenLightbox("/images/maps/map-171.png", "Builders' Association of India Map")}
+                />
+              </figure>
+              <figure className="map-card">
+                <img
+                  src="/images/maps/map-new-bg-full.png"
+                  alt="State-wise list of every BAI Centre across India"
+                  className="india-map-img"
+                  loading="lazy"
+                  onClick={() => handleOpenLightbox("/images/maps/map-new-bg-full.png", "BAI Centres, state by state")}
+                />
+              </figure>
+            </div>
+            <p className="presence-hint">Click either map to view it full size.</p>
+          </motion.div>
         </div>
       </section>
 
@@ -371,7 +395,7 @@ const Home = () => {
           <div className="membership-cta-copy">
             <span className="membership-cta-tag">Membership</span>
             <h2 id="membership-cta-title">Grow with Pune's builders. Become a BAI member.</h2>
-            <p>Join contractors, builders and developers in BAI Pune Centre and gain a voice in a nationwide network of 232 centres.</p>
+            <p>Join contractors, builders and developers in BAI Pune Centre and gain a voice in a nationwide network of 264+ centres.</p>
           </div>
           <div className="membership-cta-actions">
             <Link to="/membership" className="btn membership-cta-btn">
@@ -383,22 +407,6 @@ const Home = () => {
 
       {/* 5. Our Sponsors */}
       <SponsorsBanner />
-
-      {/* 6. Quick Links CTA Area */}
-      <section className="cta-action-section">
-        <div className="container action-grid">
-          <TiltCard className="action-card glass-card" maxTilt={5}>
-            <h3>Become a Pune Centre Member</h3>
-            <p>Join BAI Pune Centre and connect with builders, contractors and developers across the city — and BAI's nationwide network.</p>
-            <Link to="/membership" className="btn btn-primary">Become a Member</Link>
-          </TiltCard>
-          <TiltCard className="action-card orange-card" maxTilt={5}>
-            <h3>Get In Touch</h3>
-            <p>Have questions about sponsorship, tenders, publications or Pune Centre membership? We are here to assist you.</p>
-            <Link to="/contact" className="btn btn-secondary">Contact Pune Centre</Link>
-          </TiltCard>
-        </div>
-      </section>
 
       {/* Image Lightbox Modal */}
       <ImageLightbox 

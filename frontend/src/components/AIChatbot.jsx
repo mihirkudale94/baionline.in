@@ -51,7 +51,7 @@ const getFallbackReply = (query) => {
     return "📖 Indian Construction Journal (ICJ)\n\nBAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, and legal circular updates. For copies or a subscription, contact the Centre office.";
   }
   if (q.includes("contact") || q.includes("address") || q.includes("office") || q.includes("location")) {
-    return "📍 BAI Pune Centre Office\n\n**Address**: BAI's Padma Shri B G Shirke Activity Centre, Office No. 23, 24 & 25 \"Sangam\" Ph II, Near Sangam Bridge, Pune - 411001\n\n**Phone**: (020) 2605 9255 / (020) 2605 7441\n\n**Email**: baipune1@gmail.com";
+    return "📍 BAI Pune Centre Office\n\n**Address**: BAI’s Padma Shri B. G. Shirke Activity Centre, Office Nos. 23, 24 & 25, “Sangam,” Phase II, Near Sangam Bridge, Pune – 411001.\n\n**Phone**: (020) 2605 9255 / (020) 2605 7441\n\n**Email**: baipune1@gmail.com";
   }
   return "👋 Welcome to the BAI Pune Centre Assistant!\n\nI can assist you with:\n- **History**: BAI Pune Centre's 1941 founding by Brig. C.V.S. Jackson\n- **Leadership**: Chairman Shri Ajay Gujar & the Governing Council\n- **Machinery exchange**: Rent machinery on Wheeling & Dealing\n- **RERA Services**: MahaRERA registration & compliance support\n\nHow can I help you build today?";
 };

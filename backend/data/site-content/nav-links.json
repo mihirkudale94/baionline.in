@@ -53,10 +53,6 @@
         "path": "/services"
       },
       {
-        "label": "BAI in Media",
-        "path": "/media"
-      },
-      {
         "label": "Sponsors Inquiry",
         "path": "/sponsors-inquiry"
       }

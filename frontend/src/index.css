@@ -95,7 +95,7 @@ img, video {
      in narrow columns: justifying those only opens gaps between words, so
      they keep their own alignment. */
   :is(p, blockquote, dd, figcaption):not(:is(
-    .action-card p, .csr-card p, .inquiry-info-col p,
+    .csr-card p, .inquiry-info-col p,
     .value-card p, .wbsc-why-card p, .minister-details p,
     .communique-links-list p, .news-desc, .outreach-text, .service-card-desc,
     .sitevisit-desc, .step-flow-desc, .wbsc-entry-term-value,

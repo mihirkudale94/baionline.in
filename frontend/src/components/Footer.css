@@ -147,17 +147,21 @@
   flex-wrap: wrap;
 }
 
+/* The notice runs the full width left of the links so it sits on one line. */
 .copyright-text {
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.75rem;
-  max-width: 650px;
+  flex: 1 1 auto;
+  min-width: 0;
   line-height: 1.6;
 }
 
 .useful-links-row {
   display: flex;
+  flex: 0 0 auto;
   gap: 0.5rem;
   align-items: center;
+  white-space: nowrap;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.55);
 }
