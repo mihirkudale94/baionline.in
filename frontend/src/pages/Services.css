@@ -1,250 +1,212 @@
-/* ===== BAI Services page ===== */
+/* ===== BAI Services — Service Providers Area =====
+   Follows the layout of baionline.in/services: a red-washed banner, one white
+   rounded card, eight numbered write-ups with a large pale numeral in the
+   left margin, and the inquiry form in two columns.
+
+   Only the layout is taken from the main site; the colours are the portal's
+   own tokens, so this page stays in the site palette. */
+.services-page-wrapper {
+  --svc-accent: var(--primary);
+  --svc-accent-dark: var(--primary-dark);
+  --svc-numeral: var(--primary-soft);
+  --svc-heading: var(--navy);
+  --svc-ink: var(--text-body);
+  --svc-field-bg: var(--primary-tint);
+  --svc-field-border: var(--surface-border);
+}
+
+/* Title band, under the carousel. The photographs above it are shown clean,
+   so the band carries the heading on its own, on the page surface. */
+.services-banner {
+  padding: 60px 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.services-banner-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--svc-heading);
+  text-align: center;
+}
+
+/* Card */
 .services-section {
-  padding: 4rem 0 5rem;
-  background: var(--gray-50);
+  padding: 3rem 0 4rem;
+  background: var(--surface);
 }
 
-/* Intro block */
-.services-intro-card {
-  padding: 2.25rem;
-  margin-top: -40px;
+.services-card {
+  padding: 25px;
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--elev-1);
+  color: var(--svc-ink);
+}
+
+.services-intro {
+  margin: 0 0 2rem 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--svc-ink);
+  max-width: none;
+}
+
+/* Numbered write-ups */
+.service_list {
   position: relative;
-  z-index: 50;
-  margin-bottom: 3rem;
+  padding-left: 50px;
+  margin-bottom: 30px;
 }
 
-.services-eyebrow {
-  display: inline-block;
-  font-size: 0.75rem;
+.service_list p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: none;
+}
+
+.service_list p b {
   font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
+  color: var(--svc-heading);
 }
 
-.services-heading {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--navy);
-  margin: 0 0 0.75rem 0;
+.service_list > span {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--svc-ink);
 }
 
-.services-lead {
-  font-size: 1.05rem;
+.service_list .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  font-size: 34px;
+  line-height: 34px;
+  font-weight: 700;
+  color: var(--svc-numeral);
+}
+
+/* Inquiry form */
+.services-form-heading {
+  margin: 2.5rem 0 1.25rem 0;
+  font-size: 15px;
+  color: var(--svc-ink);
+  max-width: none;
+}
+
+.services-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 41.666%));
+  gap: 1rem 1.5rem;
+}
+
+.services-form-group {
+  min-width: 0;
+}
+
+.services-form-group label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.4rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--svc-ink);
+  text-align: left;
+}
+
+.services-form-group input {
+  width: 100%;
+  height: 38px;
+  padding: 10px;
+  border: 1px solid var(--svc-field-border);
+  border-radius: 4px;
+  background: var(--svc-field-bg);
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--svc-ink);
+}
+
+.services-form-group input:focus {
+  outline: none;
+  border-color: var(--svc-accent);
+}
+
+.services-form-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 15px;
   font-weight: 600;
-  color: var(--navy-light);
-  line-height: 1.6;
+  color: var(--svc-accent);
+  max-width: none;
+}
+
+.services-form-actions {
+  grid-column: 1 / -1;
+}
+
+.services-submit {
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--svc-accent);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.services-submit:hover {
+  background: var(--svc-accent-dark);
+}
+
+.services-submit:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.services-form-success p {
   margin: 0 0 1rem 0;
+  font-size: 16px;
+  color: var(--svc-ink);
   max-width: none;
-}
-
-.services-intro-text {
-  font-size: 0.95rem;
-  color: var(--gray-800);
-  line-height: 1.75;
-  margin: 0;
-  max-width: none;
-}
-
-/* Service cards */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Wide screens keep every RERA service on a single row. The column count comes
-   from the data through --services-count, so adding a service keeps one row. */
-@media (min-width: 1600px) {
-  .services-grid {
-    grid-template-columns: repeat(var(--services-count, 4), minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-}
-
-/* Each card spans three rows of the parent grid (icon, title, description)
-   via subgrid, so a title that wraps to two lines pushes every description in
-   that row down together and all descriptions start on the same line. */
-.service-card {
-  display: grid;
-  grid-row: span 3;
-  grid-template-rows: subgrid;
-  row-gap: 0;
-  align-content: start;
-  padding: 1.75rem;
-  transition: transform var(--dur-med, 0.3s) var(--ease-out), box-shadow var(--dur-med, 0.3s) var(--ease-out);
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--elev-2);
-}
-
-@media (min-width: 1600px) {
-  .service-card {
-    padding: 1.5rem 1.25rem;
-  }
-}
-
-.service-card-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: var(--r-sm);
-  background: var(--gold-light);
-  color: var(--gold);
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
-  justify-self: start;
-}
-
-.service-card-title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin: 0 0 0.5rem 0;
-}
-
-.service-card-desc {
-  font-size: 0.9rem;
-  color: var(--gray-800);
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* Downloadable forms */
-.services-docs-card {
-  padding: 2rem;
-  margin-top: 3rem;
-}
-
-.services-docs-title {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin: 0 0 1.25rem 0;
-}
-
-.services-docs-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0.75rem;
-}
-
-.services-doc-link {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--r-sm);
-  color: var(--navy);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.services-doc-link:hover {
-  border-color: var(--gold);
-  background: var(--gold-light);
-}
-
-.services-doc-link svg {
-  color: var(--accent-red);
-  flex-shrink: 0;
-}
-
-.services-doc-size {
-  margin-left: auto;
-  font-style: normal;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-/* Contact strip */
-.services-contact-card {
-  margin-top: 3rem;
-  padding: 2.25rem;
-  border-radius: var(--r-lg);
-  background: var(--navy);
-  color: var(--white);
-}
-
-.services-contact-title {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  margin: 0 0 0.65rem 0;
-  color: var(--white);
-}
-
-.services-contact-note {
-  font-size: 0.92rem;
-  line-height: 1.7;
-  margin: 0 0 1.5rem 0;
-  color: rgba(255, 255, 255, 0.78);
-  max-width: none;
-}
-
-.services-contact-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  /* Email and phone take only their own width; the address fills the rest
-     (and drops to its own line when it can't fit). */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
-}
-
-.services-contact-list li {
-  flex: 0 1 auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.services-contact-list li:last-child {
-  flex: 1 1 320px;
-}
-
-.services-contact-list svg {
-  color: var(--primary-soft);
-  margin-top: 0.2rem;
-  flex-shrink: 0;
-}
-
-.services-contact-list a {
-  color: var(--white);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.services-contact-list a:hover {
-  border-bottom-color: var(--primary-soft);
 }
 
 @media (max-width: 768px) {
-  .services-intro-card,
-  .services-contact-card,
-  .services-docs-card {
-    padding: 1.5rem;
+  .services-banner {
+    padding: 38px 0;
   }
 
-  .services-heading {
-    font-size: 1.6rem;
+  .services-banner-title {
+    font-size: 2rem;
+  }
+
+  .services-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .services-card {
+    padding: 1.25rem;
+  }
+
+  .service_list {
+    padding-left: 38px;
+  }
+
+  .service_list .number {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  .services-form {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

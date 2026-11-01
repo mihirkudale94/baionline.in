@@ -65,12 +65,13 @@
   gap: 0.5rem;
 }
 
-.sponsors-inquiry-form label {
-  font-size: 0.72rem;
-  font-weight: 700;
+/* Outranks the unscoped .form-group label rule in SocialActivities.css. */
+.sponsors-inquiry-form .form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--navy-light);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .sponsors-inquiry-form input, .sponsors-inquiry-form textarea {

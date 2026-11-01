@@ -59,6 +59,42 @@
   width: 100%;
 }
 
+/* These fields used to borrow unscoped `.form-group` rules that lived in
+   SocialActivities.css and Contact.css; both are now scoped to their own
+   forms, so the verification card carries its own copy. */
+.login-card .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-card .form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-body);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-card .form-group input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--surface-border);
+  background-color: var(--white);
+  color: var(--ink);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+}
+
+.login-card .form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-tint);
+}
+
 .login-btn {
   width: 100%;
   border-radius: 30px;

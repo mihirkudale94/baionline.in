@@ -45,22 +45,16 @@
     "path": "/membership"
   },
   {
-    "label": "Resources",
-    "path": "#",
-    "children": [
-      {
-        "label": "BAI Services",
-        "path": "/services"
-      },
-      {
-        "label": "Sponsors Inquiry",
-        "path": "/sponsors-inquiry"
-      }
-    ]
+    "label": "BAI Services",
+    "path": "/services"
   },
   {
     "label": "Social Activities",
     "path": "/social-activities"
+  },
+  {
+    "label": "Sponsors Inquiry",
+    "path": "/sponsors-inquiry"
   },
   {
     "label": "Contact Us",

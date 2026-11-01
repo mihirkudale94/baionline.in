@@ -35,6 +35,10 @@
     {
       "label": "Contact",
       "path": "/contact"
+    },
+    {
+      "label": "Privacy Policy",
+      "path": "/privacy-policy"
     }
   ],
   "notifications": [
@@ -49,20 +53,6 @@
     {
       "label": "Circular",
       "path": "/circular"
-    }
-  ],
-  "useful_links": [
-    {
-      "label": "Privacy Policy",
-      "path": "/privacy-policy"
-    },
-    {
-      "label": "Terms & Conditions",
-      "path": "/terms"
-    },
-    {
-      "label": "Disclaimer",
-      "path": "/disclaimer"
     }
   ],
   "social": [

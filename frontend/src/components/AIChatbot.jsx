@@ -45,7 +45,7 @@ const getFallbackReply = (query) => {
     return "🚜 Machinery Exchange (Wheeling & Dealing)\n\nThrough our Wheeling & Dealing portal, BAI Pune Centre members can rent, hire, or list heavy machinery like JCB loaders, concrete pumps, road rollers, and excavators.";
   }
   if (q.includes("rera") || q.includes("maharera")) {
-    return "🏢 RERA Services\n\nBAI Pune Centre runs a RERA desk for members: MahaRERA project registration, agent registration, quarterly compliance, Form 1/2/3 certification, extensions and complaint guidance. See the BAI Services page under Resources for details.";
+    return "🏢 RERA Services\n\nBAI Pune Centre runs a RERA desk for members: MahaRERA project registration, agent registration, quarterly compliance, Form 1/2/3 certification, extensions and complaint guidance. See the BAI Services page for details.";
   }
   if (q.includes("publication") || q.includes("journal") || q.includes("icj") || q.includes("magazine")) {
     return "📖 Indian Construction Journal (ICJ)\n\nBAI publishes the official monthly journal 'Indian Construction' featuring cost indices, steel prices, cement price trends, and legal circular updates. For copies or a subscription, contact the Centre office.";

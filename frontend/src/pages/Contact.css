@@ -117,10 +117,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  /* Both columns run to the row's height, but the detail cards are no longer
+     the ones that take up the slack — the map below them does, so the
+     one-line Email card stays the size of its own text. */
   align-items: stretch;
 }
 
-/* Left column fills the row so its last card ends level with the form card */
 .contact-info-col,
 .contact-form-col {
   display: flex;
@@ -141,15 +143,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  flex: 1;
 }
 
+/* Sized by its own contents — never padded out to match a neighbouring card. */
 .info-detail-card {
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
   border-radius: 16px;
@@ -211,22 +212,77 @@
   margin-bottom: 2rem;
 }
 
-.form-group {
+.contact-feedback-form .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
-  font-size: 0.8rem;
-  font-weight: 600;
+.contact-feedback-form .form-group label {
+  font-size: 0.85rem;
+  font-weight: 400;
   color: var(--navy);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
-.form-group input, .form-group textarea {
+.form-membership {
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1rem 1.25rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Lighter than the field labels below it — it asks a question rather than
+   naming an input, so it does not need their weight. */
+.form-membership legend {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--navy);
+  padding: 0 0.4rem;
+}
+
+.membership-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+}
+
+.membership-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.membership-option input {
+  accent-color: var(--primary);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.form-char-count {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Bots fill every input they can find; people never see this one. */
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.contact-feedback-form .form-group input,
+.contact-feedback-form .form-group textarea {
   background: var(--white);
   border: 1px solid var(--gray-300);
   border-radius: 8px;
@@ -238,10 +294,23 @@
   width: 100%;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.contact-feedback-form .form-group input:focus,
+.contact-feedback-form .form-group textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 4px 12px rgba(26, 115, 232, 0.12);
   outline: none;
+}
+
+.form-recaptcha {
+  margin-bottom: 1.5rem;
+  transform-origin: 0 0;
+}
+
+@media (max-width: 400px) {
+  .form-recaptcha {
+    transform: scale(0.85);
+    margin-bottom: 0.5rem;
+  }
 }
 
 .form-submit-btn {
@@ -289,14 +358,19 @@
   border-radius: 30px;
 }
 
-/* Google Map section */
-.contact-map-section {
-  padding: 0 0 5rem;
-  background-color: var(--white);
+/* Google Map, under the office cards in the left column. The block takes
+   whatever height is left beside the form, and the frame grows into it. */
+.contact-map-block {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 2.5rem;
 }
 
 .contact-map-frame {
+  flex: 1;
   margin-top: 2rem;
+  min-height: 320px;
   border: 1px solid var(--gray-200);
   border-radius: 20px;
   overflow: hidden;
@@ -306,7 +380,8 @@
 .contact-map-frame iframe {
   display: block;
   width: 100%;
-  height: 450px;
+  height: 100%;
+  min-height: 320px;
   border: 0;
 }
 
@@ -337,11 +412,12 @@
   .info-detail-card {
     padding: 1.5rem;
   }
-  .contact-map-section {
-    padding-bottom: 4rem;
+  .contact-map-block {
+    margin-top: 2rem;
   }
+  .contact-map-frame,
   .contact-map-frame iframe {
-    height: 320px;
+    min-height: 280px;
   }
 }
 

@@ -1805,63 +1805,6 @@ export const membershipPageData = {
       "Repairs & Rehabilitation Contractor"
     ]
   },
-  formSections: {
-    intro: "The printed form runs to two pages. These are the parts you will need to complete, in the order they appear on the document.",
-    parts: [
-      {
-        title: "Membership Type",
-        fields: [
-          "Category applied for — Annual, Patron, Corporate or Affiliated Association",
-          "Whether the membership is to be held in your own name or in the company name"
-        ]
-      },
-      {
-        title: "Applicant Details",
-        fields: [
-          "Full name of the applicant or member company",
-          "Complete postal address with PIN code — the form marks this 'Very Important'",
-          "Telephone and fax numbers",
-          "E-mail address and website"
-        ]
-      },
-      {
-        title: "Statutory Registrations",
-        fields: [
-          "Company Registration Number with MSME",
-          "PAN Number",
-          "GST Number",
-          "Contractor License Number",
-          "Company Identification Number (CIN)"
-        ]
-      },
-      {
-        title: "Constitution & Representation",
-        fields: [
-          "Partnership firm — names of the major working partners",
-          "Corporate company — names of the Managing and Executive Directors",
-          "Representatives authorised to attend and vote at meetings, stating for each whether Director, Partner or Executive Attorney, with residence address and telephone, fax and mobile numbers",
-          "Manager authorised by Power of Attorney"
-        ]
-      },
-      {
-        title: "Business Profile",
-        fields: [
-          "The field your company specialises in",
-          "Your company's registration with various works authorities, with details"
-        ]
-      },
-      {
-        title: "Endorsement & Execution",
-        fields: [
-          "Proposed By — an existing member of the Association",
-          "Seconded By — an existing member of the Association",
-          "Date and place of application",
-          "Signed for and on behalf of the firm, with the rubber stamp of the company",
-          "To be signed by the Proprietor, Partner, Director or Attorney"
-        ]
-      }
-    ]
-  },
   declaration: {
     title: "Declaration & Undertaking",
     intro: "The completed form is addressed to the Executive Secretary at Head Office and carries the following undertaking:",
@@ -1900,24 +1843,79 @@ export const membershipPageData = {
 };
 
 /*
-  BAI Services page.
+  BAI Services page — the Service Providers Area, laid out and worded as it is
+  on baionline.in/services: the banner carousel, the title band, one white
+  card, eight numbered entries and the "send me more information" form.
 
-  RERA Services is the first service desk published here. The write-ups below
-  describe the desk in general terms — the final list of services, charges and
-  downloadable forms are to be supplied by BAI Pune Centre and simply replace
-  the entries in `services` / `documents`.
+  The write-ups are the association's own text and are kept as published.
+
+  `rera` below is the Pune Centre's RERA desk, which this page carried before.
+  It is not rendered now that the page follows the main site; it is kept here
+  so the desk can be given its own page without the copy being written again.
 */
 export const baiServicesData = {
-  tag: "Member Services",
-  title: "BAI Services",
-  subtitle: "Professional support desks run by BAI Pune Centre for its member contractors and builders",
-  hero: {
-    image: "/images/events/event_maharera-seminar-2025.jpg",
-    alt: "The Pune Centre's half-day seminar on real estate development and self-redevelopment under MahaRERA"
+  title: "Service Providers Area",
+  intro:
+    "For tapping the business opportunity in the emerging Indian Infrastructure and Real Estate Sector, BAI offers...",
+  items: [
+    {
+      title: "Advertising in ‘Indian Construction’",
+      description:
+        "The widely circulated monthly bulletin is not only the mouth piece of BAI but a regular and dependable authenticate information provider to the constituents of the Indian construction sector."
+    },
+    {
+      title: "Product Write-ups",
+      description:
+        "Write-ups of products are carried in the ‘Indian Construction’ bulletin, in a way that it is of interest and information to readers. Most of the times it complements an advertisement of a product in the same issue."
+    },
+    {
+      title: "Exhibitions/Trade fairs",
+      description:
+        "Exhibitions/Trade fairs are regularly held by BAI in various parts of India."
+    },
+    {
+      title:
+        "Conventions/Seminars/Conferences(with a link to page having a list of Conventions/Seminars/Conferences of BAI or its Centres)",
+      description:
+        "Conventions/Seminars/Conferences are organized regularly by BAI in various parts of India and on specific topics too. These events are many times clubbed with Exhibitions/Tradefairs."
+    },
+    {
+      title: "Construction Industry Referencer",
+      description:
+        "BAI annually publishes Construction Industry Referencer the official membership directory of BAI containing all details of its members. Being a collector’s volume, advertisements in the Membership Directory get multiple exposures."
+    },
+    {
+      title: "Website",
+      description:
+        "The newly launched and regularly updated BAI Portal ‘www.baionline.in’ is a much sought after website for the information hosted on it. Advertisements, banners, messages and links on the website get wide exposure."
+    },
+    {
+      title: "One-to-One meetings",
+      description:
+        "One-to-One meetings with specific groups of members are also arranged by BAI on request by a supplier/manufacturer in various parts of India."
+    },
+    {
+      title: "Research/Survey/Opinion gathering exercise",
+      description:
+        "BAI will undertake on behalf of manufacturers/service providers"
+    }
+  ],
+  inquiry: {
+    title: "Please send me more information as below :",
+    fields: [
+      { name: "item", label: "I want more detail on item no", type: "text" },
+      { name: "name", label: "Name :", type: "text" },
+      { name: "company", label: "Company Name :", type: "text" },
+      { name: "mobile", label: "Mobile No :", type: "tel" },
+      { name: "email", label: "Email :", type: "email" }
+    ],
+    submitLabel: "Submit",
+    successText: "Thank you. Your request has been sent to BAI."
   },
   rera: {
     id: "rera",
     title: "RERA Services",
+    eyebrow: "Pune Centre · For members",
     lead: "Registration, compliance and advisory support under the Real Estate (Regulation and Development) Act, 2016 and the MahaRERA rules.",
     intro:
       "BAI Pune Centre assists member builders and promoters through every stage of their obligations under RERA — from registering a new project with MahaRERA to keeping quarterly disclosures current through the project lifecycle. The desk is run with practising legal and technical consultants, and members are given priority scheduling and concessional professional charges.",
@@ -1971,7 +1969,6 @@ export const baiServicesData = {
           "Workshops and briefing sessions at the Centre on amendments, circulars and orders issued by MahaRERA that affect members' ongoing projects."
       }
     ],
-    // Downloadable forms / circulars — populated once BAI supplies the files.
     documents: [],
     contact: {
       note: "For charges, appointment slots or any specific query on the RERA desk, write to the Centre office with your membership number and project details.",

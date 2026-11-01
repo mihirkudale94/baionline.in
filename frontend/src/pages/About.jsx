@@ -106,6 +106,24 @@ const About = () => {
             {content.paragraphs.map((para, idx) => (
               <p key={idx} className="history-paragraph">{para}</p>
             ))}
+
+            {content.history_stats && (
+              <div className="history-stats-grid">
+                {content.history_stats.map((stat, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.08 }}
+                    className="history-stat-card"
+                  >
+                    <span className="history-stat-count">{stat.count}</span>
+                    <span className="history-stat-label">{stat.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </motion.div>
           
           <motion.div
@@ -138,9 +156,6 @@ const About = () => {
                   <p className="brig-sub">Brig. C.V.S. Jackson, MES (Pune)</p>
                 </div>
               </div>
-              <p className="jackson-monument-desc">
-                In 1941, Brig. C.V.S. Jackson of Military Engineering Services suggested building contractors form an association. He provided land within Southern Command Headquarters in Pune, on which an office was constructed and aptly named <strong>'Jackson Hut'</strong>, which stands even today as a monument in BAI's name.
-              </p>
             </div>
           </motion.div>
         </div>

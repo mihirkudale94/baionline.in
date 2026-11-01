@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { footerData } from "../services/api";
-import { getSocialIcon, socialLabels } from "./socialIcons";
 import "./Footer.css";
 
 const Footer = () => {
@@ -14,27 +13,10 @@ const Footer = () => {
       <div className="container footer-content-container">
         {/* Footer Top Grid */}
         <div className="footer-grid">
-          {/* Logo and About column */}
+          {/* Logo column */}
           <div className="footer-col col-info">
             <div className="footer-logo-wrapper">
               <img src={footerData.logo} alt="BAI Logo White" className="footer-logo" />
-            </div>
-            <p className="footer-tagline">
-              BAI Pune Centre, part of India's nationwide builders' network since 1941.
-            </p>
-            <div className="footer-social-icons">
-              {footerData.social.map((soc, idx) => (
-                <a
-                  key={idx}
-                  href={soc.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`social-icon-btn ${soc.platform}`}
-                  aria-label={socialLabels[soc.platform] || soc.platform}
-                >
-                  {getSocialIcon(soc.platform)}
-                </a>
-              ))}
             </div>
           </div>
 
@@ -97,14 +79,6 @@ const Footer = () => {
         {/* Footer Bottom row */}
         <div className="footer-bottom-row">
           <div className="copyright-text">{footerData.copyright}</div>
-          <div className="useful-links-row">
-            {footerData.useful_links.map((link, idx) => (
-              <React.Fragment key={idx}>
-                <Link to={link.path}>{link.label}</Link>
-                {idx < footerData.useful_links.length - 1 && <span className="link-divider">|</span>}
-              </React.Fragment>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

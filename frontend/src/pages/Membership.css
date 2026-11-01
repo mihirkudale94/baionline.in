@@ -167,54 +167,6 @@
 }
 .membership-eligibility-item svg { color: var(--primary); flex-shrink: 0; }
 
-
-/* ---------- What the form asks ---------- */
-.membership-formparts-section { padding: 5rem 0; background: var(--gray-50); }
-.membership-formparts-intro { max-width: none; margin: 0 0 2.5rem; text-align: center; font-size: 0.9rem; color: var(--gray-800); line-height: 1.7; }
-.membership-formparts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.membership-formpart-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 18px;
-  padding: 1.75rem;
-  box-shadow: var(--elev-1);
-}
-.membership-formpart-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-.membership-formpart-num {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: var(--primary-tint);
-  color: var(--primary-dark);
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 800;
-}
-.membership-formpart-card h3 { font-family: var(--font-heading); font-size: 0.98rem; color: var(--navy); font-weight: 700; }
-.membership-formpart-card ul { list-style: none; padding: 0; margin: 0; }
-.membership-formpart-card li {
-  position: relative;
-  padding: 0.45rem 0 0.45rem 1.1rem;
-  font-size: 0.8rem;
-  color: var(--gray-800);
-  line-height: 1.55;
-  border-bottom: 1px dashed var(--gray-200);
-}
-.membership-formpart-card li:last-child { border-bottom: none; }
-.membership-formpart-card li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.05em;
-  width: 5px;
-  height: 5px;
-  border-radius: 2px;
-  background: var(--primary);
-}
-
 /* ---------- Declaration ---------- */
 .membership-declaration-section { padding: 5rem 0; background: var(--white); }
 .membership-declaration-card {
@@ -395,7 +347,7 @@
 
 @media (max-width: 1024px) {
   .membership-fees-grid { grid-template-columns: repeat(2, 1fr); }
-  .membership-eligibility-grid, .membership-formparts-grid { grid-template-columns: repeat(2, 1fr); }
+  .membership-eligibility-grid { grid-template-columns: repeat(2, 1fr); }
   .membership-centres-list { grid-template-columns: repeat(4, 1fr); }
   .membership-letterhead, .membership-submit-layout { grid-template-columns: 1fr; }
 }
@@ -403,7 +355,7 @@
 @media (max-width: 768px) {
   .membership-hero-cta { font-size: 0.78rem; padding: 0.75rem 1.2rem; }
   .membership-fees-grid,
-  .membership-eligibility-grid, .membership-formparts-grid { grid-template-columns: 1fr; }
+  .membership-eligibility-grid { grid-template-columns: 1fr; }
   .membership-centres-list { grid-template-columns: repeat(2, 1fr); }
     .membership-letterhead { padding: 1.5rem; }
   .membership-declaration-card { padding: 1.75rem; }

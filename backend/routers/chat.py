@@ -205,7 +205,7 @@ def get_local_context(query: str) -> str:
     if "rera" in q:
         context_parts.append(
             "BAI Pune Centre runs a RERA Services desk for members (MahaRERA project and agent registration, quarterly compliance, "
-            "Form 1/2/3 certification, extensions, complaints guidance), listed on the BAI Services page under Resources."
+            "Form 1/2/3 certification, extensions, complaints guidance), listed on the BAI Services page."
         )
 
     # 6. Check machinery / renting / wheeling / dealing
@@ -272,7 +272,7 @@ def generate_local_response(query: str, context: str) -> str:
         return (
             "🏢 RERA Services\n\n"
             "BAI Pune Centre runs a RERA desk for members: MahaRERA project registration, agent registration and renewal, quarterly progress compliance, "
-            "Form 1/2/3 certification, extension and correction applications, and complaints guidance. See the BAI Services page under Resources."
+            "Form 1/2/3 certification, extension and correction applications, and complaints guidance. See the BAI Services page."
         )
     elif "publication" in q or "journal" in q or "icj" in q or "magazine" in q:
         return (

@@ -67,8 +67,6 @@ const App = () => {
             <Route path="/notifications" element={<PlaceholderPage title="Notifications" />} />
             <Route path="/circular" element={<PlaceholderPage title="Circulars" />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<PlaceholderPage title="Terms & Conditions" />} />
-            <Route path="/disclaimer" element={<PlaceholderPage title="Disclaimer" />} />
             <Route path="/up-email" element={<PlaceholderPage title="Update Email Records" />} />
             <Route path="/up-meeting" element={<PlaceholderPage title="Meeting Updates" />} />
             <Route path="/up-news" element={<PlaceholderPage title="News Updates" />} />

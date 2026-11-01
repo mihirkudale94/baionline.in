@@ -60,7 +60,7 @@ const SponsorsInquiry = () => {
             {/* Form Column */}
             <div className="sponsors-form-card glass-card">
               <div className="header-icon-box"><FaHandshake /></div>
-              <h2>Partnership Inquiry Form</h2>
+              <h2>Inquiry Form</h2>
               <p className="form-desc">Share details about your brand and products, and our sponsorship committee will contact you.</p>
 
               {submitted ? (

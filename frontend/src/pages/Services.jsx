@@ -1,105 +1,107 @@
-import React from "react";
-import {
-  FaFileSignature,
-  FaUserTie,
-  FaClipboardCheck,
-  FaCertificate,
-  FaCalendarPlus,
-  FaGavel,
-  FaBalanceScale,
-  FaChalkboardTeacher,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-  FaFilePdf
-} from "react-icons/fa";
-import PageHero from "../components/PageHero";
-import { baiServicesData } from "../services/api";
+import React, { useState } from "react";
+import { baiServicesData, heroSlides, submitForm } from "../services/api";
+import HeroCarousel from "../components/HeroCarousel";
 import "./Services.css";
 
-/* Icon key -> component, so the data file stays plain data. */
-const ICONS = {
-  register: FaFileSignature,
-  agent: FaUserTie,
-  compliance: FaClipboardCheck,
-  certificate: FaCertificate,
-  extension: FaCalendarPlus,
-  legal: FaGavel,
-  advisory: FaBalanceScale,
-  training: FaChalkboardTeacher
-};
-
+/*
+  Laid out the way baionline.in/services is: the banner carousel across the
+  top, the page title in the coloured band under it, then a single white card
+  holding the intro line, the eight numbered write-ups and the inquiry form.
+*/
 const Services = () => {
-  const { tag, title, subtitle, hero, rera } = baiServicesData;
+  const { title, intro, items, inquiry } = baiServicesData;
+
+  const blankForm = Object.fromEntries(inquiry.fields.map((f) => [f.name, ""]));
+  const [form, setForm] = useState(blankForm);
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+    submitForm("service_providers_inquiry", form)
+      .then(() => {
+        setSent(true);
+        setForm(blankForm);
+      })
+      .catch(() =>
+        setError("Something went wrong sending your request. Please try again.")
+      )
+      .finally(() => setSending(false));
+  };
 
   return (
     <div className="services-page-wrapper">
-      <PageHero
-        image={hero.image}
-        alt={hero.alt}
-        tag={tag}
-        title={title}
-        subtitle={subtitle}
-      />
+      {/* The photographs are shown clean; the title reads in the band below. */}
+      <HeroCarousel slides={heroSlides} />
 
-      <section className="services-section" id={rera.id}>
+      <section className="services-banner">
         <div className="container">
-          <div className="services-intro-card glass-card">
-            <span className="services-eyebrow">RERA Desk</span>
-            <h2 className="services-heading">{rera.title}</h2>
-            <p className="services-lead">{rera.lead}</p>
-            <p className="services-intro-text">{rera.intro}</p>
-          </div>
+          <h1 className="services-banner-title">{title}</h1>
+        </div>
+      </section>
 
-          <div
-            className="services-grid"
-            style={{ "--services-count": rera.services.length }}
-          >
-            {rera.services.map((service, idx) => {
-              const Icon = ICONS[service.icon] || FaClipboardCheck;
-              return (
-                <div className="service-card glass-card" key={idx}>
-                  <span className="service-card-icon"><Icon /></span>
-                  <h3 className="service-card-title">{service.title}</h3>
-                  <p className="service-card-desc">{service.description}</p>
+      <section className="services-section">
+        <div className="container">
+          <div className="services-card">
+            <p className="services-intro">{intro}</p>
+
+            <div className="services-list">
+              {items.map((item, idx) => (
+                <div className="service_list" key={item.title}>
+                  <p>
+                    <b>{item.title}</b>
+                  </p>
+                  <span>{item.description}</span>
+                  <span className="number" aria-hidden="true">
+                    {idx + 1}
+                  </span>
                 </div>
-              );
-            })}
-          </div>
-
-          {rera.documents.length > 0 && (
-            <div className="services-docs-card glass-card">
-              <h3 className="services-docs-title">Forms & Circulars</h3>
-              <ul className="services-docs-list">
-                {rera.documents.map((doc, idx) => (
-                  <li key={idx}>
-                    <a href={doc.file} target="_blank" rel="noreferrer" className="services-doc-link">
-                      <FaFilePdf /> <span>{doc.label}</span>
-                      {doc.size && <em className="services-doc-size">{doc.size}</em>}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              ))}
             </div>
-          )}
 
-          <div className="services-contact-card">
-            <h3 className="services-contact-title">Reach the RERA Desk</h3>
-            <p className="services-contact-note">{rera.contact.note}</p>
-            <ul className="services-contact-list">
-              <li>
-                <FaEnvelope />
-                <a href={`mailto:${rera.contact.email}`}>{rera.contact.email}</a>
-              </li>
-              <li>
-                <FaPhoneAlt />
-                <a href={`tel:${rera.contact.tel.replace(/[^0-9+]/g, "")}`}>{rera.contact.tel}</a>
-              </li>
-              <li>
-                <FaMapMarkerAlt />
-                <span>{rera.contact.address}</span>
-              </li>
-            </ul>
+            <p className="services-form-heading">
+              <b>{inquiry.title}</b>
+            </p>
+
+            {sent ? (
+              <div className="services-form-success">
+                <p>{inquiry.successText}</p>
+                <button
+                  type="button"
+                  className="services-submit"
+                  onClick={() => setSent(false)}
+                >
+                  Send another
+                </button>
+              </div>
+            ) : (
+              <form className="services-form" onSubmit={handleSubmit}>
+                {error && <p className="services-form-error">{error}</p>}
+                {inquiry.fields.map((field) => (
+                  <div className="services-form-group" key={field.name}>
+                    <label htmlFor={`svc-${field.name}`}>{field.label}</label>
+                    <input
+                      id={`svc-${field.name}`}
+                      name={field.name}
+                      type={field.type}
+                      required
+                      value={form[field.name]}
+                      onChange={(e) =>
+                        setForm((prev) => ({ ...prev, [field.name]: e.target.value }))
+                      }
+                    />
+                  </div>
+                ))}
+                <div className="services-form-actions">
+                  <button type="submit" className="services-submit" disabled={sending}>
+                    {sending ? "Sending…" : inquiry.submitLabel}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </section>

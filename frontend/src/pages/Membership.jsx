@@ -196,39 +196,6 @@ const Membership = () => {
         </div>
       </section>
 
-      <section className="membership-formparts-section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="subtitle">Inside the Form</span>
-            <h2 className="section-title">What the Form Asks</h2>
-            <div className="section-title-line"></div>
-          </div>
-          <p className="membership-formparts-intro">{data.formSections.intro}</p>
-          <div className="membership-formparts-grid">
-            {data.formSections.parts.map((part, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (idx % 3) * 0.08 }}
-                className="membership-formpart-card"
-              >
-                <div className="membership-formpart-head">
-                  <span className="membership-formpart-num">{String(idx + 1).padStart(2, "0")}</span>
-                  <h3>{part.title}</h3>
-                </div>
-                <ul>
-                  {part.fields.map((field, i) => (
-                    <li key={i}>{field}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="membership-declaration-section">
         <div className="container">
           <div className="membership-declaration-card">

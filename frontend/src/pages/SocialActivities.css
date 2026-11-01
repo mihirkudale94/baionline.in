@@ -678,19 +678,19 @@
   gap: 1.5rem;
 }
 
-.form-group-row {
+.social-inquiry-form .form-group-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.form-group {
+.social-inquiry-form .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.form-group label {
+.social-inquiry-form .form-group label {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-body);
@@ -698,9 +698,9 @@
   letter-spacing: 0.5px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.social-inquiry-form .form-group input,
+.social-inquiry-form .form-group select,
+.social-inquiry-form .form-group textarea {
   padding: 0.85rem 1rem;
   border: 1px solid var(--surface-border);
   background-color: var(--white);
@@ -711,9 +711,9 @@
   transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.social-inquiry-form .form-group input:focus,
+.social-inquiry-form .form-group select:focus,
+.social-inquiry-form .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-tint);
@@ -803,7 +803,7 @@
   .inquiry-grid {
     padding: 2rem 1.5rem;
   }
-  .form-group-row {
+  .social-inquiry-form .form-group-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }

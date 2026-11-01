@@ -9,6 +9,8 @@ from fastapi.testclient import TestClient
 
 from routers import payments, sponsors, submissions
 
+GOOD_CAPTCHA_TOKEN = "token-google-accepts"
+
 LIVE_KEY_ID = "rzp_live_unittest"
 LIVE_KEY_SECRET = "unittest_secret"
 WEBHOOK_SECRET = "unittest_webhook_secret"
@@ -20,6 +22,35 @@ def no_razorpay_credentials(monkeypatch):
     monkeypatch.delenv("RAZORPAY_KEY_ID", raising=False)
     monkeypatch.delenv("RAZORPAY_KEY_SECRET", raising=False)
     monkeypatch.delenv("RAZORPAY_WEBHOOK_SECRET", raising=False)
+
+
+@pytest.fixture(autouse=True)
+def no_recaptcha_secret(monkeypatch):
+    """Verification off unless a test asks for it, whatever backend/.env holds."""
+    monkeypatch.delenv("RECAPTCHA_SECRET_KEY", raising=False)
+
+
+@pytest.fixture
+def recaptcha_configured(monkeypatch):
+    """Turn verification on and record the tokens Google would be asked about."""
+    monkeypatch.setenv("RECAPTCHA_SECRET_KEY", "unittest_recaptcha_secret")
+    checked = []
+
+    def accept(token):
+        checked.append(token)
+        return token == GOOD_CAPTCHA_TOKEN
+
+    monkeypatch.setattr(submissions, "_recaptcha_accepted", accept)
+    return checked
+
+
+@pytest.fixture(autouse=True)
+def empty_rate_limit_window():
+    """The submissions rate limiter keeps its window in module state; without
+    this, posts from one test would count against the next."""
+    submissions._recent_posts.clear()
+    yield
+    submissions._recent_posts.clear()
 
 
 @pytest.fixture
